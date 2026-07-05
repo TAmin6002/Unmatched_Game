@@ -52,3 +52,10 @@ enum class NeedInput // کارت هایی که نیاز به کنترلر دار
     PlaceDraculaAdjacentToOpponent, // دراکولا رو کنار مبارز حریف بذار بازیکن انتخاب میکند یم خانه را
     MoveOwnFighter3,                // مبارز خود را میتواند تا سه خانه جابجا کند
 };
+
+enum class e_Menu
+{
+    Play,
+    Exit,
+    Help,
+};

@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/app.dir/src/Dr_Watson.cpp.obj.d"
   "CMakeFiles/app.dir/src/Dracula.cpp.obj"
   "CMakeFiles/app.dir/src/Dracula.cpp.obj.d"
+  "CMakeFiles/app.dir/src/Ftxui_Front.cpp.obj"
+  "CMakeFiles/app.dir/src/Ftxui_Front.cpp.obj.d"
   "CMakeFiles/app.dir/src/Heroes.cpp.obj"
   "CMakeFiles/app.dir/src/Heroes.cpp.obj.d"
   "CMakeFiles/app.dir/src/Player.cpp.obj"

@@ -28,8 +28,8 @@ set_property(GLOBAL PROPERTY _CMAKE_FindGit_GIT_EXECUTABLE_VERSION
 include(ExternalProject)
 ExternalProject_Add(ftxui-populate
                      "UPDATE_DISCONNECTED" "False" "GIT_REPOSITORY" "https://github.com/ArthurSonzogni/FTXUI" "EXTERNALPROJECT_INTERNAL_ARGUMENT_SEPARATOR" "GIT_TAG" "v7.0.0"
-                    SOURCE_DIR          "D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src"
-                    BINARY_DIR          "D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-build"
+                    SOURCE_DIR          "D:/cpp/myproject/build/_deps/ftxui-src"
+                    BINARY_DIR          "D:/cpp/myproject/build/_deps/ftxui-build"
                     CONFIGURE_COMMAND   ""
                     BUILD_COMMAND       ""
                     INSTALL_COMMAND     ""

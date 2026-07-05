@@ -10,7 +10,7 @@ Board ::Board()
     spaces.resize(32);
 
     for (int i = 0; i < 32; i++)
-        spaces.push_back(Space());
+        spaces[i] = Space();
 
     spaces[0] = Space({&spaces[1], &spaces[2], &spaces[4], &spaces[5]}, {&spaces[1], &spaces[5]});
 

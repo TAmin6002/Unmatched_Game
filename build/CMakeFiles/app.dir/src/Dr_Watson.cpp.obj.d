@@ -1,7 +1,6 @@
 CMakeFiles/app.dir/src/Dr_Watson.cpp.obj: \
- D:/cpp/Unmatched_project/Unmatched_Game/src/Dr_Watson.cpp \
- D:/cpp/Unmatched_project/Unmatched_Game/includes/Dr_Watson.h \
- D:/cpp/Unmatched_project/Unmatched_Game/includes/Heroes.h \
+ D:\cpp\myproject\src\Dr_Watson.cpp D:/cpp/myproject/includes/Dr_Watson.h \
+ D:/cpp/myproject/includes/Heroes.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/string \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/requires_hosted.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/x86_64-w64-mingw32/bits/c++config.h \
@@ -132,8 +131,7 @@ CMakeFiles/app.dir/src/Dr_Watson.cpp.obj: \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/stl_numeric.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/pstl/glue_numeric_defs.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/pstl/execution_defs.h \
- D:/cpp/Unmatched_project/Unmatched_Game/includes/Space.h \
- D:/cpp/Unmatched_project/Unmatched_Game/includes/Card.h \
+ D:/cpp/myproject/includes/Space.h D:/cpp/myproject/includes/Card.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/functional \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/std_function.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/typeinfo \
@@ -151,4 +149,4 @@ CMakeFiles/app.dir/src/Dr_Watson.cpp.obj: \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/algorithmfwd.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/stl_heap.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/stl_tempbuf.h \
- D:/cpp/Unmatched_project/Unmatched_Game/includes/Enums.h
+ D:/cpp/myproject/includes/Enums.h

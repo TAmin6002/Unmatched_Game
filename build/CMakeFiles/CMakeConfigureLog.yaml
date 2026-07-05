@@ -11,7 +11,7 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/CMakeUnixFindMake.cmake:5 (find_program)"
+      - "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/CMakeMinGWFindMake.cmake:5 (find_program)"
       - "CMakeLists.txt:3 (project)"
     mode: "program"
     variable: "CMAKE_MAKE_PROGRAM"
@@ -25,11 +25,8 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
-      - "gmake"
-      - "make"
-      - "smake"
+      - "mingw32-make.exe"
     candidate_directories:
-      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -37,6 +34,116 @@ events:
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/Git/cmd/"
       - "C:/Program Files/dotnet/"
+      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/"
+      - "C:/Users/ASEMAN RAYANE/scoop/shims/"
+      - "C:/Users/ASEMAN RAYANE/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/ASEMAN RAYANE/AppData/Local/Programs/Python/Python314/"
+      - "C:/Users/ASEMAN RAYANE/AppData/Local/Programs/Python/Launcher/"
+      - "C:/Users/ASEMAN RAYANE/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Program Files/JetBrains/PyCharm 2025.2.3/bin/"
+      - "D:/pch/Microsoft VS Code/bin/"
+      - "C:/Users/ASEMAN RAYANE/AppData/Local/GitHubDesktop/bin/"
+      - "/REGISTRY-NOTFOUND/bin/"
+      - "c:/MinGW/bin/"
+      - "/MinGW/bin/"
+      - "/REGISTRY-NOTFOUND/MinGW/bin/"
+    searched_directories:
+      - "C:/Windows/System32/mingw32-make.exe.com"
+      - "C:/Windows/System32/mingw32-make.exe"
+      - "C:/Windows/mingw32-make.exe.com"
+      - "C:/Windows/mingw32-make.exe"
+      - "C:/Windows/System32/wbem/mingw32-make.exe.com"
+      - "C:/Windows/System32/wbem/mingw32-make.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/mingw32-make.exe.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/mingw32-make.exe"
+      - "C:/Windows/System32/OpenSSH/mingw32-make.exe.com"
+      - "C:/Windows/System32/OpenSSH/mingw32-make.exe"
+      - "C:/Program Files/Git/cmd/mingw32-make.exe.com"
+      - "C:/Program Files/Git/cmd/mingw32-make.exe"
+      - "C:/Program Files/dotnet/mingw32-make.exe.com"
+      - "C:/Program Files/dotnet/mingw32-make.exe"
+      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/mingw32-make.exe.com"
+      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/mingw32-make.exe"
+      - "C:/Users/ASEMAN RAYANE/scoop/shims/mingw32-make.exe.com"
+      - "C:/Users/ASEMAN RAYANE/scoop/shims/mingw32-make.exe"
+      - "C:/Users/ASEMAN RAYANE/AppData/Local/Programs/Python/Python314/Scripts/mingw32-make.exe.com"
+      - "C:/Users/ASEMAN RAYANE/AppData/Local/Programs/Python/Python314/Scripts/mingw32-make.exe"
+      - "C:/Users/ASEMAN RAYANE/AppData/Local/Programs/Python/Python314/mingw32-make.exe.com"
+      - "C:/Users/ASEMAN RAYANE/AppData/Local/Programs/Python/Python314/mingw32-make.exe"
+      - "C:/Users/ASEMAN RAYANE/AppData/Local/Programs/Python/Launcher/mingw32-make.exe.com"
+      - "C:/Users/ASEMAN RAYANE/AppData/Local/Programs/Python/Launcher/mingw32-make.exe"
+      - "C:/Users/ASEMAN RAYANE/AppData/Local/Microsoft/WindowsApps/mingw32-make.exe.com"
+      - "C:/Users/ASEMAN RAYANE/AppData/Local/Microsoft/WindowsApps/mingw32-make.exe"
+      - "C:/Program Files/JetBrains/PyCharm 2025.2.3/bin/mingw32-make.exe.com"
+      - "C:/Program Files/JetBrains/PyCharm 2025.2.3/bin/mingw32-make.exe"
+      - "D:/pch/Microsoft VS Code/bin/mingw32-make.exe.com"
+      - "D:/pch/Microsoft VS Code/bin/mingw32-make.exe"
+      - "C:/Users/ASEMAN RAYANE/AppData/Local/GitHubDesktop/bin/mingw32-make.exe.com"
+      - "C:/Users/ASEMAN RAYANE/AppData/Local/GitHubDesktop/bin/mingw32-make.exe"
+      - "/REGISTRY-NOTFOUND/bin/mingw32-make.exe.com"
+      - "/REGISTRY-NOTFOUND/bin/mingw32-make.exe"
+      - "c:/MinGW/bin/mingw32-make.exe.com"
+      - "c:/MinGW/bin/mingw32-make.exe"
+      - "/MinGW/bin/mingw32-make.exe.com"
+      - "/MinGW/bin/mingw32-make.exe"
+      - "/REGISTRY-NOTFOUND/MinGW/bin/mingw32-make.exe.com"
+      - "/REGISTRY-NOTFOUND/MinGW/bin/mingw32-make.exe"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Users\\ASEMAN RAYANE\\scoop\\apps\\gcc\\current\\bin"
+        - "C:\\Users\\ASEMAN RAYANE\\scoop\\shims"
+        - "C:\\Users\\ASEMAN RAYANE\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\ASEMAN RAYANE\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\ASEMAN RAYANE\\AppData\\Local\\Programs\\Python\\Launcher\\"
+        - "C:\\Users\\ASEMAN RAYANE\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Program Files\\JetBrains\\PyCharm 2025.2.3\\bin"
+        - "D:\\pch\\Microsoft VS Code\\bin"
+        - "C:\\Users\\ASEMAN RAYANE\\AppData\\Local\\GitHubDesktop\\bin"
+...
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/CMakeDetermineCompiler.cmake:63 (find_program)"
+      - "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:69 (_cmake_find_compiler)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER"
+    description: "CXX compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: false
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "c++"
+      - "g++"
+      - "cl"
+      - "bcc"
+      - "icx"
+      - "clang++"
+    candidate_directories:
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/"
       - "C:/Users/ASEMAN RAYANE/scoop/shims/"
       - "C:/Users/ASEMAN RAYANE/AppData/Local/Programs/Python/Python314/Scripts/"
       - "C:/Users/ASEMAN RAYANE/AppData/Local/Programs/Python/Python314/"
@@ -46,83 +153,139 @@ events:
       - "D:/pch/Microsoft VS Code/bin/"
       - "C:/Users/ASEMAN RAYANE/AppData/Local/GitHubDesktop/bin/"
     searched_directories:
-      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/gmake.com"
-      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/gmake.exe"
-      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/gmake"
-      - "C:/Windows/System32/gmake.com"
-      - "C:/Windows/System32/gmake.exe"
-      - "C:/Windows/System32/gmake"
-      - "C:/Windows/gmake.com"
-      - "C:/Windows/gmake.exe"
-      - "C:/Windows/gmake"
-      - "C:/Windows/System32/wbem/gmake.com"
-      - "C:/Windows/System32/wbem/gmake.exe"
-      - "C:/Windows/System32/wbem/gmake"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/gmake.com"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/gmake.exe"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/gmake"
-      - "C:/Windows/System32/OpenSSH/gmake.com"
-      - "C:/Windows/System32/OpenSSH/gmake.exe"
-      - "C:/Windows/System32/OpenSSH/gmake"
-      - "C:/Program Files/Git/cmd/gmake.com"
-      - "C:/Program Files/Git/cmd/gmake.exe"
-      - "C:/Program Files/Git/cmd/gmake"
-      - "C:/Program Files/dotnet/gmake.com"
-      - "C:/Program Files/dotnet/gmake.exe"
-      - "C:/Program Files/dotnet/gmake"
-      - "C:/Users/ASEMAN RAYANE/scoop/shims/gmake.com"
-      - "C:/Users/ASEMAN RAYANE/scoop/shims/gmake.exe"
-      - "C:/Users/ASEMAN RAYANE/scoop/shims/gmake"
-      - "C:/Users/ASEMAN RAYANE/AppData/Local/Programs/Python/Python314/Scripts/gmake.com"
-      - "C:/Users/ASEMAN RAYANE/AppData/Local/Programs/Python/Python314/Scripts/gmake.exe"
-      - "C:/Users/ASEMAN RAYANE/AppData/Local/Programs/Python/Python314/Scripts/gmake"
-      - "C:/Users/ASEMAN RAYANE/AppData/Local/Programs/Python/Python314/gmake.com"
-      - "C:/Users/ASEMAN RAYANE/AppData/Local/Programs/Python/Python314/gmake.exe"
-      - "C:/Users/ASEMAN RAYANE/AppData/Local/Programs/Python/Python314/gmake"
-      - "C:/Users/ASEMAN RAYANE/AppData/Local/Programs/Python/Launcher/gmake.com"
-      - "C:/Users/ASEMAN RAYANE/AppData/Local/Programs/Python/Launcher/gmake.exe"
-      - "C:/Users/ASEMAN RAYANE/AppData/Local/Programs/Python/Launcher/gmake"
-      - "C:/Users/ASEMAN RAYANE/AppData/Local/Microsoft/WindowsApps/gmake.com"
-      - "C:/Users/ASEMAN RAYANE/AppData/Local/Microsoft/WindowsApps/gmake.exe"
-      - "C:/Users/ASEMAN RAYANE/AppData/Local/Microsoft/WindowsApps/gmake"
-      - "C:/Program Files/JetBrains/PyCharm 2025.2.3/bin/gmake.com"
-      - "C:/Program Files/JetBrains/PyCharm 2025.2.3/bin/gmake.exe"
-      - "C:/Program Files/JetBrains/PyCharm 2025.2.3/bin/gmake"
-      - "D:/pch/Microsoft VS Code/bin/gmake.com"
-      - "D:/pch/Microsoft VS Code/bin/gmake.exe"
-      - "D:/pch/Microsoft VS Code/bin/gmake"
-      - "C:/Users/ASEMAN RAYANE/AppData/Local/GitHubDesktop/bin/gmake.com"
-      - "C:/Users/ASEMAN RAYANE/AppData/Local/GitHubDesktop/bin/gmake.exe"
-      - "C:/Users/ASEMAN RAYANE/AppData/Local/GitHubDesktop/bin/gmake"
-      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/make.com"
-      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/make.exe"
-      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/make"
-      - "C:/Windows/System32/make.com"
-      - "C:/Windows/System32/make.exe"
-      - "C:/Windows/System32/make"
-      - "C:/Windows/make.com"
-      - "C:/Windows/make.exe"
-      - "C:/Windows/make"
-      - "C:/Windows/System32/wbem/make.com"
-      - "C:/Windows/System32/wbem/make.exe"
-      - "C:/Windows/System32/wbem/make"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/make.com"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/make.exe"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/make"
-      - "C:/Windows/System32/OpenSSH/make.com"
-      - "C:/Windows/System32/OpenSSH/make.exe"
-      - "C:/Windows/System32/OpenSSH/make"
-      - "C:/Program Files/Git/cmd/make.com"
-      - "C:/Program Files/Git/cmd/make.exe"
-      - "C:/Program Files/Git/cmd/make"
-      - "C:/Program Files/dotnet/make.com"
-      - "C:/Program Files/dotnet/make.exe"
-      - "C:/Program Files/dotnet/make"
-      - "C:/Users/ASEMAN RAYANE/scoop/shims/make.com"
-    found: "C:/Users/ASEMAN RAYANE/scoop/shims/make.exe"
+      - "C:/Windows/System32/c++.com"
+      - "C:/Windows/System32/c++.exe"
+      - "C:/Windows/System32/c++"
+      - "C:/Windows/System32/g++.com"
+      - "C:/Windows/System32/g++.exe"
+      - "C:/Windows/System32/g++"
+      - "C:/Windows/System32/cl.com"
+      - "C:/Windows/System32/cl.exe"
+      - "C:/Windows/System32/cl"
+      - "C:/Windows/System32/bcc.com"
+      - "C:/Windows/System32/bcc.exe"
+      - "C:/Windows/System32/bcc"
+      - "C:/Windows/System32/icx.com"
+      - "C:/Windows/System32/icx.exe"
+      - "C:/Windows/System32/icx"
+      - "C:/Windows/System32/clang++.com"
+      - "C:/Windows/System32/clang++.exe"
+      - "C:/Windows/System32/clang++"
+      - "C:/Windows/c++.com"
+      - "C:/Windows/c++.exe"
+      - "C:/Windows/c++"
+      - "C:/Windows/g++.com"
+      - "C:/Windows/g++.exe"
+      - "C:/Windows/g++"
+      - "C:/Windows/cl.com"
+      - "C:/Windows/cl.exe"
+      - "C:/Windows/cl"
+      - "C:/Windows/bcc.com"
+      - "C:/Windows/bcc.exe"
+      - "C:/Windows/bcc"
+      - "C:/Windows/icx.com"
+      - "C:/Windows/icx.exe"
+      - "C:/Windows/icx"
+      - "C:/Windows/clang++.com"
+      - "C:/Windows/clang++.exe"
+      - "C:/Windows/clang++"
+      - "C:/Windows/System32/wbem/c++.com"
+      - "C:/Windows/System32/wbem/c++.exe"
+      - "C:/Windows/System32/wbem/c++"
+      - "C:/Windows/System32/wbem/g++.com"
+      - "C:/Windows/System32/wbem/g++.exe"
+      - "C:/Windows/System32/wbem/g++"
+      - "C:/Windows/System32/wbem/cl.com"
+      - "C:/Windows/System32/wbem/cl.exe"
+      - "C:/Windows/System32/wbem/cl"
+      - "C:/Windows/System32/wbem/bcc.com"
+      - "C:/Windows/System32/wbem/bcc.exe"
+      - "C:/Windows/System32/wbem/bcc"
+      - "C:/Windows/System32/wbem/icx.com"
+      - "C:/Windows/System32/wbem/icx.exe"
+      - "C:/Windows/System32/wbem/icx"
+      - "C:/Windows/System32/wbem/clang++.com"
+      - "C:/Windows/System32/wbem/clang++.exe"
+      - "C:/Windows/System32/wbem/clang++"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/c++.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/c++.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/c++"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/g++.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/g++.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/g++"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/cl.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/cl.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/cl"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/bcc.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/bcc.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/bcc"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/icx.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/icx.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/icx"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/clang++.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/clang++.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/clang++"
+      - "C:/Windows/System32/OpenSSH/c++.com"
+      - "C:/Windows/System32/OpenSSH/c++.exe"
+      - "C:/Windows/System32/OpenSSH/c++"
+      - "C:/Windows/System32/OpenSSH/g++.com"
+      - "C:/Windows/System32/OpenSSH/g++.exe"
+      - "C:/Windows/System32/OpenSSH/g++"
+      - "C:/Windows/System32/OpenSSH/cl.com"
+      - "C:/Windows/System32/OpenSSH/cl.exe"
+      - "C:/Windows/System32/OpenSSH/cl"
+      - "C:/Windows/System32/OpenSSH/bcc.com"
+      - "C:/Windows/System32/OpenSSH/bcc.exe"
+      - "C:/Windows/System32/OpenSSH/bcc"
+      - "C:/Windows/System32/OpenSSH/icx.com"
+      - "C:/Windows/System32/OpenSSH/icx.exe"
+      - "C:/Windows/System32/OpenSSH/icx"
+      - "C:/Windows/System32/OpenSSH/clang++.com"
+      - "C:/Windows/System32/OpenSSH/clang++.exe"
+      - "C:/Windows/System32/OpenSSH/clang++"
+      - "C:/Program Files/Git/cmd/c++.com"
+      - "C:/Program Files/Git/cmd/c++.exe"
+      - "C:/Program Files/Git/cmd/c++"
+      - "C:/Program Files/Git/cmd/g++.com"
+      - "C:/Program Files/Git/cmd/g++.exe"
+      - "C:/Program Files/Git/cmd/g++"
+      - "C:/Program Files/Git/cmd/cl.com"
+      - "C:/Program Files/Git/cmd/cl.exe"
+      - "C:/Program Files/Git/cmd/cl"
+      - "C:/Program Files/Git/cmd/bcc.com"
+      - "C:/Program Files/Git/cmd/bcc.exe"
+      - "C:/Program Files/Git/cmd/bcc"
+      - "C:/Program Files/Git/cmd/icx.com"
+      - "C:/Program Files/Git/cmd/icx.exe"
+      - "C:/Program Files/Git/cmd/icx"
+      - "C:/Program Files/Git/cmd/clang++.com"
+      - "C:/Program Files/Git/cmd/clang++.exe"
+      - "C:/Program Files/Git/cmd/clang++"
+      - "C:/Program Files/dotnet/c++.com"
+      - "C:/Program Files/dotnet/c++.exe"
+      - "C:/Program Files/dotnet/c++"
+      - "C:/Program Files/dotnet/g++.com"
+      - "C:/Program Files/dotnet/g++.exe"
+      - "C:/Program Files/dotnet/g++"
+      - "C:/Program Files/dotnet/cl.com"
+      - "C:/Program Files/dotnet/cl.exe"
+      - "C:/Program Files/dotnet/cl"
+      - "C:/Program Files/dotnet/bcc.com"
+      - "C:/Program Files/dotnet/bcc.exe"
+      - "C:/Program Files/dotnet/bcc"
+      - "C:/Program Files/dotnet/icx.com"
+      - "C:/Program Files/dotnet/icx.exe"
+      - "C:/Program Files/dotnet/icx"
+      - "C:/Program Files/dotnet/clang++.com"
+      - "C:/Program Files/dotnet/clang++.exe"
+      - "C:/Program Files/dotnet/clang++"
+      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/c++.com"
+      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/c++.exe"
+      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/c++"
+      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/g++.com"
+    found: "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/g++.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\ASEMAN RAYANE\\scoop\\apps\\gcc\\current\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -166,7 +329,6 @@ events:
     found: "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/CMakeCXXCompilerId.cpp.in"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\ASEMAN RAYANE\\scoop\\apps\\gcc\\current\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -203,7 +365,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
       
       The CXX compiler identification is GNU, found in:
-        D:/cpp/Unmatched_project/Unmatched_Game/build/CMakeFiles/4.2.0/CompilerIdCXX/a.exe
+        D:/cpp/myproject/build/CMakeFiles/4.2.0/CompilerIdCXX/a.exe
       
   -
     kind: "find-v1"
@@ -246,7 +408,6 @@ events:
     found: "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/ar.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\ASEMAN RAYANE\\scoop\\apps\\gcc\\current\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -304,7 +465,6 @@ events:
     found: "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/ranlib.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\ASEMAN RAYANE\\scoop\\apps\\gcc\\current\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -362,7 +522,6 @@ events:
     found: "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/strip.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\ASEMAN RAYANE\\scoop\\apps\\gcc\\current\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -420,7 +579,6 @@ events:
     found: "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/ld.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\ASEMAN RAYANE\\scoop\\apps\\gcc\\current\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -478,7 +636,6 @@ events:
     found: "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/nm.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\ASEMAN RAYANE\\scoop\\apps\\gcc\\current\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -536,7 +693,6 @@ events:
     found: "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/objdump.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\ASEMAN RAYANE\\scoop\\apps\\gcc\\current\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -594,7 +750,6 @@ events:
     found: "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/objcopy.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\ASEMAN RAYANE\\scoop\\apps\\gcc\\current\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -652,7 +807,6 @@ events:
     found: "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/readelf.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\ASEMAN RAYANE\\scoop\\apps\\gcc\\current\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -710,7 +864,6 @@ events:
     found: "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/dlltool.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\ASEMAN RAYANE\\scoop\\apps\\gcc\\current\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -768,7 +921,6 @@ events:
     found: "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/addr2line.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\ASEMAN RAYANE\\scoop\\apps\\gcc\\current\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -873,7 +1025,6 @@ events:
     found: false
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\ASEMAN RAYANE\\scoop\\apps\\gcc\\current\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -1078,7 +1229,6 @@ events:
     found: "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/gcc-ar.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\ASEMAN RAYANE\\scoop\\apps\\gcc\\current\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -1283,7 +1433,6 @@ events:
     found: "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/gcc-ranlib.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\ASEMAN RAYANE\\scoop\\apps\\gcc\\current\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -1323,7 +1472,6 @@ events:
       - "windres"
       - "windres"
     candidate_directories:
-      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -1331,6 +1479,7 @@ events:
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/Git/cmd/"
       - "C:/Program Files/dotnet/"
+      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/"
       - "C:/Users/ASEMAN RAYANE/scoop/shims/"
       - "C:/Users/ASEMAN RAYANE/AppData/Local/Programs/Python/Python314/Scripts/"
       - "C:/Users/ASEMAN RAYANE/AppData/Local/Programs/Python/Python314/"
@@ -1352,11 +1501,31 @@ events:
       - "C:/Program Files (x86)/unmatched/sbin/"
       - "C:/Program Files (x86)/unmatched/"
     searched_directories:
+      - "C:/Windows/System32/windres.com"
+      - "C:/Windows/System32/windres.exe"
+      - "C:/Windows/System32/windres"
+      - "C:/Windows/windres.com"
+      - "C:/Windows/windres.exe"
+      - "C:/Windows/windres"
+      - "C:/Windows/System32/wbem/windres.com"
+      - "C:/Windows/System32/wbem/windres.exe"
+      - "C:/Windows/System32/wbem/windres"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/windres.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/windres.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/windres"
+      - "C:/Windows/System32/OpenSSH/windres.com"
+      - "C:/Windows/System32/OpenSSH/windres.exe"
+      - "C:/Windows/System32/OpenSSH/windres"
+      - "C:/Program Files/Git/cmd/windres.com"
+      - "C:/Program Files/Git/cmd/windres.exe"
+      - "C:/Program Files/Git/cmd/windres"
+      - "C:/Program Files/dotnet/windres.com"
+      - "C:/Program Files/dotnet/windres.exe"
+      - "C:/Program Files/dotnet/windres"
       - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/windres.com"
     found: "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/windres.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\ASEMAN RAYANE\\scoop\\apps\\gcc\\current\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -1388,8 +1557,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "D:/cpp/Unmatched_project/Unmatched_Game/build/CMakeFiles/CMakeScratch/TryCompile-2m93e1"
-      binary: "D:/cpp/Unmatched_project/Unmatched_Game/build/CMakeFiles/CMakeScratch/TryCompile-2m93e1"
+      source: "D:/cpp/myproject/build/CMakeFiles/CMakeScratch/TryCompile-csdcwn"
+      binary: "D:/cpp/myproject/build/CMakeFiles/CMakeScratch/TryCompile-csdcwn"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1399,22 +1568,22 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'D:/cpp/Unmatched_project/Unmatched_Game/build/CMakeFiles/CMakeScratch/TryCompile-2m93e1'
+        Change Dir: 'D:/cpp/myproject/build/CMakeFiles/CMakeScratch/TryCompile-csdcwn'
         
-        Run Build Command(s): "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/bin/cmake.exe" -E env VERBOSE=1 C:/Users/ASEMAN~1/scoop/shims/make.exe -f Makefile cmTC_3e6d0/fast
-        C:/Users/ASEMAN RAYANE/scoop/apps/make/current/bin/make.exe  -f CMakeFiles/cmTC_3e6d0.dir/build.make CMakeFiles/cmTC_3e6d0.dir/build
-        make[1]: Entering directory 'D:/cpp/Unmatched_project/Unmatched_Game/build/CMakeFiles/CMakeScratch/TryCompile-2m93e1'
-        Building CXX object CMakeFiles/cmTC_3e6d0.dir/CMakeCXXCompilerABI.cpp.obj
-        "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/g++.exe"   -v -o CMakeFiles/cmTC_3e6d0.dir/CMakeCXXCompilerABI.cpp.obj -c "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp"
+        Run Build Command(s): "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/bin/cmake.exe" -E env VERBOSE=1 make -f Makefile cmTC_cd9a4/fast
+        C:/Users/ASEMAN RAYANE/scoop/apps/make/current/bin/make.exe  -f CMakeFiles\\cmTC_cd9a4.dir\\build.make CMakeFiles/cmTC_cd9a4.dir/build
+        make[1]: Entering directory 'D:/cpp/myproject/build/CMakeFiles/CMakeScratch/TryCompile-csdcwn'
+        Building CXX object CMakeFiles/cmTC_cd9a4.dir/CMakeCXXCompilerABI.cpp.obj
+        C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE   -v -o CMakeFiles\\cmTC_cd9a4.dir\\CMakeCXXCompilerABI.cpp.obj -c "C:\\Users\\ASEMAN RAYANE\\scoop\\apps\\cmake\\current\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
         Using built-in specs.
-        COLLECT_GCC=C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/g++.exe
+        COLLECT_GCC=C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE
         Target: x86_64-w64-mingw32
         Configured with: ../src/configure --enable-languages=c,c++ --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --disable-multilib --prefix=/e/temp/gcc/dest --with-sysroot=/e/temp/gcc/dest --disable-libstdcxx-pch --disable-libstdcxx-verbose --disable-nls --disable-shared --disable-win32-registry --enable-threads=posix --enable-libgomp --with-zstd=/c/mingw
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 13.2.0 (GCC) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3e6d0.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_3e6d0.dir/'
-         C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/cc1plus.exe -quiet -v -iprefix C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/ -D_REENTRANT C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_3e6d0.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o C:\\Users\\ASEMAN~1\\AppData\\Local\\Temp\\ccWZlcZE.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_cd9a4.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_cd9a4.dir\\'
+         C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/cc1plus.exe -quiet -v -iprefix C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/ -D_REENTRANT C:\\Users\\ASEMAN RAYANE\\scoop\\apps\\cmake\\current\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles\\cmTC_cd9a4.dir\\ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o C:\\Users\\ASEMAN~1\\AppData\\Local\\Temp\\ccQeYIwB.s
         GNU C++17 (GCC) version 13.2.0 (x86_64-w64-mingw32)
         	compiled by GNU C version 13.2.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.24-GMP
         
@@ -1438,18 +1607,16 @@ events:
          C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/include
         End of search list.
         Compiler executable checksum: aa8d155dea9d0b877613f1961dc4601a
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3e6d0.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_3e6d0.dir/'
-         C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_3e6d0.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\ASEMAN~1\\AppData\\Local\\Temp\\ccWZlcZE.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_cd9a4.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_cd9a4.dir\\'
+         C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_cd9a4.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Users\\ASEMAN~1\\AppData\\Local\\Temp\\ccQeYIwB.s
         GNU assembler version 2.41 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.41
         COMPILER_PATH=C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/;C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../libexec/gcc/;C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/
         LIBRARY_PATH=C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/;C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/;C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/;C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/;C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3e6d0.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_3e6d0.dir/CMakeCXXCompilerABI.cpp.'
-        Linking CXX executable cmTC_3e6d0.exe
-        "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/bin/cmake.exe" -E rm -f CMakeFiles/cmTC_3e6d0.dir/objects.a
-        "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/ar.exe" qc CMakeFiles/cmTC_3e6d0.dir/objects.a @CMakeFiles/cmTC_3e6d0.dir/objects1.rsp
-        "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/g++.exe"  -v -Wl,-v -Wl,--whole-archive CMakeFiles/cmTC_3e6d0.dir/objects.a -Wl,--no-whole-archive -o cmTC_3e6d0.exe -Wl,--out-implib,libcmTC_3e6d0.dll.a -Wl,--major-image-version,0,--minor-image-version,0
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_cd9a4.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_cd9a4.dir\\CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_cd9a4.exe
+        "C:\\Users\\ASEMAN RAYANE\\scoop\\apps\\cmake\\current\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_cd9a4.dir\\link.txt --verbose=1
         Using built-in specs.
-        COLLECT_GCC=C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/g++.exe
+        COLLECT_GCC=C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE
         COLLECT_LTO_WRAPPER=C:/Users/ASEMAN\\ RAYANE/scoop/apps/gcc/13.2.0/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe
         Target: x86_64-w64-mingw32
         Configured with: ../src/configure --enable-languages=c,c++ --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --disable-multilib --prefix=/e/temp/gcc/dest --with-sysroot=/e/temp/gcc/dest --disable-libstdcxx-pch --disable-libstdcxx-verbose --disable-nls --disable-shared --disable-win32-registry --enable-threads=posix --enable-libgomp --with-zstd=/c/mingw
@@ -1458,13 +1625,16 @@ events:
         gcc version 13.2.0 (GCC) 
         COMPILER_PATH=C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/;C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../libexec/gcc/;C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/
         LIBRARY_PATH=C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/;C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/;C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/;C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/;C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3e6d0.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_3e6d0.'
-         C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/collect2.exe -plugin C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/liblto_plugin.dll -plugin-opt=C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\ASEMAN~1\\AppData\\Local\\Temp\\ccZSXLFc.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=/e/temp/gcc/dest -m i386pep -Bdynamic -o cmTC_3e6d0.exe C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0 -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../.. -v --whole-archive CMakeFiles/cmTC_3e6d0.dir/objects.a --no-whole-archive --out-implib libcmTC_3e6d0.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_cd9a4.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_cd9a4.'
+         C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/collect2.exe -plugin C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/liblto_plugin.dll -plugin-opt=C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\ASEMAN~1\\AppData\\Local\\Temp\\ccUWolNj.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=/e/temp/gcc/dest -m i386pep -Bdynamic -o cmTC_cd9a4.exe C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0 -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_cd9a4.dir/objects.a --no-whole-archive --out-implib libcmTC_cd9a4.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o
         collect2 version 13.2.0
-        C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/liblto_plugin.dll -plugin-opt=C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\ASEMAN~1\\AppData\\Local\\Temp\\ccZSXLFc.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=/e/temp/gcc/dest -m i386pep -Bdynamic -o cmTC_3e6d0.exe C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0 -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../.. -v --whole-archive CMakeFiles/cmTC_3e6d0.dir/objects.a --no-whole-archive --out-implib libcmTC_3e6d0.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o
+        C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/liblto_plugin.dll -plugin-opt=C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\ASEMAN~1\\AppData\\Local\\Temp\\ccUWolNj.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=/e/temp/gcc/dest -m i386pep -Bdynamic -o cmTC_cd9a4.exe C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0 -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_cd9a4.dir/objects.a --no-whole-archive --out-implib libcmTC_cd9a4.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o
         GNU ld (GNU Binutils) 2.41
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3e6d0.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_3e6d0.'
-        make[1]: Leaving directory 'D:/cpp/Unmatched_project/Unmatched_Game/build/CMakeFiles/CMakeScratch/TryCompile-2m93e1'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_cd9a4.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_cd9a4.'
+        "C:\\Users\\ASEMAN RAYANE\\scoop\\apps\\cmake\\current\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_cd9a4.dir/objects.a
+        C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\ar.exe qc CMakeFiles\\cmTC_cd9a4.dir/objects.a @CMakeFiles\\cmTC_cd9a4.dir\\objects1.rsp
+        C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE  -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_cd9a4.dir/objects.a -Wl,--no-whole-archive -o cmTC_cd9a4.exe -Wl,--out-implib,libcmTC_cd9a4.dll.a -Wl,--major-image-version,0,--minor-image-version,0
+        make[1]: Leaving directory 'D:/cpp/myproject/build/CMakeFiles/CMakeScratch/TryCompile-csdcwn'
         
       exitCode: 0
   -
@@ -1505,22 +1675,22 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: 'D:/cpp/Unmatched_project/Unmatched_Game/build/CMakeFiles/CMakeScratch/TryCompile-2m93e1']
+        ignore line: [Change Dir: 'D:/cpp/myproject/build/CMakeFiles/CMakeScratch/TryCompile-csdcwn']
         ignore line: []
-        ignore line: [Run Build Command(s): "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/bin/cmake.exe" -E env VERBOSE=1 C:/Users/ASEMAN~1/scoop/shims/make.exe -f Makefile cmTC_3e6d0/fast]
-        ignore line: [C:/Users/ASEMAN RAYANE/scoop/apps/make/current/bin/make.exe  -f CMakeFiles/cmTC_3e6d0.dir/build.make CMakeFiles/cmTC_3e6d0.dir/build]
-        ignore line: [make[1]: Entering directory 'D:/cpp/Unmatched_project/Unmatched_Game/build/CMakeFiles/CMakeScratch/TryCompile-2m93e1']
-        ignore line: [Building CXX object CMakeFiles/cmTC_3e6d0.dir/CMakeCXXCompilerABI.cpp.obj]
-        ignore line: ["C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/g++.exe"   -v -o CMakeFiles/cmTC_3e6d0.dir/CMakeCXXCompilerABI.cpp.obj -c "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp"]
+        ignore line: [Run Build Command(s): "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/bin/cmake.exe" -E env VERBOSE=1 make -f Makefile cmTC_cd9a4/fast]
+        ignore line: [C:/Users/ASEMAN RAYANE/scoop/apps/make/current/bin/make.exe  -f CMakeFiles\\cmTC_cd9a4.dir\\build.make CMakeFiles/cmTC_cd9a4.dir/build]
+        ignore line: [make[1]: Entering directory 'D:/cpp/myproject/build/CMakeFiles/CMakeScratch/TryCompile-csdcwn']
+        ignore line: [Building CXX object CMakeFiles/cmTC_cd9a4.dir/CMakeCXXCompilerABI.cpp.obj]
+        ignore line: [C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE   -v -o CMakeFiles\\cmTC_cd9a4.dir\\CMakeCXXCompilerABI.cpp.obj -c "C:\\Users\\ASEMAN RAYANE\\scoop\\apps\\cmake\\current\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"]
         ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/g++.exe]
+        ignore line: [COLLECT_GCC=C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE]
         ignore line: [Target: x86_64-w64-mingw32]
         ignore line: [Configured with: ../src/configure --enable-languages=c c++ --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --disable-multilib --prefix=/e/temp/gcc/dest --with-sysroot=/e/temp/gcc/dest --disable-libstdcxx-pch --disable-libstdcxx-verbose --disable-nls --disable-shared --disable-win32-registry --enable-threads=posix --enable-libgomp --with-zstd=/c/mingw]
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 13.2.0 (GCC) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3e6d0.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_3e6d0.dir/']
-        ignore line: [ C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/cc1plus.exe -quiet -v -iprefix C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/ -D_REENTRANT C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_3e6d0.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o C:\\Users\\ASEMAN~1\\AppData\\Local\\Temp\\ccWZlcZE.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_cd9a4.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_cd9a4.dir\\']
+        ignore line: [ C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/cc1plus.exe -quiet -v -iprefix C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/ -D_REENTRANT C:\\Users\\ASEMAN RAYANE\\scoop\\apps\\cmake\\current\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles\\cmTC_cd9a4.dir\\ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o C:\\Users\\ASEMAN~1\\AppData\\Local\\Temp\\ccQeYIwB.s]
         ignore line: [GNU C++17 (GCC) version 13.2.0 (x86_64-w64-mingw32)]
         ignore line: [	compiled by GNU C version 13.2.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.24-GMP]
         ignore line: []
@@ -1544,8 +1714,8 @@ events:
         ignore line: [ C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: aa8d155dea9d0b877613f1961dc4601a]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3e6d0.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_3e6d0.dir/']
-        ignore line: [ C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_3e6d0.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\ASEMAN~1\\AppData\\Local\\Temp\\ccWZlcZE.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_cd9a4.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_cd9a4.dir\\']
+        ignore line: [ C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_cd9a4.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Users\\ASEMAN~1\\AppData\\Local\\Temp\\ccQeYIwB.s]
         ignore line: [GNU assembler version 2.41 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.41]
         ignore line: [COMPILER_PATH=C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/]
         ignore line: [C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../libexec/gcc/]
@@ -1556,13 +1726,11 @@ events:
         ignore line: [C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/]
         ignore line: [C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3e6d0.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_3e6d0.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX executable cmTC_3e6d0.exe]
-        ignore line: ["C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/bin/cmake.exe" -E rm -f CMakeFiles/cmTC_3e6d0.dir/objects.a]
-        ignore line: ["C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/ar.exe" qc CMakeFiles/cmTC_3e6d0.dir/objects.a @CMakeFiles/cmTC_3e6d0.dir/objects1.rsp]
-        ignore line: ["C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/g++.exe"  -v -Wl -v -Wl --whole-archive CMakeFiles/cmTC_3e6d0.dir/objects.a -Wl --no-whole-archive -o cmTC_3e6d0.exe -Wl --out-implib libcmTC_3e6d0.dll.a -Wl --major-image-version 0 --minor-image-version 0]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_cd9a4.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_cd9a4.dir\\CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_cd9a4.exe]
+        ignore line: ["C:\\Users\\ASEMAN RAYANE\\scoop\\apps\\cmake\\current\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_cd9a4.dir\\link.txt --verbose=1]
         ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/g++.exe]
+        ignore line: [COLLECT_GCC=C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE]
         ignore line: [COLLECT_LTO_WRAPPER=C:/Users/ASEMAN\\ RAYANE/scoop/apps/gcc/13.2.0/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe]
         ignore line: [Target: x86_64-w64-mingw32]
         ignore line: [Configured with: ../src/configure --enable-languages=c c++ --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --disable-multilib --prefix=/e/temp/gcc/dest --with-sysroot=/e/temp/gcc/dest --disable-libstdcxx-pch --disable-libstdcxx-verbose --disable-nls --disable-shared --disable-win32-registry --enable-threads=posix --enable-libgomp --with-zstd=/c/mingw]
@@ -1578,13 +1746,16 @@ events:
         ignore line: [C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/]
         ignore line: [C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3e6d0.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_3e6d0.']
-        ignore line: [ C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/collect2.exe -plugin C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/liblto_plugin.dll -plugin-opt=C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\ASEMAN~1\\AppData\\Local\\Temp\\ccZSXLFc.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=/e/temp/gcc/dest -m i386pep -Bdynamic -o cmTC_3e6d0.exe C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0 -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../.. -v --whole-archive CMakeFiles/cmTC_3e6d0.dir/objects.a --no-whole-archive --out-implib libcmTC_3e6d0.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_cd9a4.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_cd9a4.']
+        ignore line: [ C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/collect2.exe -plugin C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/liblto_plugin.dll -plugin-opt=C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\ASEMAN~1\\AppData\\Local\\Temp\\ccUWolNj.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=/e/temp/gcc/dest -m i386pep -Bdynamic -o cmTC_cd9a4.exe C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0 -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_cd9a4.dir/objects.a --no-whole-archive --out-implib libcmTC_cd9a4.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o]
         ignore line: [collect2 version 13.2.0]
-        ignore line: [C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/liblto_plugin.dll -plugin-opt=C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\ASEMAN~1\\AppData\\Local\\Temp\\ccZSXLFc.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=/e/temp/gcc/dest -m i386pep -Bdynamic -o cmTC_3e6d0.exe C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0 -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../.. -v --whole-archive CMakeFiles/cmTC_3e6d0.dir/objects.a --no-whole-archive --out-implib libcmTC_3e6d0.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o]
+        ignore line: [C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/liblto_plugin.dll -plugin-opt=C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\ASEMAN~1\\AppData\\Local\\Temp\\ccUWolNj.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=/e/temp/gcc/dest -m i386pep -Bdynamic -o cmTC_cd9a4.exe C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0 -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib -LC:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_cd9a4.dir/objects.a --no-whole-archive --out-implib libcmTC_cd9a4.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o]
         ignore line: [GNU ld (GNU Binutils) 2.41]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3e6d0.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_3e6d0.']
-        ignore line: [make[1]: Leaving directory 'D:/cpp/Unmatched_project/Unmatched_Game/build/CMakeFiles/CMakeScratch/TryCompile-2m93e1']
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_cd9a4.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_cd9a4.']
+        ignore line: ["C:\\Users\\ASEMAN RAYANE\\scoop\\apps\\cmake\\current\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_cd9a4.dir/objects.a]
+        ignore line: [C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\ar.exe qc CMakeFiles\\cmTC_cd9a4.dir/objects.a @CMakeFiles\\cmTC_cd9a4.dir\\objects1.rsp]
+        ignore line: [C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE  -v -Wl -v -Wl --whole-archive CMakeFiles\\cmTC_cd9a4.dir/objects.a -Wl --no-whole-archive -o cmTC_cd9a4.exe -Wl --out-implib libcmTC_cd9a4.dll.a -Wl --major-image-version 0 --minor-image-version 0]
+        ignore line: [make[1]: Leaving directory 'D:/cpp/myproject/build/CMakeFiles/CMakeScratch/TryCompile-csdcwn']
         ignore line: []
         ignore line: []
         linker tool for 'CXX': C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/x86_64-w64-mingw32/bin/ld.exe
@@ -1629,7 +1800,6 @@ events:
       - "git.cmd"
       - "git"
     candidate_directories:
-      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -1637,6 +1807,7 @@ events:
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/Git/cmd/"
       - "C:/Program Files/dotnet/"
+      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/"
       - "C:/Users/ASEMAN RAYANE/scoop/shims/"
       - "C:/Users/ASEMAN RAYANE/AppData/Local/Programs/Python/Python314/Scripts/"
       - "C:/Users/ASEMAN RAYANE/AppData/Local/Programs/Python/Python314/"
@@ -1659,9 +1830,6 @@ events:
       - "C:/Program Files (x86)/unmatched/"
       - "C:/Users/ASEMAN RAYANE/AppData/Local/Atlassian/SourceTree/git_local/bin/"
     searched_directories:
-      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/git.cmd.com"
-      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/git.cmd.exe"
-      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/git.cmd"
       - "C:/Windows/System32/git.cmd.com"
       - "C:/Windows/System32/git.cmd.exe"
       - "C:/Windows/System32/git.cmd"
@@ -1683,6 +1851,9 @@ events:
       - "C:/Program Files/dotnet/git.cmd.com"
       - "C:/Program Files/dotnet/git.cmd.exe"
       - "C:/Program Files/dotnet/git.cmd"
+      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/git.cmd.com"
+      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/git.cmd.exe"
+      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/git.cmd"
       - "C:/Users/ASEMAN RAYANE/scoop/shims/git.cmd.com"
       - "C:/Users/ASEMAN RAYANE/scoop/shims/git.cmd.exe"
       - "C:/Users/ASEMAN RAYANE/scoop/shims/git.cmd"
@@ -1746,9 +1917,6 @@ events:
       - "C:/Users/ASEMAN RAYANE/AppData/Local/Atlassian/SourceTree/git_local/bin/git.cmd.com"
       - "C:/Users/ASEMAN RAYANE/AppData/Local/Atlassian/SourceTree/git_local/bin/git.cmd.exe"
       - "C:/Users/ASEMAN RAYANE/AppData/Local/Atlassian/SourceTree/git_local/bin/git.cmd"
-      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/git.com"
-      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/git.exe"
-      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/git"
       - "C:/Windows/System32/git.com"
       - "C:/Windows/System32/git.exe"
       - "C:/Windows/System32/git"
@@ -1768,7 +1936,6 @@ events:
     found: "C:/Program Files/Git/cmd/git.exe"
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\ASEMAN RAYANE\\scoop\\apps\\gcc\\current\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -1810,7 +1977,6 @@ events:
     names:
       - "clang-tidy"
     candidate_directories:
-      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -1818,6 +1984,7 @@ events:
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/Git/cmd/"
       - "C:/Program Files/dotnet/"
+      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/"
       - "C:/Users/ASEMAN RAYANE/scoop/shims/"
       - "C:/Users/ASEMAN RAYANE/AppData/Local/Programs/Python/Python314/Scripts/"
       - "C:/Users/ASEMAN RAYANE/AppData/Local/Programs/Python/Python314/"
@@ -1839,9 +2006,6 @@ events:
       - "C:/Program Files (x86)/unmatched/sbin/"
       - "C:/Program Files (x86)/unmatched/"
     searched_directories:
-      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/clang-tidy.com"
-      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/clang-tidy.exe"
-      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/clang-tidy"
       - "C:/Windows/System32/clang-tidy.com"
       - "C:/Windows/System32/clang-tidy.exe"
       - "C:/Windows/System32/clang-tidy"
@@ -1863,6 +2027,9 @@ events:
       - "C:/Program Files/dotnet/clang-tidy.com"
       - "C:/Program Files/dotnet/clang-tidy.exe"
       - "C:/Program Files/dotnet/clang-tidy"
+      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/clang-tidy.com"
+      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/clang-tidy.exe"
+      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/clang-tidy"
       - "C:/Users/ASEMAN RAYANE/scoop/shims/clang-tidy.com"
       - "C:/Users/ASEMAN RAYANE/scoop/shims/clang-tidy.exe"
       - "C:/Users/ASEMAN RAYANE/scoop/shims/clang-tidy"
@@ -1926,7 +2093,6 @@ events:
     found: false
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\ASEMAN RAYANE\\scoop\\apps\\gcc\\current\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -1969,7 +2135,6 @@ events:
       - "include-what-you-use"
       - "iwyu"
     candidate_directories:
-      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -1977,6 +2142,7 @@ events:
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/Git/cmd/"
       - "C:/Program Files/dotnet/"
+      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/"
       - "C:/Users/ASEMAN RAYANE/scoop/shims/"
       - "C:/Users/ASEMAN RAYANE/AppData/Local/Programs/Python/Python314/Scripts/"
       - "C:/Users/ASEMAN RAYANE/AppData/Local/Programs/Python/Python314/"
@@ -1998,9 +2164,6 @@ events:
       - "C:/Program Files (x86)/unmatched/sbin/"
       - "C:/Program Files (x86)/unmatched/"
     searched_directories:
-      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/include-what-you-use.com"
-      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/include-what-you-use.exe"
-      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/include-what-you-use"
       - "C:/Windows/System32/include-what-you-use.com"
       - "C:/Windows/System32/include-what-you-use.exe"
       - "C:/Windows/System32/include-what-you-use"
@@ -2022,6 +2185,9 @@ events:
       - "C:/Program Files/dotnet/include-what-you-use.com"
       - "C:/Program Files/dotnet/include-what-you-use.exe"
       - "C:/Program Files/dotnet/include-what-you-use"
+      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/include-what-you-use.com"
+      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/include-what-you-use.exe"
+      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/include-what-you-use"
       - "C:/Users/ASEMAN RAYANE/scoop/shims/include-what-you-use.com"
       - "C:/Users/ASEMAN RAYANE/scoop/shims/include-what-you-use.exe"
       - "C:/Users/ASEMAN RAYANE/scoop/shims/include-what-you-use"
@@ -2082,9 +2248,6 @@ events:
       - "C:/Program Files (x86)/unmatched/include-what-you-use.com"
       - "C:/Program Files (x86)/unmatched/include-what-you-use.exe"
       - "C:/Program Files (x86)/unmatched/include-what-you-use"
-      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/iwyu.com"
-      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/iwyu.exe"
-      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/iwyu"
       - "C:/Windows/System32/iwyu.com"
       - "C:/Windows/System32/iwyu.exe"
       - "C:/Windows/System32/iwyu"
@@ -2106,6 +2269,9 @@ events:
       - "C:/Program Files/dotnet/iwyu.com"
       - "C:/Program Files/dotnet/iwyu.exe"
       - "C:/Program Files/dotnet/iwyu"
+      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/iwyu.com"
+      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/iwyu.exe"
+      - "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/iwyu"
       - "C:/Users/ASEMAN RAYANE/scoop/shims/iwyu.com"
       - "C:/Users/ASEMAN RAYANE/scoop/shims/iwyu.exe"
       - "C:/Users/ASEMAN RAYANE/scoop/shims/iwyu"
@@ -2169,7 +2335,6 @@ events:
     found: false
     search_context:
       ENV{PATH}:
-        - "C:\\Users\\ASEMAN RAYANE\\scoop\\apps\\gcc\\current\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"

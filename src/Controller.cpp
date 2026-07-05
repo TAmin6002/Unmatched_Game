@@ -1,5 +1,7 @@
 #include "Controller.h"
+#include "Ftxui_Front.h"
 
+#include <iostream>
 using namespace std;
 
 int Controller::get_DraculaAction() const
@@ -42,11 +44,28 @@ Card Controller::get_Defender_selected_card()
     return Defender_selected_card;
 }
 
-
 void Controller::run()
 {
-    while(true)
+    while (true)
     {
+        switch (FF.Menu())
+        {
 
+        case e_Menu::Play:
+        {
+            FF.Players_Info_List();
+        }
+        break;
+
+        case e_Menu::Help:
+        {
+        }
+        break;
+
+        case e_Menu::Exit:
+        {
+        }
+        break;
+        }
     }
 }

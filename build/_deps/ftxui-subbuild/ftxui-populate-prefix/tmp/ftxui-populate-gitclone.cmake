@@ -3,11 +3,11 @@
 
 cmake_minimum_required(VERSION ${CMAKE_VERSION}) # this file comes with cmake
 
-if(EXISTS "D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-gitclone-lastrun.txt" AND EXISTS "D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-gitinfo.txt" AND
-  "D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-gitclone-lastrun.txt" IS_NEWER_THAN "D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-gitinfo.txt")
+if(EXISTS "D:/cpp/myproject/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-gitclone-lastrun.txt" AND EXISTS "D:/cpp/myproject/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-gitinfo.txt" AND
+  "D:/cpp/myproject/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-gitclone-lastrun.txt" IS_NEWER_THAN "D:/cpp/myproject/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-gitinfo.txt")
   message(VERBOSE
     "Avoiding repeated git clone, stamp file is up to date: "
-    "'D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-gitclone-lastrun.txt'"
+    "'D:/cpp/myproject/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-gitclone-lastrun.txt'"
   )
   return()
 endif()
@@ -22,12 +22,12 @@ else()
 endif()
 
 execute_process(
-  COMMAND ${CMAKE_COMMAND} -E rm -rf "D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src"
+  COMMAND ${CMAKE_COMMAND} -E rm -rf "D:/cpp/myproject/build/_deps/ftxui-src"
   RESULT_VARIABLE error_code
   ${maybe_show_command}
 )
 if(error_code)
-  message(FATAL_ERROR "Failed to remove directory: 'D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src'")
+  message(FATAL_ERROR "Failed to remove directory: 'D:/cpp/myproject/build/_deps/ftxui-src'")
 endif()
 
 # try the clone 3 times in case there is an odd git clone issue
@@ -37,7 +37,7 @@ while(error_code AND number_of_tries LESS 3)
   execute_process(
     COMMAND "C:/Program Files/Git/cmd/git.exe"
             clone --no-checkout --config "advice.detachedHead=false" "https://github.com/ArthurSonzogni/FTXUI" "ftxui-src"
-    WORKING_DIRECTORY "D:/cpp/Unmatched_project/Unmatched_Game/build/_deps"
+    WORKING_DIRECTORY "D:/cpp/myproject/build/_deps"
     RESULT_VARIABLE error_code
     ${maybe_show_command}
   )
@@ -53,7 +53,7 @@ endif()
 execute_process(
   COMMAND "C:/Program Files/Git/cmd/git.exe"
           checkout "v7.0.0" --
-  WORKING_DIRECTORY "D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src"
+  WORKING_DIRECTORY "D:/cpp/myproject/build/_deps/ftxui-src"
   RESULT_VARIABLE error_code
   ${maybe_show_command}
 )
@@ -66,22 +66,22 @@ if(init_submodules)
   execute_process(
     COMMAND "C:/Program Files/Git/cmd/git.exe" 
             submodule update --recursive --init 
-    WORKING_DIRECTORY "D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src"
+    WORKING_DIRECTORY "D:/cpp/myproject/build/_deps/ftxui-src"
     RESULT_VARIABLE error_code
     ${maybe_show_command}
   )
 endif()
 if(error_code)
-  message(FATAL_ERROR "Failed to update submodules in: 'D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src'")
+  message(FATAL_ERROR "Failed to update submodules in: 'D:/cpp/myproject/build/_deps/ftxui-src'")
 endif()
 
 # Complete success, update the script-last-run stamp file:
 #
 execute_process(
-  COMMAND ${CMAKE_COMMAND} -E copy "D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-gitinfo.txt" "D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-gitclone-lastrun.txt"
+  COMMAND ${CMAKE_COMMAND} -E copy "D:/cpp/myproject/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-gitinfo.txt" "D:/cpp/myproject/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-gitclone-lastrun.txt"
   RESULT_VARIABLE error_code
   ${maybe_show_command}
 )
 if(error_code)
-  message(FATAL_ERROR "Failed to copy script-last-run stamp file: 'D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-gitclone-lastrun.txt'")
+  message(FATAL_ERROR "Failed to copy script-last-run stamp file: 'D:/cpp/myproject/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-gitclone-lastrun.txt'")
 endif()

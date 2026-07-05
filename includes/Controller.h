@@ -7,6 +7,7 @@
 #include "Sisters.h"
 #include "Dr_Watson.h"
 #include "board.h"
+#include "Ftxui_Front.h"
 
 #include "ftxui/component/component.hpp"
 #include "ftxui/component/screen_interactive.hpp"
@@ -38,6 +39,8 @@ private:
 
     int DraculaAction = 2;
     int SherlockAction = 2;
+
+    Ftxui_Front FF;
 
 public:
     void run();

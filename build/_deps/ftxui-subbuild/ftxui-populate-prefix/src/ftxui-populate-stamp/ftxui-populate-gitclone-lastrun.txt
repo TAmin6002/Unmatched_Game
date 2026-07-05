@@ -3,9 +3,9 @@
 # No other meaning or use of this file is supported.
 
 method=git
-command=C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/bin/cmake.exe;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/tmp/ftxui-populate-gitclone.cmake
-source_dir=D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src
-work_dir=D:/cpp/Unmatched_project/Unmatched_Game/build/_deps
+command=C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/bin/cmake.exe;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;D:/cpp/myproject/build/_deps/ftxui-subbuild/ftxui-populate-prefix/tmp/ftxui-populate-gitclone.cmake
+source_dir=D:/cpp/myproject/build/_deps/ftxui-src
+work_dir=D:/cpp/myproject/build/_deps
 repository=https://github.com/ArthurSonzogni/FTXUI
 remote=origin
 init_submodules=TRUE

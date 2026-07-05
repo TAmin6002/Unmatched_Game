@@ -8,5 +8,5 @@ private:
 public:
     Dr_Watson();
 
-    virtual void Damage(int);
+    // virtual void Damage(int);
 };

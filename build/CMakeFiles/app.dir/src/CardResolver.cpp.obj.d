@@ -1,7 +1,7 @@
 CMakeFiles/app.dir/src/CardResolver.cpp.obj: \
- D:/cpp/Unmatched_project/Unmatched_Game/src/CardResolver.cpp \
- D:/cpp/Unmatched_project/Unmatched_Game/includes/CardResolver.h \
- D:/cpp/Unmatched_project/Unmatched_Game/includes/Card.h \
+ D:\cpp\myproject\src\CardResolver.cpp \
+ D:/cpp/myproject/includes/CardResolver.h \
+ D:/cpp/myproject/includes/Card.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/string \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/requires_hosted.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/x86_64-w64-mingw32/bits/c++config.h \
@@ -122,10 +122,8 @@ CMakeFiles/app.dir/src/CardResolver.cpp.obj: \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/stl_heap.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/uniform_int_dist.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/stl_tempbuf.h \
- D:/cpp/Unmatched_project/Unmatched_Game/includes/Enums.h \
- D:/cpp/Unmatched_project/Unmatched_Game/includes/Controller.h \
- D:/cpp/Unmatched_project/Unmatched_Game/includes/Dracula.h \
- D:/cpp/Unmatched_project/Unmatched_Game/includes/Heroes.h \
+ D:/cpp/myproject/includes/Enums.h D:/cpp/myproject/includes/Controller.h \
+ D:/cpp/myproject/includes/Dracula.h D:/cpp/myproject/includes/Heroes.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/random \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/cmath \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/x86_64-w64-mingw32/include/math.h \
@@ -153,14 +151,12 @@ CMakeFiles/app.dir/src/CardResolver.cpp.obj: \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/stl_numeric.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/pstl/glue_numeric_defs.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/pstl/execution_defs.h \
- D:/cpp/Unmatched_project/Unmatched_Game/includes/Space.h \
- D:/cpp/Unmatched_project/Unmatched_Game/includes/Sisters.h \
- D:/cpp/Unmatched_project/Unmatched_Game/includes/SherlockHolmes.h \
- D:/cpp/Unmatched_project/Unmatched_Game/includes/Dr_Watson.h \
- D:/cpp/Unmatched_project/Unmatched_Game/includes/Player.h \
- D:/cpp/Unmatched_project/Unmatched_Game/includes/board.h \
- D:/cpp/Unmatched_project/Unmatched_Game/includes/space.h \
- D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src/include/ftxui/component/component.hpp \
+ D:/cpp/myproject/includes/Space.h D:/cpp/myproject/includes/Sisters.h \
+ D:/cpp/myproject/includes/SherlockHolmes.h \
+ D:/cpp/myproject/includes/Dr_Watson.h D:/cpp/myproject/includes/Player.h \
+ D:/cpp/myproject/includes/board.h D:/cpp/myproject/includes/space.h \
+ D:/cpp/myproject/includes/Ftxui_Front.h \
+ D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/component/component.hpp \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/memory \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/stl_raw_storage_iter.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/align.h \
@@ -197,25 +193,25 @@ CMakeFiles/app.dir/src/CardResolver.cpp.obj: \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/pstl/glue_memory_defs.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/utility \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/stl_relops.h \
- D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src/include/ftxui/util/warn_windows_macro.hpp \
- D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src/include/ftxui/component/component_base.hpp \
- D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src/include/ftxui/component/captured_mouse.hpp \
- D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src/include/ftxui/util/export.hpp \
- D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src/include/ftxui/dom/elements.hpp \
- D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src/include/ftxui/dom/canvas.hpp \
- D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src/include/ftxui/screen/color.hpp \
- D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src/include/ftxui/screen/surface.hpp \
- D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src/include/ftxui/screen/box.hpp \
- D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src/include/ftxui/screen/cell.hpp \
- D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src/include/ftxui/dom/direction.hpp \
- D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src/include/ftxui/dom/flexbox_config.hpp \
- D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src/include/ftxui/dom/linear_gradient.hpp \
+ D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/util/warn_windows_macro.hpp \
+ D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/component/component_base.hpp \
+ D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/component/captured_mouse.hpp \
+ D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/util/export.hpp \
+ D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/dom/elements.hpp \
+ D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/dom/canvas.hpp \
+ D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/screen/color.hpp \
+ D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/screen/surface.hpp \
+ D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/screen/box.hpp \
+ D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/screen/cell.hpp \
+ D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/dom/direction.hpp \
+ D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/dom/flexbox_config.hpp \
+ D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/dom/linear_gradient.hpp \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/optional \
- D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src/include/ftxui/dom/node.hpp \
- D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src/include/ftxui/dom/requirement.hpp \
- D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src/include/ftxui/screen/screen.hpp \
- D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src/include/ftxui/screen/terminal.hpp \
- D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src/include/ftxui/dom/selection.hpp \
+ D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/dom/node.hpp \
+ D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/dom/requirement.hpp \
+ D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/screen/screen.hpp \
+ D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/screen/terminal.hpp \
+ D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/dom/selection.hpp \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/sstream \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/istream \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/ios \
@@ -240,11 +236,11 @@ CMakeFiles/app.dir/src/CardResolver.cpp.obj: \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/ostream.tcc \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/istream.tcc \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/sstream.tcc \
- D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src/include/ftxui/util/ref.hpp \
- D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src/include/ftxui/screen/string.hpp \
+ D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/util/ref.hpp \
+ D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/screen/string.hpp \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/variant \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/parse_numbers.h \
- D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src/include/ftxui/dom/take_any_args.hpp \
+ D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/dom/take_any_args.hpp \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/deque \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/stl_deque.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/deque.tcc \
@@ -252,16 +248,16 @@ CMakeFiles/app.dir/src/CardResolver.cpp.obj: \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/stl_queue.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/stack \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/stl_stack.h \
- D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src/include/ftxui/dom/deprecated.hpp \
- D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src/include/ftxui/component/component_options.hpp \
+ D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/dom/deprecated.hpp \
+ D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/component/component_options.hpp \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/chrono \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/chrono.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/ratio \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/ctime \
- D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src/include/ftxui/component/animation.hpp \
- D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src/include/ftxui/component/screen_interactive.hpp \
- D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src/include/ftxui/component/app.hpp \
+ D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/component/animation.hpp \
+ D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/component/screen_interactive.hpp \
+ D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/component/app.hpp \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/atomic \
- D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src/include/ftxui/component/task.hpp \
- D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src/include/ftxui/component/event.hpp \
- D:/cpp/Unmatched_project/Unmatched_Game/build/_deps/ftxui-src/include/ftxui/component/mouse.hpp
+ D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/component/task.hpp \
+ D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/component/event.hpp \
+ D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/component/mouse.hpp
