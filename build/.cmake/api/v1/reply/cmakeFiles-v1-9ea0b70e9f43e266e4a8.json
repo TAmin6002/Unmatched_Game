@@ -1,0 +1,288 @@
+{
+	"inputs" : 
+	[
+		{
+			"path" : "CMakeLists.txt"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/CMakeFiles/4.2.0/CMakeSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/CMakeSystemSpecificInitialize.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/Platform/Windows-Initialize.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/CMakeFiles/4.2.0/CMakeCXXCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/CMakeSystemSpecificInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/CMakeGenericSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/CMakeInitializeConfigs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/Platform/Windows.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/Platform/WindowsPaths.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/CMakeCXXInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/Compiler/GNU-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/Compiler/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/Platform/Windows-GNU-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/Platform/Windows-GNU.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/CMakeFiles/4.2.0/CMakeRCCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/CMakeRCInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/Platform/Windows-windres.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/Platform/Windows-GNU-CXX-ABI.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/Internal/CMakeCXXLinkerInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/Internal/CMakeCommonLinkerInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/Linker/GNU-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/Linker/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/Platform/Linker/Windows-GNU-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/Platform/Linker/Windows-GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/Platform/Linker/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/FetchContent.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/ExternalProject/shared_internal_commands.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/FindGit.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/FetchContent/CMakeLists.cmake.in"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/_deps/ftxui-src/CMakeLists.txt"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/_deps/ftxui-src/cmake/ftxui_message.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/_deps/ftxui-src/cmake/ftxui_set_options.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/_deps/ftxui-src/cmake/ftxui_coverage.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/_deps/ftxui-src/cmake/ftxui_test.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/_deps/ftxui-src/cmake/ftxui_benchmark.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/_deps/ftxui-src/cmake/ftxui_fuzzer.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/_deps/ftxui-src/cmake/iwyu.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/_deps/ftxui-src/cmake/ftxui_export.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/_deps/ftxui-src/cmake/ftxui_install.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/GNUInstallDirs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/CMakePackageConfigHelpers.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/WriteBasicConfigVersionFile.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/_deps/ftxui-src/cmake/ftxui-config.cmake.in"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/BasicConfigVersion-SameMajorVersion.cmake.in"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/_deps/ftxui-src/ftxui.pc.in"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/_deps/ftxui-src/cmake/ftxui_package.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/CPack.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/CPackComponent.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Templates/CPackConfig.cmake.in"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Templates/CPackConfig.cmake.in"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/_deps/ftxui-src/cmake/ftxui_modules.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/_deps/ftxui-src/examples/CMakeLists.txt"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/_deps/ftxui-src/doc/CMakeLists.txt"
+		}
+	],
+	"kind" : "cmakeFiles",
+	"paths" : 
+	{
+		"build" : "D:/cpp/Unmatched_project/Unmatched_Game/build",
+		"source" : "D:/cpp/Unmatched_project/Unmatched_Game"
+	},
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 1
+	}
+}
