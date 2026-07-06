@@ -46,6 +46,7 @@ Card Controller::get_Defender_selected_card()
 
 void Controller::run()
 {
+    bool Exit = false;
     while (true)
     {
         switch (FF.Menu())
@@ -53,7 +54,7 @@ void Controller::run()
 
         case e_Menu::Play:
         {
-            FF.Players_Info_List();
+            FF.Players_Info_List(&p1, &p2);
         }
         break;
 
@@ -64,8 +65,12 @@ void Controller::run()
 
         case e_Menu::Exit:
         {
+            Exit = true;
         }
         break;
         }
+
+        if (Exit)
+            break;
     }
 }

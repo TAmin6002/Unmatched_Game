@@ -12,5 +12,5 @@ class Ftxui_Front
 private:
 public:
     enum::e_Menu Menu();
-    void Players_Info_List();
+    void Players_Info_List(Player *,Player *);
 };

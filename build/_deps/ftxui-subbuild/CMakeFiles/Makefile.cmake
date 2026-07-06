@@ -7,10 +7,8 @@ set(CMAKE_DEPENDS_GENERATOR "MinGW Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/CMakeDetermineSystem.cmake"
   "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/CMakeGenericSystem.cmake"
   "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/CMakeInitializeConfigs.cmake"
-  "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/CMakeSystem.cmake.in"
   "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/CMakeSystemSpecificInformation.cmake"
   "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/CMakeSystemSpecificInitialize.cmake"
   "C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/share/cmake-4.2/Modules/ExternalProject.cmake"
@@ -38,7 +36,6 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
-  "CMakeFiles/4.2.0/CMakeSystem.cmake"
   "ftxui-populate-prefix/tmp/ftxui-populate-mkdirs.cmake"
   "ftxui-populate-prefix/tmp/ftxui-populate-gitclone.cmake"
   "ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-gitinfo.txt"
