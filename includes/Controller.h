@@ -57,5 +57,9 @@ public:
     Card get_Attacker_selected_card();
     Card get_Defender_selected_card();
 
+    void set_players_character(int);
+
+    void Initial_characters_places();
+
     int dis_sumcards(); // Removes as many cards as the player wants
 };

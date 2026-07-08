@@ -44,6 +44,68 @@ Card Controller::get_Defender_selected_card()
     return Defender_selected_card;
 }
 
+void Controller::set_players_character(int choise)
+{
+    if (choise == 0)
+    {
+        if (p1.get_age() <= p2.get_age())
+        {
+            p1.set_character(&dracula);
+
+            p1.set_comrade(&s1);
+            p1.set_comrade(&s2);
+            p1.set_comrade(&s3);
+
+            p2.set_character(&sherlock);
+            p1.set_comrade(&Watson);
+        }
+
+        else
+        {
+            p2.set_character(&dracula);
+
+            p2.set_comrade(&s1);
+            p2.set_comrade(&s2);
+            p2.set_comrade(&s3);
+
+            p1.set_character(&sherlock);
+            p1.set_comrade(&Watson);
+        }
+    }
+
+    else
+    {
+        if (p1.get_age() <= p2.get_age())
+        {
+            p1.set_character(&sherlock);
+            p1.set_comrade(&Watson);
+
+            p2.set_character(&dracula);
+
+            p2.set_comrade(&s1);
+            p2.set_comrade(&s2);
+            p2.set_comrade(&s3);
+        }
+
+        else
+        {
+            p2.set_character(&sherlock);
+            p2.set_comrade(&Watson);
+
+            p1.set_character(&dracula);
+
+            p1.set_comrade(&s1);
+            p1.set_comrade(&s2);
+            p1.set_comrade(&s3);
+        }
+    }
+}
+
+void Controller::Initial_characters_places()
+{
+    
+}
+
 void Controller::run()
 {
     bool Exit = false;
@@ -54,7 +116,10 @@ void Controller::run()
 
         case e_Menu::Play:
         {
-            FF.Players_Info_List(&p1, &p2);
+            // FF.Players_Info_List(&p1, &p2);
+            // set_players_character(FF.Det_characters(&p1, &p2));
+
+            FF.main_map(&board);
         }
         break;
 

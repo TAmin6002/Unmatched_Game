@@ -8,12 +8,13 @@ class Board
 {
 private:
     std ::vector<Space> spaces;
-    Heroes *hero;
+    // Heroes *hero;
 
 public:
     Board();
 
-    bool is_Adjacent(Space *, Space *);    
+    std::vector<Space> get_spaces();
+    bool is_Adjacent(Space *, Space *);
 };
 
 #endif

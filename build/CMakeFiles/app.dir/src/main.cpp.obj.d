@@ -258,4 +258,5 @@ CMakeFiles/app.dir/src/main.cpp.obj: D:\cpp\myproject\src\main.cpp \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/atomic \
  D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/component/task.hpp \
  D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/component/event.hpp \
- D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/component/mouse.hpp
+ D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/component/mouse.hpp \
+ D:/cpp/myproject/includes/Board.h

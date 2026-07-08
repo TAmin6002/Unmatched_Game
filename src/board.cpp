@@ -86,3 +86,8 @@ bool Board::is_Adjacent(Space *s1, Space *s2)
     }
     return false;
 }
+
+std::vector<Space> Board::get_spaces()
+{
+    return spaces;
+}

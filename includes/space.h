@@ -14,6 +14,7 @@ private:
 
     Heroes *hero = nullptr;
 
+
 public:
     Space(std::vector<Space *>, std ::vector<Space *>);
     Space() = default;

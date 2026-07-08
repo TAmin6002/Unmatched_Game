@@ -6,11 +6,14 @@
 
 #include "Player.h"
 #include "Enums.h"
+#include "Board.h"
 
 class Ftxui_Front
 {
 private:
 public:
-    enum::e_Menu Menu();
-    void Players_Info_List(Player *,Player *);
+    enum ::e_Menu Menu();
+    void Players_Info_List(Player *, Player *);
+    int Det_characters(Player *, Player *);
+    void main_map(Board *board);
 };

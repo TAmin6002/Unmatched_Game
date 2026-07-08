@@ -1224,11 +1224,18 @@ CMakeFiles/app.dir/src/Ftxui_Front.cpp.obj: D:/cpp/myproject/src/Ftxui_Front.cpp
   _deps/ftxui-src/include/ftxui/util/ref.hpp \
   _deps/ftxui-src/include/ftxui/util/warn_windows_macro.hpp \
   D:/cpp/myproject/includes/Card.h \
+  D:/cpp/myproject/includes/Controller.h \
+  D:/cpp/myproject/includes/Dr_Watson.h \
+  D:/cpp/myproject/includes/Dracula.h \
   D:/cpp/myproject/includes/Enums.h \
   D:/cpp/myproject/includes/Ftxui_Front.h \
   D:/cpp/myproject/includes/Heroes.h \
   D:/cpp/myproject/includes/Player.h \
-  D:/cpp/myproject/includes/Space.h
+  D:/cpp/myproject/includes/SherlockHolmes.h \
+  D:/cpp/myproject/includes/Sisters.h \
+  D:/cpp/myproject/includes/Space.h \
+  D:/cpp/myproject/includes/board.h \
+  D:/cpp/myproject/includes/space.h
 
 CMakeFiles/app.dir/src/Heroes.cpp.obj: D:/cpp/myproject/src/Heroes.cpp \
   C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/array \
