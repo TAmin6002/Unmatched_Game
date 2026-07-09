@@ -14,9 +14,9 @@ private:
 
     Heroes *hero = nullptr;
 
-
+    int number;
 public:
-    Space(std::vector<Space *>, std ::vector<Space *>);
+    Space(int, std::vector<Space *>, std ::vector<Space *>);
     Space() = default;
 
     std::vector<Space *> get_zone();
@@ -24,6 +24,8 @@ public:
 
     void set_hero(Heroes *);
     Heroes *get_hero();
+
+    int get_number();
 };
 
 #endif

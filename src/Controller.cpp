@@ -57,7 +57,7 @@ void Controller::set_players_character(int choise)
             p1.set_comrade(&s3);
 
             p2.set_character(&sherlock);
-            p1.set_comrade(&Watson);
+            p2.set_comrade(&Watson);
         }
 
         else
@@ -81,7 +81,6 @@ void Controller::set_players_character(int choise)
             p1.set_comrade(&Watson);
 
             p2.set_character(&dracula);
-
             p2.set_comrade(&s1);
             p2.set_comrade(&s2);
             p2.set_comrade(&s3);
@@ -103,7 +102,27 @@ void Controller::set_players_character(int choise)
 
 void Controller::Initial_characters_places()
 {
-    
+    get_younger_player()->get_character()->set_place(&(board.get_spaces()[23])); // space 1
+    board.get_spaces()[23].set_hero(get_younger_player()->get_character());
+
+    get_older_player()->get_character()->set_place(&(board.get_spaces()[2])); // space 2
+    board.get_spaces()[2].set_hero(get_older_player()->get_character());
+}
+
+Player *Controller::get_younger_player()
+{
+    if (p1.get_age() <= p2.get_age())
+        return &p1;
+
+    return &p2;
+}
+
+Player *Controller::get_older_player()
+{
+    if (p1.get_age() <= p2.get_age())
+        return &p2;
+
+    return &p1;
 }
 
 void Controller::run()
@@ -111,15 +130,17 @@ void Controller::run()
     bool Exit = false;
     while (true)
     {
-        switch (FF.Menu())
+        switch (FF.Menu_())
         {
 
         case e_Menu::Play:
         {
-            // FF.Players_Info_List(&p1, &p2);
-            // set_players_character(FF.Det_characters(&p1, &p2));
+            FF.Players_Info_List(&p1, &p2);
+            set_players_character(FF.Det_characters(&p1, &p2));
+            Initial_characters_places();
+            FF.chose_comrad_place(&p1, &p2, &board);
 
-            FF.main_map(&board);
+            FF.main_map(&p1, &p2, &board);
         }
         break;
 

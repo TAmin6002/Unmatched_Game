@@ -60,6 +60,8 @@ public:
     void set_players_character(int);
 
     void Initial_characters_places();
+    Player *get_younger_player();
+    Player *get_older_player();
 
     int dis_sumcards(); // Removes as many cards as the player wants
 };

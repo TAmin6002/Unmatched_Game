@@ -1,7 +1,7 @@
 #include "space.h"
 using namespace std;
 
-Space ::Space(vector<Space *> z, vector<Space *> v) : zone(z), neighbor(v) {}
+Space ::Space(int number, vector<Space *> z, vector<Space *> v) : number(number), zone(z), neighbor(v) {}
 
 vector<Space *> Space::get_zone()
 {
@@ -21,4 +21,9 @@ Heroes *Space::get_hero()
 void Space::set_hero(Heroes *hero)
 {
     this->hero = hero;
+}
+
+int Space::get_number()
+{
+    return number;
 }

@@ -13,7 +13,7 @@ private:
 public:
     Board();
 
-    std::vector<Space> get_spaces();
+    std::vector<Space>& get_spaces();
     bool is_Adjacent(Space *, Space *);
 };
 

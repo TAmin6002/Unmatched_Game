@@ -18,7 +18,7 @@ private:
     int Health;
     bool islive{true};
 
-    Space place;
+    Space *place = nullptr;
 
 protected:
     std::vector<Card> deck;
@@ -31,6 +31,7 @@ public:
     std::string get_name();
     std::string get_Attacktype();
     int get_Movement();
+    int get_Health();
 
     void add_Action(int);
     int get_Action() const;
@@ -41,6 +42,10 @@ public:
 
     Space *get_place();
     void set_place(Space *);
+
+    std::vector<Card> get_deck();
+    std::vector<Card> get_hand();
+    std::vector<Card> get_discard();
 
     void DrawnCard(); // یک کارت میکشد
     int discard_hand();

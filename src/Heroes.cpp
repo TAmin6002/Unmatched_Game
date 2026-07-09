@@ -19,7 +19,6 @@ int Heroes::get_Movement()
     return Movement;
 }
 
-
 void Heroes::add_Action(int amount)
 {
     Action += amount;
@@ -45,13 +44,33 @@ bool Heroes::get_islive()
 
 Space *Heroes::get_place()
 {
-    return &place;
+    return place;
+}
+int Heroes::get_Health()
+{
+    return Health;
 }
 
 void Heroes::set_place(Space *p)
 {
-    place = *p;
+    place = p;
 }
+
+vector<Card> Heroes::get_deck()
+{
+    return deck;
+}
+
+vector<Card> Heroes::get_hand()
+{
+    return hand;
+}
+
+vector<Card> Heroes::get_discard()
+{
+    return discard;
+}
+
 void Heroes::DrawnCard()
 {
     hand.push_back(deck.front());

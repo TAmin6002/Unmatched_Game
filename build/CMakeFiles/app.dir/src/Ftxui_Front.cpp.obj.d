@@ -259,4 +259,5 @@ CMakeFiles/app.dir/src/Ftxui_Front.cpp.obj: \
  D:/cpp/myproject/includes/space.h D:/cpp/myproject/includes/Controller.h \
  D:/cpp/myproject/includes/Dracula.h D:/cpp/myproject/includes/Sisters.h \
  D:/cpp/myproject/includes/SherlockHolmes.h \
- D:/cpp/myproject/includes/Dr_Watson.h D:/cpp/myproject/includes/board.h
+ D:/cpp/myproject/includes/Dr_Watson.h D:/cpp/myproject/includes/board.h \
+ C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/iostream

@@ -378,6 +378,7 @@ CMakeFiles/app.dir/src/CardResolver.cpp.obj: D:/cpp/myproject/src/CardResolver.c
   _deps/ftxui-src/include/ftxui/util/export.hpp \
   _deps/ftxui-src/include/ftxui/util/ref.hpp \
   _deps/ftxui-src/include/ftxui/util/warn_windows_macro.hpp \
+  D:/cpp/myproject/includes/Board.h \
   D:/cpp/myproject/includes/Card.h \
   D:/cpp/myproject/includes/CardResolver.h \
   D:/cpp/myproject/includes/Controller.h \
@@ -647,6 +648,7 @@ CMakeFiles/app.dir/src/Controller.cpp.obj: D:/cpp/myproject/src/Controller.cpp \
   _deps/ftxui-src/include/ftxui/util/export.hpp \
   _deps/ftxui-src/include/ftxui/util/ref.hpp \
   _deps/ftxui-src/include/ftxui/util/warn_windows_macro.hpp \
+  D:/cpp/myproject/includes/Board.h \
   D:/cpp/myproject/includes/Card.h \
   D:/cpp/myproject/includes/Controller.h \
   D:/cpp/myproject/includes/Dr_Watson.h \
@@ -1095,6 +1097,7 @@ CMakeFiles/app.dir/src/Ftxui_Front.cpp.obj: D:/cpp/myproject/src/Ftxui_Front.cpp
   C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/initializer_list \
   C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/ios \
   C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/iosfwd \
+  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/iostream \
   C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/istream \
   C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/limits \
   C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/memory \
@@ -1223,6 +1226,7 @@ CMakeFiles/app.dir/src/Ftxui_Front.cpp.obj: D:/cpp/myproject/src/Ftxui_Front.cpp
   _deps/ftxui-src/include/ftxui/util/export.hpp \
   _deps/ftxui-src/include/ftxui/util/ref.hpp \
   _deps/ftxui-src/include/ftxui/util/warn_windows_macro.hpp \
+  D:/cpp/myproject/includes/Board.h \
   D:/cpp/myproject/includes/Card.h \
   D:/cpp/myproject/includes/Controller.h \
   D:/cpp/myproject/includes/Dr_Watson.h \
@@ -2305,6 +2309,7 @@ CMakeFiles/app.dir/src/main.cpp.obj: D:/cpp/myproject/src/main.cpp \
   _deps/ftxui-src/include/ftxui/util/export.hpp \
   _deps/ftxui-src/include/ftxui/util/ref.hpp \
   _deps/ftxui-src/include/ftxui/util/warn_windows_macro.hpp \
+  D:/cpp/myproject/includes/Board.h \
   D:/cpp/myproject/includes/Card.h \
   D:/cpp/myproject/includes/Controller.h \
   D:/cpp/myproject/includes/Dr_Watson.h \
@@ -2886,6 +2891,8 @@ _deps/ftxui-src/include/ftxui/component/event.hpp:
 _deps/ftxui-src/include/ftxui/component/mouse.hpp:
 
 _deps/ftxui-src/include/ftxui/component/task.hpp:
+
+D:/cpp/myproject/includes/Board.h:
 
 _deps/ftxui-src/include/ftxui/dom/canvas.hpp:
 
