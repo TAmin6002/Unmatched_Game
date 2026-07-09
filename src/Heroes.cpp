@@ -73,8 +73,11 @@ vector<Card> Heroes::get_discard()
 
 void Heroes::DrawnCard()
 {
-    hand.push_back(deck.front());
-    deck.erase(deck.begin());
+    if (deck.empty())
+        return;
+
+    hand.push_back(deck.back());
+    deck.pop_back();
 }
 
 void Heroes::Damage(int amount)

@@ -823,6 +823,7 @@ CMakeFiles/app.dir/src/Dr_Watson.cpp.obj
 
 CMakeFiles/app.dir/src/Dracula.cpp.obj
  D:/cpp/myproject/src/Dracula.cpp
+ C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/algorithm
  C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/array
  C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/backward/binders.h
  C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bit
@@ -910,6 +911,7 @@ CMakeFiles/app.dir/src/Dracula.cpp.obj
  C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/new
  C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/numeric
  C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/pstl/execution_defs.h
+ C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/pstl/glue_algorithm_defs.h
  C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/pstl/glue_numeric_defs.h
  C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/pstl/pstl_config.h
  C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/random

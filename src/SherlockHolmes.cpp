@@ -48,5 +48,10 @@ SherlockHolmes::SherlockHolmes()
 
     deck.push_back(Card(CardType::Study_Methods, CardTiming::After, "Both", 3, 2));
     deck.push_back(Card(CardType::Study_Methods, CardTiming::After, "Both", 3, 2));
-}
 
+    std::mt19937 rng(std::random_device{}());
+    std::shuffle(deck.begin(), deck.end(), rng);
+
+    for (int i = 0; i < 5; i++)
+        DrawnCard();
+}

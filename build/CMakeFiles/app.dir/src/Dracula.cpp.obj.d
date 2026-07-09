@@ -148,4 +148,6 @@ CMakeFiles/app.dir/src/Dracula.cpp.obj: D:\cpp\myproject\src\Dracula.cpp \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/algorithmfwd.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/stl_heap.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/stl_tempbuf.h \
- D:/cpp/myproject/includes/Enums.h D:/cpp/myproject/includes/Sisters.h
+ D:/cpp/myproject/includes/Enums.h D:/cpp/myproject/includes/Sisters.h \
+ C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/algorithm \
+ C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/pstl/glue_algorithm_defs.h

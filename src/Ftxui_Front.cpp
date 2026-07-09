@@ -164,7 +164,7 @@ Element Dracula_Box(Player *p1, Player *p2)
 {
     Player *dracula_player = (p1->get_character()->get_name() == "DRACULA") ? p1 : p2;
     return vbox({
-               text("DRACULA\n") | color(Color::Red1),
+               text("DRACULA\n") | bold | color(Color::Red1),
                text("Health : " + to_string(dracula_player->get_character()->get_Health()) + " / 13"),
                text("Move : " + to_string(dracula_player->get_character()->get_Movement())),
                text("card in hand : " + to_string(dracula_player->get_character()->get_hand().size())),
@@ -179,7 +179,7 @@ Element Sherlock_Box(Player *p1, Player *p2)
     Player *sherlock_player = (p1->get_character()->get_name() == "SHERLOCKHOLMES") ? p1 : p2;
 
     return vbox({
-               text("SHERLOCK\n") | color(Color::Blue1),
+               text("SHERLOCK\n") | bold | color(Color::Blue1),
                text("Health : " + to_string(sherlock_player->get_character()->get_Health()) + " / 16"),
                text("Move : " + to_string(sherlock_player->get_character()->get_Movement())),
                text("card in hand : " + to_string(sherlock_player->get_character()->get_hand().size())),
@@ -367,14 +367,52 @@ Element Graph_Box(vector<Space> spaces)
     return canvas(std::move(c));
 }
 
-Element Dracula_Hand()
+Element Dracula_Hand(Player *p1, Player *p2)
 {
-    return hbox({text("Dracula Hand :") | border | size(WIDTH, EQUAL, 55) | size(HEIGHT, EQUAL, 10)});
+    Player *dracula_player = (p1->get_character()->get_name() == "DRACULA") ? p1 : p2;
+
+    vector<Card> Hand_Cards = dracula_player->get_character()->get_hand();
+
+    return hbox({text("Dracula - Hand ") | center | border | size(WIDTH, EQUAL, 55) | size(HEIGHT, EQUAL, 10)});
 }
 
-Element Sherlock_Hand()
+Component ChooseAction(Player *p1, Player *p2)
 {
-    return hbox({text("Sherlock Hand :") | border | size(WIDTH, EQUAL, 55) | size(HEIGHT, EQUAL, 10)});
+
+    static std::vector<std::string> entries = {
+        "Attack",
+        "Maneuver",
+        "Scheme",
+        "Back"};
+
+    static int selected = 0;
+    static int action = -1;
+
+    auto menu = Menu(&entries, &selected);
+
+    auto component = CatchEvent(menu, [&](Event event)
+                                {
+        if (event == Event::Return) {
+            action = selected;   
+            return true;
+        }
+        return false; });
+
+    auto renderer = Renderer(component, [&]
+                             { return vbox({
+                                          text("Choose Action") | bold | center,
+                                          separator(),
+                                          component->Render(),
+                                      }) |
+                                      border; });
+
+    return component;
+}
+
+Element Sherlock_Hand(Player *p1, Player *p2)
+{
+    Player *sherlock_player = (p1->get_character()->get_name() == "SHERLOCKHOLMES") ? p1 : p2;
+    return hbox({text("Sherlock - Hand") | center | border | size(WIDTH, EQUAL, 55) | size(HEIGHT, EQUAL, 10)});
 }
 
 void Ftxui_Front::chose_comrad_place(Player *p1, Player *p2, Board *board)
@@ -483,23 +521,31 @@ void Ftxui_Front::main_map(Player *p1, Player *p2, Board *board)
 {
     auto screen = ScreenInteractive::Fullscreen();
 
-    auto renderer = Renderer([&]
+    auto container = Container::Vertical({
+        ChooseAction(p1, p2),
+    });
+
+    auto renderer = Renderer(container, [&]
                              { return vbox({
                                    vbox({
                                        text("turn : ") | bold | center | border,
                                        hbox({
                                            Dracula_Box(p1, p2),
                                            Graph_Box(board->get_spaces()),
-                                           Sherlock_Box(p1,
-                                                        p2),
+                                           Sherlock_Box(p1, p2),
                                        }) | center,
                                    }),
 
                                    vbox({
                                        hbox({
-                                           Dracula_Hand(),
-                                           hbox({text("center") | border | size(WIDTH, EQUAL, 40) | size(HEIGHT, EQUAL, 10)}),
-                                           Sherlock_Hand(),
+                                           Dracula_Hand(p1, p2),
+                                           vbox({
+                                               text("   Choose Action  ") | bold | color(Color::Khaki1),
+                                               separatorHeavy(),
+
+                                               container->Render() | center,
+                                           }),
+                                           Sherlock_Hand(p1, p2),
                                        }),
 
                                    }) | center,

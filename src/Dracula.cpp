@@ -1,6 +1,7 @@
 
 #include "Dracula.h"
 #include <random>
+#include <algorithm>
 using namespace std;
 
 Dracula::Dracula()
@@ -47,6 +48,12 @@ Dracula::Dracula()
   deck.push_back(Card(CardType::Feint, CardTiming::Before, "Both", 2, 2));
   deck.push_back(Card(CardType::Feint, CardTiming::Before, "Both", 2, 2));
   deck.push_back(Card(CardType::Feint, CardTiming::Before, "Both", 2, 2));
+
+  std::mt19937 rng(std::random_device{}());
+  std::shuffle(deck.begin(), deck.end(), rng);
+
+  for (int i = 0; i < 5; i++)
+    DrawnCard();
 }
 
 void Dracula::set_sisters(Sisters &s1, Sisters &s2, Sisters &s3)

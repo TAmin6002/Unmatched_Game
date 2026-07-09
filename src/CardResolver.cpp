@@ -2,8 +2,7 @@
 #include "Card.h"
 
 #include <vector>
-#include <random>
-#include <algorithm>
+
 using namespace std;
 
 NeedInput CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *Attacker, Heroes *Defender, Board *board)

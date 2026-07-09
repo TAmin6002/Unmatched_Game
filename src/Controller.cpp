@@ -138,6 +138,7 @@ void Controller::run()
             FF.Players_Info_List(&p1, &p2);
             set_players_character(FF.Det_characters(&p1, &p2));
             Initial_characters_places();
+            
             FF.chose_comrad_place(&p1, &p2, &board);
 
             FF.main_map(&p1, &p2, &board);

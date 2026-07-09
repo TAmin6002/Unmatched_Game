@@ -818,6 +818,7 @@ CMakeFiles/app.dir/src/Dr_Watson.cpp.obj: D:/cpp/myproject/src/Dr_Watson.cpp \
   D:/cpp/myproject/includes/Space.h
 
 CMakeFiles/app.dir/src/Dracula.cpp.obj: D:/cpp/myproject/src/Dracula.cpp \
+  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/algorithm \
   C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/array \
   C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/backward/binders.h \
   C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bit \
@@ -905,6 +906,7 @@ CMakeFiles/app.dir/src/Dracula.cpp.obj: D:/cpp/myproject/src/Dracula.cpp \
   C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/new \
   C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/numeric \
   C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/pstl/execution_defs.h \
+  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/pstl/glue_algorithm_defs.h \
   C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/pstl/glue_numeric_defs.h \
   C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/pstl/pstl_config.h \
   C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/random \
@@ -2410,6 +2412,8 @@ C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/algorithmf
 
 C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/alloc_traits.h:
 
+C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/pstl/glue_algorithm_defs.h:
+
 C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/unordered_map.h:
 
 C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/allocator.h:
@@ -2579,6 +2583,8 @@ C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/lib/gcc/x86_64-w64-mingw32/13.2.0/
 C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/cstddef:
 
 C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/cstdio:
+
+C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/algorithm:
 
 C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/cstdlib:
 
