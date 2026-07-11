@@ -1,5 +1,5 @@
 _deps/ftxui-build/CMakeFiles/screen.dir/src/ftxui/screen/string.cpp.obj: \
- D:\cpp\myproject\build\_deps\ftxui-src\src\ftxui\screen\string.cpp \
+ D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/screen/string.cpp \
  D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/screen/string.hpp \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/string \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/requires_hosted.h \

@@ -55,3 +55,8 @@ SherlockHolmes::SherlockHolmes()
     for (int i = 0; i < 5; i++)
         DrawnCard();
 }
+
+void SherlockHolmes::abiliti()
+{
+
+}

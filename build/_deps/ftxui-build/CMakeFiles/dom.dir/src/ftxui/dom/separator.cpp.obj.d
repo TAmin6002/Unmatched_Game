@@ -1,5 +1,5 @@
 _deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/separator.cpp.obj: \
- D:\cpp\myproject\build\_deps\ftxui-src\src\ftxui\dom\separator.cpp \
+ D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/separator.cpp \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/string_view \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/char_traits.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/x86_64-w64-mingw32/bits/c++config.h \

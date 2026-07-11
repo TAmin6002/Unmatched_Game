@@ -7,6 +7,16 @@
 using namespace std;
 using namespace ftxui;
 
+int Ftxui_Front::get_number_of_choose()
+{
+    return number_of_choose;
+}
+
+void Ftxui_Front::set_number_of_choose(int amount)
+{
+    number_of_choose = amount;
+}
+
 enum ::e_Menu Ftxui_Front::Menu_()
 {
     auto screen = ScreenInteractive::Fullscreen();
@@ -22,24 +32,24 @@ enum ::e_Menu Ftxui_Front::Menu_()
 
     auto component = CatchEvent(menu, [&](Event event)
                                 {
-        if (event == Event::Return) {
-            if (selected == 0) {
-                screen.ExitLoopClosure()();
-                return true;
+            if (event == Event::Return) {
+                if (selected == 0) {
+                    screen.ExitLoopClosure()();
+                    return true;
+                }
+                
+                else if (selected == 1) {
+                    screen.ExitLoopClosure()();
+                    return true;
+                }
+                
+                else if (selected == 2) {
+                    screen.ExitLoopClosure()();
+                    screen.Exit();
+                    return true;
+                }
             }
-            
-            else if (selected == 1) {
-                screen.ExitLoopClosure()();
-                return true;
-            }
-            
-            else if (selected == 2) {
-                screen.ExitLoopClosure()();
-                screen.Exit();
-                return true;
-            }
-        }
-        return false; });
+            return false; });
 
     auto renderer = Renderer(component, [&]
                              { return vbox({text("UNMATCHED") | bold | center,
@@ -376,7 +386,7 @@ Element Dracula_Hand(Player *p1, Player *p2)
     return hbox({text("Dracula - Hand ") | center | border | size(WIDTH, EQUAL, 55) | size(HEIGHT, EQUAL, 10)});
 }
 
-Component ChooseAction(Player *p1, Player *p2)
+Component Ftxui_Front::ChooseAction(Player *p1, Player *p2, ScreenInteractive *screen)
 {
 
     static std::vector<std::string> entries = {
@@ -392,19 +402,21 @@ Component ChooseAction(Player *p1, Player *p2)
 
     auto component = CatchEvent(menu, [&](Event event)
                                 {
-        if (event == Event::Return) {
-            action = selected;   
-            return true;
-        }
-        return false; });
+            if (event == Event::Return) {
+                number_of_choose = selected;
 
-    auto renderer = Renderer(component, [&]
-                             { return vbox({
-                                          text("Choose Action") | bold | center,
-                                          separator(),
-                                          component->Render(),
-                                      }) |
-                                      border; });
+                    screen->ExitLoopClosure()();
+                    return true;
+            }
+            return false; });
+
+    // auto renderer = Renderer(component, [&]
+    //                          { return vbox({
+    //                                       text("Choose Action") | bold | center,
+    //                                       separator(),
+    //                                       component->Render(),
+    //                                   }) |
+    //                                   border; });
 
     return component;
 }
@@ -439,22 +451,22 @@ void Ftxui_Front::chose_comrad_place(Player *p1, Player *p2, Board *board)
 
         auto confirm_btn = Button("Confirm", [&]
                                   {
-            bool duplicate = false;
-            for(auto c : choices) if(c == selected) duplicate = true;
-            
-            if(!duplicate) {
-                choices.push_back(selected);
-                confirmed++;
-            }
-
-            if(confirmed == 3) {
-                for(int i = 0; i < 3; i++)
-                {
-                    dracula_player->get_comrade()[i]->set_place(zone[choices[i]]);
-                    zone[choices[i]]->set_hero(dracula_player->get_comrade()[i]);
+                bool duplicate = false;
+                for(auto c : choices) if(c == selected) duplicate = true;
+                
+                if(!duplicate) {
+                    choices.push_back(selected);
+                    confirmed++;
                 }
-                screen.ExitLoopClosure()();
-            } });
+
+                if(confirmed == 3) {
+                    for(int i = 0; i < 3; i++)
+                    {
+                        dracula_player->get_comrade()[i]->set_place(zone[choices[i]]);
+                        zone[choices[i]]->set_hero(dracula_player->get_comrade()[i]);
+                    }
+                    screen.ExitLoopClosure()();
+                } });
 
         auto container = Container::Vertical({menu, confirm_btn});
 
@@ -490,16 +502,16 @@ void Ftxui_Front::chose_comrad_place(Player *p1, Player *p2, Board *board)
         auto menu = ftxui::Menu(&entries, &selected);
         auto confirm_btn = Button("Confirm", [&]
                                   {
-            sherlock_player->get_comrade()[0]->set_place(zone[selected]);
-            zone[selected]->set_hero(sherlock_player->get_comrade()[0]);
+                sherlock_player->get_comrade()[0]->set_place(zone[selected]);
+                zone[selected]->set_hero(sherlock_player->get_comrade()[0]);
 
-            screen.ExitLoopClosure()(); });
+                screen.ExitLoopClosure()(); });
 
         auto container = Container::Vertical({menu, confirm_btn});
 
         auto renderer = Renderer(container, [&]
                                  { return vbox({
-                                       text("turn : ") | bold | center | border,
+                                       //    text("turn : ") | bold | center | border,
                                        hbox({
                                            vbox({
                                                text(sherlock_player->get_name() + " - Choose 1 space for Watson") | bold | center,
@@ -517,18 +529,195 @@ void Ftxui_Front::chose_comrad_place(Player *p1, Player *p2, Board *board)
     }
 }
 
-void Ftxui_Front::main_map(Player *p1, Player *p2, Board *board)
+void Ftxui_Front::Attakcer_Heroes_Menu(Player *player, Board *board, Heroes *&hero)
+{
+    auto screen = ScreenInteractive::Fullscreen();
+
+    vector<Heroes *> fighters;
+
+    if (player->get_character() != nullptr and player->get_character()->get_islive())
+        fighters.push_back(player->get_character());
+
+    for (auto c : player->get_comrade())
+    {
+        if (c != nullptr and c->get_islive())
+            fighters.push_back(c);
+    }
+
+    vector<string> entries;
+
+    for (auto h : fighters)
+        entries.push_back(h->get_name());
+
+    int selected = 0;
+
+    if (fighters.empty())
+    {
+        // هیچ هدفی وجود ندارد
+        // exeption ... !!!!!!!!!!!!!!!!!!!!!!
+        return;
+    }
+
+    auto menu = Menu(&entries, &selected);
+
+    auto confirm = Button("Confirm", [&]
+                          { 
+                            hero = fighters[selected];
+                            
+                            screen.ExitLoopClosure()(); });
+
+    auto container = Container::Vertical({
+        menu,
+        confirm,
+    });
+
+    auto renderer = Renderer(container, [&]
+                             { return hbox({
+
+                                   vbox({
+                                       text(player->get_name() + " Choose Attacker") | bold | center,
+                                       separator(),
+                                       menu->Render(),
+                                       separator(),
+                                       confirm->Render() | center,
+                                   }) | border |
+                                       size(WIDTH, EQUAL, 30),
+
+                                   Graph_Box(board->get_spaces()),
+
+                               }); });
+
+    screen.Loop(renderer);
+}
+
+bool Exist_path(vector<Space *> zone, Space *target)
+{
+    if (zone.empty())
+    {
+        throw "zone (path) is empty.";
+    }
+
+    else
+    {
+        for (auto const &z : zone)
+        {
+            if (z == target)
+                return true;
+        }
+        return false;
+    }
+}
+
+void Ftxui_Front::Defender_Heroes_Menu(Player *player, Board *board, Heroes *&defender, Heroes *&Attacker)
+{
+
+    if (Attacker == nullptr)
+    {
+        throw runtime_error("Attacker is nullptr");
+    }
+
+    else
+    {
+        auto screen = ScreenInteractive::Fullscreen();
+
+        vector<Heroes *> defenders;
+
+        try
+        {
+            // all characters (sherlock and dracula) are MELEE
+
+            if (Attacker->get_Attacktype() == "MELEE")
+            {
+
+                if (player->get_character() != nullptr and player->get_character()->get_islive() and Exist_path(Attacker->get_place()->get_neighbor(), player->get_character()->get_place()))
+                    defenders.push_back(player->get_character());
+
+                for (auto c : player->get_comrade())
+                {
+                    if (c != nullptr and c->get_islive() and Exist_path(Attacker->get_place()->get_neighbor(), c->get_place()))
+                        defenders.push_back(c);
+                }
+            }
+            else if (Attacker->get_Attacktype() == "RANGE")
+            {
+
+                if (player->get_character() != nullptr and player->get_character()->get_islive() and Exist_path(Attacker->get_place()->get_zone(), player->get_character()->get_place()))
+                    defenders.push_back(player->get_character());
+
+                for (auto c : player->get_comrade())
+                {
+                    if (c != nullptr and c->get_islive() and Exist_path(Attacker->get_place()->get_zone(), c->get_place()))
+                        defenders.push_back(c);
+                }
+            }
+        }
+        catch (const char *m)
+        {
+            msg.push_back(m);
+        }
+
+        vector<string> entries;
+
+        for (auto h : defenders)
+            entries.push_back(h->get_name());
+
+        int selected = 0;
+
+        cout << "defenders size = "
+             << defenders.size()
+             << endl;
+             
+        if (defenders.empty())
+        {
+            throw std::runtime_error("Attack is not possible.");
+            return;
+        }
+
+        auto menu = Menu(&entries, &selected);
+
+        auto confirm = Button("Confirm", [&]
+                              { 
+                                defender = defenders[selected];
+                                
+                                screen.ExitLoopClosure()(); });
+
+        auto container = Container::Vertical({
+            menu,
+            confirm,
+        });
+
+        auto renderer = Renderer(container, [&]
+                                 { return hbox({
+
+                                       vbox({
+                                           text(player->get_name() + " Choose Defender") | bold | center,
+                                           separator(),
+                                           menu->Render(),
+                                           separator(),
+                                           confirm->Render() | center,
+                                       }) | border |
+                                           size(WIDTH, EQUAL, 30),
+
+                                       Graph_Box(board->get_spaces()),
+
+                                   }); });
+
+        screen.Loop(renderer);
+    }
+}
+
+void Ftxui_Front::main_map(Player *p1, Player *p2, Board *board, Player *turn)
 {
     auto screen = ScreenInteractive::Fullscreen();
 
     auto container = Container::Vertical({
-        ChooseAction(p1, p2),
+        ChooseAction(p1, p2, &screen),
     });
 
     auto renderer = Renderer(container, [&]
                              { return vbox({
                                    vbox({
-                                       text("turn : ") | bold | center | border,
+                                       text("turn : " + turn->get_name()) | bold | center | border,
                                        hbox({
                                            Dracula_Box(p1, p2),
                                            Graph_Box(board->get_spaces()),
@@ -544,11 +733,18 @@ void Ftxui_Front::main_map(Player *p1, Player *p2, Board *board)
                                                separatorHeavy(),
 
                                                container->Render() | center,
+
                                            }),
                                            Sherlock_Hand(p1, p2),
                                        }),
 
                                    }) | center,
                                }); });
+
     screen.Loop(renderer);
+}
+
+std::vector<std::string> &Ftxui_Front::get_msg()
+{
+    return msg;
 }

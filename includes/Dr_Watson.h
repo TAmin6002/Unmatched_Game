@@ -7,6 +7,5 @@ class Dr_Watson : public Heroes
 private:
 public:
     Dr_Watson();
-
-    // virtual void Damage(int);
+    virtual void abiliti() override;
 };

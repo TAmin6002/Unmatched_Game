@@ -51,4 +51,5 @@ public:
     int discard_hand();
 
     void Damage(int);
+    virtual void abiliti() = 0;
 };

@@ -1,5 +1,5 @@
 _deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/graph.cpp.obj: \
- D:\cpp\myproject\build\_deps\ftxui-src\src\ftxui\dom\graph.cpp \
+ D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/graph.cpp \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/array \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/compare \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/initializer_list \

@@ -1,0 +1,67 @@
+{
+	"kind" : "toolchains",
+	"toolchains" : 
+	[
+		{
+			"compiler" : 
+			{
+				"id" : "GNU",
+				"implicit" : 
+				{
+					"includeDirectories" : 
+					[
+						"C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/include",
+						"C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0",
+						"C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/x86_64-w64-mingw32",
+						"C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/backward",
+						"C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/lib/gcc/x86_64-w64-mingw32/13.2.0/include",
+						"C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed",
+						"C:/Users/ASEMAN RAYANE/scoop/apps/gcc/13.2.0/x86_64-w64-mingw32/include"
+					],
+					"linkDirectories" : [],
+					"linkFrameworkDirectories" : [],
+					"linkLibraries" : []
+				},
+				"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/g++.exe",
+				"version" : "13.2.0"
+			},
+			"language" : "CXX",
+			"sourceFileExtensions" : 
+			[
+				"C",
+				"M",
+				"c++",
+				"cc",
+				"cpp",
+				"cxx",
+				"m",
+				"mm",
+				"mpp",
+				"CPP",
+				"ixx",
+				"cppm",
+				"ccm",
+				"cxxm",
+				"c++m"
+			]
+		},
+		{
+			"compiler" : 
+			{
+				"implicit" : {},
+				"path" : "C:/Users/ASEMAN RAYANE/scoop/apps/gcc/current/bin/windres.exe"
+			},
+			"language" : "RC",
+			"sourceFileExtensions" : 
+			[
+				"rc",
+				"RC"
+			]
+		}
+	],
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 0
+	}
+}

@@ -21,6 +21,16 @@ std::string Player::get_name()
     return name;
 }
 
+int Player::get_count()
+{
+    return count;
+}
+
+void Player::add_count()
+{
+    count++;
+}
+
 void Player::set_character(Heroes *character)
 {
     this->character = character;

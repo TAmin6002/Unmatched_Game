@@ -3,4 +3,7 @@
 Dr_Watson::Dr_Watson()
     : Heroes("Dr_Watson", "RANGED", 8, 2) {}
 
+void Dr_Watson::abiliti()
+{
 
+}

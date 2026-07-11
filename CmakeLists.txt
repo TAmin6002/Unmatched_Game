@@ -25,3 +25,5 @@ target_link_libraries(app
 )
 
 target_include_directories(app PRIVATE includes src)
+
+set(FETCHCONTENT_UPDATES_DISCONNECTED ON)

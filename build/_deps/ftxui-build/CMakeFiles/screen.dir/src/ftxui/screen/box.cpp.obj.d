@@ -1,5 +1,5 @@
 _deps/ftxui-build/CMakeFiles/screen.dir/src/ftxui/screen/box.cpp.obj: \
- D:\cpp\myproject\build\_deps\ftxui-src\src\ftxui\screen\box.cpp \
+ D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/screen/box.cpp \
  D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/screen/box.hpp \
  D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/util/export.hpp \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/algorithm \

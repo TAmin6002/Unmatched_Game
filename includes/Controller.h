@@ -26,7 +26,7 @@ private:
     Player p2;
 
     Dracula dracula;
-    Sisters s1, s2, s3;
+    Sisters s1{"1"}, s2{"2"}, s3{"3"};
 
     SherlockHolmes sherlock;
     Dr_Watson Watson;
@@ -39,6 +39,11 @@ private:
 
     int DraculaAction = 2;
     int SherlockAction = 2;
+
+    Player *turn;
+    Player *not_turn;
+
+    int round = 1;
 
     Ftxui_Front FF;
 
@@ -62,6 +67,11 @@ public:
     void Initial_characters_places();
     Player *get_younger_player();
     Player *get_older_player();
+
+    // bool can_Attack(Player *);
+
+    void Initial_turn();
+    void chane_turn();
 
     int dis_sumcards(); // Removes as many cards as the player wants
 };

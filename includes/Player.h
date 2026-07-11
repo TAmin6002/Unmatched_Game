@@ -8,6 +8,7 @@ class Player
 private:
     int age;
     std::string name;
+    int count = 0; // count Action
 
     Heroes *character;
     std::vector<Heroes *> comrade;
@@ -22,6 +23,9 @@ public:
 
     void set_name(std::string);
     std::string get_name();
+
+    int get_count();
+    void add_count();
 
     void set_character(Heroes *);
     Heroes *get_character();

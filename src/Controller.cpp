@@ -106,7 +106,7 @@ void Controller::Initial_characters_places()
     board.get_spaces()[23].set_hero(get_younger_player()->get_character());
 
     get_older_player()->get_character()->set_place(&(board.get_spaces()[2])); // space 2
-    board.get_spaces()[2].set_hero(get_older_player()->get_character());
+    board.get_spaces()[24].set_hero(get_older_player()->get_character());
 }
 
 Player *Controller::get_younger_player()
@@ -125,23 +125,129 @@ Player *Controller::get_older_player()
     return &p1;
 }
 
+// bool Controller::can_Attack(Player *turn)
+// {
+//     if (!turn->get_character()->get_islive())
+//         return false;
+// }
+
+void Controller::Initial_turn()
+{
+    if (p1.get_age() <= p2.get_age())
+    {
+        turn = &p1;
+        not_turn = &p2;
+    }
+
+    else
+    {
+        turn = &p2;
+        not_turn = &p1;
+    }
+}
+
+void Controller::chane_turn()
+{
+    if (turn == &p1)
+    {
+        turn = &p2;
+        not_turn = &p1;
+    }
+
+    else
+    {
+        turn = &p1;
+        not_turn = &p2;
+    }
+}
+
 void Controller::run()
 {
+
     bool Exit = false;
+
     while (true)
     {
+
         switch (FF.Menu_())
         {
 
         case e_Menu::Play:
         {
+            board = Board();
+
+            p1 = Player();
+            p2 = Player();
+
+            dracula = Dracula();
+            s1 = Sisters{"1"};
+            s2 = Sisters{"2"};
+            s3 = Sisters{"3"};
+
+            sherlock = SherlockHolmes();
+            Watson = Dr_Watson();
+
             FF.Players_Info_List(&p1, &p2);
+
+            if (round == 1)
+                Initial_turn();
+
             set_players_character(FF.Det_characters(&p1, &p2));
             Initial_characters_places();
-            
+
             FF.chose_comrad_place(&p1, &p2, &board);
 
-            FF.main_map(&p1, &p2, &board);
+            while (true)
+            {
+                FF.main_map(&p1, &p2, &board, turn);
+
+                switch (FF.get_number_of_choose())
+                {
+
+                case 0: // Attack
+                    if (turn->get_count() < 2)
+                    {
+
+                        try
+                        {
+                            FF.Attakcer_Heroes_Menu(turn, &board, Attacker);               // Attacker selection
+                            FF.Defender_Heroes_Menu(not_turn, &board, Defender, Attacker); // Defender selection
+                        }
+                        catch (const std::exception &e)
+                        {
+                            FF.get_msg().push_back(e.what());
+                        }
+                    }
+
+                    // exeption ...
+
+                    break;
+
+                case 1: // Maneuver
+                    if (turn->get_count() < 2)
+                    {
+                    }
+
+                    // exeption ...
+                    break;
+
+                case 2: // Scheme
+                    if (turn->get_count() < 2)
+                    {
+                    }
+
+                    // exeption ...
+                    break;
+
+                case 3: // Back
+                    break;
+                }
+                turn->add_count();
+                if (turn->get_count() % 2 == 0)
+                    chane_turn();
+
+                round++;
+            }
         }
         break;
 

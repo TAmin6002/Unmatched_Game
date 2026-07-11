@@ -12,11 +12,11 @@ Board ::Board()
     for (int i = 0; i < 32; i++)
         spaces[i] = Space();
 
-    spaces[0] = Space(1, {&spaces[1], &spaces[2], &spaces[4], &spaces[5]}, {&spaces[1], &spaces[5]});
+    spaces[0] = Space(1, {&spaces[2], &spaces[1], &spaces[3], &spaces[4], &spaces[5]}, {&spaces[1], &spaces[5]});
 
-    spaces[1] = Space(2, {&spaces[0], &spaces[2], &spaces[4], &spaces[5]}, {&spaces[0], &spaces[2]});
+    spaces[1] = Space(2, {&spaces[0], &spaces[2], &spaces[4], &spaces[5], &spaces[3]}, {&spaces[0], &spaces[2]});
 
-    spaces[2] = Space(3, {&spaces[0], &spaces[1], &spaces[4], &spaces[5], &spaces[31], &spaces[30], &spaces[29], &spaces[28]}, {&spaces[1], &spaces[3], &spaces[31]});
+    spaces[2] = Space(3, {&spaces[0], &spaces[1], &spaces[3], &spaces[4], &spaces[5], &spaces[31], &spaces[30], &spaces[29], &spaces[28]}, {&spaces[1], &spaces[3], &spaces[31]});
 
     spaces[3] = Space(4, {&spaces[0], &spaces[1], &spaces[2], &spaces[4], &spaces[5], &spaces[6], &spaces[7], &spaces[8], &spaces[9]}, {&spaces[2], &spaces[4], &spaces[6]});
 
@@ -28,19 +28,19 @@ Board ::Board()
 
     spaces[7] = Space(8, {&spaces[3], &spaces[6], &spaces[8], &spaces[9]}, {&spaces[5], &spaces[6], &spaces[8]});
 
-    spaces[8] = Space(9, {&spaces[3], &spaces[6], &spaces[7], &spaces[9]}, {&spaces[7], &spaces[9], &spaces[14]});
+    spaces[8] = Space(9, {&spaces[3], &spaces[6], &spaces[7], &spaces[9], &spaces[14], &spaces[15], &spaces[16], &spaces[13], &spaces[17], &spaces[18], &spaces[19], &spaces[20], &spaces[21]}, {&spaces[7], &spaces[9], &spaces[14]});
 
     spaces[9] = Space(10, {&spaces[3], &spaces[6], &spaces[7], &spaces[8], &spaces[10], &spaces[11], &spaces[12], &spaces[13], &spaces[28]}, {&spaces[8], &spaces[10]});
 
     spaces[10] = Space(11, {&spaces[9], &spaces[11], &spaces[12], &spaces[13], &spaces[28]}, {&spaces[9], &spaces[11], &spaces[13]});
 
-    spaces[11] = Space(12, {&spaces[9], &spaces[10], &spaces[12], &spaces[13], &spaces[28]}, {&spaces[10], &spaces[12], &spaces[13]});
+    spaces[11] = Space(12, {&spaces[9], &spaces[10], &spaces[12], &spaces[13], &spaces[28]}, {&spaces[10], &spaces[12]});
 
     spaces[12] = Space(13, {&spaces[9], &spaces[10], &spaces[11], &spaces[13], &spaces[28], &spaces[21], &spaces[22], &spaces[23], &spaces[24]}, {&spaces[11], &spaces[28], &spaces[24], &spaces[23], &spaces[18], &spaces[19]});
 
     spaces[13] = Space(14, {&spaces[9], &spaces[10], &spaces[11], &spaces[12], &spaces[28], &spaces[8], &spaces[14], &spaces[15], &spaces[16], &spaces[17], &spaces[18], &spaces[19], &spaces[20], &spaces[21]}, {&spaces[10], &spaces[16], &spaces[17], &spaces[18]});
 
-    spaces[14] = Space(15, {&spaces[8], &spaces[15], &spaces[16], &spaces[13], &spaces[17], &spaces[18], &spaces[19], &spaces[20], &spaces[21]}, {&spaces[11], &spaces[8], &spaces[15]});
+    spaces[14] = Space(15, {&spaces[8], &spaces[15], &spaces[16], &spaces[13], &spaces[17], &spaces[18], &spaces[19], &spaces[20], &spaces[21]}, {&spaces[8], &spaces[15]});
 
     spaces[15] = Space(16, {&spaces[8], &spaces[14], &spaces[16], &spaces[13], &spaces[17], &spaces[18], &spaces[19], &spaces[20], &spaces[21]}, {&spaces[14], &spaces[16]});
 
@@ -48,19 +48,19 @@ Board ::Board()
 
     spaces[17] = Space(18, {&spaces[8], &spaces[14], &spaces[15], &spaces[16], &spaces[13], &spaces[18], &spaces[19], &spaces[20], &spaces[21]}, {&spaces[16], &spaces[13], &spaces[18]});
 
-    spaces[18] = Space(19, {&spaces[8], &spaces[14], &spaces[15], &spaces[16], &spaces[13], &spaces[17], &spaces[19], &spaces[20], &spaces[21]}, {&spaces[16], &spaces[13], &spaces[17], &spaces[12], &spaces[19]});
+    spaces[18] = Space(19, {&spaces[8], &spaces[14], &spaces[15], &spaces[16], &spaces[13], &spaces[17], &spaces[19], &spaces[20], &spaces[21]}, {&spaces[13], &spaces[17], &spaces[12], &spaces[19]});
 
     spaces[19] = Space(20, {&spaces[8], &spaces[14], &spaces[15], &spaces[16], &spaces[13], &spaces[17], &spaces[18], &spaces[20], &spaces[21]}, {&spaces[18], &spaces[12], &spaces[20], &spaces[21]});
 
     spaces[20] = Space(21, {&spaces[8], &spaces[14], &spaces[15], &spaces[16], &spaces[13], &spaces[17], &spaces[18], &spaces[19], &spaces[21]}, {&spaces[19], &spaces[21]});
 
-    spaces[21] = Space(22, {&spaces[8], &spaces[14], &spaces[15], &spaces[16], &spaces[13], &spaces[17], &spaces[18], &spaces[19], &spaces[20], &spaces[12], &spaces[23], &spaces[22], &spaces[24]}, {&spaces[20], &spaces[22]});
+    spaces[21] = Space(22, {&spaces[8], &spaces[14], &spaces[15], &spaces[16], &spaces[13], &spaces[17], &spaces[18], &spaces[19], &spaces[20], &spaces[12], &spaces[23], &spaces[22], &spaces[24]}, {&spaces[19], &spaces[20], &spaces[22]});
 
-    spaces[22] = Space(23, {&spaces[12], &spaces[23], &spaces[24]}, {&spaces[21], &spaces[23], &spaces[24]});
+    spaces[22] = Space(23, {&spaces[12], &spaces[23], &spaces[24], &spaces[21]}, {&spaces[21], &spaces[23], &spaces[24]});
 
-    spaces[23] = Space(24, {&spaces[12], &spaces[24], &spaces[22]}, {&spaces[12], &spaces[22]});
+    spaces[23] = Space(24, {&spaces[12], &spaces[24], &spaces[22], &spaces[21]}, {&spaces[12], &spaces[22]});
 
-    spaces[24] = Space(25, {&spaces[12], &spaces[23], &spaces[22]}, {&spaces[12], &spaces[22]});
+    spaces[24] = Space(25, {&spaces[12], &spaces[23], &spaces[22], &spaces[21]}, {&spaces[12], &spaces[22]});
 
     spaces[25] = Space(26, {&spaces[26], &spaces[27], &spaces[28]}, {&spaces[24], &spaces[27]});
 
@@ -87,7 +87,7 @@ bool Board::is_Adjacent(Space *s1, Space *s2)
     return false;
 }
 
-std::vector<Space>& Board::get_spaces()
+std::vector<Space> &Board::get_spaces()
 {
     return spaces;
 }

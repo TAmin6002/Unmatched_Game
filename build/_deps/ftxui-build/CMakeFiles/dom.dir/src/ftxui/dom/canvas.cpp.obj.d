@@ -1,5 +1,5 @@
 _deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/canvas.cpp.obj: \
- D:\cpp\myproject\build\_deps\ftxui-src\src\ftxui\dom\canvas.cpp \
+ D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/canvas.cpp \
  D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/dom/canvas.hpp \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/cstddef \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/x86_64-w64-mingw32/bits/c++config.h \

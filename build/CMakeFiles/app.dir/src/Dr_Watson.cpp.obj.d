@@ -1,5 +1,5 @@
 CMakeFiles/app.dir/src/Dr_Watson.cpp.obj: \
- D:\cpp\myproject\src\Dr_Watson.cpp D:/cpp/myproject/includes/Dr_Watson.h \
+ D:/cpp/myproject/src/Dr_Watson.cpp D:/cpp/myproject/includes/Dr_Watson.h \
  D:/cpp/myproject/includes/Heroes.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/string \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/requires_hosted.h \

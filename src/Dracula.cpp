@@ -67,3 +67,8 @@ vector<Sisters *> Dracula::get_sisters()
 {
   return sisters;
 }
+
+void Dracula::abiliti()
+{
+
+}
