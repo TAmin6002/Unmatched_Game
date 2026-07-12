@@ -31,8 +31,8 @@ private:
     SherlockHolmes sherlock;
     Dr_Watson Watson;
 
-    Heroes *Attacker;
-    Heroes *Defender; // این دوتا هنگام ی ست میشوند که بازیکن از بین گزینه های اکشن اتک زدن را اتخاب کرده باشد
+    Heroes *Attacker = nullptr;
+    Heroes *Defender = nullptr; // این دوتا هنگام ی ست میشوند که بازیکن از بین گزینه های اکشن اتک زدن را اتخاب کرده باشد
 
     Card Attacker_selected_card;
     Card Defender_selected_card; // وقتی دو مبارز وارد جنگ میشوند ابتدا از اتکر و سپس از دفاع کننده کارت های انتخابی شان گرفته میشود

@@ -170,6 +170,54 @@ int Ftxui_Front::Det_characters(Player *p1, Player *p2)
     return choice;
 }
 
+void Ftxui_Front::catch_place(Player *p1, Player *p2, Board *board)
+{
+    int selected = 0;
+    auto screen = ScreenInteractive::Fullscreen();
+
+    vector<string> places = {"space 3", "space 24"};
+
+    auto menu = ftxui::Menu(&places, &selected);
+
+    auto component = CatchEvent(menu, [&](Event event)
+                                {
+    if (event == Event::Return) {
+        screen.ExitLoopClosure()(); 
+        return true;
+    }
+    return false; });
+
+    auto container = Container::Vertical({
+        component,
+    });
+
+    auto renderer = Renderer(container, [&]
+                             { return vbox({
+                                          text((p1->get_age() <= p2->get_age() ? p1->get_name() : p2->get_name()) + " Choose your Hero place") | border | center,
+                                          container->Render(),
+                                      }) |
+                                      border; });
+    screen.Loop(renderer);
+
+    if (selected == 0)
+    {
+        (p1->get_age() <= p2->get_age() ? p1 : p2)->get_character()->set_place(&board->get_spaces()[2]);
+        board->get_spaces()[2].set_hero((p1->get_age() <= p2->get_age() ? p1 : p2)->get_character());
+
+        (p1->get_age() > p2->get_age() ? p1 : p2)->get_character()->set_place(&board->get_spaces()[23]);
+        board->get_spaces()[23].set_hero((p1->get_age() > p2->get_age() ? p1 : p2)->get_character());
+    }
+
+    else if (selected == 1)
+    {
+        (p1->get_age() <= p2->get_age() ? p1 : p2)->get_character()->set_place(&board->get_spaces()[23]);
+        board->get_spaces()[23].set_hero((p1->get_age() <= p2->get_age() ? p1 : p2)->get_character());
+
+        (p1->get_age() > p2->get_age() ? p1 : p2)->get_character()->set_place(&board->get_spaces()[2]);
+        board->get_spaces()[2].set_hero((p1->get_age() > p2->get_age() ? p1 : p2)->get_character());
+    }
+}
+
 Element Dracula_Box(Player *p1, Player *p2)
 {
     Player *dracula_player = (p1->get_character()->get_name() == "DRACULA") ? p1 : p2;
@@ -383,6 +431,8 @@ Element Dracula_Hand(Player *p1, Player *p2)
 
     vector<Card> Hand_Cards = dracula_player->get_character()->get_hand();
 
+    
+
     return hbox({text("Dracula - Hand ") | center | border | size(WIDTH, EQUAL, 55) | size(HEIGHT, EQUAL, 10)});
 }
 
@@ -452,7 +502,7 @@ void Ftxui_Front::chose_comrad_place(Player *p1, Player *p2, Board *board)
         auto confirm_btn = Button("Confirm", [&]
                                   {
                 bool duplicate = false;
-                for(auto c : choices) if(c == selected) duplicate = true;
+                for(auto c : choices) if(c == selected) duplicate = true; // check duplicate
                 
                 if(!duplicate) {
                     choices.push_back(selected);
@@ -553,8 +603,7 @@ void Ftxui_Front::Attakcer_Heroes_Menu(Player *player, Board *board, Heroes *&he
 
     if (fighters.empty())
     {
-        // هیچ هدفی وجود ندارد
-        // exeption ... !!!!!!!!!!!!!!!!!!!!!!
+        throw std::runtime_error("No valid target to attack.");
         return;
     }
 
@@ -666,7 +715,7 @@ void Ftxui_Front::Defender_Heroes_Menu(Player *player, Board *board, Heroes *&de
         cout << "defenders size = "
              << defenders.size()
              << endl;
-             
+
         if (defenders.empty())
         {
             throw std::runtime_error("Attack is not possible.");

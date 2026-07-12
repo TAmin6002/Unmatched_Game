@@ -28,6 +28,8 @@ public:
 
     int Det_characters(Player *, Player *);
 
+    void catch_place(Player *, Player *, Board *);
+
     Component ChooseAction(Player *, Player *, ScreenInteractive *);
 
     void main_map(Player *, Player *, Board *, Player *);

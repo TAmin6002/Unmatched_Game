@@ -100,14 +100,14 @@ void Controller::set_players_character(int choise)
     }
 }
 
-void Controller::Initial_characters_places()
-{
-    get_younger_player()->get_character()->set_place(&(board.get_spaces()[23])); // space 1
-    board.get_spaces()[23].set_hero(get_younger_player()->get_character());
+// void Controller::Initial_characters_places()
+// {
+//     get_younger_player()->get_character()->set_place(&(board.get_spaces()[23])); // space 1
+//     board.get_spaces()[23].set_hero(get_younger_player()->get_character());
 
-    get_older_player()->get_character()->set_place(&(board.get_spaces()[2])); // space 2
-    board.get_spaces()[24].set_hero(get_older_player()->get_character());
-}
+//     get_older_player()->get_character()->set_place(&(board.get_spaces()[2])); // space 2
+//     board.get_spaces()[24].set_hero(get_older_player()->get_character());
+// }
 
 Player *Controller::get_younger_player()
 {
@@ -193,9 +193,26 @@ void Controller::run()
                 Initial_turn();
 
             set_players_character(FF.Det_characters(&p1, &p2));
-            Initial_characters_places();
 
-            FF.chose_comrad_place(&p1, &p2, &board);
+            dracula.set_place(&board.get_spaces()[2]);
+            s1.set_place(&board.get_spaces()[0]);
+            s1.set_place(&board.get_spaces()[1]);
+            s1.set_place(&board.get_spaces()[3]);
+
+            board.get_spaces()[2].set_hero(&dracula);
+            board.get_spaces()[0].set_hero(&s1);
+            board.get_spaces()[1].set_hero(&s2);
+            board.get_spaces()[3].set_hero(&s3);
+
+            sherlock.set_place(&board.get_spaces()[8]);
+            Watson.set_place(&board.get_spaces()[31]);
+
+            board.get_spaces()[8].set_hero(&sherlock);
+            board.get_spaces()[31].set_hero(&Watson);
+
+            // FF.catch_place(&p1, &p2, &board);
+
+            // FF.chose_comrad_place(&p1, &p2, &board);
 
             while (true)
             {
@@ -212,10 +229,14 @@ void Controller::run()
                         {
                             FF.Attakcer_Heroes_Menu(turn, &board, Attacker);               // Attacker selection
                             FF.Defender_Heroes_Menu(not_turn, &board, Defender, Attacker); // Defender selection
+
+                            // FF.Attacker_selected_card();
+                            // FF.Defender_selected_card();
                         }
                         catch (const std::exception &e)
                         {
                             FF.get_msg().push_back(e.what());
+                            cout << e.what() << endl;
                         }
                     }
 
@@ -240,6 +261,7 @@ void Controller::run()
                     break;
 
                 case 3: // Back
+                    Exit = true;
                     break;
                 }
                 turn->add_count();
@@ -264,6 +286,9 @@ void Controller::run()
         }
 
         if (Exit)
+        {
+            Exit = false;
             break;
+        }
     }
 }
