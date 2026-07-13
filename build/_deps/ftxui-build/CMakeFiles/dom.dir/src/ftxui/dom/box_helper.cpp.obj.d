@@ -1,5 +1,5 @@
 _deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/box_helper.cpp.obj: \
- D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/box_helper.cpp \
+ D:\cpp\myproject\build\_deps\ftxui-src\src\ftxui\dom\box_helper.cpp \
  D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/box_helper.hpp \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/vector \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/requires_hosted.h \

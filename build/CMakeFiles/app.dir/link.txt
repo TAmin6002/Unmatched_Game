@@ -1,0 +1,3 @@
+"C:\Users\ASEMAN RAYANE\scoop\apps\cmake\current\bin\cmake.exe" -E rm -f CMakeFiles\app.dir/objects.a
+C:\Users\ASEMAN~1\scoop\apps\gcc\current\bin\ar.exe qc CMakeFiles\app.dir/objects.a @CMakeFiles\app.dir\objects1.rsp
+C:\Users\ASEMAN~1\scoop\apps\gcc\current\bin\G__~1.EXE -Wl,--whole-archive CMakeFiles\app.dir/objects.a -Wl,--no-whole-archive -o app.exe -Wl,--out-implib,libapp.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\app.dir\linkLibs.rsp

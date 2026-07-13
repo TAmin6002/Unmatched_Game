@@ -264,6 +264,12 @@ void Controller::run()
                     Exit = true;
                     break;
                 }
+                if (Exit)
+                {
+                    Exit = false;
+                    break;
+                }
+
                 turn->add_count();
                 if (turn->get_count() % 2 == 0)
                     chane_turn();

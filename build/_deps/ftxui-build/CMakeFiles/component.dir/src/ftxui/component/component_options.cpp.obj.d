@@ -1,5 +1,5 @@
 _deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/component_options.cpp.obj: \
- D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/component/component_options.cpp \
+ D:\cpp\myproject\build\_deps\ftxui-src\src\ftxui\component\component_options.cpp \
  D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/component/component_options.hpp \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/chrono \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/requires_hosted.h \

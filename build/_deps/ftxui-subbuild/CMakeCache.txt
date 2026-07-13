@@ -17,9 +17,6 @@
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
 
-//Enable/Disable output of compile commands during generation.
-CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=
-
 //Value Computed by CMake.
 CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=D:/cpp/myproject/build/_deps/ftxui-subbuild/CMakeFiles/pkgRedirects
 
@@ -27,7 +24,7 @@ CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=D:/cpp/myproject/build/_deps/ftxui-subbu
 CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/ftxui-populate
 
 //No help, variable specified on the command line.
-CMAKE_MAKE_PROGRAM:FILEPATH=C:/Users/ASEMAN~1/scoop/shims/make.exe
+CMAKE_MAKE_PROGRAM:FILEPATH=make
 
 //Value Computed by CMake
 CMAKE_PROJECT_COMPAT_VERSION:STATIC=
@@ -89,12 +86,10 @@ CMAKE_CPACK_COMMAND:INTERNAL=C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/bin
 CMAKE_CTEST_COMMAND:INTERNAL=C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/bin/ctest.exe
 //Path to cache edit program executable.
 CMAKE_EDIT_COMMAND:INTERNAL=C:/Users/ASEMAN RAYANE/scoop/apps/cmake/current/bin/cmake-gui.exe
-//ADVANCED property for variable: CMAKE_EXPORT_COMPILE_COMMANDS
-CMAKE_EXPORT_COMPILE_COMMANDS-ADVANCED:INTERNAL=1
 //Name of external makefile project generator.
 CMAKE_EXTRA_GENERATOR:INTERNAL=
 //Name of generator.
-CMAKE_GENERATOR:INTERNAL=Unix Makefiles
+CMAKE_GENERATOR:INTERNAL=MinGW Makefiles
 //Generator instance identifier.
 CMAKE_GENERATOR_INSTANCE:INTERNAL=
 //Name of generator platform.

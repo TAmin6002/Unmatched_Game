@@ -7,47 +7,47 @@ using namespace std;
 Dracula::Dracula()
     : Heroes("DRACULA", "MELEE", 13, 2)
 {
-  deck.push_back(Card(CardType::Feedingfrenzy, CardTiming::During, "Attack", 2, 3));
-  deck.push_back(Card(CardType::Feedingfrenzy, CardTiming::During, "Attack", 2, 3));
+  deck.push_back(Card(CardType::Feedingfrenzy, CardTiming::During, "Attack", 2, 3, "DRACULA"));
+  deck.push_back(Card(CardType::Feedingfrenzy, CardTiming::During, "Attack", 2, 3, "DRACULA"));
 
-  deck.push_back(Card(CardType::Mistform, CardTiming::Immediate, "Event", 0, 2));
-  deck.push_back(Card(CardType::Mistform, CardTiming::Immediate, "Event", 0, 2));
+  deck.push_back(Card(CardType::Mistform, CardTiming::Immediate, "Event", 0, 2, "DRACULA"));
+  deck.push_back(Card(CardType::Mistform, CardTiming::Immediate, "Event", 0, 2, "DRACULA"));
 
-  deck.push_back(Card(CardType::Ambush, CardTiming::During, "Attack", 2, 3));
-  deck.push_back(Card(CardType::Ambush, CardTiming::During, "Attack", 2, 3));
+  deck.push_back(Card(CardType::Ambush, CardTiming::During, "Attack", 2, 3, "ANY"));
+  deck.push_back(Card(CardType::Ambush, CardTiming::During, "Attack", 2, 3, "ANY"));
 
-  deck.push_back(Card(CardType::Baptism_of_blood, CardTiming::Immediate, "Event", 0, 2));
-  deck.push_back(Card(CardType::Baptism_of_blood, CardTiming::Immediate, "Event", 0, 2));
+  deck.push_back(Card(CardType::Baptism_of_blood, CardTiming::Immediate, "Event", 0, 2, "DRACULA"));
+  deck.push_back(Card(CardType::Baptism_of_blood, CardTiming::Immediate, "Event", 0, 2, "DRACULA"));
 
-  deck.push_back(Card(CardType::Beastform, CardTiming::During, "Attack", 6, 4));
-  deck.push_back(Card(CardType::Beastform, CardTiming::During, "Attack", 6, 4));
+  deck.push_back(Card(CardType::Beastform, CardTiming::During, "Attack", 6, 4, "DRACULA"));
+  deck.push_back(Card(CardType::Beastform, CardTiming::During, "Attack", 6, 4, "DRACULA"));
 
-  deck.push_back(Card(CardType::Dash, CardTiming::After, "Both", 3, 1));
-  deck.push_back(Card(CardType::Dash, CardTiming::After, "Both", 3, 1));
-  deck.push_back(Card(CardType::Dash, CardTiming::After, "Both", 3, 1));
+  deck.push_back(Card(CardType::Dash, CardTiming::After, "Both", 3, 1, "ANY"));
+  deck.push_back(Card(CardType::Dash, CardTiming::After, "Both", 3, 1, "ANY"));
+  deck.push_back(Card(CardType::Dash, CardTiming::After, "Both", 3, 1, "ANY"));
 
-  deck.push_back(Card(CardType::Exploit, CardTiming::After, "Both", 4, 1));
-  deck.push_back(Card(CardType::Exploit, CardTiming::After, "Both", 4, 1));
-  deck.push_back(Card(CardType::Exploit, CardTiming::After, "Both", 4, 1));
+  deck.push_back(Card(CardType::Exploit, CardTiming::After, "Both", 4, 1, "ANY"));
+  deck.push_back(Card(CardType::Exploit, CardTiming::After, "Both", 4, 1, "ANY"));
+  deck.push_back(Card(CardType::Exploit, CardTiming::After, "Both", 4, 1, "ANY"));
 
-  deck.push_back(Card(CardType::Look_into_my_eyes, CardTiming::During, "Defense", 1, 2));
-  deck.push_back(Card(CardType::Look_into_my_eyes, CardTiming::During, "Defense", 1, 2));
-  deck.push_back(Card(CardType::Look_into_my_eyes, CardTiming::During, "Defense", 1, 2));
+  deck.push_back(Card(CardType::Look_into_my_eyes, CardTiming::During, "Defense", 1, 2, "DRACULA"));
+  deck.push_back(Card(CardType::Look_into_my_eyes, CardTiming::During, "Defense", 1, 2, "DRACULA"));
+  deck.push_back(Card(CardType::Look_into_my_eyes, CardTiming::During, "Defense", 1, 2, "DRACULA"));
 
-  deck.push_back(Card(CardType::Prey_upon, CardTiming::Immediate, "Event", 0, 4));
-  deck.push_back(Card(CardType::Prey_upon, CardTiming::Immediate, "Event", 0, 4));
+  deck.push_back(Card(CardType::Prey_upon, CardTiming::Immediate, "Event", 0, 4, "DRACULA"));
+  deck.push_back(Card(CardType::Prey_upon, CardTiming::Immediate, "Event", 0, 4, "DRACULA"));
 
-  deck.push_back(Card(CardType::Ravening_Seduction, CardTiming::Immediate, "Event", 0, 2));
-  deck.push_back(Card(CardType::Ravening_Seduction, CardTiming::Immediate, "Event", 0, 2));
-  deck.push_back(Card(CardType::Ravening_Seduction, CardTiming::Immediate, "Event", 0, 2));
+  deck.push_back(Card(CardType::Ravening_Seduction, CardTiming::Immediate, "Event", 0, 2, "SISTERS"));
+  deck.push_back(Card(CardType::Ravening_Seduction, CardTiming::Immediate, "Event", 0, 2, "SISTERS"));
+  deck.push_back(Card(CardType::Ravening_Seduction, CardTiming::Immediate, "Event", 0, 2, "SISTERS"));
 
-  deck.push_back(Card(CardType::Thirst_for_sustenance, CardTiming::After, "Attack", 3, 3));
-  deck.push_back(Card(CardType::Thirst_for_sustenance, CardTiming::After, "Attack", 3, 3));
-  deck.push_back(Card(CardType::Thirst_for_sustenance, CardTiming::After, "Attack", 3, 3));
+  deck.push_back(Card(CardType::Thirst_for_sustenance, CardTiming::After, "Attack", 3, 3, "SISTERS"));
+  deck.push_back(Card(CardType::Thirst_for_sustenance, CardTiming::After, "Attack", 3, 3, "SISTERS"));
+  deck.push_back(Card(CardType::Thirst_for_sustenance, CardTiming::After, "Attack", 3, 3, "SISTERS"));
 
-  deck.push_back(Card(CardType::Feint, CardTiming::Before, "Both", 2, 2));
-  deck.push_back(Card(CardType::Feint, CardTiming::Before, "Both", 2, 2));
-  deck.push_back(Card(CardType::Feint, CardTiming::Before, "Both", 2, 2));
+  deck.push_back(Card(CardType::Feint, CardTiming::Before, "Both", 2, 2, "ANY"));
+  deck.push_back(Card(CardType::Feint, CardTiming::Before, "Both", 2, 2, "ANY"));
+  deck.push_back(Card(CardType::Feint, CardTiming::Before, "Both", 2, 2, "ANY"));
 
   std::mt19937 rng(std::random_device{}());
   std::shuffle(deck.begin(), deck.end(), rng);
@@ -70,5 +70,4 @@ vector<Sisters *> Dracula::get_sisters()
 
 void Dracula::abiliti()
 {
-
 }

@@ -425,15 +425,125 @@ Element Graph_Box(vector<Space> spaces)
     return canvas(std::move(c));
 }
 
+std::string CardTypeToString(CardType card)
+{
+    switch (card)
+    {
+    case CardType::Feedingfrenzy:
+        return "Feeding ";
+
+    case CardType::Mistform:
+        return "Mist";
+
+    case CardType::Ambush:
+        return "Ambush";
+
+    case CardType::Baptism_of_blood:
+        return "Baptism";
+
+    case CardType::Beastform:
+        return "Beast";
+
+    case CardType::Dash:
+        return "Dash";
+
+    case CardType::Exploit:
+        return "Exploit";
+
+    case CardType::Look_into_my_eyes:
+        return "Look_e";
+
+    case CardType::Prey_upon:
+        return "Prey    ";
+
+    case CardType::Ravening_Seduction:
+        return "Ravening";
+
+    case CardType::Thirst_for_sustenance:
+        return "Thirst";
+
+    case CardType::Feint:
+        return "Feint";
+
+    case CardType::Administer_Aid:
+        return "Aid";
+
+    case CardType::Counterpunch:
+        return "Counter";
+
+    case CardType::Deduce_Strategy:
+        return "Deduce";
+
+    case CardType::Education_Never_Ends:
+        return "Education";
+
+    case CardType::Eliminate_The_Impossible:
+        return "Eliminate";
+
+    case CardType::Feint2:
+        return "Feint";
+
+    case CardType::Fixed_Point_in_a_Changing_Age:
+        return "Fixed";
+
+    case CardType::The_Game_Is_Afoot:
+        return "T_Game";
+
+    case CardType::Service_Revolver:
+        return "Service";
+
+    case CardType::Study_Methods:
+        return "Study";
+    }
+}
+
+std::string CardTimingToString(CardTiming card)
+{
+    switch (card)
+    {
+    case CardTiming::After:
+        return "After";
+
+    case CardTiming::Before:
+        return "Before";
+
+    case CardTiming::During:
+        return "During";
+
+    case CardTiming::Immediate:
+        return "Immediate";
+    }
+}
+
 Element Dracula_Hand(Player *p1, Player *p2)
 {
-    Player *dracula_player = (p1->get_character()->get_name() == "DRACULA") ? p1 : p2;
+    Player *dracula_player =
+        (p1->get_character()->get_name() == "DRACULA") ? p1 : p2;
 
     vector<Card> Hand_Cards = dracula_player->get_character()->get_hand();
 
-    
+    Elements cards;
 
-    return hbox({text("Dracula - Hand ") | center | border | size(WIDTH, EQUAL, 55) | size(HEIGHT, EQUAL, 10)});
+    for (int i = 0; i < Hand_Cards.size(); i++)
+    {
+        cards.push_back(
+            vbox({
+                text("[ " + Hand_Cards[i].get_Attacktype() + " ]") | center,
+                separator(),
+                text(CardTypeToString(Hand_Cards[i].get_CardType())) | center,
+                text(Hand_Cards[i].get_owner()) | center,
+                text("Boost: " + to_string(Hand_Cards[i].get_Boost())) | center,
+                text(CardTimingToString(Hand_Cards[i].get_CardTiming())) | center,
+            }) |
+            border |
+            color(Color::RGB(0, 100, 0)));
+    }
+
+    return vbox({
+        text("Dracula - Hand") | bold | center,
+        separator(),
+        hbox(std::move(cards)),
+    });
 }
 
 Component Ftxui_Front::ChooseAction(Player *p1, Player *p2, ScreenInteractive *screen)
@@ -445,8 +555,8 @@ Component Ftxui_Front::ChooseAction(Player *p1, Player *p2, ScreenInteractive *s
         "Scheme",
         "Back"};
 
-    static int selected = 0;
-    static int action = -1;
+    int selected = 0;
+    int action = -1;
 
     auto menu = Menu(&entries, &selected);
 
@@ -473,8 +583,32 @@ Component Ftxui_Front::ChooseAction(Player *p1, Player *p2, ScreenInteractive *s
 
 Element Sherlock_Hand(Player *p1, Player *p2)
 {
-    Player *sherlock_player = (p1->get_character()->get_name() == "SHERLOCKHOLMES") ? p1 : p2;
-    return hbox({text("Sherlock - Hand") | center | border | size(WIDTH, EQUAL, 55) | size(HEIGHT, EQUAL, 10)});
+    Player *sherlock_player =
+        (p1->get_character()->get_name() == "SHERLOCKHOLMES") ? p1 : p2;
+
+    vector<Card> Hand_Cards = sherlock_player->get_character()->get_hand();
+
+    Elements cards;
+
+    for (int i = 0; i < Hand_Cards.size(); i++)
+    {
+        cards.push_back(
+            vbox({
+                text("[ " + Hand_Cards[i].get_Attacktype() + " ]") | center,
+                separator(),
+                text(CardTypeToString(Hand_Cards[i].get_CardType())) | center,
+                text(Hand_Cards[i].get_owner()) | center,
+                text("Boost: " + std::to_string(Hand_Cards[i].get_Boost())) | center,
+                text(CardTimingToString(Hand_Cards[i].get_CardTiming())) | center,
+            }) |
+            border | color(Color::RGB(0, 100, 0)));
+    }
+
+    return vbox({
+        text("Sherlock - Hand") | bold | center,
+        separator(),
+        hbox(std::move(cards)),
+    });
 }
 
 void Ftxui_Front::chose_comrad_place(Player *p1, Player *p2, Board *board)
@@ -712,9 +846,9 @@ void Ftxui_Front::Defender_Heroes_Menu(Player *player, Board *board, Heroes *&de
 
         int selected = 0;
 
-        cout << "defenders size = "
-             << defenders.size()
-             << endl;
+        // cout << "defenders size = "
+        //      << defenders.size()
+        //      << endl;
 
         if (defenders.empty())
         {

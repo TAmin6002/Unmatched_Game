@@ -1,5 +1,5 @@
 _deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/node_decorator.cpp.obj: \
- D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/node_decorator.cpp \
+ D:\cpp\myproject\build\_deps\ftxui-src\src\ftxui\dom\node_decorator.cpp \
  D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/dom/node.hpp \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/memory \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/memoryfwd.h \

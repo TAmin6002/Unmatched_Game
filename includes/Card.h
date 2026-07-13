@@ -11,15 +11,17 @@ private:
     CardType name;
     CardTiming timing;      // "DURING" , "AFTER" , "BEFORE", "IMMEDIATE"
     std::string typeAttack; // "ATTACK" , "DEFENSE" , "EVENT", "BOTH"
-    
+
     int amount;
     int Boost;
+
+    std::string owner;
 
     bool ApplyEffects{true};
 
 public:
     Card() = default;
-    Card(CardType, CardTiming, std::string, int, int);
+    Card(CardType, CardTiming, std::string, int, int, std::string);
 
     CardType get_CardType() const;
     CardTiming get_CardTiming() const;
@@ -33,4 +35,7 @@ public:
 
     bool get_ApplyEffects();
     void set_ApplyEffects(bool);
+
+    std::string get_owner();
+    std::string get_Attacktype();
 };
