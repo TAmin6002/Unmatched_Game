@@ -34,12 +34,12 @@ SherlockHolmes *Controller::get_SherlockHolmes()
     return &sherlock;
 }
 
-Card Controller::get_Attacker_selected_card()
+Card *Controller::get_Attacker_selected_card()
 {
     return Attacker_selected_card;
 }
 
-Card Controller::get_Defender_selected_card()
+Card *Controller::get_Defender_selected_card()
 {
     return Defender_selected_card;
 }
@@ -227,16 +227,21 @@ void Controller::run()
 
                         try
                         {
-                            FF.Attakcer_Heroes_Menu(turn, &board, Attacker);               // Attacker selection
-                            FF.Defender_Heroes_Menu(not_turn, &board, Defender, Attacker); // Defender selection
 
-                            // FF.Attacker_selected_card();
-                            // FF.Defender_selected_card();
+                            FF.Attakcer_Heroes_Menu(turn, &board, Attacker);
+
+                            FF.Defender_Heroes_Menu(not_turn, &board, Defender, Attacker);
+
+                            FF.Attacker_selected_card(Attacker, Defender, &p1, &p2, &board, Attacker_selected_card);
+
+                            FF.Defender_selected_card(Attacker, Defender, &p1, &p2, &board, Defender_selected_card);
+
+                            FF.Reveal_Combat(Attacker, Defender, Attacker_selected_card, Defender_selected_card);
                         }
                         catch (const std::exception &e)
                         {
                             FF.get_msg().push_back(e.what());
-                            cout << e.what() << endl;
+                            // cout << e.what() << endl;
                         }
                     }
 

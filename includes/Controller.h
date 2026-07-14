@@ -34,8 +34,8 @@ private:
     Heroes *Attacker = nullptr;
     Heroes *Defender = nullptr; // این دوتا هنگام ی ست میشوند که بازیکن از بین گزینه های اکشن اتک زدن را اتخاب کرده باشد
 
-    Card Attacker_selected_card;
-    Card Defender_selected_card; // وقتی دو مبارز وارد جنگ میشوند ابتدا از اتکر و سپس از دفاع کننده کارت های انتخابی شان گرفته میشود
+    Card *Attacker_selected_card = nullptr;
+    Card *Defender_selected_card = nullptr; // وقتی دو مبارز وارد جنگ میشوند ابتدا از اتکر و سپس از دفاع کننده کارت های انتخابی شان گرفته میشود
 
     int DraculaAction = 2;
     int SherlockAction = 2;
@@ -59,8 +59,8 @@ public:
     int get_SherlockAction() const;
     void set_SherlockAction();
 
-    Card get_Attacker_selected_card();
-    Card get_Defender_selected_card();
+    Card *get_Attacker_selected_card();
+    Card *get_Defender_selected_card();
 
     void set_players_character(int);
 

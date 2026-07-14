@@ -1,4 +1,4 @@
-CMakeFiles/app.dir/src/Player.cpp.obj: D:\cpp\myproject\src\Player.cpp \
+CMakeFiles/app.dir/src/Player.cpp.obj: D:/cpp/myproject/src/Player.cpp \
  D:/cpp/myproject/includes/Player.h D:/cpp/myproject/includes/Heroes.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/string \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/requires_hosted.h \

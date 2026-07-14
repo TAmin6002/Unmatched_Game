@@ -1,4 +1,4 @@
-CMakeFiles/app.dir/src/board.cpp.obj: D:\cpp\myproject\src\board.cpp \
+CMakeFiles/app.dir/src/board.cpp.obj: D:/cpp/myproject/src/board.cpp \
  D:/cpp/myproject/includes/board.h D:/cpp/myproject/includes/space.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/vector \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/requires_hosted.h \

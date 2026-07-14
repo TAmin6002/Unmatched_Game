@@ -56,17 +56,17 @@ void Heroes::set_place(Space *p)
     place = p;
 }
 
-vector<Card> Heroes::get_deck()
+vector<Card>& Heroes::get_deck()
 {
     return deck;
 }
 
-vector<Card> Heroes::get_hand()
+vector<Card>& Heroes::get_hand()
 {
     return hand;
 }
 
-vector<Card> Heroes::get_discard()
+vector<Card>& Heroes::get_discard()
 {
     return discard;
 }

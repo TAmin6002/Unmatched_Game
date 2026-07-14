@@ -1,5 +1,5 @@
 CMakeFiles/app.dir/src/CardResolver.cpp.obj: \
- D:\cpp\myproject\src\CardResolver.cpp \
+ D:/cpp/myproject/src/CardResolver.cpp \
  D:/cpp/myproject/includes/CardResolver.h \
  D:/cpp/myproject/includes/Card.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/string \

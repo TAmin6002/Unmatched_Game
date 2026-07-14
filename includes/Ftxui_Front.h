@@ -40,4 +40,9 @@ public:
     void Defender_Heroes_Menu(Player *, Board *, Heroes *&, Heroes *&);
 
     std::vector<std::string> &get_msg();
+
+    void Attacker_selected_card(Heroes *, Heroes *, Player *, Player *, Board *, Card *&);
+    void Defender_selected_card(Heroes *, Heroes *, Player *, Player *, Board *, Card *&);
+
+    void Reveal_Combat(Heroes*, Heroes*, Card* , Card* );
 };

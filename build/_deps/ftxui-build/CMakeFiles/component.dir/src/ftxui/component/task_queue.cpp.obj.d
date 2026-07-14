@@ -1,5 +1,5 @@
 _deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/task_queue.cpp.obj: \
- D:\cpp\myproject\build\_deps\ftxui-src\src\ftxui\component\task_queue.cpp \
+ D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/component/task_queue.cpp \
  D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/component/task_queue.hpp \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/mutex \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/requires_hosted.h \

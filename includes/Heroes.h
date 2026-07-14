@@ -43,9 +43,9 @@ public:
     Space *get_place();
     void set_place(Space *);
 
-    std::vector<Card> get_deck();
-    std::vector<Card> get_hand();
-    std::vector<Card> get_discard();
+    std::vector<Card>& get_deck();
+    std::vector<Card>& get_hand();
+    std::vector<Card>& get_discard();
 
     void DrawnCard(); // یک کارت میکشد
     int discard_hand();

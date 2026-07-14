@@ -247,7 +247,7 @@ Element Sherlock_Box(Player *p1, Player *p2)
            border;
 }
 
-Element Graph_Box(vector<Space> spaces)
+Element Graph_Box(vector<Space> &spaces)
 {
     auto c = Canvas(200, 65);
 
@@ -555,8 +555,7 @@ Component Ftxui_Front::ChooseAction(Player *p1, Player *p2, ScreenInteractive *s
         "Scheme",
         "Back"};
 
-    int selected = 0;
-    int action = -1;
+    static int selected = 0;
 
     auto menu = Menu(&entries, &selected);
 
@@ -923,11 +922,264 @@ void Ftxui_Front::main_map(Player *p1, Player *p2, Board *board, Player *turn)
 
                                    }) | center,
                                }); });
-
     screen.Loop(renderer);
 }
 
 std::vector<std::string> &Ftxui_Front::get_msg()
 {
     return msg;
+}
+
+void Ftxui_Front::Attacker_selected_card(Heroes *Attacker, Heroes *Defender, Player *p1, Player *p2, Board *board, Card *&Attacker_Card)
+{
+    vector<Card *> AllowHand;
+
+    for (auto &c : Attacker->get_hand())
+    {
+        if (c.get_owner() == Attacker->get_name() ||
+            c.get_owner() == "ANY")
+        {
+            AllowHand.push_back(&c);
+        }
+    }
+
+    vector<string> entries;
+    static int selected = 0;
+
+    for (auto *c : AllowHand)
+        entries.push_back(CardTypeToString(c->get_CardType()));
+
+    auto screen = ScreenInteractive::Fullscreen();
+
+    auto menu = Menu(&entries, &selected);
+
+    auto confirm = Button("Confirm", [&]
+                          { screen.ExitLoopClosure()(); });
+
+    auto left = Renderer(Container::Vertical({
+                             menu,
+                             confirm,
+                         }),
+                         [&]
+                         {
+                             return vbox({
+                                        text("Choose Attack Card") | bold | center,
+                                        separator(),
+                                        menu->Render() | border,
+                                        filler(),
+                                        confirm->Render() | center,
+                                    }) |
+                                    size(WIDTH, EQUAL, 30);
+                         });
+
+    auto graph = Graph_Box(board->get_spaces());
+
+    Element hand;
+
+    if (Attacker->get_name() == "DRACULA" or
+        Attacker->get_name() == "S1ISTER" or
+        Attacker->get_name() == "S2ISTER" or
+        Attacker->get_name() == "S3ISTER")
+
+        hand = Dracula_Hand(p1, p2);
+
+    else if (Attacker->get_name() == "SHERLOCKHOLMES" or Attacker->get_name() == "Dr_Watson")
+        hand = Sherlock_Hand(p1, p2);
+
+    auto renderer = Renderer(Container::Horizontal({
+                                 left,
+                             }),
+                             [&]
+                             {
+                                 return hbox({
+                                     left->Render(),
+                                     separator(),
+                                     vbox({
+                                         graph,
+                                         hand,
+                                     }),
+                                 });
+                             });
+
+    screen.Loop(renderer);
+
+    Attacker_Card = AllowHand[selected];
+}
+
+void Ftxui_Front::Defender_selected_card(Heroes *Attacker, Heroes *Defender, Player *p1, Player *p2, Board *board, Card *&Defender_Card)
+{
+    Heroes *CardOwner = Defender;
+
+    if (Defender->get_name() == "Dr_Watson")
+        CardOwner = p1->get_character()->get_name() == "SHERLOCKHOLMES"
+                        ? p1->get_character()
+                        : p2->get_character();
+
+    else if (Defender->get_name() == "S1ister" ||
+             Defender->get_name() == "S2ister" ||
+             Defender->get_name() == "S3ister")
+
+        CardOwner = p1->get_character()->get_name() == "DRACULA"
+                        ? p1->get_character()
+                        : p2->get_character();
+
+    vector<Card *> AllowHand;
+
+    for (auto &c : CardOwner->get_hand())
+    {
+        if (c.get_owner() == Defender->get_name() || c.get_owner() == "ANY")
+        {
+            AllowHand.push_back(&c);
+        }
+    }
+
+    vector<string> entries;
+    static int selected = 0;
+
+    for (auto *c : AllowHand)
+        entries.push_back(CardTypeToString(c->get_CardType()));
+
+    entries.push_back("No Defense");
+
+    auto screen = ScreenInteractive::Fullscreen();
+
+    auto menu = Menu(&entries, &selected);
+
+    auto confirm = Button("Confirm", [&]
+                          { screen.ExitLoopClosure()(); });
+
+    auto left = Renderer(Container::Vertical({
+                             menu,
+                             confirm,
+                         }),
+                         [&]
+                         {
+                             return vbox({
+                                        text("Choose Defense Card") | bold | center,
+                                        separator(),
+                                        menu->Render() | border,
+                                        filler(),
+                                        confirm->Render() | center,
+                                    }) |
+                                    size(WIDTH, EQUAL, 30);
+                         });
+
+    auto graph = Graph_Box(board->get_spaces());
+
+    Element hand;
+
+    if (Defender->get_name() == "DRACULA" or
+        Defender->get_name() == "S1ISTER" or
+        Defender->get_name() == "S2ISTER" or
+        Defender->get_name() == "S3ISTER")
+
+        hand = Dracula_Hand(p1, p2);
+
+    else if (Defender->get_name() == "SHERLOCKHOLMES" or Defender->get_name() == "Dr_Watson")
+        hand = Sherlock_Hand(p1, p2);
+
+    auto renderer = Renderer(Container::Horizontal({
+                                 left,
+                             }),
+                             [&]
+                             {
+                                 return hbox({
+                                     left->Render(),
+                                     separator(),
+                                     vbox({
+                                         graph,
+                                         hand,
+                                     }),
+                                 });
+                             });
+
+    screen.Loop(renderer);
+
+    if (entries[selected] == "No Defense")
+        Defender_Card = nullptr;
+
+    else
+        Defender_Card = AllowHand[selected];
+}
+
+Element Card_Box(Card *card, string title)
+{
+    if (card == nullptr)
+    {
+        return vbox({
+                   text(title) | bold | center,
+                   separator(),
+                   text("NO DEFENSE") | center | color(Color::Red),
+               }) |
+               borderRounded;
+    }
+
+    return vbox({
+               text(title) | bold | center,
+               separatorHeavy(),
+
+               text(CardTypeToString(card->get_CardType())) | bold | center,
+               separator(),
+
+               hbox({
+                   text("Type : "),
+                   text(card->get_Attacktype()),
+               }),
+
+               hbox({
+                   text("Boost: "),
+                   text(to_string(card->get_Boost())),
+               }),
+
+               hbox({
+                   text("Owner: "),
+                   text(card->get_owner()),
+               }),
+
+               hbox({
+                   text("Time : "),
+                   text(CardTimingToString(card->get_CardTiming())),
+               }),
+           }) |
+           borderRounded | size(WIDTH, EQUAL, 35);
+}
+
+void Ftxui_Front::Reveal_Combat(Heroes *attacker, Heroes *defender, Card *attack_card, Card *defense_card)
+{
+
+    auto screen = ScreenInteractive::Fullscreen();
+
+    auto btn = Button("Resolve Combat", [&]
+                      { screen.ExitLoopClosure()(); });
+
+    auto renderer = Renderer(btn, [&]
+                             { return vbox({
+
+                                   text("COMBAT") | bold | center | color(Color::YellowLight),
+
+                                   separatorDouble(),
+
+                                   hbox({
+                                       vbox({
+                                           text(attacker->get_name()) | center,
+                                           separator(),
+                                           Card_Box(attack_card, "ATTACK"),
+                                       }),
+
+                                       text(" ⚔️  ") | bold | center,
+
+                                       vbox({
+                                           text(defender->get_name()) | center,
+                                           separator(),
+                                           Card_Box(defense_card, "DEFENSE"),
+                                       }),
+                                   }) | center,
+
+                                   separatorDouble(),
+
+                                   btn->Render() | center,
+
+                               }); });
+
+    screen.Loop(renderer);
 }
