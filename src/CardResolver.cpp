@@ -4,46 +4,34 @@
 #include <vector>
 
 using namespace std;
+using namespace ftxui;
 
-NeedInput CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *Attacker, Heroes *Defender, Board *board)
+void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *Attacker, Heroes *Defender, Board *board, int &Attack_Value, int &Defence_Value)
 {
+    Player *Dracula_Player;
+    Player *Sherlock_Player;
+
+    Dracula_Player = (p1->get_name() == "DRACULA" ? p1 : p2);
+    Sherlock_Player = (p1->get_name() == "SHERLOCKHOLMES" ? p1 : p2);
 
     switch (selectedcard->get_CardType())
     {
-
     case CardType::Feedingfrenzy:
     {
         if (selectedcard->get_ApplyEffects())
         {
-            if (p1->get_character()->get_name() == "DRACULA")
+            vector<Space *> opponent = Defender->get_place()->get_zone();
+            for (auto const &o : opponent)
             {
-                vector<Space *> opponent = p2->get_character()->get_place()->get_zone();
-
-                for (auto &s : p1->get_comrade())
+                for (auto const &s : Dracula_Player->get_comrade())
                 {
-                    for (auto const &o : opponent)
-                    {
-                        if (s->get_place() == o)
-                            selectedcard->add_amount(1);
-                    }
-                }
-            }
-
-            else if (p2->get_character()->get_name() == "DRACULA")
-            {
-                vector<Space *> opponent = p1->get_character()->get_place()->get_zone();
-
-                for (auto &s : p2->get_comrade())
-                {
-                    for (auto const &o : opponent)
-                    {
-                        if (s->get_place() == o)
-                            selectedcard->add_amount(1);
-                    }
+                    if (o == s->get_place())
+                        Attack_Value++;
                 }
             }
         }
-        return NeedInput::None;
+
+        // return NeedInput::None;
         break;
     }
 
@@ -51,21 +39,10 @@ NeedInput CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroe
     {
         if (selectedcard->get_ApplyEffects())
         {
-            // put Dracula in any space ...
-
-            if (p1->get_character()->get_name() == "DRACULA")
-            {
-                p1->get_character()->add_Action(1);
-                return NeedInput::PlaceDraculaAnywhere;
-            }
-
-            else if (p2->get_character()->get_name() == "DRACULA")
-            {
-                p2->get_character()->add_Action(1);
-                return NeedInput::PlaceDraculaAnywhere;
-            }
+            FF.put_in_any_space(Dracula_Player->get_character(), board);
+            Dracula_Player->get_character()->add_Action(1);
         }
-        return NeedInput::None;
+        // return NeedInput::None;
         break;
     }
 
@@ -73,19 +50,9 @@ NeedInput CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroe
     {
         if (selectedcard->get_ApplyEffects())
         {
-            if (p1->get_character()->get_name() == "DRACULA" or p1->get_comrade()[0]->get_name() == "SISTERS")
-            {
-                selectedcard->add_amount(p2->get_character()->discard_hand());
-            }
-
-            else if (p2->get_character()->get_name() == "DRACULA" or p2->get_comrade()[0]->get_name() == "SISTERS")
-            {
-                selectedcard->add_amount(p1->get_character()->discard_hand());
-            }
-
-            // بعد از محاسبه این مقدار افزایش یافه برمیگردد
+            Attack_Value += Sherlock_Player->get_character()->discard_hand();
         }
-        return NeedInput::None;
+        // return NeedInput::None;
         break;
     }
 
@@ -93,31 +60,26 @@ NeedInput CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroe
     {
         if (selectedcard->get_ApplyEffects())
         {
+            Dracula_Player->get_character()->set_Health(2, 13);
 
-            if (p1->get_character()->get_name() == "DRACULA")
+            Heroes *sister = nullptr;
+
+            for (auto &s : Dracula_Player->get_comrade()) // SISTERS
             {
-                p1->get_character()->set_Health(2, 13);
-
-                for (auto &s : p1->get_comrade())
+                if (!s->get_islive())
                 {
-                    if (s->get_islive() == false)
-                        return NeedInput::PlaceSisterInDraculaZone;
+                    sister = s;
                 }
             }
-            return NeedInput::None;
-        }
 
-        else if (p2->get_character()->get_name() == "DRACULA")
-        {
-            p2->get_character()->set_Health(2, 13);
-
-            for (auto &s : p2->get_comrade())
+            if (sister != nullptr)
             {
-                if (s->get_islive() == false)
-                    return NeedInput::PlaceSisterInDraculaZone;
-            }
+                sister->set_islive(true);
+                sister->set_Health(1, 1);
 
-            return NeedInput::None;
+                FF.Revive_Sister(sister, Dracula_Player->get_character(), board);
+            }
+            // return NeedInput::None;
         }
     }
 
@@ -125,19 +87,18 @@ NeedInput CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroe
     {
         if (selectedcard->get_ApplyEffects())
         {
-            return NeedInput::SelectOwnCardToDiscard;
+            Attack_Value += FF.DiscardCards(Attacker);
         }
 
         break;
     }
 
-    case CardType::Dash: // uncomplate ......??????
+    case CardType::Dash:
     {
         if (selectedcard->get_ApplyEffects())
         {
-            return NeedInput::MoveOwnFighter3;
+            FF.MoveHero(selectedcard->get_user_card(), board, 3);
         }
-        return NeedInput::None;
         break;
     }
 
@@ -148,15 +109,17 @@ NeedInput CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroe
 
             if (p1->get_character()->get_name() == "DRACULA" or p1->get_comrade()[0]->get_name() == "SISTERS")
             {
-                p1->get_character()->DrawnCard();
+                if (p1->get_character()->DrawnCard() == 0)
+                    p1->get_character()->Damage(2);
             }
 
             else if (p2->get_character()->get_name() == "DRACULA" or p2->get_comrade()[0]->get_name() == "SISTERS")
             {
-                p2->get_character()->DrawnCard();
+                if (p2->get_character()->DrawnCard() == 0)
+                    p2->get_character()->Damage(2);
             }
         }
-        return NeedInput::None;
+        // return NeedInput::None;
         break;
     }
 
@@ -164,20 +127,10 @@ NeedInput CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroe
     {
         if (selectedcard->get_ApplyEffects())
         {
-
-            if (p1->get_character()->get_name() == "DRACULA")
-            {
-                int Boost = p2->get_selected_card().get_Boost(); // Opponent's card boost amount
-                p1->get_selected_card().set_amount(Boost);
-            }
-
-            else if (p2->get_character()->get_name() == "DRACULA")
-            {
-                int Boost = p1->get_selected_card().get_Boost(); // Opponent's card boost amount
-                p2->get_selected_card().set_amount(Boost);
-            }
+            int Boost = Sherlock_Player->get_selected_card()->get_Boost();
+            selectedcard->set_amount(Boost);
         }
-        return NeedInput::None;
+        // return NeedInput::None;
         break;
     }
 
@@ -185,35 +138,45 @@ NeedInput CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroe
     {
         if (selectedcard->get_ApplyEffects())
         {
+            int count = 0;
+
             if (p1->get_character()->get_name() == "DRACULA")
             {
+                count = 0;
 
                 if (board->is_Adjacent(p1->get_character()->get_place(), p2->get_character()->get_place()))
                 {
                     p2->get_character()->Damage(1);
+                    count++;
                 }
 
                 if (board->is_Adjacent(p1->get_character()->get_place(), p2->get_comrade()[0]->get_place()))
                 {
                     p2->get_comrade()[0]->Damage(1);
+                    count++;
                 }
+                p1->get_character()->set_Health(count, 13);
             }
 
             else if (p2->get_character()->get_name() == "DRACULA")
             {
+                count = 0;
 
                 if (board->is_Adjacent(p2->get_character()->get_place(), p1->get_character()->get_place()))
                 {
                     p1->get_character()->Damage(1);
+                    count++;
                 }
 
                 if (board->is_Adjacent(p2->get_character()->get_place(), p1->get_comrade()[0]->get_place()))
                 {
                     p1->get_comrade()[0]->Damage(1);
+                    count++;
                 }
+                p2->get_character()->set_Health(count, 13);
             }
         }
-        return NeedInput::None;
+        // return NeedInput::None;
         break;
     }
 
@@ -221,7 +184,24 @@ NeedInput CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroe
     {
         if (selectedcard->get_ApplyEffects())
         {
-            return NeedInput::MoveOpponentFighter;
+            Heroes *target = FF.SelectHero(board);
+
+            FF.MoveHero(target, board, 2);
+
+            int damage = 0;
+
+            for (Space *space : target->get_place()->get_neighbor())
+            {
+                Heroes *hero = space->get_hero();
+
+                if (hero == nullptr)
+                    continue;
+
+                if (hero->get_name() == "S1ISTER" or hero->get_name() == "S2ISTER" or hero->get_name() == "S3ISTER")
+                    damage++;
+            }
+
+            target->Damage(damage);
         }
 
         break;
@@ -231,98 +211,60 @@ NeedInput CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroe
     {
         if (selectedcard->get_ApplyEffects())
         {
-            if (p1->get_comrade()[0]->get_name() == "SISTERS")
+            if (Attack_Value - Defence_Value >= 1)
             {
-                if (p1->get_isAttacker())
-                {
-                    if (p1->get_selected_card().get_amount() - p2->get_selected_card().get_amount() >= 1)
-                    {
-                        return NeedInput::PlaceDraculaAdjacentToOpponent;
-                    }
-                }
-
-                else
-                {
-                    if (p1->get_selected_card().get_amount() - p2->get_selected_card().get_amount() < 1)
-                    {
-                        return NeedInput::PlaceDraculaAdjacentToOpponent;
-                    }
-                }
+                FF.PlaceHeroAdjacent(Dracula_Player->get_character(), Defender, board);
             }
 
-            else if (p2->get_comrade()[0]->get_name() == "SISTERS")
-            {
-                if (p2->get_isAttacker())
-                {
-                    if (p2->get_selected_card().get_amount() - p1->get_selected_card().get_amount() >= 1)
-                    {
-                        return NeedInput::PlaceDraculaAdjacentToOpponent;
-                    }
-                }
-
-                else
-                {
-                    if (p2->get_selected_card().get_amount() - p1->get_selected_card().get_amount() < 1)
-                    {
-                        return NeedInput::PlaceDraculaAdjacentToOpponent;
-                    }
-                }
-            }
-        }
-        return NeedInput::None;
-        break;
-    }
-    case CardType::Feint:
-    {
-        if (selectedcard->get_ApplyEffects())
-        {
-            if (p1->get_character()->get_name() == "DRACULA" or p1->get_comrade()[0]->get_name() == "SISTERS")
-            {
-                p2->get_selected_card().set_ApplyEffects(false); // Cancel the effect opponent's card.
-            }
-
-            else if (p2->get_character()->get_name() == "DRACULA" or p2->get_comrade()[0]->get_name() == "SISTERS")
-            {
-                p1->get_selected_card().set_ApplyEffects(false); // Cancel the effect opponent's card.
-            }
-            return NeedInput::None;
+            // return NeedInput::None;
             break;
         }
     }
 
-        // if (p1->get_character()->get_name() == "DRACULA" or p1->get_comrade()->get_name() == "SISTERS")
-        // {
-        // }
+    case CardType::Feint:
+    {
+        if (selectedcard->get_ApplyEffects())
+        {
+            if (p1->get_character()->get_name() == "DRACULA" or p1->get_comrade()[0]->get_name() == "S1ISTERS")
+            {
+                p2->get_selected_card()->set_ApplyEffects(false); // Cancel the effect opponent's card.
+            }
 
-        // else if (p2->get_character()->get_name() == "DRACULA" or p2->get_comrade()->get_name() == "SISTERS")
-        // {
-        // }
+            else if (p2->get_character()->get_name() == "DRACULA" or p2->get_comrade()[0]->get_name() == "SISTERS")
+            {
+                p1->get_selected_card()->set_ApplyEffects(false); // Cancel the effect opponent's card.
+            }
+            // return NeedInput::None;
+            break;
+        }
+    }
 
     case CardType::Administer_Aid:
     {
         if (selectedcard->get_ApplyEffects())
         {
-            if (p1->get_comrade()[0]->get_name() == "Dr_Watson")
-            { // ..........................................................................
-                for (auto &s : p1->get_character()->get_place()->get_neighbor())
-                {
-                    if (s->get_hero() == nullptr)
-                        p1->get_comrade()[0]->set_place(s);
-                }
-
-                p1->get_character()->set_Health(1, 16); // adding a Health to sherlock
-            }
-
-            else if (p2->get_comrade()[0]->get_name() == "Dr_Watson")
+            if (p1->get_character()->get_name() == "SHERLOCKHOLMES" or p1->get_comrade()[0]->get_name() == "Dr_Watson")
             {
-                for (auto &s : p2->get_character()->get_place()->get_neighbor())
+                FF.PlaceHeroAdjacent(p1->get_character(), p1->get_comrade()[0], board);
+                p1->get_character()->set_Health(1, 16);
+                if (p1->get_character()->DrawnCard() == 0)
                 {
-                    if (s->get_hero() == nullptr)
-                        p2->get_comrade()[0]->set_place(s);
+                    p1->get_character()->Damage(2);
                 }
-                p2->get_character()->set_Health(1, 16); // adding a Health to sherlock
             }
-            return NeedInput::None;
+
+            else if (p2->get_character()->get_name() == "SHERLOCKHOLMES" or p2->get_comrade()[0]->get_name() == "Dr_Watson")
+            {
+                FF.PlaceHeroAdjacent(p2->get_character(), p2->get_comrade()[0], board);
+                p2->get_character()->set_Health(1, 16);
+
+                if (p2->get_character()->DrawnCard() == 0)
+                {
+                    p2->get_character()->Damage(2);
+                }
+            }
+
+            // return NeedInput::None;
             break;
         }
     }
@@ -343,46 +285,19 @@ NeedInput CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroe
     {
         if (selectedcard->get_ApplyEffects())
         {
-
-            if (p1->get_character()->get_name() == "SHERLOCKHOLMES")
+            if (Attacker->get_name() == "SHERLOCKHOLMES")
             {
-                if (p1->get_isAttacker())
-                {
-                    if (board->is_Adjacent(p1->get_character()->get_place(), Defender->get_place()))
-                    {
-                        Defender->Damage(2);
-                    }
-                }
-
-                else
-                {
-                    if (board->is_Adjacent(p1->get_character()->get_place(), Attacker->get_place()))
-                    {
-                        Attacker->Damage(2);
-                    }
-                }
-            }
-        }
-
-        else if (p2->get_character()->get_name() == "SHERLOCKHOLMES")
-        {
-            if (p2->get_isAttacker())
-            {
-                if (board->is_Adjacent(p2->get_character()->get_place(), Defender->get_place()))
-                {
+                if (board->is_Adjacent(Attacker->get_place(), Defender->get_place()))
                     Defender->Damage(2);
-                }
             }
 
-            else
+            else if (Defender->get_name() == "SHERLOCKHOLMES")
             {
-                if (board->is_Adjacent(p2->get_character()->get_place(), Attacker->get_place()))
-                {
+                if (board->is_Adjacent(Defender->get_place(), Attacker->get_place()))
                     Attacker->Damage(2);
-                }
             }
         }
-        return NeedInput::None;
+        // return NeedInput::None;
         break;
     }
 
@@ -393,16 +308,16 @@ NeedInput CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroe
 
             if (p1->get_character()->get_name() == "SHERLOCKHOLMES")
             {
-                int Boost = p2->get_selected_card().get_Boost();
-                p2->get_selected_card().set_amount(Boost);
+                int Boost = p2->get_selected_card()->get_Boost();
+                p2->get_selected_card()->set_amount(Boost);
             }
 
             else if (p2->get_character()->get_name() == "SHERLOCKHOLMES")
             {
-                int Boost = p1->get_selected_card().get_Boost();
-                p1->get_selected_card().set_amount(Boost);
+                int Boost = p1->get_selected_card()->get_Boost();
+                p1->get_selected_card()->set_amount(Boost);
             }
-            return NeedInput::None;
+            // return NeedInput::None;
             break;
         }
     }
@@ -411,46 +326,46 @@ NeedInput CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroe
     {
         if (selectedcard->get_ApplyEffects())
         {
-            if (p1->get_character()->get_name() == "SHERLOCKHOLMES" or p1->get_comrade()[0]->get_name() == "Dr_Watson")
+            if (Attacker->get_name() == "SHERLOCKHOLMES")
             {
-                if (p1->get_isAttacker())
+                if (Attack_Value - Defence_Value >= 1)
                 {
-                    // if we were Attakcer :
-                    if ((p1->get_selected_card().get_amount() - p2->get_selected_card().get_amount()) >= 1)
-                    {
-                        // if we had won :
-                        p2->get_character()->DrawnCard();
-                    }
-                    else
-                    {
-                        p1->get_character()->DrawnCard();
-                        p1->get_character()->DrawnCard();
-                    }
+                    Defender->DrawnCard();
                 }
-            }
-            else if (p2->get_character()->get_name() == "SHERLOCKHOLMES" or p2->get_comrade()[0]->get_name() == "Dr_Watson")
-            {
-                if (p2->get_isAttacker())
+
+                else
                 {
-
-                    // if we were Attakcer :
-                    if ((p2->get_selected_card().get_amount() - p1->get_selected_card().get_amount()) >= 1)
+                    if (Attacker->DrawnCard() == 0)
                     {
-                        // if we had won :
-                        p1->get_character()->DrawnCard();
+                        Attacker->Damage(2);
                     }
-
                     else
-                    {
-                        p2->get_character()->DrawnCard();
-                        p2->get_character()->DrawnCard();
-                    }
+                        Attacker->DrawnCard();
                 }
             }
         }
-        return NeedInput::None;
-        break;
+        else if (Defender->get_name() == "SHERLOCKHOLMES")
+        {
+            if (Attack_Value - Defence_Value <= 0)
+            {
+                if (Defender->DrawnCard() == 0)
+                    Defender->Damage(2);
+            }
+
+            else
+            {
+                if (Defender->DrawnCard() == 0)
+                {
+                    Defender->Damage(2);
+                }
+                else
+                    Defender->DrawnCard();
+            }
+        }
     }
+
+    // return NeedInput::None;
+    break;
 
         // case CardType::Elementary:
         // {
@@ -460,116 +375,77 @@ NeedInput CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroe
 
     case CardType::Eliminate_The_Impossible:
     {
-        return NeedInput::SelectCardToDiscard; // در کنترلر انجام میشود ...
+        if (selectedcard->get_ApplyEffects())
+        {
+            Sherlock_Player->get_character()->Discard_Card(FF.ChooseCardFromHand(Dracula_Player, p1, p2, board));
+        }
         break;
     }
 
     case CardType::Feint2:
     {
-
-        if (p1->get_character()->get_name() == "SHERLOCKHOLMES" or p1->get_comrade()[0]->get_name() == "Dr_Watson")
+        if (selectedcard->get_ApplyEffects())
         {
-            p2->get_selected_card().set_ApplyEffects(false); // p2 dis carding
+            Dracula_Player->get_selected_card()->set_ApplyEffects(false); // dis card opponent
         }
-
-        else if (p2->get_character()->get_name() == "SHERLOCKHOLMES" or p2->get_comrade()[0]->get_name() == "Dr_Watson")
-        {
-            p1->get_selected_card().set_ApplyEffects(false); // p1 dis carding
-        }
-        return NeedInput::None;
+        // return NeedInput::None;
         break;
     }
 
     case CardType ::Fixed_Point_in_a_Changing_Age:
     {
-
-        if (p1->get_comrade()[0]->get_name() == "Dr_Watson")
+        if (selectedcard->get_ApplyEffects())
         {
-            if (board->is_Adjacent(p1->get_character()->get_place(), p1->get_comrade()[0]->get_place()))
+            if (board->is_Adjacent(Sherlock_Player->get_character()->get_place(), Sherlock_Player->get_comrade()[0]->get_place()))
             {
-                p1->get_character()->set_Health(1, 16);
-                p1->get_comrade()[0]->set_Health(1, 8);
+                Sherlock_Player->get_character()->set_Health(1, 16);
+                Sherlock_Player->get_comrade()[0]->set_Health(1, 8);
             }
         }
-
-        else if (p2->get_comrade()[0]->get_name() == "Dr_Watson")
-        {
-            if (board->is_Adjacent(p2->get_character()->get_place(), p2->get_comrade()[0]->get_place()))
-            {
-                p2->get_character()->set_Health(1, 16);
-                p2->get_comrade()[0]->set_Health(1, 8);
-            }
-        }
-        return NeedInput::None;
+        // return NeedInput::None;
         break;
     }
 
     case CardType::Master_of_Disguise:
     {
-        if (p1->get_character()->get_name() == "SHERLOCKHOLMES")
+        if (selectedcard->get_ApplyEffects())
         {
             if (Attacker->get_name() == "SHERLOCKHOLMES")
-            {
-                p1->get_character()->set_place(Defender->get_place());
+                board->SwapHeroes(Attacker, Defender);
 
-                Defender->Damage(1);
-            }
-
-            if (Defender->get_name() == "SHERLOCKHOLMES")
-            {
-                p1->get_character()->set_place(Attacker->get_place());
-                Attacker->Damage(1);
-            }
-            if (Attacker->get_name() == "SHERLOCKHOLMES")
-            {
-                p1->get_character()->set_place(Defender->get_place());
-
-                Defender->Damage(1);
-            }
-
-            if (Defender->get_name() == "SHERLOCKHOLMES")
-            {
-                p1->get_character()->set_place(Attacker->get_place());
-                Attacker->Damage(1);
-            }
+            else
+                board->SwapHeroes(Defender, Attacker);
         }
-
-        else if (p2->get_character()->get_name() == "SHERLOCKHOLMES")
-        {
-            if (Attacker->get_name() == "SHERLOCKHOLMES")
-            {
-                p2->get_character()->set_place(Defender->get_place());
-
-                Defender->Damage(1);
-            }
-
-            if (Defender->get_name() == "SHERLOCKHOLMES")
-            {
-                p2->get_character()->set_place(Attacker->get_place());
-                Attacker->Damage(1);
-            }
-        }
-        return NeedInput::None;
-        break;
     }
+
+    // return NeedInput::None;
+    break;
 
     case CardType::The_Game_Is_Afoot:
     {
-        if (p1->get_character()->get_name() == "SHERLOCKHOLMES" or p2->get_character()->get_name() == "SHERLOCKHOLMES")
-            return NeedInput::MoveSherlock3;
+        FF.MoveHero(Sherlock_Player->get_character(), board, 3);
         break;
     }
 
     case CardType::Service_Revolver:
     {
         // hase't .
-        return NeedInput::None;
+        // return NeedInput::None;
         break;
     }
 
     case CardType::Study_Methods:
     {
-        return NeedInput::ShowOpponentHand;
+        if (Attacker->get_name() == "SHERLOCKHOLMES" or Attacker->get_name() == "Dr_Watson")
+        {
+            if (Attack_Value - Defence_Value >= 1)
+                FF.ShowHand(Defender, p1, p2, board);
+        }
+        else
+        {
+            if (Attack_Value - Defence_Value >= 0)
+                FF.ShowHand(Attacker, p1, p2, board);
+        }
         break;
     }
     }

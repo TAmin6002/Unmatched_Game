@@ -91,3 +91,21 @@ std::vector<Space> &Board::get_spaces()
 {
     return spaces;
 }
+
+void Board::SwapHeroes(Heroes *hero1, Heroes *hero2)
+{
+    if (hero1 == nullptr || hero2 == nullptr)
+        throw std::runtime_error("Hero is nullptr.");
+
+    Space *place1 = hero1->get_place();
+    Space *place2 = hero2->get_place();
+
+    if (place1 == nullptr || place2 == nullptr)
+        throw std::runtime_error("Hero has no place.");
+
+    place1->set_hero(hero2);
+    place2->set_hero(hero1);
+
+    hero1->set_place(place2);
+    hero2->set_place(place1);
+}

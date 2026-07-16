@@ -57,3 +57,13 @@ std::string Card::get_Attacktype()
 {
     return typeAttack;
 }
+
+void Card::set_user_card(Heroes *hero)
+{
+    user = hero;
+}
+
+Heroes *Card::get_user_card()
+{
+    return user;
+}

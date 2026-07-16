@@ -150,16 +150,17 @@ CMakeFiles/app.dir/src/Controller.cpp.obj: \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/stl_numeric.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/pstl/glue_numeric_defs.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/pstl/execution_defs.h \
- D:/cpp/myproject/includes/Space.h D:/cpp/myproject/includes/Sisters.h \
- D:/cpp/myproject/includes/SherlockHolmes.h \
- D:/cpp/myproject/includes/Dr_Watson.h D:/cpp/myproject/includes/Player.h \
- D:/cpp/myproject/includes/board.h D:/cpp/myproject/includes/space.h \
- D:/cpp/myproject/includes/Ftxui_Front.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/stdexcept \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/exception \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/exception_ptr.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/cxxabi_init_exception.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/nested_exception.h \
+ D:/cpp/myproject/includes/Space.h D:/cpp/myproject/includes/Sisters.h \
+ D:/cpp/myproject/includes/SherlockHolmes.h \
+ D:/cpp/myproject/includes/Dr_Watson.h D:/cpp/myproject/includes/Player.h \
+ D:/cpp/myproject/includes/board.h D:/cpp/myproject/includes/space.h \
+ D:/cpp/myproject/includes/CardResolver.h \
+ D:/cpp/myproject/includes/Ftxui_Front.h \
  D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/component/component.hpp \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/memory \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/stl_raw_storage_iter.h \
@@ -261,4 +262,8 @@ CMakeFiles/app.dir/src/Controller.cpp.obj: \
  D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/component/event.hpp \
  D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/component/mouse.hpp \
  D:/cpp/myproject/includes/Board.h \
+ C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/set \
+ C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/stl_tree.h \
+ C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/stl_set.h \
+ C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/stl_multiset.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/iostream

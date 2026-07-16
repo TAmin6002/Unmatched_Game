@@ -61,12 +61,12 @@ bool Player::get_isAttacker()
     return is_Attacker;
 }
 
-Card Player::get_selected_card()
+Card *Player::get_selected_card()
 {
     return selected_card;
 }
 
-void Player::set_selected_card(Card card)
+void Player::set_selected_card(Card *card)
 {
     selected_card = card;
 }

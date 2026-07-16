@@ -1004,6 +1004,13 @@ void Ftxui_Front::Attacker_selected_card(Heroes *Attacker, Heroes *Defender, Pla
     screen.Loop(renderer);
 
     Attacker_Card = AllowHand[selected];
+
+    if (p1->get_character()->get_name() == Attacker->get_name() or p1->get_comrade()[0]->get_name() == Attacker->get_name())
+    {
+        p1->set_selected_card(AllowHand[selected]);
+    }
+    else
+        p2->set_selected_card(AllowHand[selected]);
 }
 
 void Ftxui_Front::Defender_selected_card(Heroes *Attacker, Heroes *Defender, Player *p1, Player *p2, Board *board, Card *&Defender_Card)
@@ -1096,10 +1103,27 @@ void Ftxui_Front::Defender_selected_card(Heroes *Attacker, Heroes *Defender, Pla
     screen.Loop(renderer);
 
     if (entries[selected] == "No Defense")
+    {
         Defender_Card = nullptr;
+        if (p1->get_character()->get_name() == Defender->get_name() or p1->get_comrade()[0]->get_name() == Defender->get_name())
+        {
+            p1->set_selected_card(nullptr);
+        }
+        else
+            p1->set_selected_card(nullptr);
+    }
 
     else
+    {
         Defender_Card = AllowHand[selected];
+
+        if (p1->get_character()->get_name() == Defender->get_name() or p1->get_comrade()[0]->get_name() == Defender->get_name())
+        {
+            p1->set_selected_card(AllowHand[selected]);
+        }
+        else
+            p1->set_selected_card(AllowHand[selected]);
+    }
 }
 
 Element Card_Box(Card *card, string title)
@@ -1182,4 +1206,452 @@ void Ftxui_Front::Reveal_Combat(Heroes *attacker, Heroes *defender, Card *attack
                                }); });
 
     screen.Loop(renderer);
+}
+
+void Ftxui_Front::put_in_any_space(Heroes *fighter, Board *board)
+{
+    auto screen = ScreenInteractive::Fullscreen();
+
+    static int selected = 0;
+    vector<Space *> AllowSpace;
+    vector<string> entries;
+
+    for (auto &b : board->get_spaces())
+    {
+        if (&b == nullptr)
+        {
+            AllowSpace.push_back(&b);
+            entries.push_back("Spase" + to_string(b.get_number()));
+        }
+    }
+
+    auto menu = Menu(&entries, &selected);
+
+    auto renderer = Renderer(menu, [&]
+                             { return vbox({text("Choose a space:"),
+                                            menu->Render()}); });
+
+    auto component = CatchEvent(renderer, [&](Event event)
+                                {
+
+        if(event == Event::Return)
+        {
+            cout << "Selected: "
+                 << entries[selected]
+                 << endl;
+
+            screen.ExitLoopClosure()();
+            return true;
+        }
+
+        return false; });
+
+    screen.Loop(component);
+
+    fighter->set_place(AllowSpace[selected]);
+    AllowSpace[selected]->set_hero(fighter);
+}
+
+void Ftxui_Front::Revive_Sister(Heroes *sister, Heroes *dracula, Board *board)
+{
+    std::vector<Space *> available_spaces;
+    std::vector<std::string> entries;
+
+    for (Space *space : dracula->get_place()->get_zone())
+    {
+        if (space->get_hero() == nullptr)
+        {
+            available_spaces.push_back(space);
+
+            entries.push_back(
+                "Space " + std::to_string(space->get_number()));
+        }
+    }
+
+    if (available_spaces.empty())
+    {
+        // exeption ...
+        throw std::runtime_error("No available adjacent spaces to move.");
+    }
+
+    int selected = 0;
+
+    auto menu = Menu(&entries, &selected);
+
+    auto renderer = Renderer(menu, [&]
+                             { return hbox({Graph_Box(board->get_spaces()),
+                                            separator(),
+                                            window(
+                                                text("Choose revive position"),
+                                                menu->Render())}); });
+
+    ScreenInteractive screen = ScreenInteractive::Fullscreen();
+
+    auto component = CatchEvent(renderer, [&](Event event)
+                                {
+        if (event == Event::Return)
+        {
+            sister->set_place(available_spaces[selected]);
+
+            available_spaces[selected]->set_hero(sister);
+
+            screen.Exit();
+            return true;
+        }
+
+        return false; });
+
+    screen.Loop(component);
+}
+
+int Ftxui_Front::DiscardCards(Heroes *dracula)
+{
+    int discard_count = 0;
+
+    while (true)
+    {
+        std::vector<std::string> entries;
+
+        for (auto &card : dracula->get_hand())
+            entries.push_back(CardTypeToString(card.get_CardType()));
+
+        entries.push_back("Done");
+
+        int selected = 0;
+
+        auto menu = Menu(&entries, &selected);
+
+        ScreenInteractive screen = ScreenInteractive::Fullscreen();
+
+        auto renderer = Renderer(menu, [&]
+                                 { return window(
+                                       text("Choose cards to discard"),
+                                       menu->Render()); });
+
+        auto component = CatchEvent(renderer, [&](Event event)
+                                    {
+            if (event == Event::Return)
+            {
+                screen.Exit();
+                return true;
+            }
+
+            return false; });
+
+        screen.Loop(component);
+
+        if (selected == (int)entries.size() - 1)
+            break;
+
+        dracula->DiscardCard(selected);
+
+        discard_count++;
+    }
+
+    return discard_count;
+}
+
+void Ftxui_Front::MoveHero(Heroes *hero, Board *board, int max_distance)
+{
+    std::vector<Space *> available_spaces;
+    std::vector<std::string> entries;
+
+    std::queue<std::pair<Space *, int>> q;
+    std::set<Space *> visited;
+
+    Space *start = hero->get_place();
+
+    q.push({start, 0});
+    visited.insert(start);
+
+    while (!q.empty())
+    {
+        auto [current, distance] = q.front();
+        q.pop();
+
+        if (distance == max_distance)
+            continue;
+
+        for (Space *next : current->get_neighbor())
+        {
+            if (visited.count(next))
+                continue;
+
+            visited.insert(next);
+
+            q.push({next, distance + 1});
+
+            if (next->get_hero() == nullptr)
+            {
+                available_spaces.push_back(next);
+
+                entries.push_back(
+                    "Space " + std::to_string(next->get_number()));
+            }
+        }
+    }
+
+    if (available_spaces.empty())
+        throw std::runtime_error("No available spaces.");
+
+    int selected = 0;
+
+    auto menu = Menu(&entries, &selected);
+
+    auto renderer = Renderer(menu, [&]
+                             { return hbox({Graph_Box(board->get_spaces()),
+                                            separator(),
+                                            window(
+                                                text("Choose destination"),
+                                                menu->Render())}); });
+
+    ScreenInteractive screen = ScreenInteractive::Fullscreen();
+
+    auto component = CatchEvent(renderer,
+                                [&](Event event)
+                                {
+                                    if (event == Event::Return)
+                                    {
+                                        Space *current = hero->get_place();
+                                        Space *target = available_spaces[selected];
+
+                                        current->set_hero(nullptr);
+
+                                        target->set_hero(hero);
+
+                                        hero->set_place(target);
+
+                                        screen.Exit();
+                                        return true;
+                                    }
+
+                                    return false;
+                                });
+
+    screen.Loop(component);
+}
+
+Heroes *Ftxui_Front::SelectHero(Board *board)
+{
+    std::vector<Heroes *> fighters;
+    std::vector<std::string> entries;
+
+    for (Space &space : board->get_spaces())
+    {
+        Heroes *hero = space.get_hero();
+
+        if (hero == nullptr)
+            continue;
+
+        if (!hero->get_islive())
+            continue;
+
+        fighters.push_back(hero);
+
+        entries.push_back(
+            hero->get_name() +
+            " (Space " + std::to_string(space.get_number()) + ")");
+    }
+
+    if (fighters.empty())
+        throw std::runtime_error("No fighters available.");
+
+    int selected = 0;
+
+    auto menu = Menu(&entries, &selected);
+
+    auto renderer = Renderer(menu, [&]
+                             { return hbox({Graph_Box(board->get_spaces()),
+                                            separator(),
+                                            window(
+                                                text("Choose Fighter"),
+                                                menu->Render())}); });
+
+    ScreenInteractive screen = ScreenInteractive::Fullscreen();
+
+    auto component = CatchEvent(renderer,
+                                [&](Event event)
+                                {
+                                    if (event == Event::Return)
+                                    {
+                                        screen.Exit();
+                                        return true;
+                                    }
+
+                                    return false;
+                                });
+
+    screen.Loop(component);
+
+    return fighters[selected];
+}
+
+void Ftxui_Front::PlaceHeroAdjacent(
+    Heroes *hero,
+    Heroes *target,
+    Board *board)
+{
+    if (hero == nullptr || target == nullptr)
+        throw std::runtime_error("Hero is nullptr.");
+
+    std::vector<Space *> available;
+
+    for (Space *space : target->get_place()->get_zone())
+    {
+        if (space->get_hero() == nullptr)
+            available.push_back(space);
+    }
+
+    if (available.empty())
+        throw std::runtime_error("No adjacent empty spaces.");
+
+    std::vector<std::string> entries;
+
+    for (Space *space : available)
+    {
+        entries.push_back("Space " + std::to_string(space->get_number()));
+    }
+
+    int selected = 0;
+
+    auto menu = Menu(&entries, &selected);
+
+    ScreenInteractive screen = ScreenInteractive::Fullscreen();
+
+    auto component = CatchEvent(menu,
+                                [&](Event event)
+                                {
+                                    if (event == Event::Return)
+                                    {
+                                        screen.Exit();
+                                        return true;
+                                    }
+
+                                    return false;
+                                });
+
+    auto renderer = Renderer(component,
+                             [&]
+                             {
+                                 return hbox({Graph_Box(board->get_spaces()),
+                                              separator(),
+                                              window(
+                                                  text("Choose Adjacent Space"),
+                                                  component->Render())});
+                             });
+
+    screen.Loop(renderer);
+
+    Space *destination = available[selected];
+
+    hero->get_place()->set_hero(nullptr);
+
+    destination->set_hero(hero);
+
+    hero->set_place(destination);
+}
+
+void Ftxui_Front::ShowHand(Heroes *owner, Player *p1, Player *p2, Board *board)
+{
+    ScreenInteractive screen = ScreenInteractive::Fullscreen();
+
+    std::vector<std::string> entries = {"Continue"};
+    int selected = 0;
+
+    auto menu = Menu(&entries, &selected);
+
+    auto component = CatchEvent(menu,
+                                [&](Event event)
+                                {
+                                    if (event == Event::Return)
+                                    {
+                                        screen.Exit();
+                                        return true;
+                                    }
+
+                                    return false;
+                                });
+
+    auto renderer = Renderer(component,
+                             [&]
+                             {
+                                 Element hand;
+
+                                 if (owner->get_name() == "DRACULA")
+                                     hand = Dracula_Hand(p1, p2);
+                                 else
+                                     hand = Sherlock_Hand(p1, p2);
+
+                                 return hbox({
+                                     Graph_Box(board->get_spaces()),
+                                     separator(),
+                                     vbox({
+                                         hand,
+                                         separator(),
+                                         window(
+                                             text("Continue"),
+                                             component->Render()),
+                                     }),
+                                 });
+                             });
+
+    screen.Loop(renderer);
+}
+
+Card *Ftxui_Front::ChooseCardFromHand(Player *owner, Player *p1, Player *p2, Board *board)
+{
+    auto &hand = owner->get_character()->get_hand();
+
+    if (hand.empty())
+        throw std::runtime_error("Hand is empty.");
+
+    std::vector<std::string> entries;
+
+    for (int i = 0; i < hand.size(); i++)
+        entries.push_back("Card " + std::to_string(i + 1));
+
+    int selected = 0;
+
+    auto menu = Menu(&entries, &selected);
+
+    ScreenInteractive screen = ScreenInteractive::Fullscreen();
+
+    auto component = CatchEvent(menu,
+                                [&](Event event)
+                                {
+                                    if (event == Event::Return)
+                                    {
+                                        screen.Exit();
+                                        return true;
+                                    }
+
+                                    return false;
+                                });
+
+    auto renderer = Renderer(component,
+                             [&]
+                             {
+                                 Element hand_element;
+
+                                 if (owner->get_character()->get_name() == "DRACULA")
+                                     hand_element = Dracula_Hand(p1, p2);
+                                 else
+                                     hand_element = Sherlock_Hand(p1, p2);
+
+                                 return hbox({
+                                     Graph_Box(board->get_spaces()),
+                                     separator(),
+                                     vbox({
+                                         hand_element,
+                                         separator(),
+                                         window(
+                                             text("Choose Card"),
+                                             component->Render()),
+                                     }),
+                                 });
+                             });
+
+    screen.Loop(renderer);
+
+    return &hand[selected];
 }

@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <random>
+#include <stdexcept>
 
 #include "Space.h"
 #include "Card.h"
@@ -39,16 +40,19 @@ public:
     void set_Health(int, int);
 
     bool get_islive();
+    void set_islive(bool);
 
     Space *get_place();
     void set_place(Space *);
 
-    std::vector<Card>& get_deck();
-    std::vector<Card>& get_hand();
-    std::vector<Card>& get_discard();
+    std::vector<Card> &get_deck();
+    std::vector<Card> &get_hand();
+    std::vector<Card> &get_discard();
 
-    void DrawnCard(); // یک کارت میکشد
-    int discard_hand();
+    int DrawnCard(); // یک کارت میکشد
+    int discard_hand(); // یک کارت رندوم از دست میکشد و حذف میکند
+    void DiscardCard(int);
+    void Discard_Card(Card* ); // کارتی که گرفته را حذف میکند از دست
 
     void Damage(int);
     virtual void abiliti() = 0;

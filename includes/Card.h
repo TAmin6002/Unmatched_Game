@@ -4,6 +4,8 @@
 #include <functional>
 #include "Enums.h"
 
+class Heroes;
+
 class Card
 {
 
@@ -12,10 +14,11 @@ private:
     CardTiming timing;      // "DURING" , "AFTER" , "BEFORE", "IMMEDIATE"
     std::string typeAttack; // "ATTACK" , "DEFENSE" , "EVENT", "BOTH"
 
-    int amount;
-    int Boost;
+    int amount = 0;
+    int Boost = 0;
 
     std::string owner;
+    Heroes *user = nullptr;
 
     bool ApplyEffects{true};
 
@@ -38,4 +41,7 @@ public:
 
     std::string get_owner();
     std::string get_Attacktype();
+
+    void set_user_card(Heroes *);
+    Heroes *get_user_card();
 };

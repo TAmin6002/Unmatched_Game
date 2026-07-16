@@ -7,6 +7,7 @@
 #include "Sisters.h"
 #include "Dr_Watson.h"
 #include "board.h"
+#include "CardResolver.h"
 #include "Ftxui_Front.h"
 
 #include "ftxui/component/component.hpp"
@@ -36,6 +37,11 @@ private:
 
     Card *Attacker_selected_card = nullptr;
     Card *Defender_selected_card = nullptr; // وقتی دو مبارز وارد جنگ میشوند ابتدا از اتکر و سپس از دفاع کننده کارت های انتخابی شان گرفته میشود
+
+    int Attack_Value = 0;
+    int Defense_Value = 0;
+
+    CardResolver card_resolver;
 
     int DraculaAction = 2;
     int SherlockAction = 2;

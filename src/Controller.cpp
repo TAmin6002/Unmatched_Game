@@ -229,19 +229,93 @@ void Controller::run()
                         {
 
                             FF.Attakcer_Heroes_Menu(turn, &board, Attacker);
-
                             FF.Defender_Heroes_Menu(not_turn, &board, Defender, Attacker);
 
                             FF.Attacker_selected_card(Attacker, Defender, &p1, &p2, &board, Attacker_selected_card);
-
                             FF.Defender_selected_card(Attacker, Defender, &p1, &p2, &board, Defender_selected_card);
 
-                            FF.Reveal_Combat(Attacker, Defender, Attacker_selected_card, Defender_selected_card);
+                            FF.Reveal_Combat(Attacker, Defender, Attacker_selected_card, Defender_selected_card); // show tow v&s cards
+
+                            Attack_Value = Attacker_selected_card->get_amount();
+                            Defense_Value = Defender_selected_card->get_amount();
                         }
                         catch (const std::exception &e)
                         {
                             FF.get_msg().push_back(e.what());
                             // cout << e.what() << endl;
+                        }
+
+                        // ------------------------ start combat -----------------------------------.
+
+                        try
+                        {
+
+                            // -------------------------- Befor Calculation --------------------------.
+
+                            if (Attacker_selected_card->get_CardTiming() == CardTiming::Before)
+                            {
+                                card_resolver.excute(Attacker_selected_card, &p1, &p2, Attacker, Defender, &board, Attack_Value, Defense_Value);
+                            }
+
+                            if (Defender_selected_card->get_CardTiming() == CardTiming::Before)
+                            {
+                                card_resolver.excute(Defender_selected_card, &p1, &p2, Attacker, Defender, &board, Attack_Value, Defense_Value);
+                            }
+
+                            // -------------------------- During Calculation --------------------------.
+
+                            if (Attacker_selected_card->get_CardTiming() == CardTiming::During)
+                            {
+                                card_resolver.excute(Attacker_selected_card, &p1, &p2, Attacker, Defender, &board, Attack_Value, Defense_Value);
+                            }
+
+                            if (Defender_selected_card->get_CardTiming() == CardTiming::During)
+                            {
+                                card_resolver.excute(Defender_selected_card, &p1, &p2, Attacker, Defender, &board, Attack_Value, Defense_Value);
+                            }
+
+                            // --------------------------- Damage Calculation ------------------------.
+
+                            int Damage = Attack_Value - Defense_Value;
+
+                            if (Damage > 0)
+                                Defender->Damage(Damage);
+
+                            // Heroes *Winner = (Attack_Value > Defense_Value) ? Attacker : Defender;
+
+                            //---------------------------- After Calculation ---------------------------.
+
+                            if (Attacker_selected_card->get_CardTiming() == CardTiming::After)
+                            {
+                                card_resolver.excute(Attacker_selected_card, &p1, &p2, Attacker, Defender, &board, Attack_Value, Defense_Value);
+                            }
+
+                            if (Defender_selected_card->get_CardTiming() == CardTiming::After)
+                            {
+                                card_resolver.excute(Defender_selected_card, &p1, &p2, Attacker, Defender, &board, Attack_Value, Defense_Value);
+                            }
+
+                            // ------------------------- Transfer Cards to discard --------------------------.
+
+                            Attacker->Discard_Card(Attacker_selected_card);
+                            Defender->Discard_Card(Defender_selected_card);
+
+                            Attacker_selected_card->set_user_card(nullptr);
+                            Defender_selected_card->set_user_card(nullptr);
+
+                            Player *Attacker_Player = (p1.get_character()->get_name() == Attacker->get_name() ? &p1 : &p2);
+                            Player *Defender_Player = (p1.get_character()->get_name() == Defender->get_name() ? &p1 : &p2);
+
+                            Attacker_Player->set_selected_card(nullptr);
+                            Defender_Player->set_selected_card(nullptr);
+
+                            Attack_Value = 0;
+                            Defense_Value = 0;
+                        }
+                        catch (const std::exception &e)
+                        {
+                            FF.get_msg().push_back(e.what());
+                            // std::cerr << e.what() << '\n';
                         }
                     }
 

@@ -122,8 +122,8 @@ CMakeFiles/app.dir/src/CardResolver.cpp.obj: \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/stl_heap.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/uniform_int_dist.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/stl_tempbuf.h \
- D:/cpp/myproject/includes/Enums.h D:/cpp/myproject/includes/Controller.h \
- D:/cpp/myproject/includes/Dracula.h D:/cpp/myproject/includes/Heroes.h \
+ D:/cpp/myproject/includes/Enums.h D:/cpp/myproject/includes/board.h \
+ D:/cpp/myproject/includes/space.h D:/cpp/myproject/includes/Heroes.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/random \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/cmath \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/x86_64-w64-mingw32/include/math.h \
@@ -151,16 +151,13 @@ CMakeFiles/app.dir/src/CardResolver.cpp.obj: \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/stl_numeric.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/pstl/glue_numeric_defs.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/pstl/execution_defs.h \
- D:/cpp/myproject/includes/Space.h D:/cpp/myproject/includes/Sisters.h \
- D:/cpp/myproject/includes/SherlockHolmes.h \
- D:/cpp/myproject/includes/Dr_Watson.h D:/cpp/myproject/includes/Player.h \
- D:/cpp/myproject/includes/board.h D:/cpp/myproject/includes/space.h \
- D:/cpp/myproject/includes/Ftxui_Front.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/stdexcept \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/exception \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/exception_ptr.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/cxxabi_init_exception.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/nested_exception.h \
+ D:/cpp/myproject/includes/Space.h \
+ D:/cpp/myproject/includes/Ftxui_Front.h \
  D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/component/component.hpp \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/memory \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/stl_raw_storage_iter.h \
@@ -261,4 +258,8 @@ CMakeFiles/app.dir/src/CardResolver.cpp.obj: \
  D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/component/task.hpp \
  D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/component/event.hpp \
  D:/cpp/myproject/build/_deps/ftxui-src/include/ftxui/component/mouse.hpp \
- D:/cpp/myproject/includes/Board.h
+ D:/cpp/myproject/includes/Player.h D:/cpp/myproject/includes/Board.h \
+ C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/set \
+ C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/stl_tree.h \
+ C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/stl_set.h \
+ C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/stl_multiset.h

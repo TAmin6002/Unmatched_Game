@@ -42,6 +42,11 @@ bool Heroes::get_islive()
     return islive;
 }
 
+void Heroes::set_islive(bool b)
+{
+    islive = b;
+}
+
 Space *Heroes::get_place()
 {
     return place;
@@ -56,28 +61,30 @@ void Heroes::set_place(Space *p)
     place = p;
 }
 
-vector<Card>& Heroes::get_deck()
+vector<Card> &Heroes::get_deck()
 {
     return deck;
 }
 
-vector<Card>& Heroes::get_hand()
+vector<Card> &Heroes::get_hand()
 {
     return hand;
 }
 
-vector<Card>& Heroes::get_discard()
+vector<Card> &Heroes::get_discard()
 {
     return discard;
 }
 
-void Heroes::DrawnCard()
+int Heroes::DrawnCard()
 {
     if (deck.empty())
-        return;
+        return 0;
 
     hand.push_back(deck.back());
     deck.pop_back();
+
+    return 1;
 }
 
 void Heroes::Damage(int amount)
@@ -96,7 +103,7 @@ int Heroes::discard_hand()
     int Boost;
 
     std::mt19937 rng(std::random_device{}());
-    std::uniform_int_distribution<int> dist(0, 4); // 0 - 4
+    std::uniform_int_distribution<int> dist(0, hand.size());
     int randomIndex = dist(rng);
 
     Boost = hand[randomIndex].get_Boost();
@@ -106,4 +113,26 @@ int Heroes::discard_hand()
     hand.erase(hand.begin() + randomIndex);
 
     return Boost;
+}
+
+void Heroes::DiscardCard(int selected)
+{
+    this->discard.push_back(hand[selected]);
+    this->hand.erase(hand.begin() + selected);
+}
+
+void Heroes::Discard_Card(Card *card)
+{
+    auto it = std::find_if(hand.begin(), hand.end(),
+                           [&](const Card &c)
+                           {
+                               return &c == card;
+                           });
+
+    if (it == hand.end())
+        throw std::runtime_error("Card not found.");
+
+    discard.push_back(*it);
+
+    hand.erase(it);
 }

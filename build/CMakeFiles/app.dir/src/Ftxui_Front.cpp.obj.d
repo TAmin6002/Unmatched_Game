@@ -256,8 +256,14 @@ CMakeFiles/app.dir/src/Ftxui_Front.cpp.obj: \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/pstl/glue_numeric_defs.h \
  D:/cpp/myproject/includes/Space.h D:/cpp/myproject/includes/Card.h \
  D:/cpp/myproject/includes/Enums.h D:/cpp/myproject/includes/Board.h \
- D:/cpp/myproject/includes/space.h D:/cpp/myproject/includes/Controller.h \
+ D:/cpp/myproject/includes/space.h \
+ C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/set \
+ C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/stl_tree.h \
+ C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/stl_set.h \
+ C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/bits/stl_multiset.h \
+ D:/cpp/myproject/includes/Controller.h \
  D:/cpp/myproject/includes/Dracula.h D:/cpp/myproject/includes/Sisters.h \
  D:/cpp/myproject/includes/SherlockHolmes.h \
  D:/cpp/myproject/includes/Dr_Watson.h D:/cpp/myproject/includes/board.h \
+ D:/cpp/myproject/includes/CardResolver.h \
  C:/Users/ASEMAN\ RAYANE/scoop/apps/gcc/13.2.0/include/c++/13.2.0/iostream

@@ -15,7 +15,7 @@ private:
 
     bool is_Attacker;
 
-    Card selected_card; // The card chosen by the player
+    Card *selected_card = nullptr; // The card chosen by the player
 
 public:
     void set_age(int);
@@ -36,6 +36,6 @@ public:
     void set_isAttacker(bool);
     bool get_isAttacker();
 
-    Card get_selected_card();
-    void set_selected_card(Card);
+    Card *get_selected_card();
+    void set_selected_card(Card *);
 };

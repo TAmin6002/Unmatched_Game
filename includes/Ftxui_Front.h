@@ -9,6 +9,9 @@
 #include "Enums.h"
 #include "Board.h"
 
+#include <queue>
+#include <set>
+
 using namespace ftxui;
 
 class Ftxui_Front
@@ -19,6 +22,8 @@ private:
     std::vector<std::string> msg;
 
 public:
+    std::vector<std::string> &get_msg();
+
     int get_number_of_choose();
     void set_number_of_choose(int);
 
@@ -39,10 +44,18 @@ public:
     void Attakcer_Heroes_Menu(Player *, Board *, Heroes *&);
     void Defender_Heroes_Menu(Player *, Board *, Heroes *&, Heroes *&);
 
-    std::vector<std::string> &get_msg();
-
     void Attacker_selected_card(Heroes *, Heroes *, Player *, Player *, Board *, Card *&);
     void Defender_selected_card(Heroes *, Heroes *, Player *, Player *, Board *, Card *&);
 
-    void Reveal_Combat(Heroes*, Heroes*, Card* , Card* );
+    void Reveal_Combat(Heroes *, Heroes *, Card *, Card *);
+
+    void put_in_any_space(Heroes *, Board *);        // Gives every fighter to every empty house.
+    void Revive_Sister(Heroes *, Heroes *, Board *); // He revives the defeated sister and places her in every house.
+    int DiscardCards(Heroes *);                      // Shows the fighter's hand so that the player can draw cards from it without restriction.
+    void MoveHero(Heroes *, Board *, int);           // Moves the fighter up to a specified number of spaces.
+    Heroes *SelectHero(Board *);
+    void PlaceHeroAdjacent(Heroes *, Heroes *, Board *);
+    void ShowHand(Heroes *, Player *, Player *, Board *);
+    Card *ChooseCardFromHand(Player *, Player *, Player *, Board *); // The opponent's fighter is shown and the player chooses and burns one card from among them.
+
 };
