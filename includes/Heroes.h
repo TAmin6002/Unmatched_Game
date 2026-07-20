@@ -14,9 +14,10 @@ class Heroes
 private:
     std::string name;
     std::string Attacktype;
-    int Movement;
+    int Movement = 2;
     int Action = 2;
     int Health;
+    int number;
     bool islive{true};
 
     Space *place = nullptr;
@@ -27,12 +28,15 @@ protected:
     std::vector<Card> discard;
 
 public:
-    Heroes(std::string, std::string, int, int);
+    Heroes(std::string, std::string, int, int, int);
 
+    int get_number();
     std::string get_name();
     std::string get_Attacktype();
-    int get_Movement();
     int get_Health();
+
+    void set_Movement(int);
+    int get_Movement();
 
     void add_Action(int);
     int get_Action() const;

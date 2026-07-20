@@ -1,7 +1,7 @@
 #include "Sisters.h"
 
-Sisters::Sisters(std::string number)
-    : Heroes("S" + number + "ISTERS", "MELEE", 1, 2) {}
+Sisters::Sisters(int number)
+    : Heroes("SISTERS", "MELEE", 1, 2, number) {}
 
 void Sisters::abiliti()
 {

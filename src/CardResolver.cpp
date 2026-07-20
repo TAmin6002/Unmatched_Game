@@ -2,12 +2,15 @@
 #include "Card.h"
 
 #include <vector>
+#include <iostream>
 
 using namespace std;
 using namespace ftxui;
 
 void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *Attacker, Heroes *Defender, Board *board, int &Attack_Value, int &Defence_Value)
 {
+    cout << "Entered the excute\n";
+
     Player *Dracula_Player;
     Player *Sherlock_Player;
 
@@ -94,7 +97,7 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
     }
 
     case CardType::Dash:
-    {
+    {        
         if (selectedcard->get_ApplyEffects())
         {
             FF.MoveHero(selectedcard->get_user_card(), board, 3);
@@ -197,7 +200,7 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
                 if (hero == nullptr)
                     continue;
 
-                if (hero->get_name() == "S1ISTER" or hero->get_name() == "S2ISTER" or hero->get_name() == "S3ISTER")
+                if (hero->get_name() == "SISTER")
                     damage++;
             }
 
@@ -225,7 +228,7 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
     {
         if (selectedcard->get_ApplyEffects())
         {
-            if (p1->get_character()->get_name() == "DRACULA" or p1->get_comrade()[0]->get_name() == "S1ISTERS")
+            if (p1->get_character()->get_name() == "DRACULA" or p1->get_comrade()[0]->get_name() == "SISTERS")
             {
                 p2->get_selected_card()->set_ApplyEffects(false); // Cancel the effect opponent's card.
             }
@@ -443,7 +446,7 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
         }
         else
         {
-            if (Attack_Value - Defence_Value >= 0)
+            if (Attack_Value - Defence_Value <= 0)
                 FF.ShowHand(Attacker, p1, p2, board);
         }
         break;

@@ -5,12 +5,13 @@
 #include "ftxui/component/screen_interactive.hpp"
 #include "ftxui/dom/elements.hpp"
 
-#include "Player.h"
 #include "Enums.h"
+#include "Player.h"
 #include "Board.h"
 
 #include <queue>
 #include <set>
+
 
 using namespace ftxui;
 
@@ -39,7 +40,7 @@ public:
 
     void main_map(Player *, Player *, Board *, Player *);
 
-    void chose_comrad_place(Player *, Player *, Board *);
+    void choose_comrad_place(Player *, Player *, Board *);
 
     void Attakcer_Heroes_Menu(Player *, Board *, Heroes *&);
     void Defender_Heroes_Menu(Player *, Board *, Heroes *&, Heroes *&);

@@ -17,7 +17,7 @@ private:
 public:
     Dracula();
 
-    void set_sisters(Sisters &, Sisters &, Sisters &);
+    // void set_sisters(Sisters &, Sisters &, Sisters &);
     std::vector<Sisters *> get_sisters();
     virtual void abiliti() override;
 };

@@ -27,7 +27,7 @@ private:
     Player p2;
 
     Dracula dracula;
-    Sisters s1{"1"}, s2{"2"}, s3{"3"};
+    Sisters s1{1}, s2{2}, s3{3};
 
     SherlockHolmes sherlock;
     Dr_Watson Watson;
@@ -46,8 +46,8 @@ private:
     int DraculaAction = 2;
     int SherlockAction = 2;
 
-    Player *turn;
-    Player *not_turn;
+    Player *turn = nullptr;
+    Player *not_turn = nullptr;
 
     int round = 1;
 

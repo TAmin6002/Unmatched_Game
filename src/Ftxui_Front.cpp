@@ -77,9 +77,11 @@ enum ::e_Menu Ftxui_Front::Menu_()
 
 void Ftxui_Front::Players_Info_List(Player *p1, Player *p2)
 {
+    cout << "Enter player info list \n";
+    
     string name_p1;
     string age_p1;
-
+    
     string name_p2;
     string age_p2;
 
@@ -87,11 +89,11 @@ void Ftxui_Front::Players_Info_List(Player *p1, Player *p2)
 
     auto complet_button = Button("Completed", [&]
                                  { screen.Exit(); }, ButtonOption::Simple()) |
-                          color(Color::Green);
+                                 color(Color::Green);
 
     auto Input_name_p1 = Input(&name_p1, "Name the player 1 : ");
     auto Input_age_p1 = Input(&age_p1, "age the player 1 : ");
-
+    
     auto Input_name_p2 = Input(&name_p2, "Name the player 2 : ");
     auto Input_age_p2 = Input(&age_p2, "age the player 2 : ");
 
@@ -100,6 +102,7 @@ void Ftxui_Front::Players_Info_List(Player *p1, Player *p2)
         Input_age_p1,
         Input_name_p2,
         Input_age_p2,
+        complet_button,
     });
 
     auto renderer = Renderer(main_container, [&]
@@ -108,66 +111,66 @@ void Ftxui_Front::Players_Info_List(Player *p1, Player *p2)
                                                       flex,
                                                   separator(),
                                                   vbox({text("Player 2") | bold | center, separator(),
-                                                        Input_name_p2->Render(), Input_age_p2->Render()}) |
-                                                      flex}) |
-                                                flex,
-                                            separator(),
+                                                    Input_name_p2->Render(), Input_age_p2->Render()}) |
+                                                    flex}) |
+                                                    flex,
+                                                    separator(),
                                             complet_button->Render() | center}) |
-                                      borderRounded; });
-
-    auto component = CatchEvent(renderer, [&](Event event)
-                                { return complet_button->OnEvent(event); });
-
+                                            borderRounded; });
+                                            
+                                            auto component = CatchEvent(renderer, [&](Event event)
+                                            { return complet_button->OnEvent(event); });
+                                        
+    
     screen.Loop(component);
 
     p1->set_name(name_p1), p1->set_age(stoi(age_p1));
     p2->set_name(name_p2), p2->set_age(stoi(age_p2));
+
+    cout << "Exit player info list \n";
+
+     cout << p1->get_age() << "\t" << p1 ->get_name() << endl;
+    cout << p2->get_age() << "\t" << p2 ->get_name() << endl;
 }
 
 int Ftxui_Front::Det_characters(Player *p1, Player *p2)
 {
-    int choice = -1;
+
+    Player* younger = (p1->get_age() <= p2->get_age()) ? p1 : p2;
+
+    std::vector<std::string> entries = {
+        "DRACULA",
+        "SHERLOCK HOLMES"
+    };
+
+    int selected = 0;
+
     auto screen = ScreenInteractive::Fullscreen();
 
-    auto complete_Button = Button("Completed", [&]
-                                  { screen.Exit(); }) |
-                           color(Color::Green);
+    auto menu = Menu(&entries, &selected);
 
-    auto Dracula_Button = Button("DRACULA", [&]
-                                 { choice = 0; }) |
-                          center | flex;
-
-    auto Sherlock_Button = Button("SHERLOCK HOLMES", [&]
-                                  { choice = 1; }) |
-                           center | flex;
-
-    auto container = Container::Horizontal({
-        Dracula_Button,
-        Sherlock_Button,
+    auto confirm = Button("Confirm", [&] {
+        screen.Exit();
     });
 
-    auto renderer = Renderer(container, [&]
-                             { return vbox({
-                                          text((p1->get_age() <= p2->get_age() ? p1->get_name() : p2->get_name()) + " select your character") | bold | center,
-                                          separator(),
-                                          hbox({
-                                              Dracula_Button->Render(),
-                                              separator(),
+    auto container = Container::Vertical({
+        menu,
+        confirm,
+    });
 
-                                              Sherlock_Button->Render(),
-                                              separator(),
+    auto renderer = Renderer(container, [&] {
+        return vbox({
+            text(younger->get_name() + " choose your hero") | bold | center,
+            separator(),
+            menu->Render(),
+            separator(),
+            confirm->Render() | center,
+        }) | border;
+    });
 
-                                          }) | flex,
-                                          complete_Button->Render(),
-                                      }) |
-                                      border; });
+    screen.Loop(renderer);
 
-    auto component = CatchEvent(renderer, [&](Event event)
-                                { return complete_Button->OnEvent(event); });
-
-    screen.Loop(component);
-
-    return choice;
+    return selected;
 }
 
 void Ftxui_Front::catch_place(Player *p1, Player *p2, Board *board)
@@ -220,6 +223,7 @@ void Ftxui_Front::catch_place(Player *p1, Player *p2, Board *board)
 
 Element Dracula_Box(Player *p1, Player *p2)
 {
+
     Player *dracula_player = (p1->get_character()->get_name() == "DRACULA") ? p1 : p2;
     return vbox({
                text("DRACULA\n") | bold | color(Color::Red1),
@@ -327,100 +331,100 @@ Element Graph_Box(vector<Space> &spaces)
     // ---- homes ----
 
     c.DrawPointCircle(9, 6, 3, Color::Cyan);
-    c.DrawText(8, 5, (spaces[0].get_hero() == nullptr ? "1" : (spaces[0].get_hero()->get_name().substr(0, 2))), Color::Yellow);
+    c.DrawText(8, 5, (spaces[0].get_hero() == nullptr ? "1" : (spaces[0].get_hero()->get_number() == 0 ? "" : to_string(spaces[0].get_hero()->get_number())) + (spaces[0].get_hero()->get_name().substr(0, 2))), Color::Yellow);
 
     c.DrawPointCircle(31, 6, 3, Color::Cyan);
-    c.DrawText(30, 5, (spaces[1].get_hero() == nullptr ? "2" : (spaces[1].get_hero()->get_name().substr(0, 2))), Color::Yellow);
+    c.DrawText(30, 5, (spaces[1].get_hero() == nullptr ? "2" : (spaces[1].get_hero()->get_number() == 0 ? "" : to_string(spaces[1].get_hero()->get_number())) + (spaces[1].get_hero()->get_name().substr(0, 2))), Color::Yellow);
 
     c.DrawPointCircle(50, 14, 3, Color::Cyan);
-    c.DrawText(49, 13, (spaces[2].get_hero() == nullptr ? "3" : (spaces[2].get_hero()->get_name().substr(0, 2))), Color::Yellow);
+    c.DrawText(49, 13, (spaces[2].get_hero() == nullptr ? "3" : (spaces[2].get_hero()->get_number() == 0 ? "" : to_string(spaces[2].get_hero()->get_number())) + (spaces[2].get_hero()->get_name().substr(0, 2))), Color::Yellow);
 
     c.DrawPointCircle(54, 25, 3, Color::Cyan);
-    c.DrawText(53, 24, (spaces[3].get_hero() == nullptr ? "4" : (spaces[3].get_hero()->get_name().substr(0, 2))), Color::Yellow);
+    c.DrawText(53, 24, (spaces[3].get_hero() == nullptr ? "4" : (spaces[3].get_hero()->get_number() == 0 ? "" : to_string(spaces[3].get_hero()->get_number())) + (spaces[3].get_hero()->get_name().substr(0, 2))), Color::Yellow);
 
     c.DrawPointCircle(31, 19, 3, Color::Cyan);
-    c.DrawText(30, 18, (spaces[4].get_hero() == nullptr ? "5" : (spaces[4].get_hero()->get_name().substr(0, 2))), Color::Yellow);
+    c.DrawText(30, 18, (spaces[4].get_hero() == nullptr ? "5" : (spaces[4].get_hero()->get_number() == 0 ? "" : to_string(spaces[4].get_hero()->get_number())) + (spaces[4].get_hero()->get_name().substr(0, 2))), Color::Yellow);
 
     c.DrawPointCircle(9, 19, 3, Color::Cyan);
-    c.DrawText(8, 18, (spaces[5].get_hero() == nullptr ? "6" : (spaces[5].get_hero()->get_name().substr(0, 2))), Color::Yellow);
+    c.DrawText(8, 18, (spaces[5].get_hero() == nullptr ? "6" : (spaces[5].get_hero()->get_number() == 0 ? "" : to_string(spaces[5].get_hero()->get_number())) + (spaces[5].get_hero()->get_name().substr(0, 2))), Color::Yellow);
 
     c.DrawPointCircle(31, 20, 3, Color::Cyan);
-    c.DrawText(30, 19, (spaces[6].get_hero() == nullptr ? "7" : (spaces[6].get_hero()->get_name().substr(0, 2))), Color::Yellow);
+    c.DrawText(30, 19, (spaces[6].get_hero() == nullptr ? "7" : (spaces[6].get_hero()->get_number() == 0 ? "" : to_string(spaces[6].get_hero()->get_number())) + (spaces[6].get_hero()->get_name().substr(0, 2))), Color::Yellow);
 
     c.DrawPointCircle(9, 31, 3, Color::Cyan);
-    c.DrawText(8, 30, (spaces[7].get_hero() == nullptr ? "8" : (spaces[7].get_hero()->get_name().substr(0, 2))), Color::Yellow);
+    c.DrawText(8, 30, (spaces[7].get_hero() == nullptr ? "8" : (spaces[7].get_hero()->get_number() == 0 ? "" : to_string(spaces[7].get_hero()->get_number())) + (spaces[7].get_hero()->get_name().substr(0, 2))), Color::Yellow);
 
     c.DrawPointCircle(10, 38, 3, Color::Cyan);
-    c.DrawText(9, 37, (spaces[8].get_hero() == nullptr ? "9" : (spaces[8].get_hero()->get_name().substr(0, 2))), Color::Yellow);
+    c.DrawText(9, 37, (spaces[8].get_hero() == nullptr ? "9" : (spaces[8].get_hero()->get_number() == 0 ? "" : to_string(spaces[8].get_hero()->get_number())) + (spaces[8].get_hero()->get_name().substr(0, 2))), Color::Yellow);
 
     c.DrawPointCircle(51, 37, 3, Color::Cyan);
-    c.DrawText(50, 36, (spaces[9].get_hero() == nullptr ? "10" : (spaces[9].get_hero()->get_name().substr(0, 2))), Color::Yellow);
+    c.DrawText(50, 36, (spaces[9].get_hero() == nullptr ? "10" : (spaces[9].get_hero()->get_number() == 0 ? "" : to_string(spaces[9].get_hero()->get_number())) + (spaces[9].get_hero()->get_name().substr(0, 2))), Color::Yellow);
 
     c.DrawPointCircle(75, 33, 3, Color::Cyan);
-    c.DrawText(74, 32, (spaces[10].get_hero() == nullptr ? "11" : (spaces[10].get_hero()->get_name().substr(0, 2))), Color::Yellow);
+    c.DrawText(74, 32, (spaces[10].get_hero() == nullptr ? "11" : (spaces[10].get_hero()->get_number() == 0 ? "" : to_string(spaces[10].get_hero()->get_number())) + (spaces[10].get_hero()->get_name().substr(0, 2))), Color::Yellow);
 
     c.DrawPointCircle(92, 29, 3, Color::Cyan);
-    c.DrawText(91, 28, (spaces[11].get_hero() == nullptr ? "12" : (spaces[11].get_hero()->get_name().substr(0, 2))), Color::Yellow);
+    c.DrawText(91, 28, (spaces[11].get_hero() == nullptr ? "12" : (spaces[11].get_hero()->get_number() == 0 ? "" : to_string(spaces[11].get_hero()->get_number())) + (spaces[11].get_hero()->get_name().substr(0, 2))), Color::Yellow);
 
     c.DrawPointCircle(127, 33, 3, Color::Cyan);
-    c.DrawText(126, 32, (spaces[12].get_hero() == nullptr ? "13" : (spaces[12].get_hero()->get_name().substr(0, 2))), Color::Yellow);
+    c.DrawText(126, 32, (spaces[12].get_hero() == nullptr ? "13" : (spaces[12].get_hero()->get_number() == 0 ? "" : to_string(spaces[12].get_hero()->get_number())) + (spaces[12].get_hero()->get_name().substr(0, 2))), Color::Yellow);
 
     c.DrawPointCircle(81, 44, 3, Color::Cyan);
-    c.DrawText(80, 43, (spaces[13].get_hero() == nullptr ? "14" : (spaces[13].get_hero()->get_name().substr(0, 2))), Color::Yellow);
+    c.DrawText(80, 43, (spaces[13].get_hero() == nullptr ? "14" : (spaces[13].get_hero()->get_number() == 0 ? "" : to_string(spaces[13].get_hero()->get_number())) + (spaces[13].get_hero()->get_name().substr(0, 2))), Color::Yellow);
 
     c.DrawPointCircle(19, 48, 3, Color::Cyan);
-    c.DrawText(18, 47, (spaces[14].get_hero() == nullptr ? "15" : (spaces[14].get_hero()->get_name().substr(0, 2))), Color::Yellow);
+    c.DrawText(18, 47, (spaces[14].get_hero() == nullptr ? "15" : (spaces[14].get_hero()->get_number() == 0 ? "" : to_string(spaces[14].get_hero()->get_number())) + (spaces[14].get_hero()->get_name().substr(0, 2))), Color::Yellow);
 
     c.DrawPointCircle(41, 56, 3, Color::Cyan);
-    c.DrawText(40, 55, (spaces[15].get_hero() == nullptr ? "16" : (spaces[15].get_hero()->get_name().substr(0, 2))), Color::Yellow);
+    c.DrawText(40, 55, (spaces[15].get_hero() == nullptr ? "16" : (spaces[15].get_hero()->get_number() == 0 ? "" : to_string(spaces[15].get_hero()->get_number())) + (spaces[15].get_hero()->get_name().substr(0, 2))), Color::Yellow);
 
     c.DrawPointCircle(62, 49, 3, Color::Cyan);
-    c.DrawText(61, 48, (spaces[16].get_hero() == nullptr ? "17" : (spaces[16].get_hero()->get_name().substr(0, 2))), Color::Yellow);
+    c.DrawText(61, 48, (spaces[16].get_hero() == nullptr ? "17" : (spaces[16].get_hero()->get_number() == 0 ? "" : to_string(spaces[16].get_hero()->get_number())) + (spaces[16].get_hero()->get_name().substr(0, 2))), Color::Yellow);
 
     c.DrawPointCircle(81, 56, 3, Color::Cyan);
-    c.DrawText(80, 55, (spaces[17].get_hero() == nullptr ? "18" : (spaces[17].get_hero()->get_name().substr(0, 2))), Color::Yellow);
+    c.DrawText(80, 55, (spaces[17].get_hero() == nullptr ? "18" : (spaces[17].get_hero()->get_number() == 0 ? "" : to_string(spaces[17].get_hero()->get_number())) + (spaces[17].get_hero()->get_name().substr(0, 2))), Color::Yellow);
 
     c.DrawPointCircle(107, 48, 3, Color::Cyan);
-    c.DrawText(106, 47, (spaces[18].get_hero() == nullptr ? "19" : (spaces[18].get_hero()->get_name().substr(0, 2))), Color::Yellow);
+    c.DrawText(106, 47, (spaces[18].get_hero() == nullptr ? "19" : (spaces[18].get_hero()->get_number() == 0 ? "" : to_string(spaces[18].get_hero()->get_number())) + (spaces[18].get_hero()->get_name().substr(0, 2))), Color::Yellow);
 
     c.DrawPointCircle(130, 55, 3, Color::Cyan);
-    c.DrawText(129, 54, (spaces[19].get_hero() == nullptr ? "20" : (spaces[19].get_hero()->get_name().substr(0, 2))), Color::Yellow);
+    c.DrawText(129, 54, (spaces[19].get_hero() == nullptr ? "20" : (spaces[19].get_hero()->get_number() == 0 ? "" : to_string(spaces[19].get_hero()->get_number())) + (spaces[19].get_hero()->get_name().substr(0, 2))), Color::Yellow);
 
     c.DrawPointCircle(150, 60, 3, Color::Cyan);
-    c.DrawText(149, 59, (spaces[20].get_hero() == nullptr ? "21" : (spaces[20].get_hero()->get_name().substr(0, 2))), Color::Yellow);
+    c.DrawText(149, 59, (spaces[20].get_hero() == nullptr ? "21" : (spaces[20].get_hero()->get_number() == 0 ? "" : to_string(spaces[20].get_hero()->get_number())) + (spaces[20].get_hero()->get_name().substr(0, 2))), Color::Yellow);
 
     c.DrawPointCircle(164, 48, 3, Color::Cyan);
-    c.DrawText(163, 47, (spaces[21].get_hero() == nullptr ? "22" : (spaces[21].get_hero()->get_name().substr(0, 2))), Color::Yellow);
+    c.DrawText(163, 47, (spaces[21].get_hero() == nullptr ? "22" : (spaces[21].get_hero()->get_number() == 0 ? "" : to_string(spaces[21].get_hero()->get_number())) + (spaces[21].get_hero()->get_name().substr(0, 2))), Color::Yellow);
 
     c.DrawPointCircle(164, 33, 3, Color::Cyan);
-    c.DrawText(163, 32, (spaces[22].get_hero() == nullptr ? "23" : (spaces[22].get_hero()->get_name().substr(0, 2))), Color::Yellow);
+    c.DrawText(163, 32, (spaces[22].get_hero() == nullptr ? "23" : (spaces[22].get_hero()->get_number() == 0 ? "" : to_string(spaces[22].get_hero()->get_number())) + (spaces[22].get_hero()->get_name().substr(0, 2))), Color::Yellow);
 
     c.DrawPointCircle(148, 33, 3, Color::Cyan);
-    c.DrawText(147, 32, (spaces[23].get_hero() == nullptr ? "24" : (spaces[23].get_hero()->get_name().substr(0, 2))), Color::Yellow);
+    c.DrawText(147, 32, (spaces[23].get_hero() == nullptr ? "24" : (spaces[23].get_hero()->get_number() == 0 ? "" : to_string(spaces[23].get_hero()->get_number())) + (spaces[23].get_hero()->get_name().substr(0, 2))), Color::Yellow);
 
     c.DrawPointCircle(157, 26, 3, Color::Cyan);
-    c.DrawText(156, 25, (spaces[24].get_hero() == nullptr ? "25" : (spaces[24].get_hero()->get_name().substr(0, 2))), Color::Yellow);
+    c.DrawText(156, 25, (spaces[24].get_hero() == nullptr ? "25" : (spaces[24].get_hero()->get_number() == 0 ? "" : to_string(spaces[24].get_hero()->get_number())) + (spaces[24].get_hero()->get_name().substr(0, 2))), Color::Yellow);
 
     c.DrawPointCircle(157, 14, 3, Color::Cyan);
-    c.DrawText(156, 13, (spaces[25].get_hero() == nullptr ? "26" : (spaces[25].get_hero()->get_name().substr(0, 2))), Color::Yellow);
+    c.DrawText(156, 13, (spaces[25].get_hero() == nullptr ? "26" : (spaces[25].get_hero()->get_number() == 0 ? "" : to_string(spaces[25].get_hero()->get_number())) + (spaces[25].get_hero()->get_name().substr(0, 2))), Color::Yellow);
 
     c.DrawPointCircle(179, 6, 3, Color::Cyan);
-    c.DrawText(178, 5, (spaces[26].get_hero() == nullptr ? "27" : (spaces[26].get_hero()->get_name().substr(0, 2))), Color::Yellow);
+    c.DrawText(178, 5, (spaces[26].get_hero() == nullptr ? "27" : (spaces[26].get_hero()->get_number() == 0 ? "" : to_string(spaces[26].get_hero()->get_number())) + (spaces[26].get_hero()->get_name().substr(0, 2))), Color::Yellow);
 
     c.DrawPointCircle(157, 6, 3, Color::Cyan);
-    c.DrawText(156, 5, (spaces[27].get_hero() == nullptr ? "28" : (spaces[27].get_hero()->get_name().substr(0, 2))), Color::Yellow);
+    c.DrawText(156, 5, (spaces[27].get_hero() == nullptr ? "28" : (spaces[27].get_hero()->get_number() == 0 ? "" : to_string(spaces[27].get_hero()->get_number())) + (spaces[27].get_hero()->get_name().substr(0, 2))), Color::Yellow);
 
     c.DrawPointCircle(130, 14, 3, Color::Cyan);
-    c.DrawText(129, 13, (spaces[28].get_hero() == nullptr ? "29" : (spaces[28].get_hero()->get_name().substr(0, 2))), Color::Yellow);
+    c.DrawText(129, 13, (spaces[28].get_hero() == nullptr ? "29" : (spaces[28].get_hero()->get_number() == 0 ? "" : to_string(spaces[28].get_hero()->get_number())) + (spaces[28].get_hero()->get_name().substr(0, 2))), Color::Yellow);
 
     c.DrawPointCircle(107, 6, 3, Color::Cyan);
-    c.DrawText(106, 5, (spaces[29].get_hero() == nullptr ? "30" : (spaces[29].get_hero()->get_name().substr(0, 2))), Color::Yellow);
+    c.DrawText(106, 5, (spaces[29].get_hero() == nullptr ? "30" : (spaces[29].get_hero()->get_number() == 0 ? "" : to_string(spaces[29].get_hero()->get_number())) + (spaces[29].get_hero()->get_name().substr(0, 2))), Color::Yellow);
 
     c.DrawPointCircle(92, 14, 3, Color::Cyan);
-    c.DrawText(91, 13, (spaces[30].get_hero() == nullptr ? "31" : (spaces[30].get_hero()->get_name().substr(0, 2))), Color::Yellow);
+    c.DrawText(91, 13, (spaces[30].get_hero() == nullptr ? "31" : (spaces[30].get_hero()->get_number() == 0 ? "" : to_string(spaces[30].get_hero()->get_number())) + (spaces[30].get_hero()->get_name().substr(0, 2))), Color::Yellow);
 
     c.DrawPointCircle(73, 6, 3, Color::Cyan);
-    c.DrawText(72, 5, (spaces[31].get_hero() == nullptr ? "32" : (spaces[31].get_hero()->get_name().substr(0, 2))), Color::Yellow);
+    c.DrawText(72, 5, (spaces[31].get_hero() == nullptr ? "32" : (spaces[31].get_hero()->get_number() == 0 ? "" : to_string(spaces[31].get_hero()->get_number())) + (spaces[31].get_hero()->get_name().substr(0, 2))), Color::Yellow);
 
     return canvas(std::move(c));
 }
@@ -552,14 +556,14 @@ Component Ftxui_Front::ChooseAction(Player *p1, Player *p2, ScreenInteractive *s
     static std::vector<std::string> entries = {
         "Attack",
         "Maneuver",
-        "Scheme",
+        "Event",
         "Back"};
 
     static int selected = 0;
 
     auto menu = Menu(&entries, &selected);
 
-    auto component = CatchEvent(menu, [&](Event event)
+    auto component = CatchEvent(menu, [this, screen](Event event)
                                 {
             if (event == Event::Return) {
                 number_of_choose = selected;
@@ -610,7 +614,7 @@ Element Sherlock_Hand(Player *p1, Player *p2)
     });
 }
 
-void Ftxui_Front::chose_comrad_place(Player *p1, Player *p2, Board *board)
+void Ftxui_Front::choose_comrad_place(Player *p1, Player *p2, Board *board)
 {
     Player *dracula_player = (p1->get_character()->get_name() == "DRACULA") ? p1 : p2;
     Player *sherlock_player = (p1->get_character()->get_name() == "SHERLOCKHOLMES") ? p1 : p2;
@@ -620,6 +624,12 @@ void Ftxui_Front::chose_comrad_place(Player *p1, Player *p2, Board *board)
         auto screen = ScreenInteractive::Fullscreen();
 
         vector<Space *> zone = dracula_player->get_character()->get_place()->get_zone();
+
+        if (zone.empty())
+        {
+            throw std::runtime_error("AllowHand is empty");
+            return;
+        }
 
         vector<string> entries;
 
@@ -677,6 +687,13 @@ void Ftxui_Front::chose_comrad_place(Player *p1, Player *p2, Board *board)
         auto screen = ScreenInteractive::Fullscreen();
 
         vector<Space *> zone = sherlock_player->get_character()->get_place()->get_zone();
+
+        if (zone.empty())
+        {
+            throw std::runtime_error("AllowHand is empty");
+            return;
+        }
+
         vector<string> entries;
         for (auto s : zone)
             entries.push_back("Space " + to_string(s->get_number()));
@@ -727,18 +744,17 @@ void Ftxui_Front::Attakcer_Heroes_Menu(Player *player, Board *board, Heroes *&he
             fighters.push_back(c);
     }
 
-    vector<string> entries;
-
-    for (auto h : fighters)
-        entries.push_back(h->get_name());
-
-    int selected = 0;
-
     if (fighters.empty())
     {
         throw std::runtime_error("No valid target to attack.");
         return;
     }
+    vector<string> entries;
+
+    for (auto h : fighters)
+        entries.push_back((h->get_number() == 0 ? "" : to_string(h->get_number())) + h->get_name());
+
+    int selected = 0;
 
     auto menu = Menu(&entries, &selected);
 
@@ -792,6 +808,7 @@ bool Exist_path(vector<Space *> zone, Space *target)
 
 void Ftxui_Front::Defender_Heroes_Menu(Player *player, Board *board, Heroes *&defender, Heroes *&Attacker)
 {
+    cout << "enter the defender heroes emnu\n";
 
     if (Attacker == nullptr)
     {
@@ -806,11 +823,8 @@ void Ftxui_Front::Defender_Heroes_Menu(Player *player, Board *board, Heroes *&de
 
         try
         {
-            // all characters (sherlock and dracula) are MELEE
-
             if (Attacker->get_Attacktype() == "MELEE")
             {
-
                 if (player->get_character() != nullptr and player->get_character()->get_islive() and Exist_path(Attacker->get_place()->get_neighbor(), player->get_character()->get_place()))
                     defenders.push_back(player->get_character());
 
@@ -820,7 +834,7 @@ void Ftxui_Front::Defender_Heroes_Menu(Player *player, Board *board, Heroes *&de
                         defenders.push_back(c);
                 }
             }
-            else if (Attacker->get_Attacktype() == "RANGE")
+            else if (Attacker->get_Attacktype() == "RANGED")
             {
 
                 if (player->get_character() != nullptr and player->get_character()->get_islive() and Exist_path(Attacker->get_place()->get_zone(), player->get_character()->get_place()))
@@ -838,30 +852,26 @@ void Ftxui_Front::Defender_Heroes_Menu(Player *player, Board *board, Heroes *&de
             msg.push_back(m);
         }
 
-        vector<string> entries;
-
-        for (auto h : defenders)
-            entries.push_back(h->get_name());
-
-        int selected = 0;
-
-        // cout << "defenders size = "
-        //      << defenders.size()
-        //      << endl;
-
         if (defenders.empty())
         {
             throw std::runtime_error("Attack is not possible.");
             return;
         }
 
+        vector<string> entries;
+
+        for (auto h : defenders)
+            entries.push_back((h->get_number() == 0 ? "" : to_string(h->get_number())) + h->get_name());
+
+        int selected = 0;
+
         auto menu = Menu(&entries, &selected);
 
         auto confirm = Button("Confirm", [&]
                               { 
-                                defender = defenders[selected];
-                                
-                                screen.ExitLoopClosure()(); });
+                defender = defenders[selected];
+                
+                screen.ExitLoopClosure()(); });
 
         auto container = Container::Vertical({
             menu,
@@ -886,15 +896,19 @@ void Ftxui_Front::Defender_Heroes_Menu(Player *player, Board *board, Heroes *&de
 
         screen.Loop(renderer);
     }
+    cout << "exit the defender heroes emnu\n";
 }
 
 void Ftxui_Front::main_map(Player *p1, Player *p2, Board *board, Player *turn)
 {
+    cout << "enter amin map...\n";
+
     auto screen = ScreenInteractive::Fullscreen();
 
     auto container = Container::Vertical({
         ChooseAction(p1, p2, &screen),
     });
+
 
     auto renderer = Renderer(container, [&]
                              { return vbox({
@@ -922,7 +936,10 @@ void Ftxui_Front::main_map(Player *p1, Player *p2, Board *board, Player *turn)
 
                                    }) | center,
                                }); });
+
     screen.Loop(renderer);
+
+    cout << "exit amin map...\n";
 }
 
 std::vector<std::string> &Ftxui_Front::get_msg()
@@ -936,11 +953,18 @@ void Ftxui_Front::Attacker_selected_card(Heroes *Attacker, Heroes *Defender, Pla
 
     for (auto &c : Attacker->get_hand())
     {
-        if (c.get_owner() == Attacker->get_name() ||
-            c.get_owner() == "ANY")
+        if ((c.get_owner() == Attacker->get_name() or c.get_owner() == "ANY") and (c.get_Attacktype() == "Attack" or c.get_Attacktype() == "Both"))
         {
             AllowHand.push_back(&c);
         }
+    }
+
+    if (AllowHand.empty())
+    {
+        throw std::runtime_error("AllowHand is empty");
+        msg.push_back("AllowHand is empty");
+
+        return; // ................
     }
 
     vector<string> entries;
@@ -963,7 +987,7 @@ void Ftxui_Front::Attacker_selected_card(Heroes *Attacker, Heroes *Defender, Pla
                          [&]
                          {
                              return vbox({
-                                        text("Choose Attack Card") | bold | center,
+                                        text(Attacker->get_name() + " Choose Card for Arrack") | bold | center,
                                         separator(),
                                         menu->Render() | border,
                                         filler(),
@@ -977,9 +1001,9 @@ void Ftxui_Front::Attacker_selected_card(Heroes *Attacker, Heroes *Defender, Pla
     Element hand;
 
     if (Attacker->get_name() == "DRACULA" or
-        Attacker->get_name() == "S1ISTER" or
-        Attacker->get_name() == "S2ISTER" or
-        Attacker->get_name() == "S3ISTER")
+        Attacker->get_name() == "SISTER" or
+        Attacker->get_name() == "SISTER" or
+        Attacker->get_name() == "SISTER")
 
         hand = Dracula_Hand(p1, p2);
 
@@ -1007,10 +1031,10 @@ void Ftxui_Front::Attacker_selected_card(Heroes *Attacker, Heroes *Defender, Pla
 
     if (p1->get_character()->get_name() == Attacker->get_name() or p1->get_comrade()[0]->get_name() == Attacker->get_name())
     {
-        p1->set_selected_card(AllowHand[selected]);
+        p1->set_selected_card(AllowHand.at(selected));
     }
     else
-        p2->set_selected_card(AllowHand[selected]);
+        p2->set_selected_card(AllowHand.at(selected));
 }
 
 void Ftxui_Front::Defender_selected_card(Heroes *Attacker, Heroes *Defender, Player *p1, Player *p2, Board *board, Card *&Defender_Card)
@@ -1022,9 +1046,9 @@ void Ftxui_Front::Defender_selected_card(Heroes *Attacker, Heroes *Defender, Pla
                         ? p1->get_character()
                         : p2->get_character();
 
-    else if (Defender->get_name() == "S1ister" ||
-             Defender->get_name() == "S2ister" ||
-             Defender->get_name() == "S3ister")
+    else if (Defender->get_name() == "SISTER" ||
+             Defender->get_name() == "SISTER" ||
+             Defender->get_name() == "SISTER")
 
         CardOwner = p1->get_character()->get_name() == "DRACULA"
                         ? p1->get_character()
@@ -1032,9 +1056,9 @@ void Ftxui_Front::Defender_selected_card(Heroes *Attacker, Heroes *Defender, Pla
 
     vector<Card *> AllowHand;
 
-    for (auto &c : CardOwner->get_hand())
+    for (auto &c : CardOwner->get_hand()) // Defender hand
     {
-        if (c.get_owner() == Defender->get_name() || c.get_owner() == "ANY")
+        if ((c.get_owner() == Defender->get_name() or c.get_owner() == "ANY") and (c.get_Attacktype() == "Defense" or c.get_Attacktype() == "Both"))
         {
             AllowHand.push_back(&c);
         }
@@ -1062,7 +1086,7 @@ void Ftxui_Front::Defender_selected_card(Heroes *Attacker, Heroes *Defender, Pla
                          [&]
                          {
                              return vbox({
-                                        text("Choose Defense Card") | bold | center,
+                                        text(Defender->get_name() + " Choose Card for Defense") | bold | center,
                                         separator(),
                                         menu->Render() | border,
                                         filler(),
@@ -1076,9 +1100,9 @@ void Ftxui_Front::Defender_selected_card(Heroes *Attacker, Heroes *Defender, Pla
     Element hand;
 
     if (Defender->get_name() == "DRACULA" or
-        Defender->get_name() == "S1ISTER" or
-        Defender->get_name() == "S2ISTER" or
-        Defender->get_name() == "S3ISTER")
+        Defender->get_name() == "SISTER" or
+        Defender->get_name() == "SISTER" or
+        Defender->get_name() == "SISTER")
 
         hand = Dracula_Hand(p1, p2);
 
@@ -1105,24 +1129,25 @@ void Ftxui_Front::Defender_selected_card(Heroes *Attacker, Heroes *Defender, Pla
     if (entries[selected] == "No Defense")
     {
         Defender_Card = nullptr;
+
         if (p1->get_character()->get_name() == Defender->get_name() or p1->get_comrade()[0]->get_name() == Defender->get_name())
         {
             p1->set_selected_card(nullptr);
         }
         else
-            p1->set_selected_card(nullptr);
+            p2->set_selected_card(nullptr);
     }
 
     else
     {
-        Defender_Card = AllowHand[selected];
+        Defender_Card = AllowHand.at(selected);
 
         if (p1->get_character()->get_name() == Defender->get_name() or p1->get_comrade()[0]->get_name() == Defender->get_name())
         {
-            p1->set_selected_card(AllowHand[selected]);
+            p1->set_selected_card(AllowHand.at(selected));
         }
         else
-            p1->set_selected_card(AllowHand[selected]);
+            p1->set_selected_card(AllowHand.at(selected));
     }
 }
 
@@ -1144,6 +1169,11 @@ Element Card_Box(Card *card, string title)
 
                text(CardTypeToString(card->get_CardType())) | bold | center,
                separator(),
+
+               hbox({
+                   text("Amount : "),
+                   text(to_string(card->get_amount())),
+               }),
 
                hbox({
                    text("Type : "),
@@ -1216,9 +1246,9 @@ void Ftxui_Front::put_in_any_space(Heroes *fighter, Board *board)
     vector<Space *> AllowSpace;
     vector<string> entries;
 
-    for (auto &b : board->get_spaces())
+    for (Space &b : board->get_spaces())
     {
-        if (&b == nullptr)
+        if (b.get_hero() == nullptr)
         {
             AllowSpace.push_back(&b);
             entries.push_back("Spase" + to_string(b.get_number()));
@@ -1248,8 +1278,17 @@ void Ftxui_Front::put_in_any_space(Heroes *fighter, Board *board)
 
     screen.Loop(component);
 
-    fighter->set_place(AllowSpace[selected]);
-    AllowSpace[selected]->set_hero(fighter);
+    if (AllowSpace.empty())
+    {
+        throw std::runtime_error("AllowHand is empty");
+        return;
+    }
+
+    else
+    {
+        fighter->set_place(AllowSpace[selected]);
+        AllowSpace[selected]->set_hero(fighter);
+    }
 }
 
 void Ftxui_Front::Revive_Sister(Heroes *sister, Heroes *dracula, Board *board)

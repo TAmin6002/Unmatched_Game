@@ -1,9 +1,11 @@
 
 #include "Heroes.h"
+#include "Ftxui_Front.h"
+
 using namespace std;
 
-Heroes::Heroes(std::string name, std::string Attacktype, int Health, int Movement)
-    : name(name), Attacktype(Attacktype), Health(Health), Movement(Movement) {}
+Heroes::Heroes(std::string name, std::string Attacktype, int Health, int Movement, int number)
+    : name(name), Attacktype(Attacktype), Health(Health), Movement(Movement), number(number) {}
 
 string Heroes::get_name()
 {
@@ -18,6 +20,12 @@ int Heroes::get_Movement()
 {
     return Movement;
 }
+
+void Heroes::set_Movement(int amount)
+{
+    Movement = amount;
+}
+
 
 void Heroes::add_Action(int amount)
 {
@@ -90,7 +98,12 @@ int Heroes::DrawnCard()
 void Heroes::Damage(int amount)
 {
     if (Health - amount <= 0)
+    {
         islive = false;
+        
+        this->get_place()->set_hero(nullptr);
+        this->set_place(nullptr);
+    }
 
     else
         Health -= amount;
@@ -130,9 +143,18 @@ void Heroes::Discard_Card(Card *card)
                            });
 
     if (it == hand.end())
+    {
+        Ftxui_Front FF;
         throw std::runtime_error("Card not found.");
+        FF.get_msg().push_back("Card not found.");
+    }
 
     discard.push_back(*it);
 
     hand.erase(it);
+}
+
+int Heroes::get_number()
+{
+    return number;
 }

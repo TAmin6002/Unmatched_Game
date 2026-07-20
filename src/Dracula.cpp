@@ -5,7 +5,7 @@
 using namespace std;
 
 Dracula::Dracula()
-    : Heroes("DRACULA", "MELEE", 13, 2)
+    : Heroes("DRACULA", "MELEE", 13, 2, 0)
 {
   deck.push_back(Card(CardType::Feedingfrenzy, CardTiming::During, "Attack", 2, 3, "DRACULA"));
   deck.push_back(Card(CardType::Feedingfrenzy, CardTiming::During, "Attack", 2, 3, "DRACULA"));
@@ -40,7 +40,7 @@ Dracula::Dracula()
   deck.push_back(Card(CardType::Ravening_Seduction, CardTiming::Immediate, "Event", 0, 2, "SISTERS"));
   deck.push_back(Card(CardType::Ravening_Seduction, CardTiming::Immediate, "Event", 0, 2, "SISTERS"));
   deck.push_back(Card(CardType::Ravening_Seduction, CardTiming::Immediate, "Event", 0, 2, "SISTERS"));
-
+ 
   deck.push_back(Card(CardType::Thirst_for_sustenance, CardTiming::After, "Attack", 3, 3, "SISTERS"));
   deck.push_back(Card(CardType::Thirst_for_sustenance, CardTiming::After, "Attack", 3, 3, "SISTERS"));
   deck.push_back(Card(CardType::Thirst_for_sustenance, CardTiming::After, "Attack", 3, 3, "SISTERS"));
@@ -56,12 +56,12 @@ Dracula::Dracula()
     DrawnCard();
 }
 
-void Dracula::set_sisters(Sisters &s1, Sisters &s2, Sisters &s3)
-{
-  sisters[0] = &s1;
-  sisters[1] = &s2;
-  sisters[2] = &s3;
-}
+// void Dracula::set_sisters(Sisters &s1, Sisters &s2, Sisters &s3)
+// {
+//   sisters[0] = &s1;
+//   sisters[1] = &s2;
+//   sisters[2] = &s3;
+// }
 
 vector<Sisters *> Dracula::get_sisters()
 {

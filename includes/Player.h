@@ -6,14 +6,14 @@ class Player
 {
 
 private:
-    int age;
+    int age = 0;
     std::string name;
     int count = 0; // count Action
 
     Heroes *character;
     std::vector<Heroes *> comrade;
 
-    bool is_Attacker;
+    bool is_Attacker{};
 
     Card *selected_card = nullptr; // The card chosen by the player
 

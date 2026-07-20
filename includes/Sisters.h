@@ -7,6 +7,6 @@ class Sisters : public Heroes
 
 private:
 public:
-    Sisters(std::string);
+    Sisters(int);
     virtual void abiliti() override;
 };

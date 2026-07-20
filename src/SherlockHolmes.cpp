@@ -4,7 +4,7 @@
 using namespace std;
 
 SherlockHolmes::SherlockHolmes()
-    : Heroes("SHERLOCKHOLMES", "MELEE", 16, 2)
+    : Heroes("SHERLOCKHOLMES", "MELEE", 16, 2, 0)
 {
     deck.push_back(Card(CardType::Administer_Aid, CardTiming::Immediate, "Event", 0, 2, "DR_WATSON"));
     deck.push_back(Card(CardType::Administer_Aid, CardTiming::Immediate, "Event", 0, 2, "DR_WATSON"));
