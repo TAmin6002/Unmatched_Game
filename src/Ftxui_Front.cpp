@@ -462,6 +462,42 @@ bool Ftxui_Front::AskUseSpecialAbility(Heroes *hero, Board *board)
 }
 
 
+bool Ftxui_Front::AskBurnCardForMove(Heroes *hero, Board *board)
+{
+    std::vector<std::string> entries = {"Yes", "No"};
+    int selected = 0;
+
+    auto menu = Menu(&entries, &selected);
+
+    ScreenInteractive screen = ScreenInteractive::Fullscreen();
+
+    auto component = CatchEvent(menu,
+                                [&](Event event)
+                                {
+                                    if (event == Event::Return)
+                                    {
+                                        screen.Exit();
+                                        return true;
+                                    }
+
+                                    return false;
+                                });
+
+    auto renderer = Renderer(component,
+                             [&]
+                             {
+                                 return hbox({Graph_Box(board->get_spaces()),
+                                              separator(),
+                                              window(
+                                                  text(hero->get_name() + " - Burn a card to move further?"),
+                                                  component->Render())});
+                             });
+
+    screen.Loop(renderer);
+
+    return selected == 0;
+}
+
 std::string CardTypeToString(CardType card)
 {
     switch (card)
@@ -984,7 +1020,9 @@ void Ftxui_Front::Attacker_selected_card(Heroes *Attacker, Heroes *Defender, Pla
 {
     vector<Card *> AllowHand;
 
-    for (auto &c : Attacker->get_hand())
+    Player * Attacker_Player = (p1->get_character() == Attacker or p1->get_comrade()[0]->get_name() == Attacker->get_name() ? p1 : p2);
+
+    for (auto &c : Attacker_Player->get_character()->get_hand())
     {
         if ((c.get_owner() == Attacker->get_name() or c.get_owner() == "ANY") and (c.get_Attacktype() == "Attack" or c.get_Attacktype() == "Both"))
         {
@@ -1034,9 +1072,9 @@ void Ftxui_Front::Attacker_selected_card(Heroes *Attacker, Heroes *Defender, Pla
     Element hand;
 
     if (Attacker->get_name() == "DRACULA" or
-        Attacker->get_name() == "SISTER" or
-        Attacker->get_name() == "SISTER" or
-        Attacker->get_name() == "SISTER")
+        Attacker->get_name() == "SISTERS" or
+        Attacker->get_name() == "SISTERS" or
+        Attacker->get_name() == "SISTERS")
 
         hand = Dracula_Hand(p1, p2);
 
@@ -1065,9 +1103,13 @@ void Ftxui_Front::Attacker_selected_card(Heroes *Attacker, Heroes *Defender, Pla
     if (p1->get_character()->get_name() == Attacker->get_name() or p1->get_comrade()[0]->get_name() == Attacker->get_name())
     {
         p1->set_selected_card(AllowHand.at(selected));
+        AllowHand[selected]->set_user_card(Attacker);
     }
     else
+    {
         p2->set_selected_card(AllowHand.at(selected));
+        AllowHand[selected]->set_user_card(Attacker);
+    }
 }
 
 void Ftxui_Front::Defender_selected_card(Heroes *Attacker, Heroes *Defender, Player *p1, Player *p2, Board *board, Card *&Defender_Card)
@@ -1079,9 +1121,9 @@ void Ftxui_Front::Defender_selected_card(Heroes *Attacker, Heroes *Defender, Pla
                         ? p1->get_character()
                         : p2->get_character();
 
-    else if (Defender->get_name() == "SISTER" ||
-             Defender->get_name() == "SISTER" ||
-             Defender->get_name() == "SISTER")
+    else if (Defender->get_name() == "SISTERS" ||
+             Defender->get_name() == "SISTERS" ||
+             Defender->get_name() == "SISTERS")
 
         CardOwner = p1->get_character()->get_name() == "DRACULA"
                         ? p1->get_character()
@@ -1133,9 +1175,9 @@ void Ftxui_Front::Defender_selected_card(Heroes *Attacker, Heroes *Defender, Pla
     Element hand;
 
     if (Defender->get_name() == "DRACULA" or
-        Defender->get_name() == "SISTER" or
-        Defender->get_name() == "SISTER" or
-        Defender->get_name() == "SISTER")
+        Defender->get_name() == "SISTERS" or
+        Defender->get_name() == "SISTERS" or
+        Defender->get_name() == "SISTERS")
 
         hand = Dracula_Hand(p1, p2);
 
@@ -1178,9 +1220,13 @@ void Ftxui_Front::Defender_selected_card(Heroes *Attacker, Heroes *Defender, Pla
         if (p1->get_character()->get_name() == Defender->get_name() or p1->get_comrade()[0]->get_name() == Defender->get_name())
         {
             p1->set_selected_card(AllowHand.at(selected));
+            AllowHand[selected]->set_user_card(Defender);
         }
         else
+        {
             p1->set_selected_card(AllowHand.at(selected));
+            AllowHand[selected]->set_user_card(Defender);
+        }
     }
 }
 
@@ -1387,7 +1433,7 @@ int Ftxui_Front::DiscardCards(Heroes *dracula)
         for (auto &card : dracula->get_hand())
             entries.push_back(CardTypeToString(card.get_CardType()));
 
-        entries.push_back("Done");
+        entries.push_back("Done !!!!");
 
         int selected = 0;
 
@@ -1558,15 +1604,18 @@ Heroes *Ftxui_Front::SelectHero(Board *board)
     return fighters[selected];
 }
 
-void Ftxui_Front::PlaceHeroAdjacent(
-    Heroes *hero,
-    Heroes *target,
-    Board *board)
+void Ftxui_Front::PlaceHeroAdjacent(Heroes *hero, Heroes *target, Board *board)
 {
     if (hero == nullptr || target == nullptr)
         throw std::runtime_error("Hero is nullptr.");
 
     std::vector<Space *> available;
+
+    if(target == nullptr)
+    {
+        msg.push_back("target is nullptr (PlaceHeroAdjacent)");
+        return;
+    }
 
     for (Space *space : target->get_place()->get_zone())
     {
@@ -1726,4 +1775,132 @@ Card *Ftxui_Front::ChooseCardFromHand(Player *owner, Player *p1, Player *p2, Boa
     screen.Loop(renderer);
 
     return &hand[selected];
+}
+
+void Ftxui_Front::Event_Selected_Card(Heroes * SelectedHero, Player *turn, Player * p1, Player * p2, Board *board, Card *&selected_Card)
+{
+    vector<Card *> AllowHand;
+
+    for (auto &c : turn->get_character()->get_hand())
+    {
+        if ((c.get_owner() == SelectedHero->get_name() or c.get_owner() == "ANY") and (c.get_Attacktype() == "Event"))
+        {
+            AllowHand.push_back(&c);
+        }
+    }
+
+    if (AllowHand.empty())
+    {
+        throw std::runtime_error("AllowHand is empty (Event)");
+        msg.push_back("AllowHand is empty (Event)");
+
+        return; // ................
+    }
+
+    vector<string> entries;
+    static int selected = 0;
+
+    for (auto *c : AllowHand)
+        entries.push_back(CardTypeToString(c->get_CardType()));
+
+    auto screen = ScreenInteractive::Fullscreen();
+
+    auto menu = Menu(&entries, &selected);
+
+    auto confirm = Button("Confirm", [&]
+                          { screen.ExitLoopClosure()(); });
+
+    auto left = Renderer(Container::Vertical({
+                             menu,
+                             confirm,
+                         }),
+                         [&]
+                         {
+                             return vbox({
+                                        text(turn->get_name() + " Choose Card for Arrack") | bold | center,
+                                        separator(),
+                                        menu->Render() | border,
+                                        filler(),
+                                        confirm->Render() | center,
+                                    }) |
+                                    size(WIDTH, EQUAL, 30);
+                         });
+
+    auto graph = Graph_Box(board->get_spaces());
+
+    Element hand;
+
+    if (turn->get_character()->get_name() == "DRACULA" or turn->get_comrade()[0]->get_name() == "SISTERS")
+        hand = Dracula_Hand(p1, p2);
+
+
+    else if (turn->get_character()->get_name() == "SHERLOCKHOLMES" or turn->get_comrade()[0]->get_name() == "Dr_Watson")
+        hand = Sherlock_Hand(p1, p2);
+
+    auto renderer = Renderer(Container::Horizontal({
+                                 left,
+                             }),
+                             [&]
+                             {
+                                 return hbox({
+                                     left->Render(),
+                                     separator(),
+                                     vbox({
+                                         graph,
+                                         hand,
+                                     }),
+                                 });
+                             });
+
+    screen.Loop(renderer);
+
+    selected_Card = AllowHand[selected];
+
+     turn->set_selected_card(AllowHand.at(selected));
+        AllowHand[selected]->set_user_card(SelectedHero);
+}
+
+
+void Ftxui_Front::DeclareWinner(Heroes *winner)
+{
+    ScreenInteractive screen = ScreenInteractive::Fullscreen();
+
+    std::vector<std::string> entries = {"Continue"};
+    int selected = 0;
+
+    auto menu = Menu(&entries, &selected);
+
+    auto component = CatchEvent(menu,
+                                [&](Event event)
+                                {
+                                    if (event == Event::Return)
+                                    {
+                                        screen.Exit();
+                                        return true;
+                                    }
+                                    return false;
+                                });
+
+    Color winnerColor = (winner->get_name() == "DRACULA") ? Color::Red1 : Color::Blue1;
+
+    auto renderer = Renderer(component,
+                             [&]
+                             {
+                                 return vbox({
+                                            text("") ,
+                                            text("🏆  V I C T O R Y  🏆") | bold | color(Color::Gold1) | center,
+                                            text(""),
+                                            separator(),
+                                            text(""),
+                                            text(winner->get_name()) | bold | color(winnerColor) | center | flex,
+                                            text("HAS WON THE GAME!") | bold | color(Color::White) | center,
+                                            text(""),
+                                            separator(),
+                                            text(""),
+                                            component->Render() | center,
+                                        }) |
+                                        border | color(Color::LightGoldenrod1) | center | size(WIDTH, GREATER_THAN, 40) | size(HEIGHT, GREATER_THAN, 12);
+                             });
+
+    screen.Loop(renderer);
 }

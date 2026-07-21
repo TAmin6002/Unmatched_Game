@@ -70,3 +70,8 @@ void Player::set_selected_card(Card *card)
 {
     selected_card = card;
 }
+
+void Player::set_count(int n)
+{
+    count = n;
+}

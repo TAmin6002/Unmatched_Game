@@ -4,25 +4,25 @@
 #include <iostream>
 using namespace std;
 
-int Controller::get_DraculaAction() const
-{
-    return DraculaAction;
-}
+// int Controller::get_DraculaAction() const
+// {
+//     return DraculaAction;
+// }
 
-void Controller::set_DraculaAction()
-{
-    DraculaAction++;
-}
+// void Controller::set_DraculaAction()
+// {
+//     DraculaAction++;
+// }
 
-int Controller::get_SherlockAction() const
-{
-    return SherlockAction;
-}
+// int Controller::get_SherlockAction() const
+// {
+//     return SherlockAction;
+// }
 
-void Controller::set_SherlockAction()
-{
-    SherlockAction++;
-}
+// void Controller::set_SherlockAction()
+// {
+//     SherlockAction++;
+// }
 
 Dracula *Controller::get_Dracula()
 {
@@ -131,6 +131,22 @@ void Controller::chane_turn()
     }
 }
 
+bool check_winner(Heroes *hero, Player *p1, Player *p2)
+{
+    Player *hero_player = (p1->get_character() == hero) ? p1 : p2;
+    Player *opponent_player = (hero_player == p1) ? p2 : p1;
+
+    if (opponent_player->get_character()->get_islive())
+        return false;
+
+    for (Heroes *comrade : opponent_player->get_comrade())
+    {
+        if (comrade->get_islive())
+            return false;
+    }
+
+    return true;
+}
 
 void Controller::run()
 {
@@ -191,8 +207,24 @@ void Controller::run()
             
             // FF.chose_comrad_place(&p1, &p2, &board);
      
+
+
+
             while (true)
             {
+                if(check_winner(&dracula, &p1, &p2))
+                {
+                    FF.DeclareWinner(&dracula);
+                    Exit = true;
+                    break;
+                }
+                else if(check_winner(&sherlock, &p1, &p2))
+                {
+                    FF.DeclareWinner(&sherlock);
+                    Exit = true;
+                    break;
+                }
+
                   if (turn->get_count() == 0 && turn->get_character()->get_name() == "DRACULA")
                     {
                         dracula.abiliti(&board);
@@ -228,7 +260,10 @@ void Controller::run()
                                 
         
                                 Attack_Value = Attacker_selected_card->get_amount();
-                                Defense_Value = Defender_selected_card->get_amount();
+                                
+                                if(Defender_selected_card == nullptr) {Defense_Value = 0;}
+                                else
+                                    Defense_Value = Defender_selected_card->get_amount();
                             }
                             catch (const std::exception &e)
                             {
@@ -244,28 +279,30 @@ void Controller::run()
                                 // -------------------------- Befor Calculation --------------------------.
                                 cout << "6\n";
                                 
+                                if (Defender_selected_card->get_CardTiming() == CardTiming::Before)
+                                {
+                                    card_resolver.excute(Defender_selected_card, &p1, &p2, Attacker, Defender, &board, Attack_Value, Defense_Value);
+                                }
+
                                 if (Attacker_selected_card->get_CardTiming() == CardTiming::Before)
                                 {
                                     card_resolver.excute(Attacker_selected_card, &p1, &p2, Attacker, Defender, &board, Attack_Value, Defense_Value);
                                 }
                                 
-                                if (Defender_selected_card->get_CardTiming() == CardTiming::Before)
-                                {
-                                    card_resolver.excute(Defender_selected_card, &p1, &p2, Attacker, Defender, &board, Attack_Value, Defense_Value);
-                                }
                                 
                                 // -------------------------- During Calculation --------------------------.
                                 cout << "7\n";
-                                
-                                if (Attacker_selected_card->get_CardTiming() == CardTiming::During)
-                                {
-                                    card_resolver.excute(Attacker_selected_card, &p1, &p2, Attacker, Defender, &board, Attack_Value, Defense_Value);
-                                }
                                 
                                 if (Defender_selected_card->get_CardTiming() == CardTiming::During)
                                 {
                                     card_resolver.excute(Defender_selected_card, &p1, &p2, Attacker, Defender, &board, Attack_Value, Defense_Value);
                                 }
+
+                                if (Attacker_selected_card->get_CardTiming() == CardTiming::During)
+                                {
+                                    card_resolver.excute(Attacker_selected_card, &p1, &p2, Attacker, Defender, &board, Attack_Value, Defense_Value);
+                                }
+                                
                                 
                                 // --------------------------- Damage Calculation ------------------------.
                                 
@@ -273,7 +310,7 @@ void Controller::run()
                                 
                                 int Damage = Attack_Value - Defense_Value;
                                 
-                                if (Damage > 0)
+                                if (Damage >= 1)
                                 Defender->Damage(Damage);
                                 
                                 // Heroes *Winner = (Attack_Value > Defense_Value) ? Attacker : Defender;
@@ -281,15 +318,16 @@ void Controller::run()
                                 //---------------------------- After Calculation ---------------------------.
                                 cout << "9\n";
                                 
+                                if (Defender_selected_card->get_CardTiming() == CardTiming::After)
+                                {
+                                    card_resolver.excute(Defender_selected_card, &p1, &p2, Attacker, Defender, &board, Attack_Value, Defense_Value);
+                                }
+
                                 if (Attacker_selected_card->get_CardTiming() == CardTiming::After)
                                 {
                                     card_resolver.excute(Attacker_selected_card, &p1, &p2, Attacker, Defender, &board, Attack_Value, Defense_Value);
                                 }
                                 
-                                if (Defender_selected_card->get_CardTiming() == CardTiming::After)
-                                {
-                                    card_resolver.excute(Defender_selected_card, &p1, &p2, Attacker, Defender, &board, Attack_Value, Defense_Value);
-                                }
                                 
                                 // ------------------------- Transfer Cards to discard --------------------------.
                                 cout << "10\n";
@@ -320,6 +358,7 @@ void Controller::run()
                             cout << "11\n";
 
                             turn->add_count();
+
                         } 
                         Attacker->set_Movement((Attacker->get_Movement() - 1 >= 0 ) ? Attacker->get_Movement() - 1 : 0);
                     }
@@ -331,31 +370,73 @@ void Controller::run()
                     case 1: // Maneuver
                         if (turn->get_count() < 2)
                         {
-                            Heroes* selected = nullptr;
+                              Heroes* selected = nullptr;
                             FF.Attakcer_Heroes_Menu(turn, &board, selected);
 
-                            
                             if (selected != nullptr)
                             {
-                                if(selected->DrawnCard() == 0)
-                                    selected->Damage(2);
+                                Heroes *cardHolder = turn->get_character(); 
 
-                                FF.MoveHero(selected, &board, selected->get_Movement());
+                                if (cardHolder->DrawnCard() == 0)
+                                    cardHolder->Damage(2);
+
+                                int extraMove = 0;
+
+                                if (!cardHolder->get_hand().empty() && FF.AskBurnCardForMove(selected, &board))
+                                {
+                                    Card *burned = FF.ChooseCardFromHand(turn, &p1, &p2, &board);
+                                    extraMove = burned->get_Boost();
+                                    cardHolder->Discard_Card(burned);
+                                }
+
+                                FF.MoveHero(selected, &board, selected->get_Movement() + extraMove);
+
+                                selected->set_Movement((selected->get_Movement() - 1 >= 0) ? selected->get_Movement() - 1 : 0);
                             }
-
-                            selected->set_Movement((selected->get_Movement() - 1 >= 0 ) ? selected->get_Movement() - 1 : 0);
+                            turn->add_count();
                         }
 
                         // exeption ...
                         break;
 
                     case 2: // Event
+                    {
                         if (turn->get_count() < 2)
                         {
+                            int temp1, temp2 ;
+
+                            try{
+                                    Card *selected_Card = nullptr;
+                                    Heroes * selectedHero = nullptr;
+        
+                                    FF.Attakcer_Heroes_Menu(turn, &board, selectedHero);
+        
+                                    if(selectedHero != nullptr)
+                                    {
+                                        FF.Event_Selected_Card(selectedHero, turn, &p1, &p2, &board, selected_Card);
+
+                                        if(selected_Card != nullptr)
+                                            card_resolver.excute(selected_Card, &p1, &p2, selectedHero, nullptr, &board, temp1, temp2);
+        
+                                    }
+                                    selectedHero->Discard_Card(selected_Card);
+
+                                    selected_Card->set_user_card(nullptr);
+                                    turn->set_selected_card(nullptr);
+
+                                }
+                                catch (const std::exception &e)
+                                {
+                                    FF.get_msg().push_back(e.what());
+                                    // std::cerr << e.what() << '\n';
+                                }
+
+                            turn->add_count();
                         }
 
                         // exeption ...
                         break;
+                    }
 
                     case 3: // Back
                     {
@@ -375,10 +456,11 @@ void Controller::run()
 
                     if (turn->get_count() % 2 == 0)
                     {
+                        turn->set_count(0);
                         chane_turn();
                         round++;
                     }
-
+                    
                     round++;
                     
                 }

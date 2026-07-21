@@ -307,6 +307,8 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
 
     case CardType::Deduce_Strategy:
     {
+
+        cout << "Dedece Card \n";
         if (selectedcard->get_ApplyEffects())
         {
 

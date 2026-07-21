@@ -40,8 +40,10 @@ public:
     Component ChooseAction(Player *, Player *, ScreenInteractive *);
     
     void main_map(Player *, Player *, Board *, Player *);
-    
+
     bool AskUseSpecialAbility(Heroes *, Board *);
+    
+    bool AskBurnCardForMove(Heroes *, Board *);
     
     void choose_comrad_place(Player *, Player *, Board *);
 
@@ -50,9 +52,9 @@ public:
 
     void Attacker_selected_card(Heroes *, Heroes *, Player *, Player *, Board *, Card *&);
     void Defender_selected_card(Heroes *, Heroes *, Player *, Player *, Board *, Card *&);
-
+    
     void Reveal_Combat(Heroes *, Heroes *, Card *, Card *);
-
+    
     void put_in_any_space(Heroes *, Board *);        // Gives every fighter to every empty house.
     void Revive_Sister(Heroes *, Heroes *, Board *); // He revives the defeated sister and places her in every house.
     int DiscardCards(Heroes *);                      // Shows the fighter's hand so that the player can draw cards from it without restriction.
@@ -61,5 +63,9 @@ public:
     void PlaceHeroAdjacent(Heroes *, Heroes *, Board *);
     void ShowHand(Heroes *, Player *, Player *, Board *);
     Card *ChooseCardFromHand(Player *, Player *, Player *, Board *); // The opponent's fighter is shown and the player chooses and burns one card from among them.
+    
+    void Event_Selected_Card(Heroes *, Player *, Player * p1, Player * p2, Board *, Card *&);
+
+    void DeclareWinner(Heroes *);
 
 };

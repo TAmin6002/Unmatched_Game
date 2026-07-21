@@ -43,8 +43,8 @@ private:
 
     CardResolver card_resolver;
 
-    int DraculaAction = 2;
-    int SherlockAction = 2;
+    // int DraculaAction = 0;
+    // int SherlockAction = 0;
 
     Player *turn = nullptr;
     Player *not_turn = nullptr;

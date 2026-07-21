@@ -38,4 +38,6 @@ public:
 
     Card *get_selected_card();
     void set_selected_card(Card *);
+
+    void set_count(int);
 };
