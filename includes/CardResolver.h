@@ -17,5 +17,7 @@ private:
     Ftxui_Front FF;
 
 public:
+    void TryDisableCard(Card *, Player *, Player *); 
+    
     void excute(Card *, Player *, Player *, Heroes *, Heroes *, Board *, int &, int &);
 };

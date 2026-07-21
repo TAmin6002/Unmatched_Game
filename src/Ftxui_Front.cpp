@@ -77,7 +77,6 @@ enum ::e_Menu Ftxui_Front::Menu_()
 
 void Ftxui_Front::Players_Info_List(Player *p1, Player *p2)
 {
-    cout << "Enter player info list \n";
     
     string name_p1;
     string age_p1;
@@ -127,10 +126,6 @@ void Ftxui_Front::Players_Info_List(Player *p1, Player *p2)
     p1->set_name(name_p1), p1->set_age(stoi(age_p1));
     p2->set_name(name_p2), p2->set_age(stoi(age_p2));
 
-    cout << "Exit player info list \n";
-
-     cout << p1->get_age() << "\t" << p1 ->get_name() << endl;
-    cout << p2->get_age() << "\t" << p2 ->get_name() << endl;
 }
 
 int Ftxui_Front::Det_characters(Player *p1, Player *p2)
@@ -220,6 +215,7 @@ void Ftxui_Front::catch_place(Player *p1, Player *p2, Board *board)
         board->get_spaces()[2].set_hero((p1->get_age() > p2->get_age() ? p1 : p2)->get_character());
     }
 }
+
 
 Element Dracula_Box(Player *p1, Player *p2)
 {
@@ -428,6 +424,43 @@ Element Graph_Box(vector<Space> &spaces)
 
     return canvas(std::move(c));
 }
+
+bool Ftxui_Front::AskUseSpecialAbility(Heroes *hero, Board *board)
+{
+    std::vector<std::string> entries = {"Yes", "No"};
+    int selected = 0;
+
+    auto menu = Menu(&entries, &selected);
+
+    ScreenInteractive screen = ScreenInteractive::Fullscreen();
+
+    auto component = CatchEvent(menu,
+                                [&](Event event)
+                                {
+                                    if (event == Event::Return)
+                                    {
+                                        screen.Exit();
+                                        return true;
+                                    }
+
+                                    return false;
+                                });
+
+    auto renderer = Renderer(component,
+                             [&]
+                             {
+                                 return hbox({Graph_Box(board->get_spaces()),
+                                              separator(),
+                                              window(
+                                                  text(hero->get_name() + " - Use Special Ability?"),
+                                                  component->Render())});
+                             });
+
+    screen.Loop(renderer);
+
+    return selected == 0; // 0 = Yes, 1 = No
+}
+
 
 std::string CardTypeToString(CardType card)
 {

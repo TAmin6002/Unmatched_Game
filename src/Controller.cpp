@@ -162,7 +162,8 @@ void Controller::run()
             
 
             FF.Players_Info_List(&p1, &p2);
-                 
+            
+            // FF.catch_place(&p1, &p2, &board);
             
             if(round == 1)
             Initial_turn();
@@ -192,6 +193,11 @@ void Controller::run()
      
             while (true)
             {
+                  if (turn->get_count() == 0 && turn->get_character()->get_name() == "DRACULA")
+                    {
+                        dracula.abiliti(&board);
+                    }
+                    
                 FF.main_map(&p1, &p2, &board, turn);
                 
 
@@ -220,11 +226,7 @@ void Controller::run()
                                 FF.Reveal_Combat(Attacker, Defender, Attacker_selected_card, Defender_selected_card); // show tow v&s cards
                                 cout << "5\n";
                                 
-                                cout << "Attacker_selected_card: " << Attacker_selected_card->get_amount();//
-                                cout << "Defender_selected_card: " <<Defender_selected_card->get_amount();//
-
-
-                                
+        
                                 Attack_Value = Attacker_selected_card->get_amount();
                                 Defense_Value = Defender_selected_card->get_amount();
                             }
@@ -329,13 +331,15 @@ void Controller::run()
                     case 1: // Maneuver
                         if (turn->get_count() < 2)
                         {
-                            turn->get_character()->DrawnCard();
-
                             Heroes* selected = nullptr;
                             FF.Attakcer_Heroes_Menu(turn, &board, selected);
 
+                            
                             if (selected != nullptr)
                             {
+                                if(selected->DrawnCard() == 0)
+                                    selected->Damage(2);
+
                                 FF.MoveHero(selected, &board, selected->get_Movement());
                             }
 

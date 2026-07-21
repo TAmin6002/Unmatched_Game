@@ -1,5 +1,6 @@
 
 #include "Dracula.h"
+#include "Ftxui_Front.h"
 #include <random>
 #include <algorithm>
 using namespace std;
@@ -68,6 +69,20 @@ vector<Sisters *> Dracula::get_sisters()
   return sisters;
 }
 
-void Dracula::abiliti()
+void Dracula::abiliti(Board *board)
 {
+  Ftxui_Front FF;
+
+    if (!FF.AskUseSpecialAbility(this, board))
+        return; 
+
+    Heroes *target = FF.SelectHero(board);  
+    
+    if (target == nullptr)
+        return;  
+
+    target->Damage(1);
+
+    if (this->DrawnCard() == 0)
+        this->Damage(2);
 }

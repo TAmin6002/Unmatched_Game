@@ -100,7 +100,7 @@ void Heroes::Damage(int amount)
     if (Health - amount <= 0)
     {
         islive = false;
-        
+
         this->get_place()->set_hero(nullptr);
         this->set_place(nullptr);
     }

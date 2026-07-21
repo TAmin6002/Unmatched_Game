@@ -8,6 +8,8 @@
 #include "Space.h"
 #include "Card.h"
 
+class Board;
+
 class Heroes
 {
 
@@ -54,10 +56,10 @@ public:
     std::vector<Card> &get_discard();
 
     int DrawnCard(); // یک کارت میکشد
-    int discard_hand(); // یک کارت رندوم از دست میکشد و حذف میکند
+    int discard_hand(); // یک کارت رندوم از دست میکشد و حذف میکند و بوست ان را برمیگرداند
     void DiscardCard(int);
     void Discard_Card(Card* ); // کارتی که گرفته را حذف میکند از دست
 
     void Damage(int);
-    virtual void abiliti() = 0;
+    virtual void abiliti(Board *) = 0;
 };

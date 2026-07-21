@@ -76,7 +76,7 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
             }
 
             if (sister != nullptr)
-            {
+            {   
                 sister->set_islive(true);
                 sister->set_Health(1, 1);
 
@@ -84,6 +84,7 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
             }
             // return NeedInput::None;
         }
+        break;
     }
 
     case CardType::Beastform:
@@ -131,7 +132,7 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
         if (selectedcard->get_ApplyEffects())
         {
             int Boost = Sherlock_Player->get_selected_card()->get_Boost();
-            selectedcard->set_amount(Boost);
+            selectedcard->add_amount(Boost);
         }
         // return NeedInput::None;
         break;
@@ -200,7 +201,7 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
                 if (hero == nullptr)
                     continue;
 
-                if (hero->get_name() == "SISTER")
+                if (hero->get_name() == "SISTERS")
                     damage++;
             }
 
@@ -220,8 +221,8 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
             }
 
             // return NeedInput::None;
-            break;
         }
+        break;
     }
 
     case CardType::Feint:
@@ -230,16 +231,16 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
         {
             if (p1->get_character()->get_name() == "DRACULA" or p1->get_comrade()[0]->get_name() == "SISTERS")
             {
-                p2->get_selected_card()->set_ApplyEffects(false); // Cancel the effect opponent's card.
+                TryDisableCard(p2->get_selected_card(), p1, p2);
             }
 
             else if (p2->get_character()->get_name() == "DRACULA" or p2->get_comrade()[0]->get_name() == "SISTERS")
             {
-                p1->get_selected_card()->set_ApplyEffects(false); // Cancel the effect opponent's card.
+                TryDisableCard(p1->get_selected_card(), p1, p2);
             }
             // return NeedInput::None;
-            break;
         }
+        break;
     }
 
     case CardType::Administer_Aid:
@@ -268,8 +269,8 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
             }
 
             // return NeedInput::None;
-            break;
         }
+        break;
     }
 
         // if (p1->get_character()->get_name() == "SHERLOCKHOLMES" or p1->get_comrade()->get_name() == "Dr_Watson")
@@ -321,48 +322,47 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
                 p1->get_selected_card()->set_amount(Boost);
             }
             // return NeedInput::None;
-            break;
         }
+        break;
     }
 
     case CardType::Education_Never_Ends:
     {
         if (selectedcard->get_ApplyEffects())
         {
-            if (Attacker->get_name() == "SHERLOCKHOLMES")
+            if (Attacker->get_name() == "SHERLOCKHOLMES" or Attacker->get_name() == "Dr_Watson")
             {
                 if (Attack_Value - Defence_Value >= 1)
                 {
-                    Defender->DrawnCard();
+                    if(Defender->DrawnCard() == 0)
+                        Defender->Damage(2);
                 }
 
                 else
                 {
                     if (Attacker->DrawnCard() == 0)
-                    {
                         Attacker->Damage(2);
-                    }
-                    else
-                        Attacker->DrawnCard();
+                    
+                    if(Attacker->DrawnCard() == 0)
+                            Attacker->Damage(2);
                 }
             }
-        }
-        else if (Defender->get_name() == "SHERLOCKHOLMES")
-        {
-            if (Attack_Value - Defence_Value <= 0)
+            else if (Defender->get_name() == "SHERLOCKHOLMES" or Defender->get_name() == "Dr_Watson")
             {
-                if (Defender->DrawnCard() == 0)
-                    Defender->Damage(2);
-            }
-
-            else
-            {
-                if (Defender->DrawnCard() == 0)
+                if (Attack_Value - Defence_Value <= 0)
                 {
+                    if (Attacker->DrawnCard() == 0)
+                    Attacker->Damage(2);
+                }
+                
+                else
+                {
+                    if (Defender->DrawnCard() == 0)
+                    Defender->Damage(2);
+                    
+                    if(Defender->DrawnCard() == 0)
                     Defender->Damage(2);
                 }
-                else
-                    Defender->DrawnCard();
             }
         }
     }
@@ -389,7 +389,7 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
     {
         if (selectedcard->get_ApplyEffects())
         {
-            Dracula_Player->get_selected_card()->set_ApplyEffects(false); // dis card opponent
+            TryDisableCard(Dracula_Player->get_selected_card(), p1, p2);
         }
         // return NeedInput::None;
         break;
@@ -414,10 +414,16 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
         if (selectedcard->get_ApplyEffects())
         {
             if (Attacker->get_name() == "SHERLOCKHOLMES")
+            {
                 board->SwapHeroes(Attacker, Defender);
-
+                Defender->Damage(1);
+            }
+            
             else
+            {
                 board->SwapHeroes(Defender, Attacker);
+                Attacker->Damage(1);
+            }
         }
     }
 
@@ -426,7 +432,11 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
 
     case CardType::The_Game_Is_Afoot:
     {
-        FF.MoveHero(Sherlock_Player->get_character(), board, 3);
+        if(selectedcard->get_ApplyEffects())
+        {
+            FF.MoveHero(Sherlock_Player->get_character(), board, 3);
+        }
+
         break;
     }
 
@@ -438,18 +448,39 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
     }
 
     case CardType::Study_Methods:
-    {
-        if (Attacker->get_name() == "SHERLOCKHOLMES" or Attacker->get_name() == "Dr_Watson")
+    {   
+         if(selectedcard->get_ApplyEffects())
         {
-            if (Attack_Value - Defence_Value >= 1)
-                FF.ShowHand(Defender, p1, p2, board);
+            if (Attacker->get_name() == "SHERLOCKHOLMES" or Attacker->get_name() == "Dr_Watson")
+            {
+                if (Attack_Value - Defence_Value >= 1)
+                    FF.ShowHand(Defender, p1, p2, board);
+            }
+            else
+            {
+                if (Attack_Value - Defence_Value <= 0)
+                    FF.ShowHand(Attacker, p1, p2, board);
+            }
         }
-        else
-        {
-            if (Attack_Value - Defence_Value <= 0)
-                FF.ShowHand(Attacker, p1, p2, board);
-        }
+
         break;
     }
     }
+}
+
+void CardResolver::TryDisableCard(Card *card, Player *p1, Player *p2)
+{
+    if (card == nullptr)
+        return;
+
+    Player *Sherlock_Player = (p1->get_name() == "SHERLOCKHOLMES" ? p1 : p2);
+    Heroes *sherlock = Sherlock_Player->get_character();
+
+    std::string owner = card->get_owner();
+
+    if (sherlock->get_islive() && (owner == "SHERLOCKHOLMES" || owner == "DR_WATSON")){
+        return; // محافظت‌شده - غیرفعال نمی‌شود
+    }
+
+    card->set_ApplyEffects(false);
 }

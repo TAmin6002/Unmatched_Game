@@ -19,5 +19,5 @@ public:
 
     // void set_sisters(Sisters &, Sisters &, Sisters &);
     std::vector<Sisters *> get_sisters();
-    virtual void abiliti() override;
+    virtual void abiliti(Board *) override;
 };

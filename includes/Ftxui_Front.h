@@ -36,10 +36,13 @@ public:
 
     void catch_place(Player *, Player *, Board *);
 
+    
     Component ChooseAction(Player *, Player *, ScreenInteractive *);
-
+    
     void main_map(Player *, Player *, Board *, Player *);
-
+    
+    bool AskUseSpecialAbility(Heroes *, Board *);
+    
     void choose_comrad_place(Player *, Player *, Board *);
 
     void Attakcer_Heroes_Menu(Player *, Board *, Heroes *&);

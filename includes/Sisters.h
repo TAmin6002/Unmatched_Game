@@ -8,5 +8,5 @@ class Sisters : public Heroes
 private:
 public:
     Sisters(int);
-    virtual void abiliti() override;
+    virtual void abiliti(Board *) override;
 };

@@ -56,6 +56,7 @@ SherlockHolmes::SherlockHolmes()
         DrawnCard();
 }
 
-void SherlockHolmes::abiliti()
+void SherlockHolmes::abiliti(Board *)
 {
+    // this abiliti implemented at Card Resolver class
 }

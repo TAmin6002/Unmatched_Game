@@ -13,5 +13,5 @@ private:
 
 public:
     SherlockHolmes();
-    virtual void abiliti() override;
+    virtual void abiliti(Board *) override;
 };
