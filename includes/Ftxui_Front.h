@@ -59,7 +59,7 @@ public:
     void Revive_Sister(Heroes *, Heroes *, Board *); // He revives the defeated sister and places her in every house.
     int DiscardCards(Heroes *);                      // Shows the fighter's hand so that the player can draw cards from it without restriction.
     void MoveHero(Heroes *, Board *, int);           // Moves the fighter up to a specified number of spaces.
-    Heroes *SelectHero(Board *);
+    Heroes *SelectHero(Board *, Heroes *exclude = nullptr);
     void PlaceHeroAdjacent(Heroes *, Heroes *, Board *);
     void ShowHand(Heroes *, Player *, Player *, Board *);
     Card *ChooseCardFromHand(Player *, Player *, Player *, Board *); // The opponent's fighter is shown and the player chooses and burns one card from among them.

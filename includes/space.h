@@ -26,6 +26,14 @@ public:
     Heroes *get_hero();
 
     int get_number();
+
+    // Portals: additional movement-only connections to non-adjacent spaces.
+    // Kept separate from `neighbor` on purpose, since `neighbor` also backs
+    // Board::is_Adjacent() (used for attack/adjacency checks). Portals must
+    // never affect combat, only movement.
+    void add_portal(Space *destination);
+    std::vector<Space *> get_portal();
+    bool has_portal();
 };
 
 #endif

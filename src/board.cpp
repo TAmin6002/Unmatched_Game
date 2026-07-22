@@ -75,6 +75,13 @@ Board ::Board()
     spaces[30] = Space(31, {&spaces[2], &spaces[31], &spaces[29], &spaces[28]}, {&spaces[31], &spaces[29], &spaces[28]});
 
     spaces[31] = Space(32, {&spaces[2], &spaces[30], &spaces[29], &spaces[28]}, {&spaces[2], &spaces[30], &spaces[29]});
+
+    // Portals: additional movement-only connections between non-adjacent
+    // spaces. They do NOT make the two spaces adjacent for attacks or
+    // zone-based card effects (see is_Adjacent, which only reads `neighbor`).
+    // Example wiring matching the report: Space 5 <-> Space 24, Space 8 <-> Space 31.
+    ConnectPortal(&spaces[4], &spaces[23]);  // Space 5 <-> Space 24
+    ConnectPortal(&spaces[7], &spaces[30]);  // Space 8 <-> Space 31
 }
 
 bool Board::is_Adjacent(Space *s1, Space *s2)
@@ -90,6 +97,17 @@ bool Board::is_Adjacent(Space *s1, Space *s2)
 std::vector<Space> &Board::get_spaces()
 {
     return spaces;
+}
+
+void Board::ConnectPortal(Space *s1, Space *s2)
+{
+    if (s1 == nullptr || s2 == nullptr)
+        throw std::runtime_error("Cannot connect a portal to a null space.");
+
+    // Bidirectional and movement-only: neither side is added to `neighbor`,
+    // so is_Adjacent() (used for attacks/zone effects) stays unaffected.
+    s1->add_portal(s2);
+    s2->add_portal(s1);
 }
 
 void Board::SwapHeroes(Heroes *hero1, Heroes *hero2)

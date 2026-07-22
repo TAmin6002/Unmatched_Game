@@ -111,13 +111,13 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
         if (selectedcard->get_ApplyEffects())
         {
 
-            if (p1->get_character()->get_name() == "DRACULA" or p1->get_comrade()[0]->get_name() == "SISTERS")
+            if (p1->get_character()->get_name() == "DRACULA" or (!p1->get_comrade().empty() and p1->get_comrade()[0]->get_name() == "SISTERS"))
             {
                 if (p1->get_character()->DrawnCard() == 0)
                     p1->get_character()->Damage(2);
             }
 
-            else if (p2->get_character()->get_name() == "DRACULA" or p2->get_comrade()[0]->get_name() == "SISTERS")
+            else if (p2->get_character()->get_name() == "DRACULA" or (!p2->get_comrade().empty() and p2->get_comrade()[0]->get_name() == "SISTERS"))
             {
                 if (p2->get_character()->DrawnCard() == 0)
                     p2->get_character()->Damage(2);
@@ -131,7 +131,11 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
     {
         if (selectedcard->get_ApplyEffects())
         {
-            int Boost = Sherlock_Player->get_selected_card()->get_Boost();
+            int Boost = 0;
+
+            if(Sherlock_Player->get_selected_card() != nullptr)
+                Boost = Sherlock_Player->get_selected_card()->get_Boost();
+
             selectedcard->add_amount(Boost);
         }
         // return NeedInput::None;
@@ -154,7 +158,7 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
                     count++;
                 }
 
-                if (board->is_Adjacent(p1->get_character()->get_place(), p2->get_comrade()[0]->get_place()))
+                if (!p2->get_comrade().empty() and board->is_Adjacent(p1->get_character()->get_place(), p2->get_comrade()[0]->get_place()))
                 {
                     p2->get_comrade()[0]->Damage(1);
                     count++;
@@ -172,7 +176,7 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
                     count++;
                 }
 
-                if (board->is_Adjacent(p2->get_character()->get_place(), p1->get_comrade()[0]->get_place()))
+                if (!p1->get_comrade().empty() and board->is_Adjacent(p2->get_character()->get_place(), p1->get_comrade()[0]->get_place()))
                 {
                     p1->get_comrade()[0]->Damage(1);
                     count++;
@@ -189,6 +193,9 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
         if (selectedcard->get_ApplyEffects())
         {
             Heroes *target = FF.SelectHero(board);
+
+            if (target == nullptr)
+                break;
 
             FF.MoveHero(target, board, 2);
 
@@ -229,14 +236,16 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
     {
         if (selectedcard->get_ApplyEffects())
         {
-            if (p1->get_character()->get_name() == "DRACULA" or p1->get_comrade()[0]->get_name() == "SISTERS")
+            if (p1->get_character()->get_name() == "DRACULA" or (!p1->get_comrade().empty() and p1->get_comrade()[0]->get_name() == "SISTERS"))
             {
-                TryDisableCard(p2->get_selected_card(), p1, p2);
+                if(p2->get_selected_card() != nullptr)
+                    TryDisableCard(p2->get_selected_card(), p1, p2);
             }
 
-            else if (p2->get_character()->get_name() == "DRACULA" or p2->get_comrade()[0]->get_name() == "SISTERS")
+            else if (p2->get_character()->get_name() == "DRACULA" or (!p2->get_comrade().empty() and p2->get_comrade()[0]->get_name() == "SISTERS"))
             {
-                TryDisableCard(p1->get_selected_card(), p1, p2);
+                if(p1->get_selected_card() != nullptr)
+                    TryDisableCard(p1->get_selected_card(), p1, p2);
             }
             // return NeedInput::None;
         }
@@ -247,9 +256,11 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
     {
         if (selectedcard->get_ApplyEffects())
         {
-            if (p1->get_character()->get_name() == "SHERLOCKHOLMES" or p1->get_comrade()[0]->get_name() == "Dr_Watson")
+            if (p1->get_character()->get_name() == "SHERLOCKHOLMES" or (!p1->get_comrade().empty() and p1->get_comrade()[0]->get_name() == "Dr_Watson"))
             {
-                FF.PlaceHeroAdjacent(p1->get_character(), p1->get_comrade()[0], board);
+                if (!p1->get_comrade().empty())
+                    FF.PlaceHeroAdjacent(p1->get_character(), p1->get_comrade()[0], board);
+
                 p1->get_character()->set_Health(1, 16);
                 if (p1->get_character()->DrawnCard() == 0)
                 {
@@ -257,9 +268,11 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
                 }
             }
 
-            else if (p2->get_character()->get_name() == "SHERLOCKHOLMES" or p2->get_comrade()[0]->get_name() == "Dr_Watson")
+            else if (p2->get_character()->get_name() == "SHERLOCKHOLMES" or (!p2->get_comrade().empty() and p2->get_comrade()[0]->get_name() == "Dr_Watson"))
             {
-                FF.PlaceHeroAdjacent(p2->get_character(), p2->get_comrade()[0], board);
+                if (!p2->get_comrade().empty())
+                    FF.PlaceHeroAdjacent(p2->get_character(), p2->get_comrade()[0], board);
+
                 p2->get_character()->set_Health(1, 16);
 
                 if (p2->get_character()->DrawnCard() == 0)
@@ -314,14 +327,20 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
 
             if (p1->get_character()->get_name() == "SHERLOCKHOLMES")
             {
-                int Boost = p2->get_selected_card()->get_Boost();
-                p2->get_selected_card()->set_amount(Boost);
+                if (p2->get_selected_card() != nullptr)
+                {
+                    int Boost = p2->get_selected_card()->get_Boost();
+                    p2->get_selected_card()->set_amount(Boost);
+                }
             }
 
             else if (p2->get_character()->get_name() == "SHERLOCKHOLMES")
             {
-                int Boost = p1->get_selected_card()->get_Boost();
-                p1->get_selected_card()->set_amount(Boost);
+                if (p1->get_selected_card() != nullptr)
+                {
+                    int Boost = p1->get_selected_card()->get_Boost();
+                    p1->get_selected_card()->set_amount(Boost);
+                }
             }
             // return NeedInput::None;
         }
@@ -391,7 +410,8 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
     {
         if (selectedcard->get_ApplyEffects())
         {
-            TryDisableCard(Dracula_Player->get_selected_card(), p1, p2);
+            if(Dracula_Player->get_selected_card() != nullptr)
+                TryDisableCard(Dracula_Player->get_selected_card(), p1, p2);
         }
         // return NeedInput::None;
         break;
@@ -401,7 +421,7 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
     {
         if (selectedcard->get_ApplyEffects())
         {
-            if (board->is_Adjacent(Sherlock_Player->get_character()->get_place(), Sherlock_Player->get_comrade()[0]->get_place()))
+            if (!Sherlock_Player->get_comrade().empty() and board->is_Adjacent(Sherlock_Player->get_character()->get_place(), Sherlock_Player->get_comrade()[0]->get_place()))
             {
                 Sherlock_Player->get_character()->set_Health(1, 16);
                 Sherlock_Player->get_comrade()[0]->set_Health(1, 8);

@@ -101,8 +101,11 @@ void Heroes::Damage(int amount)
     {
         islive = false;
 
-        this->get_place()->set_hero(nullptr);
-        this->set_place(nullptr);
+        if (place != nullptr){
+            place->set_hero(nullptr);
+            place = nullptr;
+        } 
+            
     }
 
     else
@@ -113,10 +116,13 @@ int Heroes::discard_hand()
 {
     // باید چک شود که از بین پنج کارت توی دست هیچکدام اشتباه یا نال یا استفاده شده نباشند ...!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+    if (hand.empty())
+        return 0;
+
     int Boost;
 
     std::mt19937 rng(std::random_device{}());
-    std::uniform_int_distribution<int> dist(0, hand.size());
+    std::uniform_int_distribution<int> dist(0, hand.size() - 1);
     int randomIndex = dist(rng);
 
     Boost = hand[randomIndex].get_Boost();

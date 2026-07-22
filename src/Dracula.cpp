@@ -76,10 +76,10 @@ void Dracula::abiliti(Board *board)
     if (!FF.AskUseSpecialAbility(this, board))
         return; 
 
-    Heroes *target = FF.SelectHero(board);  
-    
+    Heroes *target = FF.SelectHero(board, this);
+
     if (target == nullptr)
-        return;  
+        return;
 
     target->Damage(1);
 

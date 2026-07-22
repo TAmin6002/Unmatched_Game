@@ -260,13 +260,13 @@ Element Graph_Box(vector<Space> &spaces)
     c.DrawPointLine(50, 14, 73, 6, Color::White);  // 3
 
     c.DrawPointLine(54, 25, 31, 19, Color::White); // 4
-    c.DrawPointLine(54, 25, 31, 20, Color::White); // 4
+    c.DrawPointLine(54, 25, 31, 28, Color::White); // 4
 
     c.DrawPointLine(31, 19, 9, 19, Color::White); // 5
 
     c.DrawPointLine(9, 19, 9, 31, Color::White); // 6
 
-    c.DrawPointLine(31, 20, 9, 31, Color::White); // 7
+    c.DrawPointLine(31, 28, 9, 31, Color::White); // 8
 
     c.DrawPointLine(9, 31, 10, 38, Color::White); // 8
 
@@ -344,8 +344,8 @@ Element Graph_Box(vector<Space> &spaces)
     c.DrawPointCircle(9, 19, 3, Color::Cyan);
     c.DrawText(8, 18, (spaces[5].get_hero() == nullptr ? "6" : (spaces[5].get_hero()->get_number() == 0 ? "" : to_string(spaces[5].get_hero()->get_number())) + (spaces[5].get_hero()->get_name().substr(0, 2))), Color::Yellow);
 
-    c.DrawPointCircle(31, 20, 3, Color::Cyan);
-    c.DrawText(30, 19, (spaces[6].get_hero() == nullptr ? "7" : (spaces[6].get_hero()->get_number() == 0 ? "" : to_string(spaces[6].get_hero()->get_number())) + (spaces[6].get_hero()->get_name().substr(0, 2))), Color::Yellow);
+    c.DrawPointCircle(31, 28, 3, Color::Cyan);
+    c.DrawText(30, 27, (spaces[6].get_hero() == nullptr ? "7" : (spaces[6].get_hero()->get_number() == 0 ? "" : to_string(spaces[6].get_hero()->get_number())) + (spaces[6].get_hero()->get_name().substr(0, 2))), Color::Yellow);
 
     c.DrawPointCircle(9, 31, 3, Color::Cyan);
     c.DrawText(8, 30, (spaces[7].get_hero() == nullptr ? "8" : (spaces[7].get_hero()->get_number() == 0 ? "" : to_string(spaces[7].get_hero()->get_number())) + (spaces[7].get_hero()->get_name().substr(0, 2))), Color::Yellow);
@@ -1039,7 +1039,7 @@ void Ftxui_Front::Attacker_selected_card(Heroes *Attacker, Heroes *Defender, Pla
     }
 
     vector<string> entries;
-    static int selected = 0;
+    int selected = 0;
 
     for (auto *c : AllowHand)
         entries.push_back(CardTypeToString(c->get_CardType()));
@@ -1140,7 +1140,7 @@ void Ftxui_Front::Defender_selected_card(Heroes *Attacker, Heroes *Defender, Pla
     }
 
     vector<string> entries;
-    static int selected = 0;
+    int selected = 0;
 
     for (auto *c : AllowHand)
         entries.push_back(CardTypeToString(c->get_CardType()));
@@ -1224,7 +1224,7 @@ void Ftxui_Front::Defender_selected_card(Heroes *Attacker, Heroes *Defender, Pla
         }
         else
         {
-            p1->set_selected_card(AllowHand.at(selected));
+            p2->set_selected_card(AllowHand.at(selected));
             AllowHand[selected]->set_user_card(Defender);
         }
     }
@@ -1321,7 +1321,7 @@ void Ftxui_Front::put_in_any_space(Heroes *fighter, Board *board)
 {
     auto screen = ScreenInteractive::Fullscreen();
 
-    static int selected = 0;
+    int selected = 0;
     vector<Space *> AllowSpace;
     vector<string> entries;
 
@@ -1490,7 +1490,15 @@ void Ftxui_Front::MoveHero(Heroes *hero, Board *board, int max_distance)
         if (distance == max_distance)
             continue;
 
-        for (Space *next : current->get_neighbor())
+        // Legal movement = normal adjacent spaces + portal destinations.
+        // Portals are movement-only: they never affect attack/zone adjacency.
+        std::vector<Space *> movable_from_current = current->get_neighbor();
+        std::vector<Space *> portals_from_current = current->get_portal();
+        movable_from_current.insert(movable_from_current.end(),
+                                     portals_from_current.begin(),
+                                     portals_from_current.end());
+
+        for (Space *next : movable_from_current)
         {
             if (visited.count(next))
                 continue;
@@ -1549,7 +1557,7 @@ void Ftxui_Front::MoveHero(Heroes *hero, Board *board, int max_distance)
     screen.Loop(component);
 }
 
-Heroes *Ftxui_Front::SelectHero(Board *board)
+Heroes *Ftxui_Front::SelectHero(Board *board, Heroes *exclude)
 {
     std::vector<Heroes *> fighters;
     std::vector<std::string> entries;
@@ -1564,6 +1572,9 @@ Heroes *Ftxui_Front::SelectHero(Board *board)
         if (!hero->get_islive())
             continue;
 
+        if (hero == exclude)
+            continue;
+
         fighters.push_back(hero);
 
         entries.push_back(
@@ -1571,8 +1582,10 @@ Heroes *Ftxui_Front::SelectHero(Board *board)
             " (Space " + std::to_string(space.get_number()) + ")");
     }
 
+    // No valid target: return nullptr instead of throwing, since every
+    // caller already treats a null return as "nothing to select".
     if (fighters.empty())
-        throw std::runtime_error("No fighters available.");
+        return nullptr;
 
     int selected = 0;
 
@@ -1798,7 +1811,7 @@ void Ftxui_Front::Event_Selected_Card(Heroes * SelectedHero, Player *turn, Playe
     }
 
     vector<string> entries;
-    static int selected = 0;
+    int selected = 0;
 
     for (auto *c : AllowHand)
         entries.push_back(CardTypeToString(c->get_CardType()));

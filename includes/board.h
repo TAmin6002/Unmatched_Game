@@ -16,6 +16,10 @@ public:
     std::vector<Space> &get_spaces();
     bool is_Adjacent(Space *, Space *);
     void SwapHeroes(Heroes *, Heroes *);
+
+    // Creates a bidirectional, movement-only portal between two spaces.
+    // Does not touch `neighbor`, so it never affects is_Adjacent()/attacks.
+    void ConnectPortal(Space *, Space *);
 };
 
 #endif
