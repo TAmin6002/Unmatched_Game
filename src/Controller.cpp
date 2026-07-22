@@ -481,6 +481,7 @@ void Controller::run()
 
         case e_Menu::Help:
         {
+            FF.Show_Help();
         }
         break;
 

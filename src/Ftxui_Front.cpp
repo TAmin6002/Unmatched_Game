@@ -224,25 +224,35 @@ Element Dracula_Box(Player *p1, Player *p2)
     return vbox({
                text("DRACULA\n") | bold | color(Color::Red1),
                text("Health : " + to_string(dracula_player->get_character()->get_Health()) + " / 13"),
-               text("Move : " + to_string(dracula_player->get_character()->get_Movement())),
+               text("Action : " + to_string( 2 - dracula_player->get_count())),
+            //    text("Move : " + to_string(dracula_player->get_character()->get_Movement())),
                text("card in hand : " + to_string(dracula_player->get_character()->get_hand().size())),
                text("card in deck : " + to_string(dracula_player->get_character()->get_deck().size())),
                text("card in discard : " + to_string(dracula_player->get_character()->get_discard().size())),
-           }) |
+               separator(),
+               text("SISTERS") |bold |color(Color::RGB(180, 120, 255)),
+               text(dracula_player->get_comrade()[0]->get_name() + to_string(dracula_player->get_comrade()[0]->get_number()) + ": " + to_string(dracula_player->get_comrade()[0]->get_Health())),
+               text(dracula_player->get_comrade()[1]->get_name() + to_string(dracula_player->get_comrade()[1]->get_number()) + ": " + to_string(dracula_player->get_comrade()[1]->get_Health())),
+               text(dracula_player->get_comrade()[2]->get_name() + to_string(dracula_player->get_comrade()[2]->get_number()) + ": " + to_string(dracula_player->get_comrade()[2]->get_Health())),
+            }) |
            border;
 }
 
 Element Sherlock_Box(Player *p1, Player *p2)
 {
     Player *sherlock_player = (p1->get_character()->get_name() == "SHERLOCKHOLMES") ? p1 : p2;
-
+    
     return vbox({
-               text("SHERLOCK\n") | bold | color(Color::Blue1),
-               text("Health : " + to_string(sherlock_player->get_character()->get_Health()) + " / 16"),
-               text("Move : " + to_string(sherlock_player->get_character()->get_Movement())),
+                text("SHERLOCK\n") | bold | color(Color::Blue1),
+                text("Health : " + to_string(sherlock_player->get_character()->get_Health()) + " / 16"),
+                text("Action : " + to_string(2 -sherlock_player->get_count())),
+            //    text("Move : " + to_string(sherlock_player->get_character()->get_Movement())),
                text("card in hand : " + to_string(sherlock_player->get_character()->get_hand().size())),
                text("card in deck : " + to_string(sherlock_player->get_character()->get_deck().size())),
                text("card in discard : " + to_string(sherlock_player->get_character()->get_discard().size())),
+               separator(),
+               text("Dr_Watsone")|bold|color(Color::RGB(245, 205, 85)),
+               text(sherlock_player->get_comrade()[0]->get_name() + ": " + to_string(sherlock_player->get_comrade()[0]->get_Health())),
            }) |
            border;
 }
@@ -1914,6 +1924,173 @@ void Ftxui_Front::DeclareWinner(Heroes *winner)
                                         }) |
                                         border | color(Color::LightGoldenrod1) | center | size(WIDTH, GREATER_THAN, 40) | size(HEIGHT, GREATER_THAN, 12);
                              });
+
+    screen.Loop(renderer);
+}
+
+void Ftxui_Front::Show_Help()
+{
+    ScreenInteractive screen = ScreenInteractive::Fullscreen();
+
+    std::vector<std::string> topics = {
+        "Objective",
+        "Setup",
+        "Turn Actions",
+        "Movement & Portals",
+        "Combat",
+        "Cards & Hand",
+        "Special Abilities",
+        "Winning the Game",
+        "Back",
+    };
+
+    std::vector<std::vector<std::string>> pages = {
+        { // Objective
+            "UNMATCHED pits SHERLOCK HOLMES and DR. WATSON against",
+            "DRACULA and his three vampire SISTERS on the streets of",
+            "London.",
+            "",
+            "Each side takes turns moving fighters around the board,",
+            "attacking the other side, and playing cards, trying to",
+            "destroy the other team before that happens to them.",
+        },
+        { // Setup
+            "Two players play. Each first enters a name and an age.",
+            "",
+            "The younger player and the older player then pick sides:",
+            "one plays DRACULA with his three Sisters as comrades, the",
+            "other plays SHERLOCK HOLMES with DR. WATSON as a comrade.",
+            "",
+            "The younger player always takes the first turn, and turns",
+            "alternate between the two players after that.",
+            "",
+            "Starting Houses: the Sisters begin in Houses 1, 2 and 4,",
+            "DRACULA begins in House 3, SHERLOCK HOLMES begins in House",
+            "6, and DR. WATSON begins in House 32.",
+        },
+        { // Turn Actions
+            "Every turn you get 2 actions, in any order, chosen from:",
+            "",
+            "  Attack   - fight with one of your fighters.",
+            "  Maneuver - move one of your fighters.",
+            "  Event    - play one of that fighter's Event cards.",
+            "  Back     - end your turn early.",
+            "",
+            "Any of your living fighters can take an action, not only",
+            "your main hero - so send a Sister or Dr. Watson in instead",
+            "of your leader when it helps.",
+        },
+        { // Movement & Portals
+            "During a Maneuver, a fighter can move up to its Movement",
+            "value (normally 2) across connected Houses.",
+            "",
+            "Before moving, you may burn a card from that fighter's",
+            "hand to add the card's Boost value to the move instead of",
+            "playing it normally.",
+            "",
+            "Houses 1, 12, 15 and 27 share hidden passages. Moving",
+            "between any two of them costs just one step - but the",
+            "passage does NOT count as adjacency for attacks or",
+            "zone-based cards.",
+        },
+        { // Combat
+            "Melee fighters (DRACULA, the Sisters, SHERLOCK HOLMES) can",
+            "only attack a target standing in an adjacent House.",
+            "",
+            "Ranged fighters (DR. WATSON) can attack any target in their",
+            "House's wider zone, even without being adjacent.",
+            "",
+            "To Attack: pick your fighter, pick a valid target, then",
+            "secretly choose an Attack (or Both) card. The defender may",
+            "answer with a Defense (or Both) card, or take no card.",
+            "",
+            "Both cards flip face up together and resolve in order -",
+            "Before, then During, then After effects - before damage is",
+            "applied. Damage dealt is the attack value minus the",
+            "defense value. Both cards are then discarded.",
+        },
+        { // Cards & Hand
+            "Each fighter has their own deck and keeps a hand of cards",
+            "drawn from it.",
+            "",
+            "Cards can be Attack, Defense, Both, or Event cards. Some",
+            "cards belong to one specific fighter, while cards marked",
+            "ANY can be used by any fighter on that side.",
+            "",
+            "An Event card is played by itself during the Event action",
+            "for its special effect, instead of being used in a fight.",
+            "",
+            "Watch your deck: if a fighter needs to draw and its deck",
+            "is empty, that fighter is damaged instead of drawing.",
+        },
+        { // Special Abilities
+            "DRACULA: at the start of each of his turns, he may bite -",
+            "choose one living fighter anywhere on the board, deal it 1",
+            "damage, then draw a card. If his deck is empty he takes 2",
+            "damage instead of drawing.",
+            "",
+            "SHERLOCK HOLMES, DR. WATSON and the Sisters have no",
+            "built-in per-turn ability - their tricks come from the",
+            "Event cards in their hand instead.",
+        },
+        { // Winning
+            "A side wins the instant the opponent's main fighter",
+            "(DRACULA or SHERLOCK HOLMES) has been defeated AND every",
+            "one of their comrades has also been defeated.",
+            "",
+            "Keep at least one member of your team standing to stay in",
+            "the fight!",
+        },
+    };
+
+    int selected = 0;
+
+    auto menu = Menu(&topics, &selected);
+
+    auto component = CatchEvent(menu, [&](Event event)
+                                {
+            if (event == Event::Return)
+            {
+                if (selected == (int)topics.size() - 1) // Back
+                {
+                    screen.Exit();
+                    return true;
+                }
+                return true;
+            }
+
+            if (event == Event::Escape)
+            {
+                screen.Exit();
+                return true;
+            }
+
+            return false; });
+
+    auto renderer = Renderer(component, [&]
+                             {
+        Elements lines;
+
+        if (selected >= 0 && selected < (int)pages.size())
+        {
+            for (auto const &line : pages[selected])
+                lines.push_back(text(line));
+        }
+        else
+        {
+            lines.push_back(text("Press Enter to close this screen."));
+        }
+
+        return vbox({
+                   text("UNMATCHED - HOW TO PLAY") | bold | center,
+                   separator(),
+                   hbox({
+                       window(text("Topics"), component->Render()) | size(WIDTH, EQUAL, 26),
+                       separator(),
+                       window(text(topics[selected]), vbox(lines)) | flex,
+                   }) | flex,
+               }) |
+               border | size(WIDTH, GREATER_THAN, 70) | size(HEIGHT, GREATER_THAN, 20); });
 
     screen.Loop(renderer);
 }

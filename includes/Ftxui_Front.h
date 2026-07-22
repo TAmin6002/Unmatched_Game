@@ -67,5 +67,7 @@ public:
     void Event_Selected_Card(Heroes *, Player *, Player * p1, Player * p2, Board *, Card *&);
 
     void DeclareWinner(Heroes *);
+    void Show_Help();
+
 
 };
