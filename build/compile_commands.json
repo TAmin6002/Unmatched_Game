@@ -1,0 +1,452 @@
+[
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_SCREEN_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -ID:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\screen.dir\\src\\ftxui\\screen\\box.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\screen\\box.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/screen/box.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/screen.dir/src/ftxui/screen/box.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_SCREEN_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -ID:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\screen.dir\\src\\ftxui\\screen\\color.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\screen\\color.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/screen/color.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/screen.dir/src/ftxui/screen/color.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_SCREEN_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -ID:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\screen.dir\\src\\ftxui\\screen\\color_info.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\screen\\color_info.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/screen/color_info.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/screen.dir/src/ftxui/screen/color_info.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_SCREEN_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -ID:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\screen.dir\\src\\ftxui\\screen\\surface.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\screen\\surface.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/screen/surface.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/screen.dir/src/ftxui/screen/surface.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_SCREEN_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -ID:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\screen.dir\\src\\ftxui\\screen\\screen.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\screen\\screen.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/screen/screen.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/screen.dir/src/ftxui/screen/screen.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_SCREEN_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -ID:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\screen.dir\\src\\ftxui\\screen\\string.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\screen\\string.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/screen/string.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/screen.dir/src/ftxui/screen/string.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_SCREEN_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -ID:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\screen.dir\\src\\ftxui\\screen\\terminal.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\screen\\terminal.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/screen/terminal.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/screen.dir/src/ftxui/screen/terminal.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\automerge.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\automerge.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/automerge.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/automerge.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\selection_style.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\selection_style.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/selection_style.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/selection_style.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\blink.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\blink.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/blink.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/blink.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\bold.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\bold.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/bold.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/bold.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\border.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\border.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/border.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/border.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\box_helper.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\box_helper.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/box_helper.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/box_helper.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\canvas.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\canvas.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/canvas.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/canvas.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\clear_under.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\clear_under.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/clear_under.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/clear_under.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\color.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\color.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/color.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/color.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\composite_decorator.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\composite_decorator.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/composite_decorator.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/composite_decorator.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\dbox.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\dbox.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/dbox.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/dbox.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\dim.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\dim.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/dim.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/dim.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\flex.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\flex.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/flex.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/flex.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\flexbox.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\flexbox.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/flexbox.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/flexbox.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\flexbox_config.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\flexbox_config.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/flexbox_config.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/flexbox_config.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\flexbox_helper.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\flexbox_helper.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/flexbox_helper.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/flexbox_helper.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\focus.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\focus.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/focus.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/focus.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\frame.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\frame.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/frame.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/frame.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\gauge.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\gauge.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/gauge.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/gauge.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\graph.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\graph.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/graph.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/graph.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\gridbox.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\gridbox.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/gridbox.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/gridbox.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\hbox.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\hbox.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/hbox.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/hbox.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\hyperlink.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\hyperlink.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/hyperlink.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/hyperlink.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\inverted.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\inverted.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/inverted.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/inverted.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\italic.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\italic.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/italic.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/italic.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\linear_gradient.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\linear_gradient.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/linear_gradient.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/linear_gradient.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\node.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\node.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/node.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/node.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\node_decorator.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\node_decorator.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/node_decorator.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/node_decorator.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\paragraph.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\paragraph.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/paragraph.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/paragraph.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\reflect.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\reflect.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/reflect.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/reflect.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\scroll_indicator.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\scroll_indicator.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/scroll_indicator.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/scroll_indicator.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\selection.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\selection.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/selection.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/selection.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\separator.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\separator.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/separator.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/separator.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\size.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\size.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/size.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/size.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\spinner.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\spinner.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/spinner.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/spinner.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\strikethrough.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\strikethrough.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/strikethrough.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/strikethrough.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\table.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\table.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/table.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/table.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\text.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\text.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/text.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/text.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\underlined.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\underlined.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/underlined.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/underlined.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\underlined_double.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\underlined_double.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/underlined_double.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/underlined_double.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\util.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\util.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/util.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/util.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_DOM_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\dom.dir\\src\\ftxui\\dom\\vbox.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\dom\\vbox.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/dom/vbox.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/vbox.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_COMPONENT_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\component.dir\\src\\ftxui\\component\\animation.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\component\\animation.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/component/animation.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/animation.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_COMPONENT_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\component.dir\\src\\ftxui\\component\\button.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\component\\button.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/component/button.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/button.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_COMPONENT_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\component.dir\\src\\ftxui\\component\\catch_event.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\component\\catch_event.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/component/catch_event.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/catch_event.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_COMPONENT_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\component.dir\\src\\ftxui\\component\\checkbox.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\component\\checkbox.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/component/checkbox.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/checkbox.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_COMPONENT_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\component.dir\\src\\ftxui\\component\\collapsible.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\component\\collapsible.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/component/collapsible.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/collapsible.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_COMPONENT_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\component.dir\\src\\ftxui\\component\\component.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\component\\component.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/component/component.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/component.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_COMPONENT_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\component.dir\\src\\ftxui\\component\\component_options.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\component\\component_options.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/component/component_options.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/component_options.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_COMPONENT_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\component.dir\\src\\ftxui\\component\\container.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\component\\container.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/component/container.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/container.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_COMPONENT_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\component.dir\\src\\ftxui\\component\\dropdown.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\component\\dropdown.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/component/dropdown.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/dropdown.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_COMPONENT_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\component.dir\\src\\ftxui\\component\\event.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\component\\event.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/component/event.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/event.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_COMPONENT_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\component.dir\\src\\ftxui\\component\\hoverable.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\component\\hoverable.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/component/hoverable.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/hoverable.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_COMPONENT_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\component.dir\\src\\ftxui\\component\\input.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\component\\input.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/component/input.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/input.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_COMPONENT_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\component.dir\\src\\ftxui\\component\\maybe.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\component\\maybe.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/component/maybe.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/maybe.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_COMPONENT_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\component.dir\\src\\ftxui\\component\\menu.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\component\\menu.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/component/menu.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/menu.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_COMPONENT_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\component.dir\\src\\ftxui\\component\\modal.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\component\\modal.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/component/modal.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/modal.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_COMPONENT_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\component.dir\\src\\ftxui\\component\\radiobox.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\component\\radiobox.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/component/radiobox.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/radiobox.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_COMPONENT_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\component.dir\\src\\ftxui\\component\\renderer.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\component\\renderer.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/component/renderer.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/renderer.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_COMPONENT_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\component.dir\\src\\ftxui\\component\\resizable_split.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\component\\resizable_split.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/component/resizable_split.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/resizable_split.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_COMPONENT_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\component.dir\\src\\ftxui\\component\\app.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\component\\app.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/component/app.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/app.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_COMPONENT_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\component.dir\\src\\ftxui\\component\\slider.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\component\\slider.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/component/slider.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/slider.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_COMPONENT_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\component.dir\\src\\ftxui\\component\\task.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\component\\task.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/component/task.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/task.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_COMPONENT_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\component.dir\\src\\ftxui\\component\\task_queue.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\component\\task_queue.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/component/task_queue.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/task_queue.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_COMPONENT_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\component.dir\\src\\ftxui\\component\\task_runner.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\component\\task_runner.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/component/task_runner.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/task_runner.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_COMPONENT_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\component.dir\\src\\ftxui\\component\\terminal_input_parser.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\component\\terminal_input_parser.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/component/terminal_input_parser.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/terminal_input_parser.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_COMPONENT_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\component.dir\\src\\ftxui\\component\\util.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\component\\util.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/component/util.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/util.cpp.obj"
+},
+{
+  "directory": "D:/cpp/myproject/build",
+  "command": "C:\\Users\\ASEMAN~1\\scoop\\apps\\gcc\\current\\bin\\G__~1.EXE -DIS_FTXUI_COMPONENT_IMPL=1 -DUNICODE -D_UNICODE -ID:/cpp/myproject/build/_deps/ftxui-src/src -isystem D:/cpp/myproject/build/_deps/ftxui-src/include -std=gnu++17 -o _deps\\ftxui-build\\CMakeFiles\\component.dir\\src\\ftxui\\component\\window.cpp.obj -c D:\\cpp\\myproject\\build\\_deps\\ftxui-src\\src\\ftxui\\component\\window.cpp",
+  "file": "D:/cpp/myproject/build/_deps/ftxui-src/src/ftxui/component/window.cpp",
+  "output": "D:/cpp/myproject/build/_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/window.cpp.obj"
+}
+]

@@ -1,0 +1,10 @@
+{
+	"InstallScripts" : 
+	[
+		"D:/cpp/myproject/build/cmake_install.cmake",
+		"D:/cpp/myproject/build/_deps/ftxui-build/cmake_install.cmake",
+		"D:/cpp/myproject/build/_deps/ftxui-build/examples/cmake_install.cmake",
+		"D:/cpp/myproject/build/_deps/ftxui-build/doc/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

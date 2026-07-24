@@ -1,0 +1,35 @@
+cmake_minimum_required(VERSION 3.20)
+
+project(unmatched LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+include(FetchContent)
+
+set(FETCHCONTENT_UPDATES_DISCONNECTED ON)
+
+FetchContent_Declare(
+  ftxui
+  GIT_REPOSITORY https://github.com/ArthurSonzogni/FTXUI.git
+  GIT_TAG v7.0.0
+)
+
+FetchContent_MakeAvailable(ftxui)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+file(GLOB SRC_FILES
+    src/*.cpp
+)
+
+add_executable(app ${SRC_FILES})
+
+target_link_libraries(app 
+  PRIVATE ftxui::screen
+  PRIVATE ftxui::dom
+  PRIVATE ftxui::component
+)
+
+target_include_directories(app PRIVATE includes src)
