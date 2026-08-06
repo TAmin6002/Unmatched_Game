@@ -1370,11 +1370,12 @@ void Ftxui_Front::put_in_any_space(Heroes *fighter, Board *board)
     if (AllowSpace.empty())
     {
         throw std::runtime_error("AllowHand is empty");
-        return;
     }
 
     else
     {
+        fighter->get_place()->set_hero(nullptr);
+
         fighter->set_place(AllowSpace[selected]);
         AllowSpace[selected]->set_hero(fighter);
     }

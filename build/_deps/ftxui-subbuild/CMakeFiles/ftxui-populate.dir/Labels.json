@@ -2,37 +2,37 @@
 	"sources" : 
 	[
 		{
-			"file" : "D:/cpp/myproject/build/_deps/ftxui-subbuild/CMakeFiles/ftxui-populate"
+			"file" : "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/CMakeFiles/ftxui-populate"
 		},
 		{
-			"file" : "D:/cpp/myproject/build/_deps/ftxui-subbuild/CMakeFiles/ftxui-populate.rule"
+			"file" : "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/CMakeFiles/ftxui-populate.rule"
 		},
 		{
-			"file" : "D:/cpp/myproject/build/_deps/ftxui-subbuild/CMakeFiles/ftxui-populate-complete.rule"
+			"file" : "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/CMakeFiles/ftxui-populate-complete.rule"
 		},
 		{
-			"file" : "D:/cpp/myproject/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-build.rule"
+			"file" : "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-build.rule"
 		},
 		{
-			"file" : "D:/cpp/myproject/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-configure.rule"
+			"file" : "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-configure.rule"
 		},
 		{
-			"file" : "D:/cpp/myproject/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-download.rule"
+			"file" : "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-download.rule"
 		},
 		{
-			"file" : "D:/cpp/myproject/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-install.rule"
+			"file" : "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-install.rule"
 		},
 		{
-			"file" : "D:/cpp/myproject/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-mkdir.rule"
+			"file" : "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-mkdir.rule"
 		},
 		{
-			"file" : "D:/cpp/myproject/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-patch_disconnected.rule"
+			"file" : "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-patch_disconnected.rule"
 		},
 		{
-			"file" : "D:/cpp/myproject/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-test.rule"
+			"file" : "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-test.rule"
 		},
 		{
-			"file" : "D:/cpp/myproject/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-update_disconnected.rule"
+			"file" : "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-update_disconnected.rule"
 		}
 	],
 	"target" : 

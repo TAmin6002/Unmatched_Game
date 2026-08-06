@@ -1,4 +1,4 @@
-#include "space.h"
+#include "Space.h"
 using namespace std;
 
 Space ::Space(int number, vector<Space *> z, vector<Space *> v) : number(number), zone(z), neighbor(v) {}
@@ -36,7 +36,7 @@ void Space::add_portal(Space *destination)
     for (auto const &p : Hidden_way)
     {
         if (p == destination)
-            return; // already connected, avoid duplicates
+            return; 
     }
 
     Hidden_way.push_back(destination);

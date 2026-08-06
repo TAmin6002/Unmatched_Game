@@ -1,5 +1,5 @@
-#include "board.h"
-#include "space.h"
+#include "Board.h"
+#include "Space.h"
 
 #include <iostream>
 
@@ -76,13 +76,7 @@ Board ::Board()
 
     spaces[31] = Space(32, {&spaces[2], &spaces[30], &spaces[29], &spaces[28]}, {&spaces[2], &spaces[30], &spaces[29]});
 
-    // Portals: secret passages. Houses 1, 12, 15, and 27 all connect to each
-    // other and can be entered from one another with a single move step.
-    // Movement-only: they do NOT make the spaces adjacent for attacks or
-    // zone-based card effects (see is_Adjacent, which only reads `neighbor`).
-    // Because MoveHero()'s search walks neighbor edges and portal edges the
-    // same way (each costs 1 step), a player can stop right after taking a
-    // passage, or keep moving from the new location, using any movement left.
+
     ConnectPortal(&spaces[0], &spaces[11]);  // House 1  <-> House 12
     ConnectPortal(&spaces[0], &spaces[14]);  // House 1  <-> House 15
     ConnectPortal(&spaces[0], &spaces[26]);  // House 1  <-> House 27
@@ -111,8 +105,7 @@ void Board::ConnectPortal(Space *s1, Space *s2)
     if (s1 == nullptr || s2 == nullptr)
         throw std::runtime_error("Cannot connect a portal to a null space.");
 
-    // Bidirectional and movement-only: neither side is added to `neighbor`,
-    // so is_Adjacent() (used for attacks/zone effects) stays unaffected.
+  
     s1->add_portal(s2);
     s2->add_portal(s1);
 }

@@ -1,6 +1,6 @@
-prefix="C:/Program Files (x86)/unmatched"
-libdir="C:/Program Files (x86)/unmatched/lib"
-includedir="C:/Program Files (x86)/unmatched/include"
+prefix="/usr/local"
+libdir="/usr/local/lib"
+includedir="/usr/local/include"
 
 Name: ftxui
 Description: 

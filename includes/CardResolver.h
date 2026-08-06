@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Card.h"
-#include "board.h"
+#include "Board.h"
 
 #include <string>
 

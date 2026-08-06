@@ -55,10 +55,10 @@ public:
     std::vector<Card> &get_hand();
     std::vector<Card> &get_discard();
 
-    int DrawnCard(); // یک کارت میکشد
-    int discard_hand(); // یک کارت رندوم از دست میکشد و حذف میکند و بوست ان را برمیگرداند
+    int DrawnCard(); 
+    int discard_hand(); 
     void DiscardCard(int);
-    void Discard_Card(Card* ); // کارتی که گرفته را حذف میکند از دست
+    void Discard_Card(Card* );
 
     void Damage(int);
     virtual void abiliti(Board *) = 0;

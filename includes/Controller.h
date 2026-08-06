@@ -6,7 +6,7 @@
 #include "Player.h"
 #include "Sisters.h"
 #include "Dr_Watson.h"
-#include "board.h"
+#include "Board.h"
 #include "CardResolver.h"
 #include "Ftxui_Front.h"
 
