@@ -15,6 +15,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/amin/cpp/Unmatched_Game/src/Dracula.cpp" "CMakeFiles/app.dir/src/Dracula.cpp.o" "gcc" "CMakeFiles/app.dir/src/Dracula.cpp.o.d"
   "/home/amin/cpp/Unmatched_Game/src/Ftxui_Front.cpp" "CMakeFiles/app.dir/src/Ftxui_Front.cpp.o" "gcc" "CMakeFiles/app.dir/src/Ftxui_Front.cpp.o.d"
   "/home/amin/cpp/Unmatched_Game/src/Heroes.cpp" "CMakeFiles/app.dir/src/Heroes.cpp.o" "gcc" "CMakeFiles/app.dir/src/Heroes.cpp.o.d"
+  "/home/amin/cpp/Unmatched_Game/src/InvisibleMan.cpp" "CMakeFiles/app.dir/src/InvisibleMan.cpp.o" "gcc" "CMakeFiles/app.dir/src/InvisibleMan.cpp.o.d"
   "/home/amin/cpp/Unmatched_Game/src/Player.cpp" "CMakeFiles/app.dir/src/Player.cpp.o" "gcc" "CMakeFiles/app.dir/src/Player.cpp.o.d"
   "/home/amin/cpp/Unmatched_Game/src/SherlockHolmes.cpp" "CMakeFiles/app.dir/src/SherlockHolmes.cpp.o" "gcc" "CMakeFiles/app.dir/src/SherlockHolmes.cpp.o.d"
   "/home/amin/cpp/Unmatched_Game/src/Sisters.cpp" "CMakeFiles/app.dir/src/Sisters.cpp.o" "gcc" "CMakeFiles/app.dir/src/Sisters.cpp.o.d"

@@ -401,6 +401,30 @@ src/Heroes.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/Heroes.cpp.s
 .PHONY : src/Heroes.cpp.s
 
+src/InvisibleMan.o: src/InvisibleMan.cpp.o
+.PHONY : src/InvisibleMan.o
+
+# target to build an object file
+src/InvisibleMan.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/InvisibleMan.cpp.o
+.PHONY : src/InvisibleMan.cpp.o
+
+src/InvisibleMan.i: src/InvisibleMan.cpp.i
+.PHONY : src/InvisibleMan.i
+
+# target to preprocess a source file
+src/InvisibleMan.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/InvisibleMan.cpp.i
+.PHONY : src/InvisibleMan.cpp.i
+
+src/InvisibleMan.s: src/InvisibleMan.cpp.s
+.PHONY : src/InvisibleMan.s
+
+# target to generate assembly for a file
+src/InvisibleMan.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/InvisibleMan.cpp.s
+.PHONY : src/InvisibleMan.cpp.s
+
 src/Player.o: src/Player.cpp.o
 .PHONY : src/Player.o
 
@@ -584,6 +608,9 @@ help:
 	@echo "... src/Heroes.o"
 	@echo "... src/Heroes.i"
 	@echo "... src/Heroes.s"
+	@echo "... src/InvisibleMan.o"
+	@echo "... src/InvisibleMan.i"
+	@echo "... src/InvisibleMan.s"
 	@echo "... src/Player.o"
 	@echo "... src/Player.i"
 	@echo "... src/Player.s"

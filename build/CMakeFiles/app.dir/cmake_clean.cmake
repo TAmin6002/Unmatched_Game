@@ -13,6 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/app.dir/src/Ftxui_Front.cpp.o.d"
   "CMakeFiles/app.dir/src/Heroes.cpp.o"
   "CMakeFiles/app.dir/src/Heroes.cpp.o.d"
+  "CMakeFiles/app.dir/src/InvisibleMan.cpp.o"
+  "CMakeFiles/app.dir/src/InvisibleMan.cpp.o.d"
   "CMakeFiles/app.dir/src/Player.cpp.o"
   "CMakeFiles/app.dir/src/Player.cpp.o.d"
   "CMakeFiles/app.dir/src/SherlockHolmes.cpp.o"

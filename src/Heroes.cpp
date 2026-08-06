@@ -115,7 +115,6 @@ void Heroes::Damage(int amount)
 
 int Heroes::discard_hand()
 {
-    // باید چک شود که از بین پنج کارت توی دست هیچکدام اشتباه یا نال یا استفاده شده نباشند ...!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
     if (hand.empty())
         return 0;

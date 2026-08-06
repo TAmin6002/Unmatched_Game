@@ -9,7 +9,6 @@
 class SherlockHolmes : public Heroes
 {
 private:
-    //... متعلقات و کارت ها
 
 public:
     SherlockHolmes();

@@ -29,6 +29,21 @@ enum class CardType
     Service_Revolver,
     Study_Methods,
 
+
+    Coded_Notes,
+    Confound,
+    Covert_Preparation,
+    Dreamint_of_Revenge,
+    Emerge_From_Mist,
+    Impossible_to_See,
+    Into_Thin_Air,
+    Lurking,
+    Reign_Thrror,
+    Rolling_Fog,
+    Slip_Away,
+    Step_Lightly,
+    Vanish,
+
 };
 
 enum class CardTiming

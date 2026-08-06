@@ -167,10 +167,24 @@ CMakeFiles/app.dir/src/Heroes.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app.dir/src/Heroes.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amin/cpp/Unmatched_Game/src/Heroes.cpp -o CMakeFiles/app.dir/src/Heroes.cpp.s
 
+CMakeFiles/app.dir/src/InvisibleMan.cpp.o: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/src/InvisibleMan.cpp.o: /home/amin/cpp/Unmatched_Game/src/InvisibleMan.cpp
+CMakeFiles/app.dir/src/InvisibleMan.cpp.o: CMakeFiles/app.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/cpp/Unmatched_Game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/app.dir/src/InvisibleMan.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app.dir/src/InvisibleMan.cpp.o -MF CMakeFiles/app.dir/src/InvisibleMan.cpp.o.d -o CMakeFiles/app.dir/src/InvisibleMan.cpp.o -c /home/amin/cpp/Unmatched_Game/src/InvisibleMan.cpp
+
+CMakeFiles/app.dir/src/InvisibleMan.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/app.dir/src/InvisibleMan.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/amin/cpp/Unmatched_Game/src/InvisibleMan.cpp > CMakeFiles/app.dir/src/InvisibleMan.cpp.i
+
+CMakeFiles/app.dir/src/InvisibleMan.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app.dir/src/InvisibleMan.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/amin/cpp/Unmatched_Game/src/InvisibleMan.cpp -o CMakeFiles/app.dir/src/InvisibleMan.cpp.s
+
 CMakeFiles/app.dir/src/Player.cpp.o: CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/src/Player.cpp.o: /home/amin/cpp/Unmatched_Game/src/Player.cpp
 CMakeFiles/app.dir/src/Player.cpp.o: CMakeFiles/app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/cpp/Unmatched_Game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/app.dir/src/Player.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/cpp/Unmatched_Game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/app.dir/src/Player.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app.dir/src/Player.cpp.o -MF CMakeFiles/app.dir/src/Player.cpp.o.d -o CMakeFiles/app.dir/src/Player.cpp.o -c /home/amin/cpp/Unmatched_Game/src/Player.cpp
 
 CMakeFiles/app.dir/src/Player.cpp.i: cmake_force
@@ -184,7 +198,7 @@ CMakeFiles/app.dir/src/Player.cpp.s: cmake_force
 CMakeFiles/app.dir/src/SherlockHolmes.cpp.o: CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/src/SherlockHolmes.cpp.o: /home/amin/cpp/Unmatched_Game/src/SherlockHolmes.cpp
 CMakeFiles/app.dir/src/SherlockHolmes.cpp.o: CMakeFiles/app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/cpp/Unmatched_Game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/app.dir/src/SherlockHolmes.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/cpp/Unmatched_Game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/app.dir/src/SherlockHolmes.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app.dir/src/SherlockHolmes.cpp.o -MF CMakeFiles/app.dir/src/SherlockHolmes.cpp.o.d -o CMakeFiles/app.dir/src/SherlockHolmes.cpp.o -c /home/amin/cpp/Unmatched_Game/src/SherlockHolmes.cpp
 
 CMakeFiles/app.dir/src/SherlockHolmes.cpp.i: cmake_force
@@ -198,7 +212,7 @@ CMakeFiles/app.dir/src/SherlockHolmes.cpp.s: cmake_force
 CMakeFiles/app.dir/src/Sisters.cpp.o: CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/src/Sisters.cpp.o: /home/amin/cpp/Unmatched_Game/src/Sisters.cpp
 CMakeFiles/app.dir/src/Sisters.cpp.o: CMakeFiles/app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/cpp/Unmatched_Game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/app.dir/src/Sisters.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/cpp/Unmatched_Game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/app.dir/src/Sisters.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app.dir/src/Sisters.cpp.o -MF CMakeFiles/app.dir/src/Sisters.cpp.o.d -o CMakeFiles/app.dir/src/Sisters.cpp.o -c /home/amin/cpp/Unmatched_Game/src/Sisters.cpp
 
 CMakeFiles/app.dir/src/Sisters.cpp.i: cmake_force
@@ -212,7 +226,7 @@ CMakeFiles/app.dir/src/Sisters.cpp.s: cmake_force
 CMakeFiles/app.dir/src/board.cpp.o: CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/src/board.cpp.o: /home/amin/cpp/Unmatched_Game/src/board.cpp
 CMakeFiles/app.dir/src/board.cpp.o: CMakeFiles/app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/cpp/Unmatched_Game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/app.dir/src/board.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/cpp/Unmatched_Game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/app.dir/src/board.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app.dir/src/board.cpp.o -MF CMakeFiles/app.dir/src/board.cpp.o.d -o CMakeFiles/app.dir/src/board.cpp.o -c /home/amin/cpp/Unmatched_Game/src/board.cpp
 
 CMakeFiles/app.dir/src/board.cpp.i: cmake_force
@@ -226,7 +240,7 @@ CMakeFiles/app.dir/src/board.cpp.s: cmake_force
 CMakeFiles/app.dir/src/main.cpp.o: CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/src/main.cpp.o: /home/amin/cpp/Unmatched_Game/src/main.cpp
 CMakeFiles/app.dir/src/main.cpp.o: CMakeFiles/app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/cpp/Unmatched_Game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/app.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/cpp/Unmatched_Game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/app.dir/src/main.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app.dir/src/main.cpp.o -MF CMakeFiles/app.dir/src/main.cpp.o.d -o CMakeFiles/app.dir/src/main.cpp.o -c /home/amin/cpp/Unmatched_Game/src/main.cpp
 
 CMakeFiles/app.dir/src/main.cpp.i: cmake_force
@@ -240,7 +254,7 @@ CMakeFiles/app.dir/src/main.cpp.s: cmake_force
 CMakeFiles/app.dir/src/space.cpp.o: CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/src/space.cpp.o: /home/amin/cpp/Unmatched_Game/src/space.cpp
 CMakeFiles/app.dir/src/space.cpp.o: CMakeFiles/app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/cpp/Unmatched_Game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/app.dir/src/space.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/cpp/Unmatched_Game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/app.dir/src/space.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app.dir/src/space.cpp.o -MF CMakeFiles/app.dir/src/space.cpp.o.d -o CMakeFiles/app.dir/src/space.cpp.o -c /home/amin/cpp/Unmatched_Game/src/space.cpp
 
 CMakeFiles/app.dir/src/space.cpp.i: cmake_force
@@ -260,6 +274,7 @@ app_OBJECTS = \
 "CMakeFiles/app.dir/src/Dracula.cpp.o" \
 "CMakeFiles/app.dir/src/Ftxui_Front.cpp.o" \
 "CMakeFiles/app.dir/src/Heroes.cpp.o" \
+"CMakeFiles/app.dir/src/InvisibleMan.cpp.o" \
 "CMakeFiles/app.dir/src/Player.cpp.o" \
 "CMakeFiles/app.dir/src/SherlockHolmes.cpp.o" \
 "CMakeFiles/app.dir/src/Sisters.cpp.o" \
@@ -277,6 +292,7 @@ app: CMakeFiles/app.dir/src/Dr_Watson.cpp.o
 app: CMakeFiles/app.dir/src/Dracula.cpp.o
 app: CMakeFiles/app.dir/src/Ftxui_Front.cpp.o
 app: CMakeFiles/app.dir/src/Heroes.cpp.o
+app: CMakeFiles/app.dir/src/InvisibleMan.cpp.o
 app: CMakeFiles/app.dir/src/Player.cpp.o
 app: CMakeFiles/app.dir/src/SherlockHolmes.cpp.o
 app: CMakeFiles/app.dir/src/Sisters.cpp.o
@@ -290,7 +306,7 @@ app: _deps/ftxui-build/libftxui-component.a
 app: _deps/ftxui-build/libftxui-dom.a
 app: _deps/ftxui-build/libftxui-screen.a
 app: CMakeFiles/app.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/cpp/Unmatched_Game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable app"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/cpp/Unmatched_Game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable app"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/app.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
