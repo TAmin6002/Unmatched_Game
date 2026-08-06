@@ -2095,3 +2095,42 @@ void Ftxui_Front::Show_Help()
 
     screen.Loop(renderer);
 }
+
+void Ftxui_Front::ChooseCardsToTopOfDeck(Heroes *owner, int maxCount, Player *p1, Player *p2, Board *board)
+{
+    std::vector<Card> chosen;
+
+    while ((int)chosen.size() < maxCount)
+    {
+        auto &hand = owner->get_hand();
+
+        if (hand.empty()) break; 
+
+        std::vector<std::string> entries;
+
+        for (auto &card : hand)
+            entries.push_back(CardTypeToString(card.get_CardType()));
+
+        int selected = 0;
+        auto menu = Menu(&entries, &selected);
+        
+        ScreenInteractive screen = ScreenInteractive::Fullscreen();
+        auto renderer = Renderer(menu, [&]
+                                 { return window(
+                                       text("Choose exactly " + std::to_string(maxCount) +
+                                            " card(s) to put on top of your deck (" +
+                                            std::to_string(chosen.size()) + "/" +
+                                            std::to_string(maxCount) + " chosen so far)"),
+                                       menu->Render()); });
+        auto component = CatchEvent(renderer, [&](Event event)
+                                    {
+            if (event == Event::Return) { screen.Exit(); return true; }
+            return false; });
+        screen.Loop(component);
+        chosen.push_back(hand[selected]);
+        hand.erase(hand.begin() + selected);
+    }
+ 
+    for (auto it = chosen.rbegin(); it != chosen.rend(); ++it)
+        owner->get_deck().push_back(*it);
+}

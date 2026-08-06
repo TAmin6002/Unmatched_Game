@@ -442,6 +442,57 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
 
         break;
     }
+
+    // ------------------- Invisible Man ------------------------
+
+    case CardType::Coded_Notes:
+    {
+        if (selectedcard->get_ApplyEffects())
+        {
+            if (Defender->DrawnCard() == 0){
+                Defender->Damage(2);
+            }
+    
+             if (Defender->DrawnCard() == 0){
+                Defender->Damage(2);
+            }
+    
+             if (Defender->DrawnCard() == 0){
+                Defender->Damage(2);
+            }
+
+            FF.ChooseCardsToTopOfDeck(Defender, 2, p1, p2, board);
+
+        }
+        
+    }
+
+    case CardType::Confound :
+    {
+        if (selectedcard->get_ApplyEffects()){
+
+        }
+
+    }
+
+     case CardType::Covert_Preparation :
+    {
+        if (selectedcard->get_ApplyEffects()){
+
+            if (Attacker->get_name() == "InvisibleMan"){
+                if (Attacker->DrawnCard() == 0)
+                    Attacker->Damage(2);
+            }
+
+            else if (Defender->get_name() == "InvisibleMan"){
+                if (Defender->DrawnCard() == 0)
+                    Defender->Damage(2);
+            }
+        }
+
+    }
+
+
     }
 }
 

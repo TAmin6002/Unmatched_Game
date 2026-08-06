@@ -69,5 +69,7 @@ public:
     void DeclareWinner(Heroes *);
     void Show_Help();
 
+    void ChooseCardsToTopOfDeck(Heroes *, int, Player *, Player *, Board *);
+
 
 };
