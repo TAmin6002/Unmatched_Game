@@ -12,6 +12,7 @@ private:
     std::vector<Space *> Hidden_way = {};
 
     Heroes *hero = nullptr;
+    Heroes *Fog = nullptr;
 
     int number;
 public:
@@ -23,6 +24,9 @@ public:
 
     void set_hero(Heroes *);
     Heroes *get_hero();
+
+    void set_Fog(Heroes *);
+    Heroes * get_Fog();
 
     int get_number();
 

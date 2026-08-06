@@ -2113,7 +2113,7 @@ void Ftxui_Front::ChooseCardsToTopOfDeck(Heroes *owner, int maxCount, Player *p1
 
         int selected = 0;
         auto menu = Menu(&entries, &selected);
-        
+
         ScreenInteractive screen = ScreenInteractive::Fullscreen();
         auto renderer = Renderer(menu, [&]
                                  { return window(
@@ -2133,4 +2133,149 @@ void Ftxui_Front::ChooseCardsToTopOfDeck(Heroes *owner, int maxCount, Player *p1
  
     for (auto it = chosen.rbegin(); it != chosen.rend(); ++it)
         owner->get_deck().push_back(*it);
+}
+
+bool Ftxui_Front::ChooseCardToDiscardOrSkip(Player *opponent)
+{
+    auto &hand = opponent->get_character()->get_hand();
+
+    if (hand.empty())
+        return false;
+
+    std::vector<std::string> entries;
+
+    for (auto &card : hand)
+        entries.push_back(CardTypeToString(card.get_CardType()));
+
+    entries.push_back("Skip (Don't discard)");
+
+    int selected = 0;
+
+    auto menu = Menu(&entries, &selected);
+
+    ScreenInteractive screen = ScreenInteractive::Fullscreen();
+
+    auto renderer = Renderer(menu, [&]
+                             { return window(
+                                   text("Opponent may discard one card, or choose Skip"),
+                                   menu->Render()); });
+
+    auto component = CatchEvent(renderer, [&](Event event)
+                                {
+        if (event == Event::Return)
+        {
+            screen.Exit();
+            return true;
+        }
+
+        return false; });
+
+    screen.Loop(component);
+
+    if (selected == (int)entries.size() - 1) 
+            return false;
+
+    opponent->get_character()->DiscardCard(selected);
+
+    return true;
+}
+
+void Ftxui_Front::MoveFogToken(Heroes *owner, Board *board)
+{
+    if (owner == nullptr)
+        return;
+        
+    auto screen = ScreenInteractive::Fullscreen();
+
+    int selected = 0;
+    std::vector<Space *> AllowSpace;
+    std::vector<std::string> entries;
+
+    for (Space &b : board->get_spaces())
+    {
+        AllowSpace.push_back(&b);
+        entries.push_back("Spase" + std::to_string(b.get_number()));
+    }
+
+    auto menu = Menu(&entries, &selected);
+
+    auto renderer = Renderer(menu, [&]
+                             { return hbox({Graph_Box(board->get_spaces()),
+                                            separator(),
+                                            window(
+                                                text(owner->get_name() + " : move the Fog Token to any space"),
+                                                menu->Render())}); });
+
+    auto component = CatchEvent(renderer, [&](Event event)
+                                {
+        if (event == Event::Return)
+        {
+            screen.ExitLoopClosure()();
+            return true;
+        }
+
+        return false; });
+
+    screen.Loop(component);
+
+    if (AllowSpace.empty())
+        throw std::runtime_error("AllowSpace is empty");
+
+        owner->get_place()->set_Fog(nullptr);
+        owner->set_place(AllowSpace.at(selected));
+
+}
+
+
+Heroes *Ftxui_Front::SelectComrade(Player *owner, Board *board)
+{
+    std::vector<Heroes *> alive_comrades;
+    std::vector<std::string> entries;
+
+    for (Heroes *comrade : owner->get_comrade())
+    {
+        if (comrade == nullptr)
+            continue;
+
+        if (!comrade->get_islive())
+            continue;
+
+        alive_comrades.push_back(comrade);
+
+        entries.push_back(
+            comrade->get_name() +
+            " (Space " + std::to_string(comrade->get_place()->get_number()) + ")");
+    }
+
+    if (alive_comrades.empty())
+        return nullptr;
+
+    int selected = 0;
+
+    auto menu = Menu(&entries, &selected);
+
+    auto renderer = Renderer(menu, [&]
+                             { return hbox({Graph_Box(board->get_spaces()),
+                                            separator(),
+                                            window(
+                                                text("Choose your comrade"),
+                                                menu->Render())}); });
+
+    ScreenInteractive screen = ScreenInteractive::Fullscreen();
+
+    auto component = CatchEvent(renderer,
+                                [&](Event event)
+                                {
+                                    if (event == Event::Return)
+                                    {
+                                        screen.Exit();
+                                        return true;
+                                    }
+
+                                    return false;
+                                });
+
+    screen.Loop(component);
+
+    return alive_comrades[selected];
 }

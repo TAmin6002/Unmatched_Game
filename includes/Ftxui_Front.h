@@ -70,6 +70,9 @@ public:
     void Show_Help();
 
     void ChooseCardsToTopOfDeck(Heroes *, int, Player *, Player *, Board *);
+    bool ChooseCardToDiscardOrSkip(Player *);
+    void MoveFogToken(Heroes *, Board *);
+    Heroes *SelectComrade(Player *, Board *); // Shows the player's living comrades in a menu and returns the one chosen.
 
 
 };

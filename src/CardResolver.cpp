@@ -471,6 +471,17 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
     {
         if (selectedcard->get_ApplyEffects()){
 
+              if (p1->get_character()->get_name() == "InvisibleMan"){
+                if(!FF.ChooseCardToDiscardOrSkip(p2))
+                    FF.MoveFogToken(FF.SelectComrade(p1, board), board);
+            }
+
+            else if (p2->get_character()->get_name() == "InvisibleMan"){
+                if(!FF.ChooseCardToDiscardOrSkip(p1))
+                    FF.MoveFogToken(FF.SelectComrade(p2, board), board);
+
+
+            }
         }
 
     }

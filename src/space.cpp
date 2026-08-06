@@ -51,3 +51,13 @@ bool Space::has_portal()
 {
     return !Hidden_way.empty();
 }
+
+void Space::set_Fog(Heroes * h)
+{
+    Fog = h;
+}
+
+Heroes * Space::get_Fog()
+{
+    return Fog;
+}
