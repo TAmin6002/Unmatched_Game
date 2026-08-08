@@ -1501,13 +1501,22 @@ void Ftxui_Front::MoveHero(Heroes *hero, Board *board, int max_distance)
         if (distance == max_distance)
             continue;
 
-        // Legal movement = normal adjacent spaces + portal destinations.
-        // Portals are movement-only: they never affect attack/zone adjacency.
+     
         std::vector<Space *> movable_from_current = current->get_neighbor();
         std::vector<Space *> portals_from_current = current->get_portal();
         movable_from_current.insert(movable_from_current.end(),
                                      portals_from_current.begin(),
                                      portals_from_current.end());
+
+        if (hero->get_name() == "InvisibleMan" && current->get_Fog() != nullptr)
+        {
+            for (Space &s : board->get_spaces())
+            {
+                if (&s != current && s.get_Fog() != nullptr)
+                    movable_from_current.push_back(&s);
+            }
+        }
+        // ---------------------------------------------------------------
 
         for (Space *next : movable_from_current)
         {
@@ -1593,8 +1602,7 @@ Heroes *Ftxui_Front::SelectHero(Board *board, Heroes *exclude)
             " (Space " + std::to_string(space.get_number()) + ")");
     }
 
-    // No valid target: return nullptr instead of throwing, since every
-    // caller already treats a null return as "nothing to select".
+ 
     if (fighters.empty())
         return nullptr;
 

@@ -248,7 +248,7 @@ void Controller::run()
                         {
                             bool onFog = (turn->get_character()->get_place() != nullptr &&
                                         turn->get_character()->get_place()->get_Fog() != nullptr);
-                                        
+
                             turn->get_character()->set_StartedTurnOnFog(onFog);
                         }
                     }
@@ -287,6 +287,13 @@ void Controller::run()
                                 if(Defender_selected_card == nullptr) {Defense_Value = 0;}
                                 else
                                     Defense_Value = Defender_selected_card->get_amount();
+
+
+                                if (Defender->get_name() == "InvisibleMan" && Defender->get_place() != nullptr && Defender->get_place()->get_Fog() != nullptr)
+                                    {
+                                        Defense_Value += 1;
+                                    }
+
                             }
                             catch (const std::exception &e)
                             {
