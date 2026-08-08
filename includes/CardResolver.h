@@ -19,5 +19,5 @@ private:
 public:
     void TryDisableCard(Card *, Player *, Player *); 
     
-    void excute(Card *, Player *, Player *, Heroes *, Heroes *, Board *, int &, int &);
+    void excute(Card *, Player *, Player *, Heroes *, Heroes *, Board *, int &, int &, bool &, bool &);
 };

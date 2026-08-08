@@ -33,7 +33,7 @@ enum class CardType
     Coded_Notes,
     Confound,
     Covert_Preparation,
-    Dreamint_of_Revenge,
+    Dreaming_of_Revenge,
     Emerge_From_Mist,
     Impossible_to_See,
     Into_Thin_Air,

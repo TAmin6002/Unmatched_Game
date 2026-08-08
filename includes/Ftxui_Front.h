@@ -74,5 +74,7 @@ public:
     void MoveFogToken(Heroes *, Board *);
     Heroes *SelectComrade(Player *, Board *); // Shows the player's living comrades in a menu and returns the one chosen.
 
+    Space *SelectFogToken(Board *);
+    void MoveFogTokenDistance(Space *, Board *, int );
 
 };

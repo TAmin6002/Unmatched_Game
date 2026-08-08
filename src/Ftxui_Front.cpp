@@ -2279,3 +2279,123 @@ Heroes *Ftxui_Front::SelectComrade(Player *owner, Board *board)
 
     return alive_comrades[selected];
 }
+
+Space *Ftxui_Front::SelectFogToken(Board *board)
+{
+    std::vector<Space *> fogSpaces;
+    std::vector<std::string> entries;
+
+    for (Space &space : board->get_spaces())
+    {
+        if (space.get_Fog() != nullptr)
+        {
+            fogSpaces.push_back(&space);
+            entries.push_back("Fog Token (Space " + std::to_string(space.get_number()) + ")");
+        }
+    }
+
+    if (fogSpaces.empty())
+        return nullptr;
+
+    if (fogSpaces.size() == 1)
+        return fogSpaces[0];
+
+    int selected = 0;
+    auto menu = Menu(&entries, &selected);
+
+    auto renderer = Renderer(menu, [&]
+                             { return hbox({Graph_Box(board->get_spaces()),
+                                            separator(),
+                                            window(text("Choose fog token"), menu->Render())}); });
+
+    ScreenInteractive screen = ScreenInteractive::Fullscreen();
+
+    auto component = CatchEvent(renderer, [&](Event event)
+                                {
+        if (event == Event::Return)
+        {
+            screen.Exit();
+            return true;
+        }
+        return false; });
+
+    screen.Loop(component);
+
+    return fogSpaces[selected];
+}
+
+void Ftxui_Front::MoveFogTokenDistance(Space *fogSpace, Board *board, int max_distance)
+{
+    if (fogSpace == nullptr)
+        return;
+
+    std::vector<Space *> available_spaces;
+    std::vector<std::string> entries;
+
+    std::queue<std::pair<Space *, int>> q;
+    std::set<Space *> visited;
+
+    q.push({fogSpace, 0});
+    visited.insert(fogSpace);
+
+    while (!q.empty())
+    {
+        auto [current, distance] = q.front();
+        q.pop();
+
+        if (distance == max_distance)
+            continue;
+
+        std::vector<Space *> movable_from_current = current->get_neighbor();
+        std::vector<Space *> portals_from_current = current->get_portal();
+        movable_from_current.insert(movable_from_current.end(),
+                                     portals_from_current.begin(),
+                                     portals_from_current.end());
+
+        for (Space *next : movable_from_current)
+        {
+            if (visited.count(next))
+                continue;
+
+            visited.insert(next);
+            q.push({next, distance + 1});
+
+            if (next != fogSpace)
+            {
+                available_spaces.push_back(next);
+                entries.push_back("Space " + std::to_string(next->get_number()));
+            }
+        }
+    }
+
+    if (available_spaces.empty())
+        return;
+
+    int selected = 0;
+    auto menu = Menu(&entries, &selected);
+
+    auto renderer = Renderer(menu, [&]
+                             { return hbox({Graph_Box(board->get_spaces()),
+                                            separator(),
+                                            window(text("Move Fog Token to..."), menu->Render())}); });
+
+    ScreenInteractive screen = ScreenInteractive::Fullscreen();
+
+    auto component = CatchEvent(renderer, [&](Event event)
+                                {
+        if (event == Event::Return)
+        {
+            Heroes *fogMarker = fogSpace->get_Fog();
+
+            fogSpace->set_Fog(nullptr);
+            available_spaces[selected]->set_Fog(fogMarker);
+
+            screen.Exit();
+            return true;
+        }
+        return false; });
+
+    screen.Loop(component);
+
+    
+}

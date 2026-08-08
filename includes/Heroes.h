@@ -24,6 +24,8 @@ private:
 
     Space *place = nullptr;
 
+    bool StartedTurnOnFog = false;
+
 protected:
     std::vector<Card> deck;
     std::vector<Card> hand;
@@ -50,6 +52,9 @@ public:
 
     Space *get_place();
     void set_place(Space *);
+
+    void set_StartedTurnOnFog(bool);
+    bool get_StartedTurnOnFog();    
 
     std::vector<Card> &get_deck();
     std::vector<Card> &get_hand();

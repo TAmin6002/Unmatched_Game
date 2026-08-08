@@ -41,6 +41,9 @@ private:
     int Attack_Value = 0;
     int Defense_Value = 0;
 
+    bool Attack_Locked = false;
+    bool Defense_Locked = false;
+
     CardResolver card_resolver;
 
     // int DraculaAction = 0;

@@ -69,6 +69,14 @@ void Heroes::set_place(Space *p)
     place = p;
 }
 
+void Heroes::set_StartedTurnOnFog(bool b) {
+     StartedTurnOnFog = b; 
+}
+
+bool Heroes::get_StartedTurnOnFog() { 
+    return StartedTurnOnFog; 
+}
+
 vector<Card> &Heroes::get_deck()
 {
     return deck;

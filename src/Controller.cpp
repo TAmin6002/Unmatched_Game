@@ -236,6 +236,12 @@ void Controller::run()
                             FF.get_msg().push_back(e.what());
                         }
                     }
+
+                    if (turn->get_count() == 0 && turn->get_character()->get_name() == "InvisibleMan")
+                        {
+                            bool onFog = (turn->get_character()->get_place()->get_Fog() != nullptr);
+                            turn->get_character()->set_StartedTurnOnFog(onFog);
+                        }
                     
                 FF.main_map(&p1, &p2, &board, turn);
                 
@@ -288,12 +294,12 @@ void Controller::run()
                                 
                                 if (Defender_selected_card != nullptr && Defender_selected_card->get_CardTiming() == CardTiming::Before)
                                 {
-                                    card_resolver.excute(Defender_selected_card, &p1, &p2, Attacker, Defender, &board, Attack_Value, Defense_Value);
+                                    card_resolver.excute(Defender_selected_card, &p1, &p2, Attacker, Defender, &board, Attack_Value, Defense_Value, Attack_Locked, Defense_Locked);
                                 }
 
                                 if (Attacker_selected_card->get_CardTiming() == CardTiming::Before)
                                 {
-                                    card_resolver.excute(Attacker_selected_card, &p1, &p2, Attacker, Defender, &board, Attack_Value, Defense_Value);
+                                    card_resolver.excute(Attacker_selected_card, &p1, &p2, Attacker, Defender, &board, Attack_Value, Defense_Value, Attack_Locked, Defense_Locked);
                                 }
                                 
                                 
@@ -302,12 +308,12 @@ void Controller::run()
                                 
                                 if (Defender_selected_card != nullptr && Defender_selected_card->get_CardTiming() == CardTiming::During)
                                 {
-                                    card_resolver.excute(Defender_selected_card, &p1, &p2, Attacker, Defender, &board, Attack_Value, Defense_Value);
+                                    card_resolver.excute(Defender_selected_card, &p1, &p2, Attacker, Defender, &board, Attack_Value, Defense_Value, Attack_Locked, Defense_Locked);
                                 }
 
                                 if (Attacker_selected_card->get_CardTiming() == CardTiming::During)
                                 {
-                                    card_resolver.excute(Attacker_selected_card, &p1, &p2, Attacker, Defender, &board, Attack_Value, Defense_Value);
+                                    card_resolver.excute(Attacker_selected_card, &p1, &p2, Attacker, Defender, &board, Attack_Value, Defense_Value, Attack_Locked, Defense_Locked);
                                 }
                                 
                                 
@@ -327,12 +333,12 @@ void Controller::run()
                                 
                                 if (Defender_selected_card != nullptr && Defender_selected_card->get_CardTiming() == CardTiming::After)
                                 {
-                                    card_resolver.excute(Defender_selected_card, &p1, &p2, Attacker, Defender, &board, Attack_Value, Defense_Value);
+                                    card_resolver.excute(Defender_selected_card, &p1, &p2, Attacker, Defender, &board, Attack_Value, Defense_Value, Attack_Locked, Defense_Locked);
                                 }
 
                                 if (Attacker_selected_card->get_CardTiming() == CardTiming::After)
                                 {
-                                    card_resolver.excute(Attacker_selected_card, &p1, &p2, Attacker, Defender, &board, Attack_Value, Defense_Value);
+                                    card_resolver.excute(Attacker_selected_card, &p1, &p2, Attacker, Defender, &board, Attack_Value, Defense_Value, Attack_Locked, Defense_Locked);
                                 }
                                 
                                 
@@ -359,7 +365,11 @@ void Controller::run()
                                 
                                 Attack_Value = 0;
                                 Defense_Value = 0;
+
+                                Attack_Locked = false;
+                                Defense_Locked = false;
                             }
+                            
                             catch (const std::exception &e)
                             {
                                 FF.get_msg().push_back(e.what());
@@ -427,7 +437,7 @@ void Controller::run()
 
                                         if(selected_Card != nullptr)
                                         {
-                                            card_resolver.excute(selected_Card, &p1, &p2, selectedHero, nullptr, &board, temp1, temp2);
+                                            card_resolver.excute(selected_Card, &p1, &p2, selectedHero, nullptr, &board, temp1, temp2, Attack_Locked, Defense_Locked);
 
                                             selectedHero->Discard_Card(selected_Card);
                                             selected_Card->set_user_card(nullptr);

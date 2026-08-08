@@ -7,7 +7,7 @@
 using namespace std;
 using namespace ftxui;
 
-void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *Attacker, Heroes *Defender, Board *board, int &Attack_Value, int &Defence_Value)
+void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *Attacker, Heroes *Defender, Board *board, int &Attack_Value, int &Defence_Value, bool &Attack_Locked, bool &Defense_Locked)
 {
     cout << "Entered the excute\n";
 
@@ -21,7 +21,7 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
     {
     case CardType::Feedingfrenzy:
     {
-        if (selectedcard->get_ApplyEffects())
+        if (selectedcard->get_ApplyEffects() && !Attack_Locked)
         {
             vector<Space *> opponent = Defender->get_place()->get_zone();
             for (auto const &o : opponent)
@@ -48,7 +48,7 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
 
     case CardType::Ambush:
     {
-        if (selectedcard->get_ApplyEffects())
+        if (selectedcard->get_ApplyEffects() && !Attack_Locked)
         {
             Attack_Value += Sherlock_Player->get_character()->discard_hand();
         }
@@ -84,7 +84,7 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
 
     case CardType::Beastform:
     {
-        if (selectedcard->get_ApplyEffects())
+        if (selectedcard->get_ApplyEffects() && !Attack_Locked)
         {
             Attack_Value += FF.DiscardCards(Attacker);
         }
@@ -493,16 +493,100 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
             if (Attacker->get_name() == "InvisibleMan"){
                 if (Attacker->DrawnCard() == 0)
                     Attacker->Damage(2);
+
+                FF.MoveHero(FF.SelectComrade(p2, board), board, 2);
+
+                // ...
+                
             }
 
             else if (Defender->get_name() == "InvisibleMan"){
                 if (Defender->DrawnCard() == 0)
                     Defender->Damage(2);
+
+                FF.MoveHero(FF.SelectComrade(p2, board), board, 2);
+
+                // ... a.m.38846
+
             }
         }
+        break;
 
     }
 
+    case CardType::Dreaming_of_Revenge :
+    {
+        if (selectedcard->get_ApplyEffects()){
+
+            Heroes * InvisibleMan = (Attacker->get_name() == "InvisibleMan") ? Attacker : Defender;
+            Player * InvisibleManPlayer = (p1->get_character()->get_name() == "InvisibleMan")? p1 : p2;
+    
+            if (InvisibleMan->get_place()->get_Fog() != nullptr){
+    
+                for (auto F : InvisibleManPlayer->get_comrade()){
+    
+                    if(F->get_place()->get_hero()->get_name() != "InvisibleMan"){
+                        F->get_place()->get_hero()->Damage(1);   
+                    }
+                }
+            }
+        }
+        break;
+    }
+
+    case CardType::Emerge_From_Mist:
+    {
+        if (selectedcard->get_ApplyEffects() && !Attack_Locked)
+        {
+            if (selectedcard->get_user_card()->get_StartedTurnOnFog())
+            {
+                Attack_Value = 5;
+            }
+        }
+        break;
+    }
+
+    
+      case CardType::Impossible_to_See:
+    {
+        if (selectedcard->get_ApplyEffects())
+        {
+            if (Attacker->get_name() == "InvisibleMan")
+            {
+                Defence_Value = 0;
+                Defense_Locked = true;
+            }
+            else if (Defender->get_name() == "InvisibleMan")
+            {
+                Attack_Value = 0;
+                Attack_Locked = true;
+            }
+        }
+        break;
+
+
+    }
+
+   case CardType::Into_Thin_Air:
+    {
+        if (selectedcard->get_ApplyEffects())
+        {
+            Heroes *user = selectedcard->get_user_card();
+
+            FF.MoveHero(user, board, 1);
+
+            Space *fogSpace = FF.SelectFogToken(board);
+            FF.MoveFogTokenDistance(fogSpace, board, 3);
+        }
+
+        break;
+
+    }
+
+    case CardType::Lurking:
+    {
+        Defender->DrawnCard();
+    }
 
     }
 }

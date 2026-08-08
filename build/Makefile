@@ -353,6 +353,30 @@ src/Dracula.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/Dracula.cpp.s
 .PHONY : src/Dracula.cpp.s
 
+src/Fog.o: src/Fog.cpp.o
+.PHONY : src/Fog.o
+
+# target to build an object file
+src/Fog.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/Fog.cpp.o
+.PHONY : src/Fog.cpp.o
+
+src/Fog.i: src/Fog.cpp.i
+.PHONY : src/Fog.i
+
+# target to preprocess a source file
+src/Fog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/Fog.cpp.i
+.PHONY : src/Fog.cpp.i
+
+src/Fog.s: src/Fog.cpp.s
+.PHONY : src/Fog.s
+
+# target to generate assembly for a file
+src/Fog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/Fog.cpp.s
+.PHONY : src/Fog.cpp.s
+
 src/Ftxui_Front.o: src/Ftxui_Front.cpp.o
 .PHONY : src/Ftxui_Front.o
 
@@ -448,6 +472,30 @@ src/Player.s: src/Player.cpp.s
 src/Player.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/Player.cpp.s
 .PHONY : src/Player.cpp.s
+
+src/Raylib.o: src/Raylib.cpp.o
+.PHONY : src/Raylib.o
+
+# target to build an object file
+src/Raylib.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/Raylib.cpp.o
+.PHONY : src/Raylib.cpp.o
+
+src/Raylib.i: src/Raylib.cpp.i
+.PHONY : src/Raylib.i
+
+# target to preprocess a source file
+src/Raylib.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/Raylib.cpp.i
+.PHONY : src/Raylib.cpp.i
+
+src/Raylib.s: src/Raylib.cpp.s
+.PHONY : src/Raylib.s
+
+# target to generate assembly for a file
+src/Raylib.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/Raylib.cpp.s
+.PHONY : src/Raylib.cpp.s
 
 src/SherlockHolmes.o: src/SherlockHolmes.cpp.o
 .PHONY : src/SherlockHolmes.o
@@ -602,6 +650,9 @@ help:
 	@echo "... src/Dracula.o"
 	@echo "... src/Dracula.i"
 	@echo "... src/Dracula.s"
+	@echo "... src/Fog.o"
+	@echo "... src/Fog.i"
+	@echo "... src/Fog.s"
 	@echo "... src/Ftxui_Front.o"
 	@echo "... src/Ftxui_Front.i"
 	@echo "... src/Ftxui_Front.s"
@@ -614,6 +665,9 @@ help:
 	@echo "... src/Player.o"
 	@echo "... src/Player.i"
 	@echo "... src/Player.s"
+	@echo "... src/Raylib.o"
+	@echo "... src/Raylib.i"
+	@echo "... src/Raylib.s"
 	@echo "... src/SherlockHolmes.o"
 	@echo "... src/SherlockHolmes.i"
 	@echo "... src/SherlockHolmes.s"
