@@ -643,6 +643,74 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
         break;
     }
 
+    case CardType::Slip_Away:
+    {
+        if (selectedcard->get_ApplyEffects())
+        {
+            Heroes *user = selectedcard->get_user_card();
+
+            Space *fogSpace = FF.SelectFogToken(board);
+            Space *destination = FF.MoveFogTokenToEmptySpace(fogSpace, board);
+
+            if (destination != nullptr)
+            {
+                user->get_place()->set_hero(nullptr);
+
+                destination->set_hero(user);
+                user->set_place(destination);
+            }
+        }
+        break;
+    }
+
+    case CardType::Step_Lightly:
+    {
+        if (selectedcard->get_ApplyEffects())
+        {
+            Heroes *user = selectedcard->get_user_card();
+
+            Heroes *target = FF.SelectAdjacentHero(user, board);
+
+            if (target != nullptr)
+            {
+                bool onFog = (user->get_place()->get_Fog() != nullptr);
+                target->Damage(onFog ? 3 : 1);
+            }
+
+            Space *fogSpace = FF.SelectFogToken(board);
+            FF.MoveFogTokenDistance(fogSpace, board, 2);
+        }
+        break;
+    }
+
+        case CardType::Vanish:
+        {
+            if (selectedcard->get_ApplyEffects())
+            {
+                Heroes *user = selectedcard->get_user_card();
+
+                Player *user_player =
+                    (p1->get_character() == Attacker ||
+                    (!p1->get_comrade().empty() && p1->get_comrade()[0] == Attacker))
+                        ? p1
+                        : p2;
+
+                user->set_Health(1, 15); 
+
+                if (user->get_place() != nullptr)
+                    user->get_place()->set_hero(nullptr);
+
+                user->set_place(nullptr);
+                user->set_PendingPlacement(true);
+
+                if (user_player->get_count() == 0) 
+                {
+                    user_player->set_count(1); 
+                }
+            }
+            break;
+        }
+
     }
 }
 

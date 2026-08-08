@@ -59,7 +59,7 @@ public:
     void Revive_Sister(Heroes *, Heroes *, Board *); // He revives the defeated sister and places her in every house.
     int DiscardCards(Heroes *);                      // Shows the fighter's hand so that the player can draw cards from it without restriction.
     void MoveHero(Heroes *, Board *, int);           // Moves the fighter up to a specified number of spaces.
-    Heroes *SelectHero(Board *, Heroes *exclude = nullptr);
+    Heroes *SelectHero(Board *, Heroes * = nullptr);
     void PlaceHeroAdjacent(Heroes *, Heroes *, Board *);
     void ShowHand(Heroes *, Player *, Player *, Board *);
     Card *ChooseCardFromHand(Player *, Player *, Player *, Board *); // The opponent's fighter is shown and the player chooses and burns one card from among them.
@@ -80,6 +80,12 @@ public:
     void MoveHeroToFogSpace(Heroes *, Board *); // for LURKING effect card
     bool ChooseBetweenTwoEffects(std::string , std::string ); // for LURKING effect card
 
-    void MoveFogTokenAnywhere(Space *fogSpace, Board *board); // for ROLLING FOG
+    void MoveFogTokenAnywhere(Space *, Board *); // for ROLLING FOG effect card
+
+    Space *MoveFogTokenToEmptySpace(Space *, Board *); // for SLIP AWAY effecr card
+
+    Heroes *SelectAdjacentHero(Heroes *, Board *); // for STEP LIGHTLY effect card
+
+    void PlaceHeroOnBoard(Heroes *, Board *); // for VANISH effect card
 
 };

@@ -77,6 +77,14 @@ bool Heroes::get_StartedTurnOnFog() {
     return StartedTurnOnFog; 
 }
 
+void Heroes::set_PendingPlacement(bool b) {
+     PendingPlacement = b; 
+}
+
+bool Heroes::get_PendingPlacement() { 
+    return PendingPlacement; 
+}
+
 vector<Card> &Heroes::get_deck()
 {
     return deck;

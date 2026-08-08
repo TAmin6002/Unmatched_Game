@@ -2514,3 +2514,141 @@ void Ftxui_Front::MoveFogTokenAnywhere(Space *fogSpace, Board *board)
 
     screen.Loop(component);
 }
+
+Space *Ftxui_Front::MoveFogTokenToEmptySpace(Space *fogSpace, Board *board)
+{
+    if (fogSpace == nullptr)
+        return nullptr;
+
+    std::vector<Space *> AllowSpace;
+    std::vector<std::string> entries;
+
+    for (Space &b : board->get_spaces())
+    {
+        if (&b != fogSpace && b.get_hero() == nullptr)
+        {
+            AllowSpace.push_back(&b);
+            entries.push_back("Space " + std::to_string(b.get_number()));
+        }
+    }
+
+    if (AllowSpace.empty())
+        return nullptr;
+
+    int selected = 0;
+    auto menu = Menu(&entries, &selected);
+
+    auto renderer = Renderer(menu, [&]
+                             { return hbox({Graph_Box(board->get_spaces()),
+                                            separator(),
+                                            window(text("Move the Fog Token to an empty space"), menu->Render())}); });
+
+    ScreenInteractive screen = ScreenInteractive::Fullscreen();
+
+    auto component = CatchEvent(renderer, [&](Event event)
+                                {
+        if (event == Event::Return)
+        {
+            screen.Exit();
+            return true;
+        }
+        return false; });
+
+    screen.Loop(component);
+
+    Heroes *fogMarker = fogSpace->get_Fog();
+    fogSpace->set_Fog(nullptr);
+
+    Space *destination = AllowSpace[selected];
+    destination->set_Fog(fogMarker);
+
+    return destination;
+}
+
+Heroes *Ftxui_Front::SelectAdjacentHero(Heroes *center, Board *board)
+{
+    std::vector<Heroes *> fighters;
+    std::vector<std::string> entries;
+
+    for (Space &space : board->get_spaces())
+    {
+        Heroes *hero = space.get_hero();
+
+        if (hero == nullptr || hero == center || !hero->get_islive())
+            continue;
+
+        if (!board->is_Adjacent(center->get_place(), &space))
+            continue;
+
+        fighters.push_back(hero);
+        entries.push_back(hero->get_name() + " (Space " + std::to_string(space.get_number()) + ")");
+    }
+
+    if (fighters.empty())
+        return nullptr;
+
+    int selected = 0;
+    auto menu = Menu(&entries, &selected);
+
+    auto renderer = Renderer(menu, [&]
+                             { return hbox({Graph_Box(board->get_spaces()),
+                                            separator(),
+                                            window(text("Choose adjacent fighter"), menu->Render())}); });
+
+    ScreenInteractive screen = ScreenInteractive::Fullscreen();
+
+    auto component = CatchEvent(renderer, [&](Event event)
+                                {
+        if (event == Event::Return)
+        {
+            screen.Exit();
+            return true;
+        }
+        return false; });
+
+    screen.Loop(component);
+
+    return fighters[selected];
+}
+
+void Ftxui_Front::PlaceHeroOnBoard(Heroes *hero, Board *board)
+{
+    std::vector<Space *> AllowSpace;
+    std::vector<std::string> entries;
+
+    for (Space &b : board->get_spaces())
+    {
+        if (b.get_hero() == nullptr)
+        {
+            AllowSpace.push_back(&b);
+            entries.push_back("Space " + std::to_string(b.get_number()));
+        }
+    }
+
+    if (AllowSpace.empty())
+        return;
+
+    int selected = 0;
+    auto menu = Menu(&entries, &selected);
+
+    auto renderer = Renderer(menu, [&]
+                             { return hbox({Graph_Box(board->get_spaces()),
+                                            separator(),
+                                            window(text("Place InvisibleMan on any space"), menu->Render())}); });
+
+    auto screen = ScreenInteractive::Fullscreen();
+
+    auto component = CatchEvent(renderer, [&](Event event)
+                                {
+        if (event == Event::Return)
+        {
+            screen.ExitLoopClosure()();
+            return true;
+        }
+        return false; });
+
+    screen.Loop(component);
+
+    hero->set_place(AllowSpace[selected]);
+    AllowSpace[selected]->set_hero(hero);
+}

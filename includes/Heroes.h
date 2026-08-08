@@ -26,6 +26,8 @@ private:
 
     bool StartedTurnOnFog = false;
 
+    bool PendingPlacement = false;
+
 protected:
     std::vector<Card> deck;
     std::vector<Card> hand;
@@ -55,6 +57,9 @@ public:
 
     void set_StartedTurnOnFog(bool);
     bool get_StartedTurnOnFog();    
+
+    void set_PendingPlacement(bool);
+    bool get_PendingPlacement();
 
     std::vector<Card> &get_deck();
     std::vector<Card> &get_hand();

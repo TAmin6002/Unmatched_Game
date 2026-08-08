@@ -238,10 +238,20 @@ void Controller::run()
                     }
 
                     if (turn->get_count() == 0 && turn->get_character()->get_name() == "InvisibleMan")
+                    {
+                        if (turn->get_character()->get_PendingPlacement())
                         {
-                            bool onFog = (turn->get_character()->get_place()->get_Fog() != nullptr);
+                            FF.PlaceHeroOnBoard(turn->get_character(), &board);
+                            turn->get_character()->set_PendingPlacement(false);
+                        }
+                        else
+                        {
+                            bool onFog = (turn->get_character()->get_place() != nullptr &&
+                                        turn->get_character()->get_place()->get_Fog() != nullptr);
+                                        
                             turn->get_character()->set_StartedTurnOnFog(onFog);
                         }
+                    }
                     
                 FF.main_map(&p1, &p2, &board, turn);
                 
