@@ -2397,5 +2397,120 @@ void Ftxui_Front::MoveFogTokenDistance(Space *fogSpace, Board *board, int max_di
 
     screen.Loop(component);
 
-    
+
+}
+
+void Ftxui_Front::MoveHeroToFogSpace(Heroes *hero, Board *board)
+{
+    std::vector<Space *> fogSpaces;
+    std::vector<std::string> entries;
+
+    for (Space &b : board->get_spaces())
+    {
+        if (b.get_Fog() != nullptr && b.get_hero() == nullptr)
+        {
+            fogSpaces.push_back(&b);
+            entries.push_back("Space " + std::to_string(b.get_number()));
+        }
+    }
+
+    if (fogSpaces.empty())
+        return;
+
+    int selected = 0;
+    auto menu = Menu(&entries, &selected);
+
+    auto renderer = Renderer(menu, [&]
+                             { return hbox({Graph_Box(board->get_spaces()),
+                                            separator(),
+                                            window(text("Move InvisibleMan to a Fog Token space"), menu->Render())}); });
+
+    ScreenInteractive screen = ScreenInteractive::Fullscreen();
+
+    auto component = CatchEvent(renderer, [&](Event event)
+                                {
+        if (event == Event::Return)
+        {
+            hero->get_place()->set_hero(nullptr);
+
+            fogSpaces[selected]->set_hero(hero);
+            hero->set_place(fogSpaces[selected]);
+
+            screen.Exit();
+            return true;
+        }
+        return false; });
+
+    screen.Loop(component);
+}
+
+bool Ftxui_Front::ChooseBetweenTwoEffects(std::string optionA, std::string optionB)
+{
+    std::vector<std::string> entries = {optionA, optionB};
+    int selected = 0;
+
+    auto menu = Menu(&entries, &selected);
+
+    ScreenInteractive screen = ScreenInteractive::Fullscreen();
+
+    auto renderer = Renderer(menu, [&]
+                             { return window(text("Choose an effect"), menu->Render()); });
+
+    auto component = CatchEvent(renderer, [&](Event event)
+                                {
+        if (event == Event::Return)
+        {
+            screen.Exit();
+            return true;
+        }
+        return false; });
+
+    screen.Loop(component);
+
+    return selected == 0; // true = optionA
+}
+
+
+void Ftxui_Front::MoveFogTokenAnywhere(Space *fogSpace, Board *board)
+{
+    if (fogSpace == nullptr)
+        return;
+
+    std::vector<Space *> AllowSpace;
+    std::vector<std::string> entries;
+
+    for (Space &b : board->get_spaces())
+    {
+        if (&b != fogSpace)
+        {
+            AllowSpace.push_back(&b);
+            entries.push_back("Space " + std::to_string(b.get_number()));
+        }
+    }
+
+    int selected = 0;
+    auto menu = Menu(&entries, &selected);
+
+    auto renderer = Renderer(menu, [&]
+                             { return hbox({Graph_Box(board->get_spaces()),
+                                            separator(),
+                                            window(text("Move the Fog Token to..."), menu->Render())}); });
+
+    ScreenInteractive screen = ScreenInteractive::Fullscreen();
+
+    auto component = CatchEvent(renderer, [&](Event event)
+                                {
+        if (event == Event::Return)
+        {
+            Heroes *fogMarker = fogSpace->get_Fog();
+
+            fogSpace->set_Fog(nullptr);
+            AllowSpace[selected]->set_Fog(fogMarker);
+
+            screen.Exit();
+            return true;
+        }
+        return false; });
+
+    screen.Loop(component);
 }

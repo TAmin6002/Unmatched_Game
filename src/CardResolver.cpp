@@ -585,7 +585,62 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
 
     case CardType::Lurking:
     {
-        Defender->DrawnCard();
+        if (selectedcard->get_ApplyEffects())
+        {
+            Heroes *user = selectedcard->get_user_card();
+
+            user->DrawnCard();
+
+            if (FF.ChooseBetweenTwoEffects("Move InvisibleMan to a Fog Token space", "Move a Fog Token up to 3 spaces"))
+            {
+                FF.MoveHeroToFogSpace(user, board);
+            }
+            else
+            {
+                Space *fogSpace = FF.SelectFogToken(board);
+                FF.MoveFogTokenDistance(fogSpace, board, 3);
+            }
+        }
+        break;
+    }
+
+    case CardType::Reign_Thrror:
+    {
+        if (selectedcard->get_ApplyEffects()){
+            Player * InvisibleManPlayer = (p1->get_character()->get_name() == "InvisibleMan") ? p1: p2;
+            Player * opp = (InvisibleManPlayer == p1) ? p2 : p1 ;
+
+
+            if(InvisibleManPlayer->get_character()->get_place()->get_Fog() != nullptr){
+                for (auto o : opp->get_comrade()){
+
+                    if (o != nullptr)
+                        o->Damage(2);
+                }
+
+                opp->get_character()->Damage(2);
+            }
+        }
+        break;
+    }
+
+    case CardType::Rolling_Fog:
+    {
+        if (selectedcard->get_ApplyEffects())
+        {
+            Space *fogSpace = FF.SelectFogToken(board);
+            FF.MoveFogTokenAnywhere(fogSpace, board);
+
+            Player *user_player =
+                (p1->get_character() == Attacker ||
+                (!p1->get_comrade().empty() && p1->get_comrade()[0] == Attacker))
+                    ? p1
+                    : p2;
+
+            if (user_player->get_count() > 0)
+                user_player->set_count(user_player->get_count() - 1);
+        }
+        break;
     }
 
     }

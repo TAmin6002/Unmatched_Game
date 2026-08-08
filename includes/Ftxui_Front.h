@@ -77,4 +77,9 @@ public:
     Space *SelectFogToken(Board *);
     void MoveFogTokenDistance(Space *, Board *, int );
 
+    void MoveHeroToFogSpace(Heroes *, Board *); // for LURKING effect card
+    bool ChooseBetweenTwoEffects(std::string , std::string ); // for LURKING effect card
+
+    void MoveFogTokenAnywhere(Space *fogSpace, Board *board); // for ROLLING FOG
+
 };
