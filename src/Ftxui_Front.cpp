@@ -290,6 +290,62 @@ Element Sherlock_Box(Player *p1, Player *p2)
            border;
 }
 
+
+Element Hero_Box(Player *player)
+{
+    Heroes *hero = player->get_character();
+    std::string hero_name = hero->get_name();
+
+    std::string comrade_title;
+    Color titleColor = Color::White;
+    int maxHealth = hero->get_Health();
+
+    if (hero_name == "DRACULA")
+    {
+        comrade_title = "SISTERS";
+        titleColor = Color::Red1;
+        maxHealth = 13;
+    }
+    else if (hero_name == "SHERLOCKHOLMES")
+    {
+        comrade_title = "Dr_Watsone";
+        titleColor = Color::Blue1;
+        maxHealth = 16;
+    }
+    else if (hero_name == "InvisibleMan")
+    {
+        comrade_title = "FOG";
+        titleColor = Color::RGB(150, 150, 150);
+        maxHealth = 15;
+    }
+
+    Elements content = {
+        text(hero_name + "\n") | bold | color(titleColor),
+        text("Health : " + to_string(hero->get_Health()) + " / " + to_string(maxHealth)),
+        text("Action : " + to_string(2 - player->get_count())),
+        text("card in hand : " + to_string(hero->get_hand().size())),
+        text("card in deck : " + to_string(hero->get_deck().size())),
+        text("card in discard : " + to_string(hero->get_discard().size())),
+    };
+
+    if (!player->get_comrade().empty())
+    {
+        content.push_back(separator());
+        content.push_back(text(comrade_title) | bold | color(titleColor));
+
+        for (auto *c : player->get_comrade())
+        {
+            std::string label = (c->get_number() == 0)
+                                     ? c->get_name()
+                                     : c->get_name() + to_string(c->get_number());
+
+            content.push_back(text(label + ": " + to_string(c->get_Health())));
+        }
+    }
+
+    return vbox(std::move(content)) | border;
+}
+
 Element Graph_Box(vector<Space> &spaces)
 {
     auto c = Canvas(200, 65);
@@ -610,6 +666,46 @@ std::string CardTypeToString(CardType card)
 
     case CardType::Study_Methods:
         return "Study";
+
+    case CardType::Coded_Notes:
+        return "Coded";
+
+    case CardType::Confound:
+        return "Confound";
+
+    case CardType::Covert_Preparation:
+        return "Covert";
+
+    case CardType::Dreaming_of_Revenge:
+        return "Dreaming";
+
+    case CardType::Emerge_From_Mist:
+        return "Emerge";
+
+    case CardType::Impossible_to_See:
+        return "Impossible";
+
+    case CardType::Into_Thin_Air:
+        return "Into_Thin";
+
+      case CardType::Lurking:
+        return "Lurking";
+
+      case CardType::Reign_Thrror:
+        return "Reign";
+
+      case CardType::Rolling_Fog:
+        return "Rolling";
+
+      case CardType::Slip_Away:
+        return "Slip";
+
+      case CardType::Step_Lightly:
+        return "Step";
+
+      case CardType::Vanish:
+        return "Vanish";
+
     }
 }
 
@@ -721,6 +817,65 @@ Element Sherlock_Hand(Player *p1, Player *p2)
 
     return vbox({
         text("Sherlock - Hand") | bold | center,
+        separator(),
+        hbox(std::move(cards)),
+    });
+}
+
+Element InvisibleMan_Hand(Player *p1, Player *p2)
+{
+    Player *invisibleMan_player =
+        (p1->get_character()->get_name() == "InvisibleMan") ? p1 : p2;
+
+    vector<Card> Hand_Cards = invisibleMan_player->get_character()->get_hand();
+
+    Elements cards;
+
+    for (int i = 0; i < Hand_Cards.size(); i++)
+    {
+        cards.push_back(
+            vbox({
+                text("[ " + Hand_Cards[i].get_Attacktype() + " ]") | center,
+                separator(),
+                text(CardTypeToString(Hand_Cards[i].get_CardType())) | center,
+                text(Hand_Cards[i].get_owner()) | center,
+                text("Boost: " + std::to_string(Hand_Cards[i].get_Boost())) | center,
+                text(CardTimingToString(Hand_Cards[i].get_CardTiming())) | center,
+            }) |
+            border | color(Color::RGB(0, 100, 0)));
+    }
+
+    return vbox({
+        text("InvisibleMan - Hand") | bold | center,
+        separator(),
+        hbox(std::move(cards)),
+    });
+}
+
+Element Hero_Hand(Player *player)
+{
+    Heroes *hero = player->get_character();
+    vector<Card> Hand_Cards = hero->get_hand();
+
+    Elements cards;
+
+    for (int i = 0; i < Hand_Cards.size(); i++)
+    {
+        cards.push_back(
+            vbox({
+                text("[ " + Hand_Cards[i].get_Attacktype() + " ]") | center,
+                separator(),
+                text(CardTypeToString(Hand_Cards[i].get_CardType())) | center,
+                text(Hand_Cards[i].get_owner()) | center,
+                text("Boost: " + to_string(Hand_Cards[i].get_Boost())) | center,
+                text(CardTimingToString(Hand_Cards[i].get_CardTiming())) | center,
+            }) |
+            border |
+            color(Color::RGB(0, 100, 0)));
+    }
+
+    return vbox({
+        text(hero->get_name() + " - Hand") | bold | center,
         separator(),
         hbox(std::move(cards)),
     });
@@ -993,21 +1148,23 @@ void Ftxui_Front::main_map(Player *p1, Player *p2, Board *board, Player *turn)
         ChooseAction(p1, p2, &screen),
     });
 
+    
+
 
     auto renderer = Renderer(container, [&]
                              { return vbox({
                                    vbox({
                                        text("turn : " + turn->get_name()) | bold | center | border,
                                        hbox({
-                                           Dracula_Box(p1, p2),
+                                           Hero_Box(p1),
                                            Graph_Box(board->get_spaces()),
-                                           Sherlock_Box(p1, p2),
+                                           Hero_Box(p2),
                                        }) | center,
                                    }),
 
                                    vbox({
                                        hbox({
-                                           Dracula_Hand(p1, p2),
+                                           Hero_Hand(p1),
                                            vbox({
                                                text("   Choose Action  ") | bold | color(Color::Khaki1),
                                                separatorHeavy(),
@@ -1015,7 +1172,7 @@ void Ftxui_Front::main_map(Player *p1, Player *p2, Board *board, Player *turn)
                                                container->Render() | center,
 
                                            }),
-                                           Sherlock_Hand(p1, p2),
+                                           Hero_Hand(p2),
                                        }),
 
                                    }) | center,
@@ -1087,14 +1244,17 @@ void Ftxui_Front::Attacker_selected_card(Heroes *Attacker, Heroes *Defender, Pla
     Element hand;
 
     if (Attacker->get_name() == "DRACULA" or
-        Attacker->get_name() == "SISTERS" or
-        Attacker->get_name() == "SISTERS" or
-        Attacker->get_name() == "SISTERS")
+            Attacker->get_name() == "SISTERS" or
+            Attacker->get_name() == "SISTERS" or
+            Attacker->get_name() == "SISTERS")
 
         hand = Dracula_Hand(p1, p2);
 
     else if (Attacker->get_name() == "SHERLOCKHOLMES" or Attacker->get_name() == "Dr_Watson")
         hand = Sherlock_Hand(p1, p2);
+
+    else if (Attacker->get_name() == "InvisibleMan" or Attacker->get_name() == "FOG")
+        hand = InvisibleMan_Hand(p1, p2);
 
     auto renderer = Renderer(Container::Horizontal({
                                  left,
@@ -1137,14 +1297,19 @@ void Ftxui_Front::Defender_selected_card(Heroes *Attacker, Heroes *Defender, Pla
                         : p2->get_character();
 
     else if (Defender->get_name() == "SISTERS" ||
-             Defender->get_name() == "SISTERS" ||
-             Defender->get_name() == "SISTERS")
+                Defender->get_name() == "SISTERS" ||
+                Defender->get_name() == "SISTERS")
 
-        CardOwner = p1->get_character()->get_name() == "DRACULA"
-                        ? p1->get_character()
-                        : p2->get_character();
+            CardOwner = p1->get_character()->get_name() == "DRACULA"
+                            ? p1->get_character()
+                            : p2->get_character();
 
-    vector<Card *> AllowHand;
+        else if (Defender->get_name() == "FOG")
+            CardOwner = p1->get_character()->get_name() == "InvisibleMan"
+                            ? p1->get_character()
+                            : p2->get_character();
+
+        vector<Card *> AllowHand;
 
     for (auto &c : CardOwner->get_hand()) // Defender hand
     {
@@ -1190,14 +1355,17 @@ void Ftxui_Front::Defender_selected_card(Heroes *Attacker, Heroes *Defender, Pla
     Element hand;
 
     if (Defender->get_name() == "DRACULA" or
-        Defender->get_name() == "SISTERS" or
-        Defender->get_name() == "SISTERS" or
-        Defender->get_name() == "SISTERS")
+            Defender->get_name() == "SISTERS" or
+            Defender->get_name() == "SISTERS" or
+            Defender->get_name() == "SISTERS")
 
-        hand = Dracula_Hand(p1, p2);
+            hand = Dracula_Hand(p1, p2);
 
-    else if (Defender->get_name() == "SHERLOCKHOLMES" or Defender->get_name() == "Dr_Watson")
-        hand = Sherlock_Hand(p1, p2);
+        else if (Defender->get_name() == "SHERLOCKHOLMES" or Defender->get_name() == "Dr_Watson")
+            hand = Sherlock_Hand(p1, p2);
+
+        else if (Defender->get_name() == "InvisibleMan" or Defender->get_name() == "FOG")
+            hand = InvisibleMan_Hand(p1, p2);
 
     auto renderer = Renderer(Container::Horizontal({
                                  left,
@@ -1758,8 +1926,10 @@ void Ftxui_Front::ShowHand(Heroes *owner, Player *p1, Player *p2, Board *board)
                              {
                                  Element hand;
 
-                                 if (owner->get_name() == "DRACULA")
+                                if (owner->get_name() == "DRACULA")
                                      hand = Dracula_Hand(p1, p2);
+                                 else if (owner->get_name() == "InvisibleMan")
+                                     hand = InvisibleMan_Hand(p1, p2);
                                  else
                                      hand = Sherlock_Hand(p1, p2);
 
@@ -1814,8 +1984,10 @@ Card *Ftxui_Front::ChooseCardFromHand(Player *owner, Player *p1, Player *p2, Boa
                              {
                                  Element hand_element;
 
-                                 if (owner->get_character()->get_name() == "DRACULA")
+                               if (owner->get_character()->get_name() == "DRACULA")
                                      hand_element = Dracula_Hand(p1, p2);
+                                 else if (owner->get_character()->get_name() == "InvisibleMan")
+                                     hand_element = InvisibleMan_Hand(p1, p2);
                                  else
                                      hand_element = Sherlock_Hand(p1, p2);
 
@@ -1890,12 +2062,15 @@ void Ftxui_Front::Event_Selected_Card(Heroes * SelectedHero, Player *turn, Playe
 
     Element hand;
 
-    if (turn->get_character()->get_name() == "DRACULA" or turn->get_comrade()[0]->get_name() == "SISTERS")
+   if (turn->get_character()->get_name() == "DRACULA" or turn->get_comrade()[0]->get_name() == "SISTERS")
         hand = Dracula_Hand(p1, p2);
 
 
     else if (turn->get_character()->get_name() == "SHERLOCKHOLMES" or turn->get_comrade()[0]->get_name() == "Dr_Watson")
         hand = Sherlock_Hand(p1, p2);
+
+    else if (turn->get_character()->get_name() == "InvisibleMan" or turn->get_comrade()[0]->get_name() == "FOG")
+        hand = InvisibleMan_Hand(p1, p2);
 
     auto renderer = Renderer(Container::Horizontal({
                                  left,

@@ -48,7 +48,11 @@ deck.push_back(Card(CardType::Step_Lightly, CardTiming::Immediate, "Event", 0, 1
 deck.push_back(Card(CardType::Vanish, CardTiming::Immediate, "Event", 0, 3, "InvisibleMan"));
 deck.push_back(Card(CardType::Vanish, CardTiming::Immediate, "Event", 0, 3, "InvisibleMan"));
 
+ std::mt19937 rng(std::random_device{}());
+    std::shuffle(deck.begin(), deck.end(), rng);
 
+    for (int i = 0; i < 5; i++)
+        DrawnCard();
 
 }
 
