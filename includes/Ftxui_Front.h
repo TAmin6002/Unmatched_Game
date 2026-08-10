@@ -58,7 +58,7 @@ public:
     void put_in_any_space(Heroes *, Board *);        // Gives every fighter to every empty house.
     void Revive_Sister(Heroes *, Heroes *, Board *); // He revives the defeated sister and places her in every house.
     int DiscardCards(Heroes *);                      // Shows the fighter's hand so that the player can draw cards from it without restriction.
-    void MoveHero(Heroes *, Board *, int);           // Moves the fighter up to a specified number of spaces.
+    void MoveHero(Heroes *, Board *, int, Player *, Player *); // Moves the fighter up to a specified number of spaces.
     Heroes *SelectHero(Board *, Heroes * = nullptr);
     void PlaceHeroAdjacent(Heroes *, Heroes *, Board *);
     void ShowHand(Heroes *, Player *, Player *, Board *);

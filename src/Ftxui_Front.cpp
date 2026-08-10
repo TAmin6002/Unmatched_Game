@@ -1480,8 +1480,25 @@ int Ftxui_Front::DiscardCards(Heroes *dracula)
     return discard_count;
 }
 
-void Ftxui_Front::MoveHero(Heroes *hero, Board *board, int max_distance)
+void Ftxui_Front::MoveHero(Heroes *hero, Board *board, int max_distance, Player *p1, Player *p2)
 {
+    auto belongs_to = [](Player *pl, Heroes *h)
+    {
+        if (pl == nullptr || h == nullptr)
+            return false;
+
+        if (pl->get_character() == h)
+            return true;
+
+        for (Heroes *c : pl->get_comrade())
+            if (c == h)
+                return true;
+
+        return false;
+    };
+
+    Player *hero_owner = belongs_to(p1, hero) ? p1 : p2;
+
     std::vector<Space *> available_spaces;
     std::vector<std::string> entries;
 
@@ -1501,7 +1518,6 @@ void Ftxui_Front::MoveHero(Heroes *hero, Board *board, int max_distance)
         if (distance == max_distance)
             continue;
 
-     
         std::vector<Space *> movable_from_current = current->get_neighbor();
         std::vector<Space *> portals_from_current = current->get_portal();
         movable_from_current.insert(movable_from_current.end(),
@@ -1512,8 +1528,15 @@ void Ftxui_Front::MoveHero(Heroes *hero, Board *board, int max_distance)
         {
             for (Space &s : board->get_spaces())
             {
-                if (&s != current && s.get_Fog() != nullptr)
-                    movable_from_current.push_back(&s);
+                if (&s == current || s.get_Fog() == nullptr)
+                    continue;
+
+                Heroes *occupant = s.get_hero();
+
+                if (occupant != nullptr && !belongs_to(hero_owner, occupant))
+                    continue;
+
+                movable_from_current.push_back(&s);
             }
         }
         // ---------------------------------------------------------------
@@ -2368,7 +2391,7 @@ void Ftxui_Front::MoveFogTokenDistance(Space *fogSpace, Board *board, int max_di
             visited.insert(next);
             q.push({next, distance + 1});
 
-            if (next != fogSpace)
+           if (next != fogSpace && next->get_Fog() == nullptr)
             {
                 available_spaces.push_back(next);
                 entries.push_back("Space " + std::to_string(next->get_number()));
@@ -2489,7 +2512,7 @@ void Ftxui_Front::MoveFogTokenAnywhere(Space *fogSpace, Board *board)
 
     for (Space &b : board->get_spaces())
     {
-        if (&b != fogSpace)
+        if (&b != fogSpace && b.get_Fog() == nullptr)
         {
             AllowSpace.push_back(&b);
             entries.push_back("Space " + std::to_string(b.get_number()));
@@ -2533,7 +2556,7 @@ Space *Ftxui_Front::MoveFogTokenToEmptySpace(Space *fogSpace, Board *board)
 
     for (Space &b : board->get_spaces())
     {
-        if (&b != fogSpace && b.get_hero() == nullptr)
+        if (&b != fogSpace && b.get_hero() == nullptr && b.get_Fog() == nullptr)
         {
             AllowSpace.push_back(&b);
             entries.push_back("Space " + std::to_string(b.get_number()));

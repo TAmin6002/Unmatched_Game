@@ -179,6 +179,8 @@ CMakeFiles/app.dir/src/Controller.cpp.o: \
  /home/amin/cpp/Unmatched_Game/includes/Dr_Watson.h \
  /home/amin/cpp/Unmatched_Game/includes/Player.h \
  /home/amin/cpp/Unmatched_Game/includes/Board.h \
+ /home/amin/cpp/Unmatched_Game/includes/Fog.h \
+ /home/amin/cpp/Unmatched_Game/includes/InvisibleMan.h \
  /home/amin/cpp/Unmatched_Game/includes/CardResolver.h \
  /home/amin/cpp/Unmatched_Game/includes/Ftxui_Front.h \
  /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include/ftxui/component/component.hpp \

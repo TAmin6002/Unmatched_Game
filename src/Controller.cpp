@@ -426,7 +426,7 @@ void Controller::run()
                                     cardHolder->Discard_Card(burned);
                                 }
 
-                                FF.MoveHero(selected, &board, selected->get_Movement() + extraMove);
+                                FF.MoveHero(selected, &board, selected->get_Movement() + extraMove, &p1, &p2);
 
                                 selected->set_Movement((selected->get_Movement() - 1 >= 0) ? selected->get_Movement() - 1 : 0);
                             }

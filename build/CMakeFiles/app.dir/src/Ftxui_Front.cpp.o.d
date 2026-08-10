@@ -271,5 +271,7 @@ CMakeFiles/app.dir/src/Ftxui_Front.cpp.o: \
  /home/amin/cpp/Unmatched_Game/includes/Sisters.h \
  /home/amin/cpp/Unmatched_Game/includes/SherlockHolmes.h \
  /home/amin/cpp/Unmatched_Game/includes/Dr_Watson.h \
+ /home/amin/cpp/Unmatched_Game/includes/Fog.h \
+ /home/amin/cpp/Unmatched_Game/includes/InvisibleMan.h \
  /home/amin/cpp/Unmatched_Game/includes/CardResolver.h \
  /usr/include/c++/13/iostream

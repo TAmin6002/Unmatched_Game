@@ -95,7 +95,7 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
     {
         if (selectedcard->get_ApplyEffects())
         {
-            FF.MoveHero(selectedcard->get_user_card(), board, 3);
+            FF.MoveHero(selectedcard->get_user_card(), board, 3, p1, p2);
         }
         break;
     }
@@ -187,7 +187,7 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
             if (target == nullptr)
                 break;
 
-            FF.MoveHero(target, board, 2);
+                FF.MoveHero(target, board, 2, p1, p2);
 
             int damage = 0;
 
@@ -413,7 +413,7 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
     {
         if (selectedcard->get_ApplyEffects())
         {
-            FF.MoveHero(Sherlock_Player->get_character(), board, 3);
+            FF.MoveHero(Sherlock_Player->get_character(), board, 3, p1, p2);
         }
 
         break;
@@ -494,7 +494,7 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
                 if (Attacker->DrawnCard() == 0)
                     Attacker->Damage(2);
 
-                FF.MoveHero(FF.SelectComrade(p2, board), board, 2);
+                FF.MoveHero(FF.SelectComrade(p2, board), board, 2, p1, p2);
 
                 // ...
                 
@@ -504,9 +504,10 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
                 if (Defender->DrawnCard() == 0)
                     Defender->Damage(2);
 
-                FF.MoveHero(FF.SelectComrade(p2, board), board, 2);
+                FF.MoveHero(FF.SelectComrade(p2, board), board, 2, p1, p2);
 
-                // ... a.m.38846
+
+                // ... a.m.38
 
             }
         }
@@ -573,8 +574,8 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
         {
             Heroes *user = selectedcard->get_user_card();
 
-            FF.MoveHero(user, board, 1);
-
+            FF.MoveHero(user, board, 1, p1, p2);
+            
             Space *fogSpace = FF.SelectFogToken(board);
             FF.MoveFogTokenDistance(fogSpace, board, 3);
         }

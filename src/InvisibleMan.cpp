@@ -51,3 +51,7 @@ deck.push_back(Card(CardType::Vanish, CardTiming::Immediate, "Event", 0, 3, "Inv
 
 
 }
+
+void InvisibleMan::abiliti(Board * board) {
+// this abiliti implemented in controller
+}

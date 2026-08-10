@@ -7,6 +7,8 @@
 #include "Sisters.h"
 #include "Dr_Watson.h"
 #include "Board.h"
+#include "Fog.h"
+#include "InvisibleMan.h"
 #include "CardResolver.h"
 #include "Ftxui_Front.h"
 
@@ -31,6 +33,10 @@ private:
 
     SherlockHolmes sherlock;
     Dr_Watson Watson;
+
+    InvisibleMan invisibleMan;
+    Fog f1, f2, f3;
+
 
     Heroes *Attacker = nullptr;
     Heroes *Defender = nullptr; // این دوتا هنگام ی ست میشوند که بازیکن از بین گزینه های اکشن اتک زدن را اتخاب کرده باشد
