@@ -128,44 +128,77 @@ void Ftxui_Front::Players_Info_List(Player *p1, Player *p2)
 
 }
 
-int Ftxui_Front::Det_characters(Player *p1, Player *p2)
+std::vector<int> Ftxui_Front::Det_characters(Player *p1, Player *p2)
 {
+    Player *younger = (p1->get_age() <= p2->get_age()) ? p1 : p2;
+    Player *older   = (p1->get_age() <= p2->get_age()) ? p2 : p1;
 
-    Player* younger = (p1->get_age() <= p2->get_age()) ? p1 : p2;
-
-    std::vector<std::string> entries = {
+    std::vector<std::string> master_list = {
         "DRACULA",
-        "SHERLOCK HOLMES"
+        "SHERLOCK HOLMES",
+        "INVISIBLE MAN"
     };
 
-    int selected = 0;
+    std::vector<std::string> entries_1 = master_list;
+    int selected_1 = 0;
 
-    auto screen = ScreenInteractive::Fullscreen();
+    {
+        auto screen = ScreenInteractive::Fullscreen();
+        auto menu = Menu(&entries_1, &selected_1);
+        auto confirm = Button("Confirm", [&] { screen.Exit(); });
+        auto container = Container::Vertical({menu, confirm});
 
-    auto menu = Menu(&entries, &selected);
+        auto renderer = Renderer(container, [&] {
+            return vbox({
+                text(younger->get_name() + " choose your hero") | bold | center,
+                separator(),
+                menu->Render(),
+                separator(),
+                confirm->Render() | center,
+            }) | border;
+        });
 
-    auto confirm = Button("Confirm", [&] {
-        screen.Exit();
-    });
+        screen.Loop(renderer);
+    }
 
-    auto container = Container::Vertical({
-        menu,
-        confirm,
-    });
+    int younger_choice = selected_1; 
 
-    auto renderer = Renderer(container, [&] {
-        return vbox({
-            text(younger->get_name() + " choose your hero") | bold | center,
-            separator(),
-            menu->Render(),
-            separator(),
-            confirm->Render() | center,
-        }) | border;
-    });
+    std::vector<std::string> entries_2;
+    std::vector<int> remaining_idx; 
 
-    screen.Loop(renderer);
+    for (int i = 0; i < (int)master_list.size(); i++)
+    {
+        if (i != younger_choice)
+        {
+            entries_2.push_back(master_list[i]);
+            remaining_idx.push_back(i);
+        }
+    }
 
-    return selected;
+    int selected_2 = 0;
+
+    {
+        auto screen = ScreenInteractive::Fullscreen();
+        auto menu = Menu(&entries_2, &selected_2);
+        auto confirm = Button("Confirm", [&] { screen.Exit(); });
+        auto container = Container::Vertical({menu, confirm});
+
+        auto renderer = Renderer(container, [&] {
+            return vbox({
+                text(older->get_name() + " choose your hero") | bold | center,
+                separator(),
+                menu->Render(),
+                separator(),
+                confirm->Render() | center,
+            }) | border;
+        });
+
+        screen.Loop(renderer);
+    }
+
+    int older_choice = remaining_idx[selected_2]; 
+
+    return {younger_choice, older_choice};
 }
 
 void Ftxui_Front::catch_place(Player *p1, Player *p2, Board *board)
@@ -695,14 +728,16 @@ Element Sherlock_Hand(Player *p1, Player *p2)
 
 void Ftxui_Front::choose_comrad_place(Player *p1, Player *p2, Board *board)
 {
-    Player *dracula_player = (p1->get_character()->get_name() == "DRACULA") ? p1 : p2;
-    Player *sherlock_player = (p1->get_character()->get_name() == "SHERLOCKHOLMES") ? p1 : p2;
-
+    auto place_comrades = [&](Player *player, const std::string &comrade_label)
     {
+        int needed = (int)player->get_comrade().size(); 
+
+        if (needed == 0)
+            return;
 
         auto screen = ScreenInteractive::Fullscreen();
 
-        vector<Space *> zone = dracula_player->get_character()->get_place()->get_zone();
+        vector<Space *> zone = player->get_character()->get_place()->get_zone();
 
         if (zone.empty())
         {
@@ -711,7 +746,6 @@ void Ftxui_Front::choose_comrad_place(Player *p1, Player *p2, Board *board)
         }
 
         vector<string> entries;
-
         for (auto s : zone)
             entries.push_back("Space " + to_string(s->get_number()));
 
@@ -724,18 +758,20 @@ void Ftxui_Front::choose_comrad_place(Player *p1, Player *p2, Board *board)
         auto confirm_btn = Button("Confirm", [&]
                                   {
                 bool duplicate = false;
-                for(auto c : choices) if(c == selected) duplicate = true; // check duplicate
-                
-                if(!duplicate) {
+                for (auto c : choices) if (c == selected) duplicate = true;
+
+                if (!duplicate)
+                {
                     choices.push_back(selected);
                     confirmed++;
                 }
 
-                if(confirmed == 3) {
-                    for(int i = 0; i < 3; i++)
+                if (confirmed == needed)
+                {
+                    for (int i = 0; i < needed; i++)
                     {
-                        dracula_player->get_comrade()[i]->set_place(zone[choices[i]]);
-                        zone[choices[i]]->set_hero(dracula_player->get_comrade()[i]);
+                        player->get_comrade()[i]->set_place(zone[choices[i]]);
+                        zone[choices[i]]->set_hero(player->get_comrade()[i]);
                     }
                     screen.ExitLoopClosure()();
                 } });
@@ -746,9 +782,9 @@ void Ftxui_Front::choose_comrad_place(Player *p1, Player *p2, Board *board)
                                  { return vbox({
                                        hbox({
                                            vbox({
-                                               text(dracula_player->get_name() + " - Choose 3 spaces for sisters") | bold | center,
+                                               text(player->get_name() + " - Choose " + to_string(needed) + " space(s) for " + comrade_label) | bold | center,
                                                separator(),
-                                               text("Selected: " + to_string(confirmed) + " / 3") | color(confirmed == 3 ? Color::Green : Color::Red) | center,
+                                               text("Selected: " + to_string(confirmed) + " / " + to_string(needed)) | color(confirmed == needed ? Color::Green : Color::Red) | center,
                                                separator(),
                                                menu->Render(),
                                                separator(),
@@ -760,51 +796,20 @@ void Ftxui_Front::choose_comrad_place(Player *p1, Player *p2, Board *board)
                                    }); });
 
         screen.Loop(renderer);
-    }
+    };
 
+    for (Player *player : {p1, p2})
     {
-        auto screen = ScreenInteractive::Fullscreen();
+        std::string hero_name = player->get_character()->get_name();
 
-        vector<Space *> zone = sherlock_player->get_character()->get_place()->get_zone();
+        if (hero_name == "DRACULA")
+            place_comrades(player, "sisters");
 
-        if (zone.empty())
-        {
-            throw std::runtime_error("AllowHand is empty");
-            return;
-        }
+        else if (hero_name == "SHERLOCKHOLMES")
+            place_comrades(player, "Watson");
 
-        vector<string> entries;
-        for (auto s : zone)
-            entries.push_back("Space " + to_string(s->get_number()));
-
-        int selected = 0;
-        auto menu = ftxui::Menu(&entries, &selected);
-        auto confirm_btn = Button("Confirm", [&]
-                                  {
-                sherlock_player->get_comrade()[0]->set_place(zone[selected]);
-                zone[selected]->set_hero(sherlock_player->get_comrade()[0]);
-
-                screen.ExitLoopClosure()(); });
-
-        auto container = Container::Vertical({menu, confirm_btn});
-
-        auto renderer = Renderer(container, [&]
-                                 { return vbox({
-                                       //    text("turn : ") | bold | center | border,
-                                       hbox({
-                                           vbox({
-                                               text(sherlock_player->get_name() + " - Choose 1 space for Watson") | bold | center,
-                                               separator(),
-                                               menu->Render(),
-                                               separator(),
-                                               confirm_btn->Render() | center,
-                                           }) | border |
-                                               size(WIDTH, EQUAL, 30),
-                                           Graph_Box(board->get_spaces()),
-                                       }),
-                                   }); });
-
-        screen.Loop(renderer);
+        else if (hero_name == "InvisibleMan")
+            place_comrades(player, "Fog tokens");
     }
 }
 

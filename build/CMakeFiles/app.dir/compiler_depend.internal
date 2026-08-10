@@ -528,8 +528,10 @@ CMakeFiles/app.dir/src/Controller.cpp.o
  /home/amin/cpp/Unmatched_Game/includes/Dr_Watson.h
  /home/amin/cpp/Unmatched_Game/includes/Dracula.h
  /home/amin/cpp/Unmatched_Game/includes/Enums.h
+ /home/amin/cpp/Unmatched_Game/includes/Fog.h
  /home/amin/cpp/Unmatched_Game/includes/Ftxui_Front.h
  /home/amin/cpp/Unmatched_Game/includes/Heroes.h
+ /home/amin/cpp/Unmatched_Game/includes/InvisibleMan.h
  /home/amin/cpp/Unmatched_Game/includes/Player.h
  /home/amin/cpp/Unmatched_Game/includes/SherlockHolmes.h
  /home/amin/cpp/Unmatched_Game/includes/Sisters.h
@@ -1603,8 +1605,10 @@ CMakeFiles/app.dir/src/Ftxui_Front.cpp.o
  /home/amin/cpp/Unmatched_Game/includes/Dr_Watson.h
  /home/amin/cpp/Unmatched_Game/includes/Dracula.h
  /home/amin/cpp/Unmatched_Game/includes/Enums.h
+ /home/amin/cpp/Unmatched_Game/includes/Fog.h
  /home/amin/cpp/Unmatched_Game/includes/Ftxui_Front.h
  /home/amin/cpp/Unmatched_Game/includes/Heroes.h
+ /home/amin/cpp/Unmatched_Game/includes/InvisibleMan.h
  /home/amin/cpp/Unmatched_Game/includes/Player.h
  /home/amin/cpp/Unmatched_Game/includes/SherlockHolmes.h
  /home/amin/cpp/Unmatched_Game/includes/Sisters.h
@@ -3356,8 +3360,10 @@ CMakeFiles/app.dir/src/main.cpp.o
  /home/amin/cpp/Unmatched_Game/includes/Dr_Watson.h
  /home/amin/cpp/Unmatched_Game/includes/Dracula.h
  /home/amin/cpp/Unmatched_Game/includes/Enums.h
+ /home/amin/cpp/Unmatched_Game/includes/Fog.h
  /home/amin/cpp/Unmatched_Game/includes/Ftxui_Front.h
  /home/amin/cpp/Unmatched_Game/includes/Heroes.h
+ /home/amin/cpp/Unmatched_Game/includes/InvisibleMan.h
  /home/amin/cpp/Unmatched_Game/includes/Player.h
  /home/amin/cpp/Unmatched_Game/includes/SherlockHolmes.h
  /home/amin/cpp/Unmatched_Game/includes/Sisters.h

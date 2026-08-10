@@ -44,30 +44,36 @@ Card *Controller::get_Defender_selected_card(){
     return Defender_selected_card;
 }
 
-void Controller::set_players_character(int choise){
+void Controller::set_players_character(int younger_choice, int older_choice)
+{
+    Player *Yanger_Player = (p1.get_age() <= p2.get_age() ? &p1 : &p2);
+    Player *Older_Player  = (p1.get_age() <= p2.get_age() ? &p2 : &p1);
 
-    Player * Yanger_Player = (p1.get_age() <= p2.get_age()? &p1 : &p2);
-    Player * Older_Player = (p1.get_age() <= p2.get_age()? &p2 : &p1);
+    auto assign_hero = [&](Player *player, int choice)
+    {
+        if (choice == 0) // DRACULA
+        {
+            player->set_character(&dracula);
+            player->set_comrade(&s1);
+            player->set_comrade(&s2);
+            player->set_comrade(&s3);
+        }
+        else if (choice == 1) // SHERLOCK HOLMES
+        {
+            player->set_character(&sherlock);
+            player->set_comrade(&Watson);
+        }
+        else if (choice == 2) // INVISIBLE MAN
+        {
+            player->set_character(&invisibleMan);
+            player->set_comrade(&f1);
+            player->set_comrade(&f2);
+            player->set_comrade(&f3);
+        }
+    };
 
-    if(choise == 0){
-        Yanger_Player->set_character(&dracula);
-        Yanger_Player->set_comrade(&s1);
-        Yanger_Player->set_comrade(&s2);
-        Yanger_Player->set_comrade(&s3);
-        
-        Older_Player->set_character(&sherlock);
-        Older_Player->set_comrade(&Watson);
-    }
-    
-    else if(choise == 1){
-        Yanger_Player->set_character(&sherlock);
-        Yanger_Player->set_comrade(&Watson);
-
-        Older_Player->set_character(&dracula);
-        Older_Player->set_comrade(&s1);
-        Older_Player->set_comrade(&s2);
-        Older_Player->set_comrade(&s3);
-    }
+    assign_hero(Yanger_Player, younger_choice);
+    assign_hero(Older_Player, older_choice);
 }
 
 // void Controller::Initial_characters_places()
@@ -175,38 +181,49 @@ void Controller::run()
             
             sherlock = SherlockHolmes();
             Watson = Dr_Watson();
+
+            invisibleMan = InvisibleMan{};
+            f1 = Fog{};
+            f2 = Fog{};
+            f3 = Fog{};
+
+
             
 
             FF.Players_Info_List(&p1, &p2);
             
             // FF.catch_place(&p1, &p2, &board);
+
+            std::vector<int> hero_choices = FF.Det_characters(&p1, &p2);
+            set_players_character(hero_choices[0], hero_choices[1]);
+
+            FF.catch_place(&p1, &p2, &board);
+
+            FF.choose_comrad_place(&p1, &p2, &board);
             
             if(round == 1)
             Initial_turn();
             
-            set_players_character(FF.Det_characters(&p1, &p2));
+            std::vector<int> choices = FF.Det_characters(&p1, &p2);
+            set_players_character(choices[0], choices[1]);
 
             
-            dracula.set_place(&board.get_spaces()[2]);
-            s1.set_place(&board.get_spaces()[0]);
-            s2.set_place(&board.get_spaces()[1]);
-            s3.set_place(&board.get_spaces()[3]);
+            // dracula.set_place(&board.get_spaces()[2]);
+            // s1.set_place(&board.get_spaces()[0]);
+            // s2.set_place(&board.get_spaces()[1]);
+            // s3.set_place(&board.get_spaces()[3]);
             
-            board.get_spaces()[2].set_hero(&dracula);
-            board.get_spaces()[0].set_hero(&s1);
-            board.get_spaces()[1].set_hero(&s2);
-            board.get_spaces()[3].set_hero(&s3);
+            // board.get_spaces()[2].set_hero(&dracula);
+            // board.get_spaces()[0].set_hero(&s1);
+            // board.get_spaces()[1].set_hero(&s2);
+            // board.get_spaces()[3].set_hero(&s3);
             
-            sherlock.set_place(&board.get_spaces()[5]);
-            Watson.set_place(&board.get_spaces()[31]);
+            // sherlock.set_place(&board.get_spaces()[5]);
+            // Watson.set_place(&board.get_spaces()[31]);
             
-            board.get_spaces()[5].set_hero(&sherlock);
-            board.get_spaces()[31].set_hero(&Watson);
+            // board.get_spaces()[5].set_hero(&sherlock);
+            // board.get_spaces()[31].set_hero(&Watson);
             
-            // FF.catch_place(&p1, &p2, &board);
-            
-            // FF.chose_comrad_place(&p1, &p2, &board);
-     
 
 
 

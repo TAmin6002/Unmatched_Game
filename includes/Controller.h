@@ -77,7 +77,7 @@ public:
     Card *get_Attacker_selected_card();
     Card *get_Defender_selected_card();
 
-    void set_players_character(int);
+    void set_players_character(int, int);
 
     void Initial_characters_places();
     Player *get_younger_player();

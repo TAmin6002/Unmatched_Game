@@ -525,8 +525,10 @@ CMakeFiles/app.dir/src/Controller.cpp.o: /home/amin/cpp/Unmatched_Game/src/Contr
   /home/amin/cpp/Unmatched_Game/includes/Dr_Watson.h \
   /home/amin/cpp/Unmatched_Game/includes/Dracula.h \
   /home/amin/cpp/Unmatched_Game/includes/Enums.h \
+  /home/amin/cpp/Unmatched_Game/includes/Fog.h \
   /home/amin/cpp/Unmatched_Game/includes/Ftxui_Front.h \
   /home/amin/cpp/Unmatched_Game/includes/Heroes.h \
+  /home/amin/cpp/Unmatched_Game/includes/InvisibleMan.h \
   /home/amin/cpp/Unmatched_Game/includes/Player.h \
   /home/amin/cpp/Unmatched_Game/includes/SherlockHolmes.h \
   /home/amin/cpp/Unmatched_Game/includes/Sisters.h \
@@ -1596,8 +1598,10 @@ CMakeFiles/app.dir/src/Ftxui_Front.cpp.o: /home/amin/cpp/Unmatched_Game/src/Ftxu
   /home/amin/cpp/Unmatched_Game/includes/Dr_Watson.h \
   /home/amin/cpp/Unmatched_Game/includes/Dracula.h \
   /home/amin/cpp/Unmatched_Game/includes/Enums.h \
+  /home/amin/cpp/Unmatched_Game/includes/Fog.h \
   /home/amin/cpp/Unmatched_Game/includes/Ftxui_Front.h \
   /home/amin/cpp/Unmatched_Game/includes/Heroes.h \
+  /home/amin/cpp/Unmatched_Game/includes/InvisibleMan.h \
   /home/amin/cpp/Unmatched_Game/includes/Player.h \
   /home/amin/cpp/Unmatched_Game/includes/SherlockHolmes.h \
   /home/amin/cpp/Unmatched_Game/includes/Sisters.h \
@@ -3341,8 +3345,10 @@ CMakeFiles/app.dir/src/main.cpp.o: /home/amin/cpp/Unmatched_Game/src/main.cpp \
   /home/amin/cpp/Unmatched_Game/includes/Dr_Watson.h \
   /home/amin/cpp/Unmatched_Game/includes/Dracula.h \
   /home/amin/cpp/Unmatched_Game/includes/Enums.h \
+  /home/amin/cpp/Unmatched_Game/includes/Fog.h \
   /home/amin/cpp/Unmatched_Game/includes/Ftxui_Front.h \
   /home/amin/cpp/Unmatched_Game/includes/Heroes.h \
+  /home/amin/cpp/Unmatched_Game/includes/InvisibleMan.h \
   /home/amin/cpp/Unmatched_Game/includes/Player.h \
   /home/amin/cpp/Unmatched_Game/includes/SherlockHolmes.h \
   /home/amin/cpp/Unmatched_Game/includes/Sisters.h \
@@ -3703,8 +3709,6 @@ CMakeFiles/app.dir/src/space.cpp.o: /home/amin/cpp/Unmatched_Game/src/space.cpp 
 
 /home/amin/cpp/Unmatched_Game/src/Player.cpp:
 
-/home/amin/cpp/Unmatched_Game/includes/InvisibleMan.h:
-
 /home/amin/cpp/Unmatched_Game/src/Heroes.cpp:
 
 /home/amin/cpp/Unmatched_Game/src/Ftxui_Front.cpp:
@@ -3712,6 +3716,8 @@ CMakeFiles/app.dir/src/space.cpp.o: /home/amin/cpp/Unmatched_Game/src/space.cpp 
 /usr/include/c++/13/pstl/glue_algorithm_defs.h:
 
 /usr/include/c++/13/algorithm:
+
+/home/amin/cpp/Unmatched_Game/includes/InvisibleMan.h:
 
 /home/amin/cpp/Unmatched_Game/includes/Dr_Watson.h:
 

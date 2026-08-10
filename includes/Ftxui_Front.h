@@ -32,10 +32,9 @@ public:
 
     void Players_Info_List(Player *, Player *);
 
-    int Det_characters(Player *, Player *);
-
+    std::vector<int> Det_characters(Player *, Player *); 
+    
     void catch_place(Player *, Player *, Board *);
-
     
     Component ChooseAction(Player *, Player *, ScreenInteractive *);
     
