@@ -490,29 +490,27 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
     {
         if (selectedcard->get_ApplyEffects()){
 
+            Player * InvisibleManPlayer = (Attacker->get_name() == "InvisibleMan") ? 
+                ((p1->get_character() == Attacker || (!p1->get_comrade().empty() && p1->get_comrade()[0] == Attacker)) ? p1 : p2)
+                : ((p1->get_character() == Defender || (!p1->get_comrade().empty() && p1->get_comrade()[0] == Defender)) ? p1 : p2);
+
+            Player * opp = (InvisibleManPlayer == p1) ? p2 : p1;
+
             if (Attacker->get_name() == "InvisibleMan"){
                 if (Attacker->DrawnCard() == 0)
                     Attacker->Damage(2);
 
-                FF.MoveHero(FF.SelectComrade(p2, board), board, 2, p1, p2);
-
-                // ...
-                
+                FF.MoveHero(FF.SelectComrade(opp, board), board, 2, p1, p2);
             }
 
             else if (Defender->get_name() == "InvisibleMan"){
                 if (Defender->DrawnCard() == 0)
                     Defender->Damage(2);
 
-                FF.MoveHero(FF.SelectComrade(p2, board), board, 2, p1, p2);
-
-
-                // ... a.m.38
-
+                FF.MoveHero(FF.SelectComrade(opp, board), board, 2, p1, p2);
             }
         }
         break;
-
     }
 
     case CardType::Dreaming_of_Revenge :

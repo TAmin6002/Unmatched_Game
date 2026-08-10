@@ -204,8 +204,8 @@ void Controller::run()
             if(round == 1)
             Initial_turn();
             
-            std::vector<int> choices = FF.Det_characters(&p1, &p2);
-            set_players_character(choices[0], choices[1]);
+            // std::vector<int> choices = FF.Det_characters(&p1, &p2);
+            // set_players_character(choices[0], choices[1]);
 
             
             // dracula.set_place(&board.get_spaces()[2]);
