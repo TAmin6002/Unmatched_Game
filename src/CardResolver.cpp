@@ -464,6 +464,7 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
             FF.ChooseCardsToTopOfDeck(Defender, 2, p1, p2, board);
 
         }
+        break;
         
     }
 
@@ -483,6 +484,7 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
 
             }
         }
+        break;
 
     }
 
@@ -500,14 +502,18 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
                 if (Attacker->DrawnCard() == 0)
                     Attacker->Damage(2);
 
-                FF.MoveHero(FF.SelectComrade(opp, board), board, 2, p1, p2);
+                Heroes *oppComrade = FF.SelectComrade(opp, board);
+                if (oppComrade != nullptr)
+                    FF.MoveHero(oppComrade, board, 2, p1, p2);
             }
 
             else if (Defender->get_name() == "InvisibleMan"){
                 if (Defender->DrawnCard() == 0)
                     Defender->Damage(2);
 
-                FF.MoveHero(FF.SelectComrade(opp, board), board, 2, p1, p2);
+                Heroes *oppComrade = FF.SelectComrade(opp, board);
+                if (oppComrade != nullptr)
+                    FF.MoveHero(oppComrade, board, 2, p1, p2);
             }
         }
         break;
@@ -520,7 +526,7 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
             Heroes * InvisibleMan = (Attacker->get_name() == "InvisibleMan") ? Attacker : Defender;
             Player * InvisibleManPlayer = (p1->get_character()->get_name() == "InvisibleMan")? p1 : p2;
     
-            if (InvisibleMan->get_place()->get_Fog() != nullptr){
+            if (InvisibleMan->get_place() != nullptr && InvisibleMan->get_place()->get_Fog() != nullptr){
     
                 for (auto F : InvisibleManPlayer->get_comrade()){
     
@@ -610,7 +616,7 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
             Player * opp = (InvisibleManPlayer == p1) ? p2 : p1 ;
 
 
-            if(InvisibleManPlayer->get_character()->get_place()->get_Fog() != nullptr){
+            if(InvisibleManPlayer->get_character()->get_place() != nullptr && InvisibleManPlayer->get_character()->get_place()->get_Fog() != nullptr){{
                 for (auto o : opp->get_comrade()){
 
                     if (o != nullptr)
@@ -651,9 +657,10 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
             Space *fogSpace = FF.SelectFogToken(board);
             Space *destination = FF.MoveFogTokenToEmptySpace(fogSpace, board);
 
-            if (destination != nullptr)
+           if (destination != nullptr)
             {
-                user->get_place()->set_hero(nullptr);
+                if (user->get_place() != nullptr)
+                    user->get_place()->set_hero(nullptr);
 
                 destination->set_hero(user);
                 user->set_place(destination);
@@ -670,9 +677,9 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
 
             Heroes *target = FF.SelectAdjacentHero(user, board);
 
-            if (target != nullptr)
+           if (target != nullptr)
             {
-                bool onFog = (user->get_place()->get_Fog() != nullptr);
+                bool onFog = (user->get_place() != nullptr && user->get_place()->get_Fog() != nullptr);
                 target->Damage(onFog ? 3 : 1);
             }
 
@@ -711,21 +718,43 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
         }
 
     }
-}
+}}
 
 void CardResolver::TryDisableCard(Card *card, Player *p1, Player *p2)
 {
     if (card == nullptr)
         return;
 
-    Player *Sherlock_Player = (p1->get_character()->get_name() == "SHERLOCKHOLMES" ? p1 : p2);
-    Heroes *sherlock = Sherlock_Player->get_character();
+    if (p1 == nullptr || p2 == nullptr)
+        return;
 
     std::string owner = card->get_owner();
 
-    if (sherlock->get_islive() && (owner == "SHERLOCKHOLMES" || owner == "DR_WATSON")) {
-        return; 
+
+    if (owner != "SHERLOCKHOLMES" && owner != "DR_WATSON")
+    {
+        card->set_ApplyEffects(false);
+        return;
+    }
+
+    Player *Sherlock_Player = nullptr;
+
+    if (p1->get_character() != nullptr && p1->get_character()->get_name() == "SHERLOCKHOLMES")
+        Sherlock_Player = p1;
+    else if (p2->get_character() != nullptr && p2->get_character()->get_name() == "SHERLOCKHOLMES")
+        Sherlock_Player = p2;
+
+    if (Sherlock_Player != nullptr)
+    {
+        Heroes *sherlock = Sherlock_Player->get_character();
+
+        if (sherlock != nullptr && sherlock->get_islive())
+        {
+            return;
+        }
     }
 
     card->set_ApplyEffects(false);
 }
+
+

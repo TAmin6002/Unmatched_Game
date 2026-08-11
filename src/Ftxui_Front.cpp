@@ -970,18 +970,25 @@ void Ftxui_Front::choose_comrad_place(Player *p1, Player *p2, Board *board)
 
 void Ftxui_Front::Attakcer_Heroes_Menu(Player *player, Board *board, Heroes *&hero)
 {
+    if (player == nullptr or hero == nullptr)
+    return ;
+
     auto screen = ScreenInteractive::Fullscreen();
 
     vector<Heroes *> fighters;
 
-    if (player->get_character() != nullptr and player->get_character()->get_islive())
-        fighters.push_back(player->get_character());
+   if (player->get_character() != nullptr and player->get_character()->get_islive()
+    and player->get_character()->get_place() != nullptr
+    and !player->get_character()->get_PendingPlacement())
+    fighters.push_back(player->get_character());
 
-    for (auto c : player->get_comrade())
-    {
-        if (c != nullptr and c->get_islive())
-            fighters.push_back(c);
-    }
+        for (auto c : player->get_comrade())
+        {
+            if (c != nullptr and c->get_islive()
+                and c->get_place() != nullptr
+                and !c->get_PendingPlacement())
+                fighters.push_back(c);
+        }
 
     if (fighters.empty())
     {
@@ -992,6 +999,9 @@ void Ftxui_Front::Attakcer_Heroes_Menu(Player *player, Board *board, Heroes *&he
 
     for (auto h : fighters)
         entries.push_back((h->get_number() == 0 ? "" : to_string(h->get_number())) + h->get_name());
+
+        if(entries.size() == 0)
+        return;
 
     int selected = 0;
 
@@ -1047,11 +1057,19 @@ bool Exist_path(vector<Space *> zone, Space *target)
 
 void Ftxui_Front::Defender_Heroes_Menu(Player *player, Board *board, Heroes *&defender, Heroes *&Attacker)
 {
+    if(player != nullptr or defender != nullptr or Attacker != nullptr)
+    return ;
+
     cout << "enter the defender heroes emnu\n";
 
     if (Attacker == nullptr)
     {
         throw runtime_error("Attacker is nullptr");
+    }
+    
+    else if (Attacker->get_place() == nullptr)
+    {
+        throw runtime_error("Attacker has no place.");
     }
 
     else
@@ -1101,6 +1119,9 @@ void Ftxui_Front::Defender_Heroes_Menu(Player *player, Board *board, Heroes *&de
 
         for (auto h : defenders)
             entries.push_back((h->get_number() == 0 ? "" : to_string(h->get_number())) + h->get_name());
+
+             if(entries.size() == 0)
+                return;
 
         int selected = 0;
 
@@ -1216,6 +1237,9 @@ void Ftxui_Front::Attacker_selected_card(Heroes *Attacker, Heroes *Defender, Pla
     for (auto *c : AllowHand)
         entries.push_back(CardTypeToString(c->get_CardType()));
 
+         if(entries.size() == 0)
+        return;
+
     auto screen = ScreenInteractive::Fullscreen();
 
     auto menu = Menu(&entries, &selected);
@@ -1324,6 +1348,9 @@ void Ftxui_Front::Defender_selected_card(Heroes *Attacker, Heroes *Defender, Pla
 
     for (auto *c : AllowHand)
         entries.push_back(CardTypeToString(c->get_CardType()));
+
+     if(entries.size() == 0)
+        return;
 
     entries.push_back("No Defense");
 
@@ -1655,6 +1682,9 @@ int Ftxui_Front::DiscardCards(Heroes *dracula)
 
 void Ftxui_Front::MoveHero(Heroes *hero, Board *board, int max_distance, Player *p1, Player *p2)
 {
+    if (hero == nullptr || hero->get_place() == nullptr)
+        return;
+
     auto belongs_to = [](Player *pl, Heroes *h)
     {
         if (pl == nullptr || h == nullptr)
