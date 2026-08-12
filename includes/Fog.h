@@ -5,7 +5,7 @@
 class Fog : public  Heroes{
     private:
     public:
-    Fog();
+    Fog(int number);
     virtual void abiliti(Board *) override;
 
 };

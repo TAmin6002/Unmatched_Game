@@ -35,7 +35,7 @@ private:
     Dr_Watson Watson;
 
     InvisibleMan invisibleMan;
-    Fog f1, f2, f3;
+    Fog f1{1}, f2{2}, f3{3};
 
 
     Heroes *Attacker = nullptr;

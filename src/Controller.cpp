@@ -147,6 +147,9 @@ bool check_winner(Heroes *hero, Player *p1, Player *p2)
 
     for (Heroes *comrade : opponent_player->get_comrade())
     {
+        if (comrade->get_name() == "FOG")
+            continue;
+
         if (comrade->get_islive())
             return false;
     }
@@ -183,9 +186,9 @@ void Controller::run()
             Watson = Dr_Watson();
 
             invisibleMan = InvisibleMan{};
-            f1 = Fog{};
-            f2 = Fog{};
-            f3 = Fog{};
+            f1 = Fog{1};
+            f2 = Fog{2};
+            f3 = Fog{3};
 
 
             
@@ -241,6 +244,13 @@ void Controller::run()
                     Exit = true;
                     break;
                 }
+                 else if(check_winner(&invisibleMan, &p1, &p2))
+                {
+                    FF.DeclareWinner(&invisibleMan);
+                    Exit = true;
+                    break;
+                }
+                
 
                   if (turn->get_count() == 0 && turn->get_character()->get_name() == "DRACULA")
                     {
@@ -282,6 +292,8 @@ void Controller::run()
                     {
                         if (turn->get_count() < 2)
                         {
+                            Defender = nullptr;
+
                             try
                             {
 
@@ -290,6 +302,9 @@ void Controller::run()
                                 
                                 FF.Defender_Heroes_Menu(not_turn, &board, Defender, Attacker);
                                 cout << "2\n";
+
+                                if (Defender == nullptr)
+                                    break;
                                 
                                 FF.Attacker_selected_card(Attacker, Defender, &p1, &p2, &board, Attacker_selected_card);
                                 cout << "3\n";
@@ -321,7 +336,8 @@ void Controller::run()
                             }
 
                             // ------------------------ start combat -----------------------------------.
-
+                            
+                            if(!(Attacker_selected_card == nullptr or Defender_selected_card == nullptr)){
                             try
                             {
 
@@ -341,16 +357,18 @@ void Controller::run()
                                 
                                 // -------------------------- During Calculation --------------------------.
                                 cout << "7\n";
+
                                 
                                 if (Defender_selected_card != nullptr && Defender_selected_card->get_CardTiming() == CardTiming::During)
                                 {
                                     card_resolver.excute(Defender_selected_card, &p1, &p2, Attacker, Defender, &board, Attack_Value, Defense_Value, Attack_Locked, Defense_Locked);
                                 }
-
-                                if (Attacker_selected_card->get_CardTiming() == CardTiming::During)
+                                
+                                if (Attacker_selected_card != nullptr && Attacker_selected_card->get_CardTiming() == CardTiming::During)
                                 {
                                     card_resolver.excute(Attacker_selected_card, &p1, &p2, Attacker, Defender, &board, Attack_Value, Defense_Value, Attack_Locked, Defense_Locked);
                                 }
+                               
                                 
                                 
                                 // --------------------------- Damage Calculation ------------------------.
@@ -372,7 +390,7 @@ void Controller::run()
                                     card_resolver.excute(Defender_selected_card, &p1, &p2, Attacker, Defender, &board, Attack_Value, Defense_Value, Attack_Locked, Defense_Locked);
                                 }
 
-                                if (Attacker_selected_card->get_CardTiming() == CardTiming::After)
+                               if (Attacker_selected_card != nullptr && Attacker_selected_card->get_CardTiming() == CardTiming::After)
                                 {
                                     card_resolver.excute(Attacker_selected_card, &p1, &p2, Attacker, Defender, &board, Attack_Value, Defense_Value, Attack_Locked, Defense_Locked);
                                 }
@@ -381,8 +399,11 @@ void Controller::run()
                                 // ------------------------- Transfer Cards to discard --------------------------.
                                 cout << "10\n";
                                 
-                                Attacker->Discard_Card(Attacker_selected_card);
-                                Attacker_selected_card->set_user_card(nullptr);
+                               if (Attacker_selected_card != nullptr)
+                                {
+                                    Attacker->Discard_Card(Attacker_selected_card);
+                                    Attacker_selected_card->set_user_card(nullptr);
+                                }
 
                                 if (Defender_selected_card != nullptr)
                                 {
@@ -410,7 +431,7 @@ void Controller::run()
                             {
                                 FF.get_msg().push_back(e.what());
                                 // std::cerr << e.what() << '\n';
-                            }
+                            }}
                             cout << "11\n";
 
                             turn->add_count();
@@ -506,20 +527,20 @@ void Controller::run()
 
 
 
-                    if (Exit)
+                          if (Exit)
                     {
                         Exit = false;
                         break;
                     }
 
-                    if (turn->get_count() % 2 == 0)
+                    if (turn->get_count() >= 2)
                     {
                         turn->set_count(0);
                         chane_turn();
                         round++;
                     }
                     
-                    round++;
+                    round++;    
                     
                 }
         }

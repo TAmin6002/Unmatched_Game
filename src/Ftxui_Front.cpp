@@ -883,7 +883,7 @@ Element Hero_Hand(Player *player)
 
 void Ftxui_Front::choose_comrad_place(Player *p1, Player *p2, Board *board)
 {
-    auto place_comrades = [&](Player *player, const std::string &comrade_label)
+    auto place_comrades = [&](Player *player, const std::string &comrade_label, bool isFogToken)
     {
         int needed = (int)player->get_comrade().size(); 
 
@@ -926,7 +926,11 @@ void Ftxui_Front::choose_comrad_place(Player *p1, Player *p2, Board *board)
                     for (int i = 0; i < needed; i++)
                     {
                         player->get_comrade()[i]->set_place(zone[choices[i]]);
-                        zone[choices[i]]->set_hero(player->get_comrade()[i]);
+
+                        if (isFogToken)
+                            zone[choices[i]]->set_Fog(player->get_comrade()[i]);
+                        else
+                            zone[choices[i]]->set_hero(player->get_comrade()[i]);
                     }
                     screen.ExitLoopClosure()();
                 } });
@@ -958,19 +962,19 @@ void Ftxui_Front::choose_comrad_place(Player *p1, Player *p2, Board *board)
         std::string hero_name = player->get_character()->get_name();
 
         if (hero_name == "DRACULA")
-            place_comrades(player, "sisters");
+            place_comrades(player, "sisters", false);
 
         else if (hero_name == "SHERLOCKHOLMES")
-            place_comrades(player, "Watson");
+            place_comrades(player, "Watson", false);
 
         else if (hero_name == "InvisibleMan")
-            place_comrades(player, "Fog tokens");
+            place_comrades(player, "Fog tokens", true);
     }
 }
 
 void Ftxui_Front::Attakcer_Heroes_Menu(Player *player, Board *board, Heroes *&hero)
 {
-    if (player == nullptr or hero == nullptr)
+    if (player == nullptr)
     return ;
 
     auto screen = ScreenInteractive::Fullscreen();
@@ -986,7 +990,8 @@ void Ftxui_Front::Attakcer_Heroes_Menu(Player *player, Board *board, Heroes *&he
         {
             if (c != nullptr and c->get_islive()
                 and c->get_place() != nullptr
-                and !c->get_PendingPlacement())
+                and !c->get_PendingPlacement()
+                and c->get_name() != "FOG")
                 fighters.push_back(c);
         }
 
@@ -1057,8 +1062,8 @@ bool Exist_path(vector<Space *> zone, Space *target)
 
 void Ftxui_Front::Defender_Heroes_Menu(Player *player, Board *board, Heroes *&defender, Heroes *&Attacker)
 {
-    if(player != nullptr or defender != nullptr or Attacker != nullptr)
-    return ;
+    if (player == nullptr)
+        return;
 
     cout << "enter the defender heroes emnu\n";
 
@@ -1087,7 +1092,7 @@ void Ftxui_Front::Defender_Heroes_Menu(Player *player, Board *board, Heroes *&de
 
                 for (auto c : player->get_comrade())
                 {
-                    if (c != nullptr and c->get_islive() and Exist_path(Attacker->get_place()->get_neighbor(), c->get_place()))
+                    if (c != nullptr and c->get_islive() and Exist_path(Attacker->get_place()->get_neighbor(), c->get_place()) and c->get_name() != "FOG")
                         defenders.push_back(c);
                 }
             }
@@ -1099,7 +1104,7 @@ void Ftxui_Front::Defender_Heroes_Menu(Player *player, Board *board, Heroes *&de
 
                 for (auto c : player->get_comrade())
                 {
-                    if (c != nullptr and c->get_islive() and Exist_path(Attacker->get_place()->get_zone(), c->get_place()))
+                    if (c != nullptr and c->get_islive() and Exist_path(Attacker->get_place()->get_zone(), c->get_place()) and c->get_name() != "FOG")
                         defenders.push_back(c);
                 }
             }
@@ -1111,7 +1116,30 @@ void Ftxui_Front::Defender_Heroes_Menu(Player *player, Board *board, Heroes *&de
 
         if (defenders.empty())
         {
-            throw std::runtime_error("Attack is not possible.");
+            defender = nullptr;
+
+            auto back_btn = Button("Back", [&]
+                                   { screen.ExitLoopClosure()(); });
+
+            auto container = Container::Vertical({back_btn});
+
+            auto renderer = Renderer(container, [&]
+                                     { return hbox({
+
+                                           vbox({
+                                               text("No opponent fighter to attack") | bold | color(Color::Red1) | center,
+                                               separator(),
+                                               back_btn->Render() | center,
+                                           }) | border |
+                                               size(WIDTH, EQUAL, 30),
+
+                                           Graph_Box(board->get_spaces()),
+
+                                       }); });
+
+            screen.Loop(renderer);
+
+            cout << "exit the defender heroes emnu\n";
             return;
         }
 
@@ -1169,6 +1197,7 @@ void Ftxui_Front::main_map(Player *p1, Player *p2, Board *board, Player *turn)
         ChooseAction(p1, p2, &screen),
     });
 
+    cout<< "bbb\n";
     
 
 
@@ -2421,22 +2450,27 @@ bool Ftxui_Front::ChooseCardToDiscardOrSkip(Player *opponent)
     return true;
 }
 
-void Ftxui_Front::MoveFogToken(Heroes *owner, Board *board)
+void Ftxui_Front::MoveFogToken(Space *fogSpace, Board *board)
 {
-    if (owner == nullptr)
+    if (fogSpace == nullptr)
         return;
-        
-    auto screen = ScreenInteractive::Fullscreen();
 
-    int selected = 0;
     std::vector<Space *> AllowSpace;
     std::vector<std::string> entries;
 
     for (Space &b : board->get_spaces())
     {
-        AllowSpace.push_back(&b);
-        entries.push_back("Spase" + std::to_string(b.get_number()));
+        if (&b != fogSpace && b.get_Fog() == nullptr)
+        {
+            AllowSpace.push_back(&b);
+            entries.push_back("Space " + std::to_string(b.get_number()));
+        }
     }
+
+    if (AllowSpace.empty())
+        return;
+
+    int selected = 0;
 
     auto menu = Menu(&entries, &selected);
 
@@ -2444,29 +2478,28 @@ void Ftxui_Front::MoveFogToken(Heroes *owner, Board *board)
                              { return hbox({Graph_Box(board->get_spaces()),
                                             separator(),
                                             window(
-                                                text(owner->get_name() + " : move the Fog Token to any space"),
+                                                text("Move the Fog Token to any space"),
                                                 menu->Render())}); });
+
+    ScreenInteractive screen = ScreenInteractive::Fullscreen();
 
     auto component = CatchEvent(renderer, [&](Event event)
                                 {
         if (event == Event::Return)
         {
-            screen.ExitLoopClosure()();
+            Heroes *fogMarker = fogSpace->get_Fog();
+
+            fogSpace->set_Fog(nullptr);
+            AllowSpace[selected]->set_Fog(fogMarker);
+
+            screen.Exit();
             return true;
         }
 
         return false; });
 
     screen.Loop(component);
-
-    if (AllowSpace.empty())
-        throw std::runtime_error("AllowSpace is empty");
-
-        owner->get_place()->set_Fog(nullptr);
-        owner->set_place(AllowSpace.at(selected));
-
 }
-
 
 Heroes *Ftxui_Front::SelectComrade(Player *owner, Board *board)
 {
