@@ -46,11 +46,11 @@ public:
     
     void choose_comrad_place(Player *, Player *, Board *);
 
-    void Attakcer_Heroes_Menu(Player *, Board *, Heroes *&);
-    void Defender_Heroes_Menu(Player *, Board *, Heroes *&, Heroes *&);
+    bool Attakcer_Heroes_Menu(Player *, Board *, Heroes *&);
+    bool Defender_Heroes_Menu(Player *, Board *, Heroes *&, Heroes *&);
 
-    void Attacker_selected_card(Heroes *, Heroes *, Player *, Player *, Board *, Card *&);
-    void Defender_selected_card(Heroes *, Heroes *, Player *, Player *, Board *, Card *&);
+    bool Attacker_selected_card(Heroes *, Heroes *, Player *, Player *, Board *, Card *&);
+    bool Defender_selected_card(Heroes *, Heroes *, Player *, Player *, Board *, Card *&);
     
     void Reveal_Combat(Heroes *, Heroes *, Card *, Card *);
     
@@ -63,7 +63,7 @@ public:
     void ShowHand(Heroes *, Player *, Player *, Board *);
     Card *ChooseCardFromHand(Player *, Player *, Player *, Board *); // The opponent's fighter is shown and the player chooses and burns one card from among them.
     
-    void Event_Selected_Card(Heroes *, Player *, Player * p1, Player * p2, Board *, Card *&);
+    bool Event_Selected_Card(Heroes *, Player *, Player * p1, Player * p2, Board *, Card *&);
 
     void DeclareWinner(Heroes *);
     void Show_Help();

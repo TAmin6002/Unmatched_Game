@@ -7,6 +7,7 @@ using namespace std;
 
 Board ::Board()
 {
+    spaces.clear();
     spaces.resize(32);
 
     for (int i = 0; i < 32; i++)

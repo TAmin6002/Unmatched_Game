@@ -252,11 +252,13 @@ void Controller::run()
                 }
                 
 
-                  if (turn->get_count() == 0 && turn->get_character()->get_name() == "DRACULA")
+                 if (turn->get_count() == 0 && turn->get_character()->get_name() == "DRACULA")
                     {
                         try
                         {
+                            cout << "before dracula.abiliti()\n";
                             dracula.abiliti(&board);
+                            cout << "after dracula.abiliti()\n";
                         }
                         catch (const std::exception &e)
                         {
@@ -297,25 +299,25 @@ void Controller::run()
                             try
                             {
 
-                                FF.Attakcer_Heroes_Menu(turn, &board, Attacker);
+                                if (!FF.Attakcer_Heroes_Menu(turn, &board, Attacker) || Attacker == nullptr)
+                                    break; 
                                 cout << "1\n";
                                 
-                                FF.Defender_Heroes_Menu(not_turn, &board, Defender, Attacker);
+                                if (!FF.Defender_Heroes_Menu(not_turn, &board, Defender, Attacker) || Defender == nullptr)
+                                    break; 
                                 cout << "2\n";
-
-                                if (Defender == nullptr)
-                                    break;
                                 
-                                FF.Attacker_selected_card(Attacker, Defender, &p1, &p2, &board, Attacker_selected_card);
+                                if (!FF.Attacker_selected_card(Attacker, Defender, &p1, &p2, &board, Attacker_selected_card) || Attacker_selected_card == nullptr)
+                                    break; 
                                 cout << "3\n";
 
-                                FF.Defender_selected_card(Attacker, Defender, &p1, &p2, &board, Defender_selected_card);
+                                if (!FF.Defender_selected_card(Attacker, Defender, &p1, &p2, &board, Defender_selected_card))
+                                    break; 
                                 cout << "4\n";
                                 
                                 FF.Reveal_Combat(Attacker, Defender, Attacker_selected_card, Defender_selected_card); // show tow v&s cards
                                 cout << "5\n";
-                                
-        
+
                                 Attack_Value = Attacker_selected_card->get_amount();
                                 
                                 if(Defender_selected_card == nullptr) {Defense_Value = 0;}
@@ -476,11 +478,13 @@ void Controller::run()
                         // exeption ...
                         break;
 
-                    case 2: // Event
+                    
+                        case 2: // Event
                     {
                         if (turn->get_count() < 2)
                         {
                             int temp1, temp2 ;
+                            bool actionUsed = false; // only true if an Event card was actually drawn & played
 
                             try{
                                     Card *selected_Card = nullptr;
@@ -490,14 +494,16 @@ void Controller::run()
         
                                     if(selectedHero != nullptr)
                                     {
-                                        FF.Event_Selected_Card(selectedHero, turn, &p1, &p2, &board, selected_Card);
+                                        bool cardDrawn = FF.Event_Selected_Card(selectedHero, turn, &p1, &p2, &board, selected_Card);
 
-                                        if(selected_Card != nullptr)
+                                        if(cardDrawn && selected_Card != nullptr)
                                         {
                                             card_resolver.excute(selected_Card, &p1, &p2, selectedHero, nullptr, &board, temp1, temp2, Attack_Locked, Defense_Locked);
 
                                             selectedHero->Discard_Card(selected_Card);
                                             selected_Card->set_user_card(nullptr);
+
+                                            actionUsed = true;
                                         }
                                     }
 
@@ -510,7 +516,8 @@ void Controller::run()
                                     // std::cerr << e.what() << '\n';
                                 }
 
-                            turn->add_count();
+                            if (actionUsed)
+                                turn->add_count();
                         }
 
                         // exeption ...

@@ -972,10 +972,12 @@ void Ftxui_Front::choose_comrad_place(Player *p1, Player *p2, Board *board)
     }
 }
 
-void Ftxui_Front::Attakcer_Heroes_Menu(Player *player, Board *board, Heroes *&hero)
+bool Ftxui_Front::Attakcer_Heroes_Menu(Player *player, Board *board, Heroes *&hero)
 {
+    hero = nullptr;
+
     if (player == nullptr)
-    return ;
+        return false;
 
     auto screen = ScreenInteractive::Fullscreen();
 
@@ -998,7 +1000,6 @@ void Ftxui_Front::Attakcer_Heroes_Menu(Player *player, Board *board, Heroes *&he
     if (fighters.empty())
     {
         throw std::runtime_error("No valid target to attack.");
-        return;
     }
     vector<string> entries;
 
@@ -1006,21 +1007,26 @@ void Ftxui_Front::Attakcer_Heroes_Menu(Player *player, Board *board, Heroes *&he
         entries.push_back((h->get_number() == 0 ? "" : to_string(h->get_number())) + h->get_name());
 
         if(entries.size() == 0)
-        return;
+        return false;
 
     int selected = 0;
+    bool confirmed = false;
 
     auto menu = Menu(&entries, &selected);
 
     auto confirm = Button("Confirm", [&]
                           { 
-                            hero = fighters[selected];
-                            
+                            confirmed = true;
+                            screen.ExitLoopClosure()(); });
+
+    auto back = Button("Back", [&]
+                       { 
+                            confirmed = false;
                             screen.ExitLoopClosure()(); });
 
     auto container = Container::Vertical({
         menu,
-        confirm,
+        Container::Horizontal({confirm, back}),
     });
 
     auto renderer = Renderer(container, [&]
@@ -1031,7 +1037,7 @@ void Ftxui_Front::Attakcer_Heroes_Menu(Player *player, Board *board, Heroes *&he
                                        separator(),
                                        menu->Render(),
                                        separator(),
-                                       confirm->Render() | center,
+                                       hbox({confirm->Render(), text("  "), back->Render()}) | center,
                                    }) | border |
                                        size(WIDTH, EQUAL, 30),
 
@@ -1040,6 +1046,12 @@ void Ftxui_Front::Attakcer_Heroes_Menu(Player *player, Board *board, Heroes *&he
                                }); });
 
     screen.Loop(renderer);
+
+    if (!confirmed)
+        return false;
+
+    hero = fighters[selected];
+    return true;
 }
 
 bool Exist_path(vector<Space *> zone, Space *target)
@@ -1060,10 +1072,12 @@ bool Exist_path(vector<Space *> zone, Space *target)
     }
 }
 
-void Ftxui_Front::Defender_Heroes_Menu(Player *player, Board *board, Heroes *&defender, Heroes *&Attacker)
+bool Ftxui_Front::Defender_Heroes_Menu(Player *player, Board *board, Heroes *&defender, Heroes *&Attacker)
 {
+    defender = nullptr;
+
     if (player == nullptr)
-        return;
+        return false;
 
     cout << "enter the defender heroes emnu\n";
 
@@ -1140,7 +1154,7 @@ void Ftxui_Front::Defender_Heroes_Menu(Player *player, Board *board, Heroes *&de
             screen.Loop(renderer);
 
             cout << "exit the defender heroes emnu\n";
-            return;
+            return false;
         }
 
         vector<string> entries;
@@ -1149,21 +1163,26 @@ void Ftxui_Front::Defender_Heroes_Menu(Player *player, Board *board, Heroes *&de
             entries.push_back((h->get_number() == 0 ? "" : to_string(h->get_number())) + h->get_name());
 
              if(entries.size() == 0)
-                return;
+                return false;
 
         int selected = 0;
+        bool confirmed = false;
 
         auto menu = Menu(&entries, &selected);
 
         auto confirm = Button("Confirm", [&]
                               { 
-                defender = defenders[selected];
-                
+                confirmed = true;
+                screen.ExitLoopClosure()(); });
+
+        auto back = Button("Back", [&]
+                           { 
+                confirmed = false;
                 screen.ExitLoopClosure()(); });
 
         auto container = Container::Vertical({
             menu,
-            confirm,
+            Container::Horizontal({confirm, back}),
         });
 
         auto renderer = Renderer(container, [&]
@@ -1174,7 +1193,7 @@ void Ftxui_Front::Defender_Heroes_Menu(Player *player, Board *board, Heroes *&de
                                            separator(),
                                            menu->Render(),
                                            separator(),
-                                           confirm->Render() | center,
+                                           hbox({confirm->Render(), text("  "), back->Render()}) | center,
                                        }) | border |
                                            size(WIDTH, EQUAL, 30),
 
@@ -1183,8 +1202,18 @@ void Ftxui_Front::Defender_Heroes_Menu(Player *player, Board *board, Heroes *&de
                                    }); });
 
         screen.Loop(renderer);
+
+        if (!confirmed)
+        {
+            defender = nullptr;
+            cout << "exit the defender heroes emnu\n";
+            return false;
+        }
+
+        defender = defenders[selected];
     }
     cout << "exit the defender heroes emnu\n";
+    return true;
 }
 
 void Ftxui_Front::main_map(Player *p1, Player *p2, Board *board, Player *turn)
@@ -1238,8 +1267,10 @@ std::vector<std::string> &Ftxui_Front::get_msg()
     return msg;
 }
 
-void Ftxui_Front::Attacker_selected_card(Heroes *Attacker, Heroes *Defender, Player *p1, Player *p2, Board *board, Card *&Attacker_Card)
+bool Ftxui_Front::Attacker_selected_card(Heroes *Attacker, Heroes *Defender, Player *p1, Player *p2, Board *board, Card *&Attacker_Card)
 {
+    Attacker_Card = nullptr;
+
     vector<Card *> AllowHand;
 
     Player * Attacker_Player = (p1->get_character() == Attacker or p1->get_comrade()[0]->get_name() == Attacker->get_name() ? p1 : p2);
@@ -1252,12 +1283,28 @@ void Ftxui_Front::Attacker_selected_card(Heroes *Attacker, Heroes *Defender, Pla
         }
     }
 
+    auto screen = ScreenInteractive::Fullscreen();
+
     if (AllowHand.empty())
     {
-        throw std::runtime_error("AllowHand is empty");
-        msg.push_back("AllowHand is empty");
+        auto back = Button("Back", [&]
+                           { screen.ExitLoopClosure()(); });
 
-        return; // ................
+        auto renderer = Renderer(back, [&]
+                                 {
+                                     return vbox({
+                                                text("No Attack card available") | bold | color(Color::Red1) | center,
+                                                separator(),
+                                                text(Attacker->get_name() + " has no card to attack with.") | center,
+                                                text(""),
+                                                back->Render() | center,
+                                            }) |
+                                            border | center | size(WIDTH, EQUAL, 44);
+                                 });
+
+        screen.Loop(renderer);
+
+        return false;
     }
 
     vector<string> entries;
@@ -1266,19 +1313,21 @@ void Ftxui_Front::Attacker_selected_card(Heroes *Attacker, Heroes *Defender, Pla
     for (auto *c : AllowHand)
         entries.push_back(CardTypeToString(c->get_CardType()));
 
-         if(entries.size() == 0)
-        return;
-
-    auto screen = ScreenInteractive::Fullscreen();
+    bool confirmed = false;
 
     auto menu = Menu(&entries, &selected);
 
     auto confirm = Button("Confirm", [&]
-                          { screen.ExitLoopClosure()(); });
+                          { confirmed = true;
+                            screen.ExitLoopClosure()(); });
+
+    auto back = Button("Back", [&]
+                       { confirmed = false;
+                         screen.ExitLoopClosure()(); });
 
     auto left = Renderer(Container::Vertical({
                              menu,
-                             confirm,
+                             Container::Horizontal({confirm, back}),
                          }),
                          [&]
                          {
@@ -1287,7 +1336,7 @@ void Ftxui_Front::Attacker_selected_card(Heroes *Attacker, Heroes *Defender, Pla
                                         separator(),
                                         menu->Render() | border,
                                         filler(),
-                                        confirm->Render() | center,
+                                        hbox({confirm->Render(), text("  "), back->Render()}) | center,
                                     }) |
                                     size(WIDTH, EQUAL, 30);
                          });
@@ -1326,6 +1375,9 @@ void Ftxui_Front::Attacker_selected_card(Heroes *Attacker, Heroes *Defender, Pla
 
     screen.Loop(renderer);
 
+    if (!confirmed)
+        return false;
+
     Attacker_Card = AllowHand[selected];
 
     if (p1->get_character()->get_name() == Attacker->get_name() or p1->get_comrade()[0]->get_name() == Attacker->get_name())
@@ -1338,10 +1390,14 @@ void Ftxui_Front::Attacker_selected_card(Heroes *Attacker, Heroes *Defender, Pla
         p2->set_selected_card(AllowHand.at(selected));
         AllowHand[selected]->set_user_card(Attacker);
     }
+
+    return true;
 }
 
-void Ftxui_Front::Defender_selected_card(Heroes *Attacker, Heroes *Defender, Player *p1, Player *p2, Board *board, Card *&Defender_Card)
+bool Ftxui_Front::Defender_selected_card(Heroes *Attacker, Heroes *Defender, Player *p1, Player *p2, Board *board, Card *&Defender_Card)
 {
+    Defender_Card = nullptr;
+
     Heroes *CardOwner = Defender;
 
     if (Defender->get_name() == "Dr_Watson")
@@ -1379,20 +1435,27 @@ void Ftxui_Front::Defender_selected_card(Heroes *Attacker, Heroes *Defender, Pla
         entries.push_back(CardTypeToString(c->get_CardType()));
 
      if(entries.size() == 0)
-        return;
+        return false;
 
     entries.push_back("No Defense");
 
     auto screen = ScreenInteractive::Fullscreen();
 
+    bool confirmed = false;
+
     auto menu = Menu(&entries, &selected);
 
     auto confirm = Button("Confirm", [&]
-                          { screen.ExitLoopClosure()(); });
+                          { confirmed = true;
+                            screen.ExitLoopClosure()(); });
+
+    auto back = Button("Back", [&]
+                       { confirmed = false;
+                         screen.ExitLoopClosure()(); });
 
     auto left = Renderer(Container::Vertical({
                              menu,
-                             confirm,
+                             Container::Horizontal({confirm, back}),
                          }),
                          [&]
                          {
@@ -1401,7 +1464,7 @@ void Ftxui_Front::Defender_selected_card(Heroes *Attacker, Heroes *Defender, Pla
                                         separator(),
                                         menu->Render() | border,
                                         filler(),
-                                        confirm->Render() | center,
+                                        hbox({confirm->Render(), text("  "), back->Render()}) | center,
                                     }) |
                                     size(WIDTH, EQUAL, 30);
                          });
@@ -1440,6 +1503,9 @@ void Ftxui_Front::Defender_selected_card(Heroes *Attacker, Heroes *Defender, Pla
 
     screen.Loop(renderer);
 
+    if (!confirmed)
+        return false;
+
     if (entries[selected] == "No Defense")
     {
         Defender_Card = nullptr;
@@ -1467,6 +1533,8 @@ void Ftxui_Front::Defender_selected_card(Heroes *Attacker, Heroes *Defender, Pla
             AllowHand[selected]->set_user_card(Defender);
         }
     }
+
+    return true;
 }
 
 Element Card_Box(Card *card, string title)
@@ -2068,7 +2136,7 @@ Card *Ftxui_Front::ChooseCardFromHand(Player *owner, Player *p1, Player *p2, Boa
     return &hand[selected];
 }
 
-void Ftxui_Front::Event_Selected_Card(Heroes * SelectedHero, Player *turn, Player * p1, Player * p2, Board *board, Card *&selected_Card)
+bool Ftxui_Front::Event_Selected_Card(Heroes * SelectedHero, Player *turn, Player * p1, Player * p2, Board *board, Card *&selected_Card)
 {
     vector<Card *> AllowHand;
 
@@ -2080,30 +2148,54 @@ void Ftxui_Front::Event_Selected_Card(Heroes * SelectedHero, Player *turn, Playe
         }
     }
 
+    auto screen = ScreenInteractive::Fullscreen();
+
+    // ------------------- No Event card available to draw -------------------
     if (AllowHand.empty())
     {
-        throw std::runtime_error("AllowHand is empty (Event)");
-        msg.push_back("AllowHand is empty (Event)");
+        auto back = Button("Back", [&]
+                           { screen.ExitLoopClosure()(); });
 
-        return; // ................
+        auto renderer = Renderer(back, [&]
+                                 {
+                                     return vbox({
+                                                text("No Event card available") | bold | color(Color::Red1) | center,
+                                                separator(),
+                                                text("This hero has no Event card to draw.") | center,
+                                                text(""),
+                                                back->Render() | center,
+                                            }) |
+                                            border | center | size(WIDTH, EQUAL, 44);
+                                 });
+
+        screen.Loop(renderer);
+
+        selected_Card = nullptr;
+        return false; 
     }
 
+    // ---------------------------- Normal selection ---------------------------
     vector<string> entries;
     int selected = 0;
 
     for (auto *c : AllowHand)
         entries.push_back(CardTypeToString(c->get_CardType()));
 
-    auto screen = ScreenInteractive::Fullscreen();
-
     auto menu = Menu(&entries, &selected);
 
+    bool confirmed = false;
+
     auto confirm = Button("Confirm", [&]
-                          { screen.ExitLoopClosure()(); });
+                          { confirmed = true;
+                            screen.ExitLoopClosure()(); });
+
+    auto back = Button("Back", [&]
+                       { confirmed = false;
+                         screen.ExitLoopClosure()(); });
 
     auto left = Renderer(Container::Vertical({
                              menu,
-                             confirm,
+                             Container::Horizontal({confirm, back}),
                          }),
                          [&]
                          {
@@ -2112,7 +2204,7 @@ void Ftxui_Front::Event_Selected_Card(Heroes * SelectedHero, Player *turn, Playe
                                         separator(),
                                         menu->Render() | border,
                                         filler(),
-                                        confirm->Render() | center,
+                                        hbox({confirm->Render(), text("  "), back->Render()}) | center,
                                     }) |
                                     size(WIDTH, EQUAL, 30);
                          });
@@ -2148,12 +2240,19 @@ void Ftxui_Front::Event_Selected_Card(Heroes * SelectedHero, Player *turn, Playe
 
     screen.Loop(renderer);
 
+    if (!confirmed)
+    {
+        selected_Card = nullptr;
+        return false; 
+    }
+
     selected_Card = AllowHand[selected];
 
      turn->set_selected_card(AllowHand.at(selected));
         AllowHand[selected]->set_user_card(SelectedHero);
-}
 
+    return true;
+}
 
 void Ftxui_Front::DeclareWinner(Heroes *winner)
 {
