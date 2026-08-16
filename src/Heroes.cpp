@@ -1,6 +1,8 @@
 
 #include "Heroes.h"
 #include "Ftxui_Front.h"
+#include "Board.h"
+
 
 using namespace std;
 
@@ -179,4 +181,81 @@ void Heroes::Discard_Card(Card *card)
 int Heroes::get_number()
 {
     return number;
+}
+
+
+
+void Heroes::set_Action(int amount)
+{
+    Action = amount;
+}
+
+void Heroes::set_HealthValue(int amount)
+{
+    Health = amount;
+}
+
+// This method serializes a Heroes object's current state and card lists into a standard JSON structure for saving.
+Json Heroes::toJson() const
+{
+    Json j = Json::makeObject();
+
+    j.set("movement", Json(Movement));
+    j.set("action", Json(Action));
+    j.set("health", Json(Health));
+    j.set("islive", Json(islive));
+    j.set("startedTurnOnFog", Json(StartedTurnOnFog));
+    j.set("pendingPlacement", Json(PendingPlacement));
+    j.set("place", Json(place != nullptr ? place->get_number() : -1));
+
+    Json deckArr = Json::makeArray();
+
+    for (auto &card : deck)
+        deckArr.push_back(card.toJson());
+
+    j.set("deck", deckArr);
+
+    Json handArr = Json::makeArray();
+
+    for (auto &card : hand)
+        handArr.push_back(card.toJson());
+
+    j.set("hand", handArr);
+
+    Json discardArr = Json::makeArray();
+
+    for (auto &card : discard)
+        discardArr.push_back(card.toJson());
+
+    j.set("discard", discardArr);
+
+    return j;
+}
+
+
+// This method reads a hero's saved information from a JSON format and deserializes it onto the current Heroes object.
+void Heroes::loadFromJson(const Json &j, Board &board, const std::function<Heroes *(const std::string &)> &resolveHero)
+{
+    Movement = j["movement"].asInt(2);
+    Action = j["action"].asInt(2);
+    Health = j["health"].asInt(Health);
+    islive = j["islive"].asBool(true);
+    StartedTurnOnFog = j["startedTurnOnFog"].asBool(false);
+    PendingPlacement = j["pendingPlacement"].asBool(false);
+
+    int placeNumber = j["place"].asInt(-1);
+    
+    place = (placeNumber == -1) ? nullptr : &board.get_spaces()[placeNumber - 1];
+
+    deck.clear();
+    for (size_t i = 0; i < j["deck"].size(); i++)
+        deck.push_back(Card::fromJson(j["deck"][i], resolveHero));
+
+    hand.clear();
+    for (size_t i = 0; i < j["hand"].size(); i++)
+        hand.push_back(Card::fromJson(j["hand"][i], resolveHero));
+
+    discard.clear();
+    for (size_t i = 0; i < j["discard"].size(); i++)
+        discard.push_back(Card::fromJson(j["discard"][i], resolveHero));
 }

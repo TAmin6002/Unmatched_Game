@@ -26,6 +26,10 @@ file(GLOB SRC_FILES
 
 add_executable(app ${SRC_FILES})
 
+if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND CMAKE_CXX_COMPILER_VERSION VERSION_LESS 9.0)
+  target_link_libraries(app PRIVATE stdc++fs)
+endif()
+
 target_link_libraries(app 
   PRIVATE ftxui::screen
   PRIVATE ftxui::dom

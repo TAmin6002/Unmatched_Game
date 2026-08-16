@@ -17,37 +17,30 @@ void Ftxui_Front::set_number_of_choose(int amount)
     number_of_choose = amount;
 }
 
+
 enum ::e_Menu Ftxui_Front::Menu_()
 {
     auto screen = ScreenInteractive::Fullscreen();
 
     std::vector<std::string> Menu = {
         "Play",
+        "Continue",
         "Help",
         "Exit"};
 
     int selected = 0;
-
     auto menu = ftxui::Menu(&Menu, &selected);
 
     auto component = CatchEvent(menu, [&](Event event)
                                 {
             if (event == Event::Return) {
-                if (selected == 0) {
-                    screen.ExitLoopClosure()();
-                    return true;
-                }
-                
-                else if (selected == 1) {
-                    screen.ExitLoopClosure()();
-                    return true;
-                }
-                
-                else if (selected == 2) {
+                if (selected == 3) {
                     screen.ExitLoopClosure()();
                     screen.Exit();
                     return true;
                 }
+                screen.ExitLoopClosure()();
+                return true;
             }
             return false; });
 
@@ -61,19 +54,72 @@ enum ::e_Menu Ftxui_Front::Menu_()
 
     switch (selected)
     {
-    case 0:
-        return e_Menu::Play;
-        break;
-
-    case 1:
-        return e_Menu::Help;
-        break;
-
-    case 2:
-        return e_Menu::Exit;
-        break;
+    case 0: return e_Menu::Play;
+    case 1: return e_Menu::Continue;
+    case 2: return e_Menu::Help;
+    case 3: return e_Menu::Exit;
     }
+
+    return e_Menu::Play;
 }
+
+// enum ::e_Menu Ftxui_Front::Menu_()
+// {
+//     auto screen = ScreenInteractive::Fullscreen();
+
+//     std::vector<std::string> Menu = {
+//         "Play",
+//         "Help",
+//         "Exit"};
+
+//     int selected = 0;
+
+//     auto menu = ftxui::Menu(&Menu, &selected);
+
+//     auto component = CatchEvent(menu, [&](Event event)
+//                                 {
+//             if (event == Event::Return) {
+//                 if (selected == 0) {
+//                     screen.ExitLoopClosure()();
+//                     return true;
+//                 }
+                
+//                 else if (selected == 1) {
+//                     screen.ExitLoopClosure()();
+//                     return true;
+//                 }
+                
+//                 else if (selected == 2) {
+//                     screen.ExitLoopClosure()();
+//                     screen.Exit();
+//                     return true;
+//                 }
+//             }
+//             return false; });
+
+//     auto renderer = Renderer(component, [&]
+//                              { return vbox({text("UNMATCHED") | bold | center,
+//                                             separator(),
+//                                             component->Render()}) |
+//                                       border; });
+
+//     screen.Loop(renderer);
+
+//     switch (selected)
+//     {
+//     case 0:
+//         return e_Menu::Play;
+//         break;
+
+//     case 1:
+//         return e_Menu::Help;
+//         break;
+
+//     case 2:
+//         return e_Menu::Exit;
+//         break;
+//     }
+// }
 
 void Ftxui_Front::Players_Info_List(Player *p1, Player *p2)
 {
@@ -765,6 +811,7 @@ Component Ftxui_Front::ChooseAction(Player *p1, Player *p2, ScreenInteractive *s
         "Attack",
         "Maneuver",
         "Event",
+        "Save",
         "Back"};
 
     static int selected = 0;
@@ -3024,4 +3071,36 @@ void Ftxui_Front::PlaceHeroOnBoard(Heroes *hero, Board *board)
 
     hero->set_place(AllowSpace[selected]);
     AllowSpace[selected]->set_hero(hero);
+}
+
+
+int Ftxui_Front::SlotMenu(const std::vector<std::string> &slotLabels, const std::string &title)
+{
+    auto screen = ScreenInteractive::Fullscreen();
+
+    std::vector<std::string> entries = slotLabels;
+    entries.push_back("Cancel");
+
+    int selected = 0;
+    int result = -1;
+
+    auto menu = ftxui::Menu(&entries, &selected);
+
+    auto component = CatchEvent(menu, [&](Event event)
+                                {
+            if (event == Event::Return) {
+                result = (selected == static_cast<int>(entries.size()) - 1) ? -1 : selected;
+                screen.ExitLoopClosure()();
+                return true;
+            }
+            return false; });
+
+    auto renderer = Renderer(component, [&]
+                             { return vbox({text(title) | bold | center,
+                                            separator(),
+                                            component->Render()}) |
+                                      border; });
+
+    screen.Loop(renderer);
+    return result;
 }

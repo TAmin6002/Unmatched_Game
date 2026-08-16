@@ -3,6 +3,7 @@
 #include <string>
 #include <functional>
 #include "Enums.h"
+#include "Json.h"
 
 class Heroes;
 
@@ -44,4 +45,7 @@ public:
 
     void set_user_card(Heroes *);
     Heroes *get_user_card();
+
+    Json toJson() const;
+    static Card fromJson(const Json &, const std::function<Heroes *(const std::string &)> &);
 };

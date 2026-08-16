@@ -1,5 +1,8 @@
 #pragma once
 
+#include <array>
+#include "Json.h"
+
 #include "Card.h"
 #include "Dracula.h"
 #include "SherlockHolmes.h"
@@ -37,6 +40,7 @@ private:
     InvisibleMan invisibleMan;
     Fog f1{1}, f2{2}, f3{3};
 
+    Ftxui_Front FF;
 
     Heroes *Attacker = nullptr;
     Heroes *Defender = nullptr; // این دوتا هنگام ی ست میشوند که بازیکن از بین گزینه های اکشن اتک زدن را اتخاب کرده باشد
@@ -60,7 +64,22 @@ private:
 
     int round = 1;
 
-    Ftxui_Front FF;
+    bool Exit = false;
+
+    static constexpr int MaxSaveSlots = 3;
+
+    std::array<Heroes *, 10> AllHeroes();
+    std::string HeroToId(Heroes *) const;
+    Heroes *FindHeroByKey(const std::string &);
+    bool IsFogToken(Heroes *) const;
+
+    Json EncodeCardRef(Card *);
+    Card *DecodeCardRef(const Json &);
+
+    std::string SaveFilePath(int) const;
+
+    void GameLoop();   
+
 
 public:
     void run();
@@ -89,4 +108,10 @@ public:
     void chane_turn();
 
     int dis_sumcards(); // Removes as many cards as the player wants
+
+
+    bool SaveGame(int);
+    bool LoadGame(int);
+    bool HasSave(int) const;
+    std::string GetSaveSummary(int) const;
 };

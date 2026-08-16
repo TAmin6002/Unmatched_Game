@@ -86,4 +86,5 @@ public:
 
     void PlaceHeroOnBoard(Heroes *, Board *); // for VANISH effect card
 
+    int SlotMenu(const std::vector<std::string> &, const std::string &);
 };

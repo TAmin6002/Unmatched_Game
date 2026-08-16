@@ -4,9 +4,11 @@
 #include <vector>
 #include <random>
 #include <stdexcept>
+#include <functional>
 
 #include "Space.h"
 #include "Card.h"
+#include "Json.h"
 
 class Board;
 
@@ -72,4 +74,14 @@ public:
 
     void Damage(int);
     virtual void abiliti(Board *) = 0;
+
+
+    void set_Action(int);          // absolute setter, unlike add_Action()
+    void set_HealthValue(int);     // absolute setter, unlike set_Health(amount, maxHealth)
+
+    Json toJson() const;
+    
+    // <const std::function<Heroes *(const std::string &)> &> 
+    //This parameter is a callback function that takes a string identifier as input and returns a pointer to a Heroes object, used to find and link heroes during loading.
+    void loadFromJson(const Json &, Board &, const std::function<Heroes *(const std::string &)> &);
 };

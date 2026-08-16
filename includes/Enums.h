@@ -71,6 +71,17 @@ enum class CardTiming
 enum class e_Menu
 {
     Play,
+    Continue,
     Exit,
     Help,
+};
+
+enum class Type
+{
+    Null,
+    Boolean,
+    Number,
+    String,
+    Array,
+    Object
 };

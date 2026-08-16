@@ -55,6 +55,12 @@
 },
 {
   "directory": "/home/amin/cpp/Unmatched_Game/build",
+  "command": "/usr/bin/g++  -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -o CMakeFiles/app.dir/src/Json.cpp.o -c /home/amin/cpp/Unmatched_Game/src/Json.cpp",
+  "file": "/home/amin/cpp/Unmatched_Game/src/Json.cpp",
+  "output": "CMakeFiles/app.dir/src/Json.cpp.o"
+},
+{
+  "directory": "/home/amin/cpp/Unmatched_Game/build",
   "command": "/usr/bin/g++  -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -o CMakeFiles/app.dir/src/Player.cpp.o -c /home/amin/cpp/Unmatched_Game/src/Player.cpp",
   "file": "/home/amin/cpp/Unmatched_Game/src/Player.cpp",
   "output": "CMakeFiles/app.dir/src/Player.cpp.o"

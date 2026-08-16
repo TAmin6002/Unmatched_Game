@@ -449,6 +449,30 @@ src/InvisibleMan.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/InvisibleMan.cpp.s
 .PHONY : src/InvisibleMan.cpp.s
 
+src/Json.o: src/Json.cpp.o
+.PHONY : src/Json.o
+
+# target to build an object file
+src/Json.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/Json.cpp.o
+.PHONY : src/Json.cpp.o
+
+src/Json.i: src/Json.cpp.i
+.PHONY : src/Json.i
+
+# target to preprocess a source file
+src/Json.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/Json.cpp.i
+.PHONY : src/Json.cpp.i
+
+src/Json.s: src/Json.cpp.s
+.PHONY : src/Json.s
+
+# target to generate assembly for a file
+src/Json.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/Json.cpp.s
+.PHONY : src/Json.cpp.s
+
 src/Player.o: src/Player.cpp.o
 .PHONY : src/Player.o
 
@@ -662,6 +686,9 @@ help:
 	@echo "... src/InvisibleMan.o"
 	@echo "... src/InvisibleMan.i"
 	@echo "... src/InvisibleMan.s"
+	@echo "... src/Json.o"
+	@echo "... src/Json.i"
+	@echo "... src/Json.s"
 	@echo "... src/Player.o"
 	@echo "... src/Player.i"
 	@echo "... src/Player.s"

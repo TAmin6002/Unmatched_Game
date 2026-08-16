@@ -10,7 +10,7 @@ private:
     std::string name;
     int count = 0; // count Action
 
-    Heroes *character;
+    Heroes *character = nullptr;
     std::vector<Heroes *> comrade;
 
     bool is_Attacker{};
