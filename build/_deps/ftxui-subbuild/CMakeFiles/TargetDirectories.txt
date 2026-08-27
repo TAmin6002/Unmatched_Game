@@ -1,3 +1,0 @@
-/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/CMakeFiles/ftxui-populate.dir
-/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/CMakeFiles/edit_cache.dir
-/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/CMakeFiles/rebuild_cache.dir
