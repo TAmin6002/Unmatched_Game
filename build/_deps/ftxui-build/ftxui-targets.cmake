@@ -15,15 +15,11 @@ cmake_policy(VERSION 2.8.3...3.26)
 # Commands may need to know the format version.
 set(CMAKE_IMPORT_FILE_VERSION 1)
 
-if(CMAKE_VERSION VERSION_LESS 3.0.0)
-  message(FATAL_ERROR "This file relies on consumers using CMake 3.0.0 or greater.")
-endif()
-
 # Protect against multiple inclusion, which would fail when already imported targets are added once more.
 set(_cmake_targets_defined "")
 set(_cmake_targets_not_defined "")
 set(_cmake_expected_targets "")
-foreach(_cmake_expected_target IN ITEMS ftxui::screen ftxui::dom ftxui::component ftxui::ftxui)
+foreach(_cmake_expected_target IN ITEMS ftxui::screen ftxui::dom ftxui::component)
   list(APPEND _cmake_expected_targets "${_cmake_expected_target}")
   if(TARGET "${_cmake_expected_target}")
     list(APPEND _cmake_targets_defined "${_cmake_expected_target}")
@@ -73,14 +69,7 @@ add_library(ftxui::component STATIC IMPORTED)
 set_target_properties(ftxui::component PROPERTIES
   INTERFACE_COMPILE_FEATURES "cxx_std_17"
   INTERFACE_INCLUDE_DIRECTORIES "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include"
-  INTERFACE_LINK_LIBRARIES "ftxui::dom"
-)
-
-# Create imported target ftxui::ftxui
-add_library(ftxui::ftxui INTERFACE IMPORTED)
-
-set_target_properties(ftxui::ftxui PROPERTIES
-  INTERFACE_LINK_LIBRARIES "ftxui::component"
+  INTERFACE_LINK_LIBRARIES "ftxui::dom;Threads::Threads"
 )
 
 # Import target "ftxui::screen" for configuration "Debug"

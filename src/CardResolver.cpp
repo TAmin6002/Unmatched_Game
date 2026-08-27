@@ -5,7 +5,6 @@
 #include <iostream>
 
 using namespace std;
-using namespace ftxui;
 
 void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *Attacker, Heroes *Defender, Board *board, int &Attack_Value, int &Defence_Value, bool &Attack_Locked, bool &Defense_Locked)
 {
@@ -40,7 +39,7 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
     {
         if (selectedcard->get_ApplyEffects())
         {
-            FF.put_in_any_space(Dracula_Player->get_character(), board);
+            RF.put_in_any_space(Dracula_Player->get_character(), board);
             Dracula_Player->add_count();
         }
         break;
@@ -76,7 +75,7 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
                 sister->set_islive(true);
                 sister->set_Health(1, 1);
 
-                FF.Revive_Sister(sister, Dracula_Player->get_character(), board);
+                RF.Revive_Sister(sister, Dracula_Player->get_character(), board);
             }
         }
         break;
@@ -86,7 +85,7 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
     {
         if (selectedcard->get_ApplyEffects() && !Attack_Locked)
         {
-            Attack_Value += FF.DiscardCards(Attacker);
+            Attack_Value += RF.DiscardCards(Attacker);
         }
         break;
     }
@@ -95,7 +94,7 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
     {
         if (selectedcard->get_ApplyEffects())
         {
-            FF.MoveHero(selectedcard->get_user_card(), board, 3, p1, p2);
+            RF.MoveHero(selectedcard->get_user_card(), board, 3, p1, p2);
         }
         break;
     }
@@ -182,12 +181,12 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
     {
         if (selectedcard->get_ApplyEffects())
         {
-            Heroes *target = FF.SelectHero(board);
+            Heroes *target = RF.SelectHero(board);
 
             if (target == nullptr)
                 break;
 
-                FF.MoveHero(target, board, 2, p1, p2);
+                RF.MoveHero(target, board, 2, p1, p2);
 
             int damage = 0;
 
@@ -214,7 +213,7 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
         {
             if (Attack_Value - Defence_Value >= 1)
             {
-                FF.PlaceHeroAdjacent(Dracula_Player->get_character(), Defender, board);
+                RF.PlaceHeroAdjacent(Dracula_Player->get_character(), Defender, board);
             }
         }
         break;
@@ -246,7 +245,7 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
             if (p1->get_character()->get_name() == "SHERLOCKHOLMES" or (!p1->get_comrade().empty() and p1->get_comrade()[0]->get_name() == "Dr_Watson"))
             {
                 if (!p1->get_comrade().empty())
-                    FF.PlaceHeroAdjacent(p1->get_character(), p1->get_comrade()[0], board);
+                    RF.PlaceHeroAdjacent(p1->get_character(), p1->get_comrade()[0], board);
 
                 p1->get_character()->set_Health(1, 16);
                 if (p1->get_character()->DrawnCard() == 0)
@@ -258,7 +257,7 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
             else if (p2->get_character()->get_name() == "SHERLOCKHOLMES" or (!p2->get_comrade().empty() and p2->get_comrade()[0]->get_name() == "Dr_Watson"))
             {
                 if (!p2->get_comrade().empty())
-                    FF.PlaceHeroAdjacent(p2->get_character(), p2->get_comrade()[0], board);
+                    RF.PlaceHeroAdjacent(p2->get_character(), p2->get_comrade()[0], board);
 
                 p2->get_character()->set_Health(1, 16);
 
@@ -362,7 +361,7 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
     {
         if (selectedcard->get_ApplyEffects())
         {
-            Dracula_Player->get_character()->Discard_Card(FF.ChooseCardFromHand(Dracula_Player, p1, p2, board));
+            Dracula_Player->get_character()->Discard_Card(RF.ChooseCardFromHand(Dracula_Player, p1, p2, board));
         }
         break;
     }
@@ -413,7 +412,7 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
     {
         if (selectedcard->get_ApplyEffects())
         {
-            FF.MoveHero(Sherlock_Player->get_character(), board, 3, p1, p2);
+            RF.MoveHero(Sherlock_Player->get_character(), board, 3, p1, p2);
         }
 
         break;
@@ -431,12 +430,12 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
             if (Attacker->get_name() == "SHERLOCKHOLMES" or Attacker->get_name() == "Dr_Watson")
             {
                 if (Attack_Value - Defence_Value >= 1)
-                    FF.ShowHand(Defender, p1, p2, board);
+                    RF.ShowHand(Defender, p1, p2, board);
             }
             else
             {
                 if (Attack_Value - Defence_Value <= 0)
-                    FF.ShowHand(Attacker, p1, p2, board);
+                    RF.ShowHand(Attacker, p1, p2, board);
             }
         }
 
@@ -461,7 +460,7 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
                 Defender->Damage(2);
             }
 
-            FF.ChooseCardsToTopOfDeck(Defender, 2, p1, p2, board);
+            RF.ChooseCardsToTopOfDeck(Defender, 2, p1, p2, board);
 
         }
         break;
@@ -473,13 +472,13 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
         if (selectedcard->get_ApplyEffects()){
 
               if (p1->get_character()->get_name() == "InvisibleMan"){
-                if(!FF.ChooseCardToDiscardOrSkip(p2))
-                    FF.MoveFogToken(FF.SelectFogToken(board), board);
+                if(!RF.ChooseCardToDiscardOrSkip(p2))
+                    RF.MoveFogToken(RF.SelectFogToken(board), board);
             }
 
             else if (p2->get_character()->get_name() == "InvisibleMan"){
-                if(!FF.ChooseCardToDiscardOrSkip(p1))
-                    FF.MoveFogToken(FF.SelectFogToken(board), board);
+                if(!RF.ChooseCardToDiscardOrSkip(p1))
+                    RF.MoveFogToken(RF.SelectFogToken(board), board);
 
             }
         }
@@ -501,18 +500,18 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
                 if (Attacker->DrawnCard() == 0)
                     Attacker->Damage(2);
 
-                Heroes *oppComrade = FF.SelectComrade(opp, board);
+                Heroes *oppComrade = RF.SelectComrade(opp, board);
                 if (oppComrade != nullptr)
-                    FF.MoveHero(oppComrade, board, 2, p1, p2);
+                    RF.MoveHero(oppComrade, board, 2, p1, p2);
             }
 
             else if (Defender->get_name() == "InvisibleMan"){
                 if (Defender->DrawnCard() == 0)
                     Defender->Damage(2);
 
-                Heroes *oppComrade = FF.SelectComrade(opp, board);
+                Heroes *oppComrade = RF.SelectComrade(opp, board);
                 if (oppComrade != nullptr)
-                    FF.MoveHero(oppComrade, board, 2, p1, p2);
+                    RF.MoveHero(oppComrade, board, 2, p1, p2);
             }
         }
         break;
@@ -577,10 +576,10 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
         {
             Heroes *user = selectedcard->get_user_card();
 
-            FF.MoveHero(user, board, 1, p1, p2);
+            RF.MoveHero(user, board, 1, p1, p2);
             
-            Space *fogSpace = FF.SelectFogToken(board);
-            FF.MoveFogTokenDistance(fogSpace, board, 3);
+            Space *fogSpace = RF.SelectFogToken(board);
+            RF.MoveFogTokenDistance(fogSpace, board, 3);
         }
 
         break;
@@ -595,14 +594,14 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
 
             user->DrawnCard();
 
-            if (FF.ChooseBetweenTwoEffects("Move InvisibleMan to a Fog Token space", "Move a Fog Token up to 3 spaces"))
+            if (RF.ChooseBetweenTwoEffects("Move InvisibleMan to a Fog Token space", "Move a Fog Token up to 3 spaces"))
             {
-                FF.MoveHeroToFogSpace(user, board);
+                RF.MoveHeroToFogSpace(user, board);
             }
             else
             {
-                Space *fogSpace = FF.SelectFogToken(board);
-                FF.MoveFogTokenDistance(fogSpace, board, 3);
+                Space *fogSpace = RF.SelectFogToken(board);
+                RF.MoveFogTokenDistance(fogSpace, board, 3);
             }
         }
         break;
@@ -632,8 +631,8 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
     {
         if (selectedcard->get_ApplyEffects())
         {
-            Space *fogSpace = FF.SelectFogToken(board);
-            FF.MoveFogTokenAnywhere(fogSpace, board);
+            Space *fogSpace = RF.SelectFogToken(board);
+            RF.MoveFogTokenAnywhere(fogSpace, board);
 
             Player *user_player =
                 (p1->get_character() == Attacker ||
@@ -653,8 +652,8 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
         {
             Heroes *user = selectedcard->get_user_card();
 
-            Space *fogSpace = FF.SelectFogToken(board);
-            Space *destination = FF.MoveFogTokenToEmptySpace(fogSpace, board);
+            Space *fogSpace = RF.SelectFogToken(board);
+            Space *destination = RF.MoveFogTokenToEmptySpace(fogSpace, board);
 
            if (destination != nullptr)
             {
@@ -674,7 +673,7 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
         {
             Heroes *user = selectedcard->get_user_card();
 
-            Heroes *target = FF.SelectAdjacentHero(user, board);
+            Heroes *target = RF.SelectAdjacentHero(user, board);
 
            if (target != nullptr)
             {
@@ -682,8 +681,8 @@ void CardResolver::excute(Card *selectedcard, Player *p1, Player *p2, Heroes *At
                 target->Damage(onFog ? 3 : 1);
             }
 
-            Space *fogSpace = FF.SelectFogToken(board);
-            FF.MoveFogTokenDistance(fogSpace, board, 2);
+            Space *fogSpace = RF.SelectFogToken(board);
+            RF.MoveFogTokenDistance(fogSpace, board, 2);
         }
         break;
     }

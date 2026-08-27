@@ -247,30 +247,6 @@ src/ftxui/component/animation.cpp.s:
 	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/component.dir/build.make _deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/animation.cpp.s
 .PHONY : src/ftxui/component/animation.cpp.s
 
-src/ftxui/component/app.o: src/ftxui/component/app.cpp.o
-.PHONY : src/ftxui/component/app.o
-
-# target to build an object file
-src/ftxui/component/app.cpp.o:
-	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/component.dir/build.make _deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/app.cpp.o
-.PHONY : src/ftxui/component/app.cpp.o
-
-src/ftxui/component/app.i: src/ftxui/component/app.cpp.i
-.PHONY : src/ftxui/component/app.i
-
-# target to preprocess a source file
-src/ftxui/component/app.cpp.i:
-	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/component.dir/build.make _deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/app.cpp.i
-.PHONY : src/ftxui/component/app.cpp.i
-
-src/ftxui/component/app.s: src/ftxui/component/app.cpp.s
-.PHONY : src/ftxui/component/app.s
-
-# target to generate assembly for a file
-src/ftxui/component/app.cpp.s:
-	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/component.dir/build.make _deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/app.cpp.s
-.PHONY : src/ftxui/component/app.cpp.s
-
 src/ftxui/component/button.o: src/ftxui/component/button.cpp.o
 .PHONY : src/ftxui/component/button.o
 
@@ -535,6 +511,30 @@ src/ftxui/component/input.cpp.s:
 	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/component.dir/build.make _deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/input.cpp.s
 .PHONY : src/ftxui/component/input.cpp.s
 
+src/ftxui/component/loop.o: src/ftxui/component/loop.cpp.o
+.PHONY : src/ftxui/component/loop.o
+
+# target to build an object file
+src/ftxui/component/loop.cpp.o:
+	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/component.dir/build.make _deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/loop.cpp.o
+.PHONY : src/ftxui/component/loop.cpp.o
+
+src/ftxui/component/loop.i: src/ftxui/component/loop.cpp.i
+.PHONY : src/ftxui/component/loop.i
+
+# target to preprocess a source file
+src/ftxui/component/loop.cpp.i:
+	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/component.dir/build.make _deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/loop.cpp.i
+.PHONY : src/ftxui/component/loop.cpp.i
+
+src/ftxui/component/loop.s: src/ftxui/component/loop.cpp.s
+.PHONY : src/ftxui/component/loop.s
+
+# target to generate assembly for a file
+src/ftxui/component/loop.cpp.s:
+	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/component.dir/build.make _deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/loop.cpp.s
+.PHONY : src/ftxui/component/loop.cpp.s
+
 src/ftxui/component/maybe.o: src/ftxui/component/maybe.cpp.o
 .PHONY : src/ftxui/component/maybe.o
 
@@ -679,6 +679,30 @@ src/ftxui/component/resizable_split.cpp.s:
 	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/component.dir/build.make _deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/resizable_split.cpp.s
 .PHONY : src/ftxui/component/resizable_split.cpp.s
 
+src/ftxui/component/screen_interactive.o: src/ftxui/component/screen_interactive.cpp.o
+.PHONY : src/ftxui/component/screen_interactive.o
+
+# target to build an object file
+src/ftxui/component/screen_interactive.cpp.o:
+	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/component.dir/build.make _deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/screen_interactive.cpp.o
+.PHONY : src/ftxui/component/screen_interactive.cpp.o
+
+src/ftxui/component/screen_interactive.i: src/ftxui/component/screen_interactive.cpp.i
+.PHONY : src/ftxui/component/screen_interactive.i
+
+# target to preprocess a source file
+src/ftxui/component/screen_interactive.cpp.i:
+	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/component.dir/build.make _deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/screen_interactive.cpp.i
+.PHONY : src/ftxui/component/screen_interactive.cpp.i
+
+src/ftxui/component/screen_interactive.s: src/ftxui/component/screen_interactive.cpp.s
+.PHONY : src/ftxui/component/screen_interactive.s
+
+# target to generate assembly for a file
+src/ftxui/component/screen_interactive.cpp.s:
+	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/component.dir/build.make _deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/screen_interactive.cpp.s
+.PHONY : src/ftxui/component/screen_interactive.cpp.s
+
 src/ftxui/component/slider.o: src/ftxui/component/slider.cpp.o
 .PHONY : src/ftxui/component/slider.o
 
@@ -702,78 +726,6 @@ src/ftxui/component/slider.s: src/ftxui/component/slider.cpp.s
 src/ftxui/component/slider.cpp.s:
 	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/component.dir/build.make _deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/slider.cpp.s
 .PHONY : src/ftxui/component/slider.cpp.s
-
-src/ftxui/component/task.o: src/ftxui/component/task.cpp.o
-.PHONY : src/ftxui/component/task.o
-
-# target to build an object file
-src/ftxui/component/task.cpp.o:
-	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/component.dir/build.make _deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/task.cpp.o
-.PHONY : src/ftxui/component/task.cpp.o
-
-src/ftxui/component/task.i: src/ftxui/component/task.cpp.i
-.PHONY : src/ftxui/component/task.i
-
-# target to preprocess a source file
-src/ftxui/component/task.cpp.i:
-	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/component.dir/build.make _deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/task.cpp.i
-.PHONY : src/ftxui/component/task.cpp.i
-
-src/ftxui/component/task.s: src/ftxui/component/task.cpp.s
-.PHONY : src/ftxui/component/task.s
-
-# target to generate assembly for a file
-src/ftxui/component/task.cpp.s:
-	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/component.dir/build.make _deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/task.cpp.s
-.PHONY : src/ftxui/component/task.cpp.s
-
-src/ftxui/component/task_queue.o: src/ftxui/component/task_queue.cpp.o
-.PHONY : src/ftxui/component/task_queue.o
-
-# target to build an object file
-src/ftxui/component/task_queue.cpp.o:
-	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/component.dir/build.make _deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/task_queue.cpp.o
-.PHONY : src/ftxui/component/task_queue.cpp.o
-
-src/ftxui/component/task_queue.i: src/ftxui/component/task_queue.cpp.i
-.PHONY : src/ftxui/component/task_queue.i
-
-# target to preprocess a source file
-src/ftxui/component/task_queue.cpp.i:
-	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/component.dir/build.make _deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/task_queue.cpp.i
-.PHONY : src/ftxui/component/task_queue.cpp.i
-
-src/ftxui/component/task_queue.s: src/ftxui/component/task_queue.cpp.s
-.PHONY : src/ftxui/component/task_queue.s
-
-# target to generate assembly for a file
-src/ftxui/component/task_queue.cpp.s:
-	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/component.dir/build.make _deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/task_queue.cpp.s
-.PHONY : src/ftxui/component/task_queue.cpp.s
-
-src/ftxui/component/task_runner.o: src/ftxui/component/task_runner.cpp.o
-.PHONY : src/ftxui/component/task_runner.o
-
-# target to build an object file
-src/ftxui/component/task_runner.cpp.o:
-	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/component.dir/build.make _deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/task_runner.cpp.o
-.PHONY : src/ftxui/component/task_runner.cpp.o
-
-src/ftxui/component/task_runner.i: src/ftxui/component/task_runner.cpp.i
-.PHONY : src/ftxui/component/task_runner.i
-
-# target to preprocess a source file
-src/ftxui/component/task_runner.cpp.i:
-	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/component.dir/build.make _deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/task_runner.cpp.i
-.PHONY : src/ftxui/component/task_runner.cpp.i
-
-src/ftxui/component/task_runner.s: src/ftxui/component/task_runner.cpp.s
-.PHONY : src/ftxui/component/task_runner.s
-
-# target to generate assembly for a file
-src/ftxui/component/task_runner.cpp.s:
-	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/component.dir/build.make _deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/task_runner.cpp.s
-.PHONY : src/ftxui/component/task_runner.cpp.s
 
 src/ftxui/component/terminal_input_parser.o: src/ftxui/component/terminal_input_parser.cpp.o
 .PHONY : src/ftxui/component/terminal_input_parser.o
@@ -1399,30 +1351,6 @@ src/ftxui/dom/inverted.cpp.s:
 	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/dom.dir/build.make _deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/inverted.cpp.s
 .PHONY : src/ftxui/dom/inverted.cpp.s
 
-src/ftxui/dom/italic.o: src/ftxui/dom/italic.cpp.o
-.PHONY : src/ftxui/dom/italic.o
-
-# target to build an object file
-src/ftxui/dom/italic.cpp.o:
-	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/dom.dir/build.make _deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/italic.cpp.o
-.PHONY : src/ftxui/dom/italic.cpp.o
-
-src/ftxui/dom/italic.i: src/ftxui/dom/italic.cpp.i
-.PHONY : src/ftxui/dom/italic.i
-
-# target to preprocess a source file
-src/ftxui/dom/italic.cpp.i:
-	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/dom.dir/build.make _deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/italic.cpp.i
-.PHONY : src/ftxui/dom/italic.cpp.i
-
-src/ftxui/dom/italic.s: src/ftxui/dom/italic.cpp.s
-.PHONY : src/ftxui/dom/italic.s
-
-# target to generate assembly for a file
-src/ftxui/dom/italic.cpp.s:
-	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/dom.dir/build.make _deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/italic.cpp.s
-.PHONY : src/ftxui/dom/italic.cpp.s
-
 src/ftxui/dom/linear_gradient.o: src/ftxui/dom/linear_gradient.cpp.o
 .PHONY : src/ftxui/dom/linear_gradient.o
 
@@ -1566,54 +1494,6 @@ src/ftxui/dom/scroll_indicator.s: src/ftxui/dom/scroll_indicator.cpp.s
 src/ftxui/dom/scroll_indicator.cpp.s:
 	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/dom.dir/build.make _deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/scroll_indicator.cpp.s
 .PHONY : src/ftxui/dom/scroll_indicator.cpp.s
-
-src/ftxui/dom/selection.o: src/ftxui/dom/selection.cpp.o
-.PHONY : src/ftxui/dom/selection.o
-
-# target to build an object file
-src/ftxui/dom/selection.cpp.o:
-	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/dom.dir/build.make _deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/selection.cpp.o
-.PHONY : src/ftxui/dom/selection.cpp.o
-
-src/ftxui/dom/selection.i: src/ftxui/dom/selection.cpp.i
-.PHONY : src/ftxui/dom/selection.i
-
-# target to preprocess a source file
-src/ftxui/dom/selection.cpp.i:
-	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/dom.dir/build.make _deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/selection.cpp.i
-.PHONY : src/ftxui/dom/selection.cpp.i
-
-src/ftxui/dom/selection.s: src/ftxui/dom/selection.cpp.s
-.PHONY : src/ftxui/dom/selection.s
-
-# target to generate assembly for a file
-src/ftxui/dom/selection.cpp.s:
-	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/dom.dir/build.make _deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/selection.cpp.s
-.PHONY : src/ftxui/dom/selection.cpp.s
-
-src/ftxui/dom/selection_style.o: src/ftxui/dom/selection_style.cpp.o
-.PHONY : src/ftxui/dom/selection_style.o
-
-# target to build an object file
-src/ftxui/dom/selection_style.cpp.o:
-	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/dom.dir/build.make _deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/selection_style.cpp.o
-.PHONY : src/ftxui/dom/selection_style.cpp.o
-
-src/ftxui/dom/selection_style.i: src/ftxui/dom/selection_style.cpp.i
-.PHONY : src/ftxui/dom/selection_style.i
-
-# target to preprocess a source file
-src/ftxui/dom/selection_style.cpp.i:
-	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/dom.dir/build.make _deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/selection_style.cpp.i
-.PHONY : src/ftxui/dom/selection_style.cpp.i
-
-src/ftxui/dom/selection_style.s: src/ftxui/dom/selection_style.cpp.s
-.PHONY : src/ftxui/dom/selection_style.s
-
-# target to generate assembly for a file
-src/ftxui/dom/selection_style.cpp.s:
-	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/dom.dir/build.make _deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/selection_style.cpp.s
-.PHONY : src/ftxui/dom/selection_style.cpp.s
 
 src/ftxui/dom/separator.o: src/ftxui/dom/separator.cpp.o
 .PHONY : src/ftxui/dom/separator.o
@@ -1975,30 +1855,6 @@ src/ftxui/screen/string.cpp.s:
 	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/screen.dir/build.make _deps/ftxui-build/CMakeFiles/screen.dir/src/ftxui/screen/string.cpp.s
 .PHONY : src/ftxui/screen/string.cpp.s
 
-src/ftxui/screen/surface.o: src/ftxui/screen/surface.cpp.o
-.PHONY : src/ftxui/screen/surface.o
-
-# target to build an object file
-src/ftxui/screen/surface.cpp.o:
-	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/screen.dir/build.make _deps/ftxui-build/CMakeFiles/screen.dir/src/ftxui/screen/surface.cpp.o
-.PHONY : src/ftxui/screen/surface.cpp.o
-
-src/ftxui/screen/surface.i: src/ftxui/screen/surface.cpp.i
-.PHONY : src/ftxui/screen/surface.i
-
-# target to preprocess a source file
-src/ftxui/screen/surface.cpp.i:
-	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/screen.dir/build.make _deps/ftxui-build/CMakeFiles/screen.dir/src/ftxui/screen/surface.cpp.i
-.PHONY : src/ftxui/screen/surface.cpp.i
-
-src/ftxui/screen/surface.s: src/ftxui/screen/surface.cpp.s
-.PHONY : src/ftxui/screen/surface.s
-
-# target to generate assembly for a file
-src/ftxui/screen/surface.cpp.s:
-	cd /home/amin/cpp/Unmatched_Game/build && $(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/screen.dir/build.make _deps/ftxui-build/CMakeFiles/screen.dir/src/ftxui/screen/surface.cpp.s
-.PHONY : src/ftxui/screen/surface.cpp.s
-
 src/ftxui/screen/terminal.o: src/ftxui/screen/terminal.cpp.o
 .PHONY : src/ftxui/screen/terminal.o
 
@@ -2043,9 +1899,6 @@ help:
 	@echo "... src/ftxui/component/animation.o"
 	@echo "... src/ftxui/component/animation.i"
 	@echo "... src/ftxui/component/animation.s"
-	@echo "... src/ftxui/component/app.o"
-	@echo "... src/ftxui/component/app.i"
-	@echo "... src/ftxui/component/app.s"
 	@echo "... src/ftxui/component/button.o"
 	@echo "... src/ftxui/component/button.i"
 	@echo "... src/ftxui/component/button.s"
@@ -2079,6 +1932,9 @@ help:
 	@echo "... src/ftxui/component/input.o"
 	@echo "... src/ftxui/component/input.i"
 	@echo "... src/ftxui/component/input.s"
+	@echo "... src/ftxui/component/loop.o"
+	@echo "... src/ftxui/component/loop.i"
+	@echo "... src/ftxui/component/loop.s"
 	@echo "... src/ftxui/component/maybe.o"
 	@echo "... src/ftxui/component/maybe.i"
 	@echo "... src/ftxui/component/maybe.s"
@@ -2097,18 +1953,12 @@ help:
 	@echo "... src/ftxui/component/resizable_split.o"
 	@echo "... src/ftxui/component/resizable_split.i"
 	@echo "... src/ftxui/component/resizable_split.s"
+	@echo "... src/ftxui/component/screen_interactive.o"
+	@echo "... src/ftxui/component/screen_interactive.i"
+	@echo "... src/ftxui/component/screen_interactive.s"
 	@echo "... src/ftxui/component/slider.o"
 	@echo "... src/ftxui/component/slider.i"
 	@echo "... src/ftxui/component/slider.s"
-	@echo "... src/ftxui/component/task.o"
-	@echo "... src/ftxui/component/task.i"
-	@echo "... src/ftxui/component/task.s"
-	@echo "... src/ftxui/component/task_queue.o"
-	@echo "... src/ftxui/component/task_queue.i"
-	@echo "... src/ftxui/component/task_queue.s"
-	@echo "... src/ftxui/component/task_runner.o"
-	@echo "... src/ftxui/component/task_runner.i"
-	@echo "... src/ftxui/component/task_runner.s"
 	@echo "... src/ftxui/component/terminal_input_parser.o"
 	@echo "... src/ftxui/component/terminal_input_parser.i"
 	@echo "... src/ftxui/component/terminal_input_parser.s"
@@ -2187,9 +2037,6 @@ help:
 	@echo "... src/ftxui/dom/inverted.o"
 	@echo "... src/ftxui/dom/inverted.i"
 	@echo "... src/ftxui/dom/inverted.s"
-	@echo "... src/ftxui/dom/italic.o"
-	@echo "... src/ftxui/dom/italic.i"
-	@echo "... src/ftxui/dom/italic.s"
 	@echo "... src/ftxui/dom/linear_gradient.o"
 	@echo "... src/ftxui/dom/linear_gradient.i"
 	@echo "... src/ftxui/dom/linear_gradient.s"
@@ -2208,12 +2055,6 @@ help:
 	@echo "... src/ftxui/dom/scroll_indicator.o"
 	@echo "... src/ftxui/dom/scroll_indicator.i"
 	@echo "... src/ftxui/dom/scroll_indicator.s"
-	@echo "... src/ftxui/dom/selection.o"
-	@echo "... src/ftxui/dom/selection.i"
-	@echo "... src/ftxui/dom/selection.s"
-	@echo "... src/ftxui/dom/selection_style.o"
-	@echo "... src/ftxui/dom/selection_style.i"
-	@echo "... src/ftxui/dom/selection_style.s"
 	@echo "... src/ftxui/dom/separator.o"
 	@echo "... src/ftxui/dom/separator.i"
 	@echo "... src/ftxui/dom/separator.s"
@@ -2259,9 +2100,6 @@ help:
 	@echo "... src/ftxui/screen/string.o"
 	@echo "... src/ftxui/screen/string.i"
 	@echo "... src/ftxui/screen/string.s"
-	@echo "... src/ftxui/screen/surface.o"
-	@echo "... src/ftxui/screen/surface.i"
-	@echo "... src/ftxui/screen/surface.s"
 	@echo "... src/ftxui/screen/terminal.o"
 	@echo "... src/ftxui/screen/terminal.i"
 	@echo "... src/ftxui/screen/terminal.s"

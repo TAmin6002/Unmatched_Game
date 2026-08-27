@@ -1,34 +1,31 @@
 {
-  "round": 18,
-  "turn": "p2",
-  "attackValue": 2,
-  "defenseValue": 2,
+  "round": 7,
+  "turn": "p1",
+  "attackValue": 0,
+  "defenseValue": 0,
   "attackLocked": false,
   "defenseLocked": false,
-  "attacker": "InvisibleMan#0",
-  "defender": "",
-  "attackerSelectedCard": {
-    "hero": "SHERLOCKHOLMES#0",
-    "index": 4
-  },
+  "attacker": "SHERLOCKHOLMES#0",
+  "defender": "DRACULA#0",
+  "attackerSelectedCard": null,
   "defenderSelectedCard": null,
   "heroes": {
     "DRACULA#0": {
       "movement": 2,
       "action": 2,
-      "health": 13,
+      "health": 9,
       "islive": true,
       "startedTurnOnFog": false,
       "pendingPlacement": false,
-      "place": -1,
+      "place": 32,
       "deck": [
         {
-          "type": 4,
-          "timing": 0,
-          "typeAttack": "Attack",
-          "amount": 6,
-          "boost": 4,
-          "owner": "DRACULA",
+          "type": 6,
+          "timing": 2,
+          "typeAttack": "Both",
+          "amount": 4,
+          "boost": 1,
+          "owner": "ANY",
           "applyEffects": true,
           "userName": "",
           "userNumber": -1
@@ -40,6 +37,17 @@
           "amount": 3,
           "boost": 1,
           "owner": "ANY",
+          "applyEffects": true,
+          "userName": "",
+          "userNumber": -1
+        },
+        {
+          "type": 8,
+          "timing": 3,
+          "typeAttack": "Event",
+          "amount": 0,
+          "boost": 4,
+          "owner": "DRACULA",
           "applyEffects": true,
           "userName": "",
           "userNumber": -1
@@ -56,10 +64,54 @@
           "userNumber": -1
         },
         {
-          "type": 5,
+          "type": 9,
+          "timing": 3,
+          "typeAttack": "Event",
+          "amount": 0,
+          "boost": 2,
+          "owner": "SISTERS",
+          "applyEffects": true,
+          "userName": "",
+          "userNumber": -1
+        },
+        {
+          "type": 0,
+          "timing": 0,
+          "typeAttack": "Attack",
+          "amount": 2,
+          "boost": 3,
+          "owner": "DRACULA",
+          "applyEffects": true,
+          "userName": "",
+          "userNumber": -1
+        },
+        {
+          "type": 3,
+          "timing": 3,
+          "typeAttack": "Event",
+          "amount": 0,
+          "boost": 2,
+          "owner": "DRACULA",
+          "applyEffects": true,
+          "userName": "",
+          "userNumber": -1
+        },
+        {
+          "type": 10,
+          "timing": 2,
+          "typeAttack": "Attack",
+          "amount": 3,
+          "boost": 3,
+          "owner": "SISTERS",
+          "applyEffects": true,
+          "userName": "",
+          "userNumber": -1
+        },
+        {
+          "type": 6,
           "timing": 2,
           "typeAttack": "Both",
-          "amount": 3,
+          "amount": 4,
           "boost": 1,
           "owner": "ANY",
           "applyEffects": true,
@@ -67,12 +119,12 @@
           "userNumber": -1
         },
         {
-          "type": 9,
+          "type": 8,
           "timing": 3,
           "typeAttack": "Event",
           "amount": 0,
-          "boost": 2,
-          "owner": "SISTERS",
+          "boost": 4,
+          "owner": "DRACULA",
           "applyEffects": true,
           "userName": "",
           "userNumber": -1
@@ -89,33 +141,22 @@
           "userNumber": -1
         },
         {
-          "type": 9,
-          "timing": 3,
-          "typeAttack": "Event",
-          "amount": 0,
-          "boost": 2,
-          "owner": "SISTERS",
-          "applyEffects": true,
-          "userName": "",
-          "userNumber": -1
-        },
-        {
-          "type": 5,
-          "timing": 2,
+          "type": 11,
+          "timing": 1,
           "typeAttack": "Both",
-          "amount": 3,
-          "boost": 1,
+          "amount": 2,
+          "boost": 2,
           "owner": "ANY",
           "applyEffects": true,
           "userName": "",
           "userNumber": -1
         },
         {
-          "type": 6,
-          "timing": 2,
+          "type": 11,
+          "timing": 1,
           "typeAttack": "Both",
-          "amount": 4,
-          "boost": 1,
+          "amount": 2,
+          "boost": 2,
           "owner": "ANY",
           "applyEffects": true,
           "userName": "",
@@ -144,6 +185,28 @@
           "userNumber": -1
         },
         {
+          "type": 5,
+          "timing": 2,
+          "typeAttack": "Both",
+          "amount": 3,
+          "boost": 1,
+          "owner": "ANY",
+          "applyEffects": true,
+          "userName": "",
+          "userNumber": -1
+        },
+        {
+          "type": 6,
+          "timing": 2,
+          "typeAttack": "Both",
+          "amount": 4,
+          "boost": 1,
+          "owner": "ANY",
+          "applyEffects": true,
+          "userName": "",
+          "userNumber": -1
+        },
+        {
           "type": 9,
           "timing": 3,
           "typeAttack": "Event",
@@ -155,179 +218,23 @@
           "userNumber": -1
         },
         {
-          "type": 0,
+          "type": 7,
           "timing": 0,
-          "typeAttack": "Attack",
-          "amount": 2,
-          "boost": 3,
+          "typeAttack": "Defense",
+          "amount": 1,
+          "boost": 2,
           "owner": "DRACULA",
           "applyEffects": true,
           "userName": "",
           "userNumber": -1
         },
         {
-          "type": 11,
-          "timing": 1,
-          "typeAttack": "Both",
-          "amount": 2,
+          "type": 9,
+          "timing": 3,
+          "typeAttack": "Event",
+          "amount": 0,
           "boost": 2,
-          "owner": "ANY",
-          "applyEffects": true,
-          "userName": "",
-          "userNumber": -1
-        },
-        {
-          "type": 11,
-          "timing": 1,
-          "typeAttack": "Both",
-          "amount": 2,
-          "boost": 2,
-          "owner": "ANY",
-          "applyEffects": true,
-          "userName": "",
-          "userNumber": -1
-        },
-        {
-          "type": 4,
-          "timing": 0,
-          "typeAttack": "Attack",
-          "amount": 6,
-          "boost": 4,
-          "owner": "DRACULA",
-          "applyEffects": true,
-          "userName": "",
-          "userNumber": -1
-        },
-        {
-          "type": 6,
-          "timing": 2,
-          "typeAttack": "Both",
-          "amount": 4,
-          "boost": 1,
-          "owner": "ANY",
-          "applyEffects": true,
-          "userName": "",
-          "userNumber": -1
-        },
-        {
-          "type": 10,
-          "timing": 2,
-          "typeAttack": "Attack",
-          "amount": 3,
-          "boost": 3,
           "owner": "SISTERS",
-          "applyEffects": true,
-          "userName": "",
-          "userNumber": -1
-        },
-        {
-          "type": 10,
-          "timing": 2,
-          "typeAttack": "Attack",
-          "amount": 3,
-          "boost": 3,
-          "owner": "SISTERS",
-          "applyEffects": true,
-          "userName": "",
-          "userNumber": -1
-        },
-        {
-          "type": 8,
-          "timing": 3,
-          "typeAttack": "Event",
-          "amount": 0,
-          "boost": 4,
-          "owner": "DRACULA",
-          "applyEffects": true,
-          "userName": "",
-          "userNumber": -1
-        },
-        {
-          "type": 8,
-          "timing": 3,
-          "typeAttack": "Event",
-          "amount": 0,
-          "boost": 4,
-          "owner": "DRACULA",
-          "applyEffects": true,
-          "userName": "",
-          "userNumber": -1
-        },
-        {
-          "type": 7,
-          "timing": 0,
-          "typeAttack": "Defense",
-          "amount": 1,
-          "boost": 2,
-          "owner": "DRACULA",
-          "applyEffects": true,
-          "userName": "",
-          "userNumber": -1
-        },
-        {
-          "type": 3,
-          "timing": 3,
-          "typeAttack": "Event",
-          "amount": 0,
-          "boost": 2,
-          "owner": "DRACULA",
-          "applyEffects": true,
-          "userName": "",
-          "userNumber": -1
-        },
-        {
-          "type": 7,
-          "timing": 0,
-          "typeAttack": "Defense",
-          "amount": 1,
-          "boost": 2,
-          "owner": "DRACULA",
-          "applyEffects": true,
-          "userName": "",
-          "userNumber": -1
-        },
-        {
-          "type": 11,
-          "timing": 1,
-          "typeAttack": "Both",
-          "amount": 2,
-          "boost": 2,
-          "owner": "ANY",
-          "applyEffects": true,
-          "userName": "",
-          "userNumber": -1
-        }
-      ],
-      "hand": [
-        {
-          "type": 6,
-          "timing": 2,
-          "typeAttack": "Both",
-          "amount": 4,
-          "boost": 1,
-          "owner": "ANY",
-          "applyEffects": true,
-          "userName": "",
-          "userNumber": -1
-        },
-        {
-          "type": 7,
-          "timing": 0,
-          "typeAttack": "Defense",
-          "amount": 1,
-          "boost": 2,
-          "owner": "DRACULA",
-          "applyEffects": true,
-          "userName": "",
-          "userNumber": -1
-        },
-        {
-          "type": 2,
-          "timing": 0,
-          "typeAttack": "Attack",
-          "amount": 2,
-          "boost": 3,
-          "owner": "ANY",
           "applyEffects": true,
           "userName": "",
           "userNumber": -1
@@ -355,13 +262,103 @@
           "userNumber": -1
         }
       ],
-      "discard": []
+      "hand": [],
+      "discard": [
+        {
+          "type": 5,
+          "timing": 2,
+          "typeAttack": "Both",
+          "amount": 3,
+          "boost": 1,
+          "owner": "ANY",
+          "applyEffects": true,
+          "userName": "SISTERS",
+          "userNumber": 1
+        },
+        {
+          "type": 11,
+          "timing": 1,
+          "typeAttack": "Both",
+          "amount": 2,
+          "boost": 2,
+          "owner": "ANY",
+          "applyEffects": true,
+          "userName": "",
+          "userNumber": -1
+        },
+        {
+          "type": 7,
+          "timing": 0,
+          "typeAttack": "Defense",
+          "amount": 3,
+          "boost": 2,
+          "owner": "DRACULA",
+          "applyEffects": true,
+          "userName": "DRACULA",
+          "userNumber": 0
+        },
+        {
+          "type": 4,
+          "timing": 0,
+          "typeAttack": "Attack",
+          "amount": 6,
+          "boost": 4,
+          "owner": "DRACULA",
+          "applyEffects": true,
+          "userName": "DRACULA",
+          "userNumber": 0
+        },
+        {
+          "type": 4,
+          "timing": 0,
+          "typeAttack": "Attack",
+          "amount": 6,
+          "boost": 4,
+          "owner": "DRACULA",
+          "applyEffects": true,
+          "userName": "DRACULA",
+          "userNumber": 0
+        },
+        {
+          "type": 2,
+          "timing": 0,
+          "typeAttack": "Attack",
+          "amount": 2,
+          "boost": 3,
+          "owner": "ANY",
+          "applyEffects": true,
+          "userName": "DRACULA",
+          "userNumber": 0
+        },
+        {
+          "type": 10,
+          "timing": 2,
+          "typeAttack": "Attack",
+          "amount": 3,
+          "boost": 3,
+          "owner": "SISTERS",
+          "applyEffects": true,
+          "userName": "",
+          "userNumber": -1
+        },
+        {
+          "type": 7,
+          "timing": 0,
+          "typeAttack": "Defense",
+          "amount": 1,
+          "boost": 2,
+          "owner": "DRACULA",
+          "applyEffects": true,
+          "userName": "",
+          "userNumber": -1
+        }
+      ]
     },
     "SISTERS#1": {
       "movement": 2,
       "action": 2,
-      "health": 1,
-      "islive": true,
+      "health": 0,
+      "islive": false,
       "startedTurnOnFog": false,
       "pendingPlacement": false,
       "place": -1,
@@ -372,8 +369,8 @@
     "SISTERS#2": {
       "movement": 2,
       "action": 2,
-      "health": 1,
-      "islive": true,
+      "health": 0,
+      "islive": false,
       "startedTurnOnFog": false,
       "pendingPlacement": false,
       "place": -1,
@@ -384,8 +381,8 @@
     "SISTERS#3": {
       "movement": 2,
       "action": 2,
-      "health": 1,
-      "islive": true,
+      "health": 0,
+      "islive": false,
       "startedTurnOnFog": false,
       "pendingPlacement": false,
       "place": -1,
@@ -394,21 +391,21 @@
       "discard": []
     },
     "SHERLOCKHOLMES#0": {
-      "movement": 0,
+      "movement": 2,
       "action": 2,
-      "health": 16,
+      "health": 13,
       "islive": true,
       "startedTurnOnFog": false,
       "pendingPlacement": false,
-      "place": 24,
+      "place": 31,
       "deck": [
         {
-          "type": 21,
+          "type": 23,
           "timing": 3,
-          "typeAttack": "Event",
-          "amount": 0,
+          "typeAttack": "Attack",
+          "amount": 5,
           "boost": 2,
-          "owner": "SHERLOCKHOLMES",
+          "owner": "DR_WATSON",
           "applyEffects": true,
           "userName": "",
           "userNumber": -1
@@ -425,6 +422,61 @@
           "userNumber": -1
         },
         {
+          "type": 21,
+          "timing": 3,
+          "typeAttack": "Event",
+          "amount": 0,
+          "boost": 2,
+          "owner": "SHERLOCKHOLMES",
+          "applyEffects": true,
+          "userName": "",
+          "userNumber": -1
+        },
+        {
+          "type": 12,
+          "timing": 3,
+          "typeAttack": "Event",
+          "amount": 0,
+          "boost": 2,
+          "owner": "DR_WATSON",
+          "applyEffects": true,
+          "userName": "",
+          "userNumber": -1
+        },
+        {
+          "type": 20,
+          "timing": 2,
+          "typeAttack": "Both",
+          "amount": 3,
+          "boost": 1,
+          "owner": "DR_WATSON",
+          "applyEffects": true,
+          "userName": "",
+          "userNumber": -1
+        },
+        {
+          "type": 14,
+          "timing": 2,
+          "typeAttack": "Both",
+          "amount": 3,
+          "boost": 1,
+          "owner": "SHERLOCKHOLMES",
+          "applyEffects": true,
+          "userName": "",
+          "userNumber": -1
+        },
+        {
+          "type": 23,
+          "timing": 3,
+          "typeAttack": "Attack",
+          "amount": 5,
+          "boost": 2,
+          "owner": "DR_WATSON",
+          "applyEffects": true,
+          "userName": "",
+          "userNumber": -1
+        },
+        {
           "type": 11,
           "timing": 1,
           "typeAttack": "Both",
@@ -436,21 +488,10 @@
           "userNumber": -1
         },
         {
-          "type": 16,
-          "timing": 2,
-          "typeAttack": "Both",
-          "amount": 3,
-          "boost": 1,
-          "owner": "ANY",
-          "applyEffects": true,
-          "userName": "",
-          "userNumber": -1
-        },
-        {
-          "type": 22,
-          "timing": 2,
-          "typeAttack": "Attack",
-          "amount": 5,
+          "type": 21,
+          "timing": 3,
+          "typeAttack": "Event",
+          "amount": 0,
           "boost": 2,
           "owner": "SHERLOCKHOLMES",
           "applyEffects": true,
@@ -469,10 +510,10 @@
           "userNumber": -1
         },
         {
-          "type": 23,
+          "type": 12,
           "timing": 3,
-          "typeAttack": "Attack",
-          "amount": 5,
+          "typeAttack": "Event",
+          "amount": 0,
           "boost": 2,
           "owner": "DR_WATSON",
           "applyEffects": true,
@@ -502,78 +543,12 @@
           "userNumber": -1
         },
         {
-          "type": 20,
-          "timing": 2,
+          "type": 11,
+          "timing": 1,
           "typeAttack": "Both",
-          "amount": 3,
+          "amount": 2,
           "boost": 1,
-          "owner": "DR_WATSON",
-          "applyEffects": true,
-          "userName": "",
-          "userNumber": -1
-        },
-        {
-          "type": 12,
-          "timing": 3,
-          "typeAttack": "Event",
-          "amount": 0,
-          "boost": 2,
-          "owner": "DR_WATSON",
-          "applyEffects": true,
-          "userName": "",
-          "userNumber": -1
-        },
-        {
-          "type": 15,
-          "timing": 0,
-          "typeAttack": "Both",
-          "amount": 3,
-          "boost": 1,
-          "owner": "SHERLOCKHOLMES",
-          "applyEffects": true,
-          "userName": "",
-          "userNumber": -1
-        },
-        {
-          "type": 18,
-          "timing": 3,
-          "typeAttack": "Event",
-          "amount": 0,
-          "boost": 2,
-          "owner": "SHERLOCKHOLMES",
-          "applyEffects": true,
-          "userName": "",
-          "userNumber": -1
-        },
-        {
-          "type": 22,
-          "timing": 2,
-          "typeAttack": "Attack",
-          "amount": 5,
-          "boost": 2,
-          "owner": "SHERLOCKHOLMES",
-          "applyEffects": true,
-          "userName": "",
-          "userNumber": -1
-        },
-        {
-          "type": 21,
-          "timing": 3,
-          "typeAttack": "Event",
-          "amount": 0,
-          "boost": 2,
-          "owner": "SHERLOCKHOLMES",
-          "applyEffects": true,
-          "userName": "",
-          "userNumber": -1
-        },
-        {
-          "type": 14,
-          "timing": 2,
-          "typeAttack": "Both",
-          "amount": 3,
-          "boost": 1,
-          "owner": "SHERLOCKHOLMES",
+          "owner": "ANY",
           "applyEffects": true,
           "userName": "",
           "userNumber": -1
@@ -590,47 +565,12 @@
           "userNumber": -1
         },
         {
-          "type": 14,
-          "timing": 2,
+          "type": 15,
+          "timing": 0,
           "typeAttack": "Both",
           "amount": 3,
           "boost": 1,
           "owner": "SHERLOCKHOLMES",
-          "applyEffects": true,
-          "userName": "",
-          "userNumber": -1
-        }
-      ],
-      "hand": [
-        {
-          "type": 11,
-          "timing": 1,
-          "typeAttack": "Both",
-          "amount": 2,
-          "boost": 1,
-          "owner": "ANY",
-          "applyEffects": true,
-          "userName": "SHERLOCKHOLMES",
-          "userNumber": 0
-        },
-        {
-          "type": 20,
-          "timing": 2,
-          "typeAttack": "Both",
-          "amount": 3,
-          "boost": 1,
-          "owner": "DR_WATSON",
-          "applyEffects": true,
-          "userName": "",
-          "userNumber": -1
-        },
-        {
-          "type": 23,
-          "timing": 3,
-          "typeAttack": "Attack",
-          "amount": 5,
-          "boost": 2,
-          "owner": "DR_WATSON",
           "applyEffects": true,
           "userName": "",
           "userNumber": -1
@@ -642,28 +582,6 @@
           "amount": 3,
           "boost": 1,
           "owner": "SHERLOCKHOLMES",
-          "applyEffects": true,
-          "userName": "SHERLOCKHOLMES",
-          "userNumber": 0
-        },
-        {
-          "type": 14,
-          "timing": 2,
-          "typeAttack": "Both",
-          "amount": 3,
-          "boost": 1,
-          "owner": "SHERLOCKHOLMES",
-          "applyEffects": true,
-          "userName": "SHERLOCKHOLMES",
-          "userNumber": 0
-        },
-        {
-          "type": 12,
-          "timing": 3,
-          "typeAttack": "Event",
-          "amount": 0,
-          "boost": 2,
-          "owner": "DR_WATSON",
           "applyEffects": true,
           "userName": "",
           "userNumber": -1
@@ -680,33 +598,123 @@
           "userNumber": -1
         }
       ],
-      "discard": []
+      "hand": [],
+      "discard": [
+        {
+          "type": 16,
+          "timing": 2,
+          "typeAttack": "Both",
+          "amount": 3,
+          "boost": 1,
+          "owner": "ANY",
+          "applyEffects": true,
+          "userName": "Dr_Watson",
+          "userNumber": 0
+        },
+        {
+          "type": 22,
+          "timing": 2,
+          "typeAttack": "Attack",
+          "amount": 5,
+          "boost": 2,
+          "owner": "SHERLOCKHOLMES",
+          "applyEffects": true,
+          "userName": "",
+          "userNumber": -1
+        },
+        {
+          "type": 22,
+          "timing": 2,
+          "typeAttack": "Attack",
+          "amount": 5,
+          "boost": 2,
+          "owner": "SHERLOCKHOLMES",
+          "applyEffects": true,
+          "userName": "SHERLOCKHOLMES",
+          "userNumber": 0
+        },
+        {
+          "type": 14,
+          "timing": 2,
+          "typeAttack": "Both",
+          "amount": 3,
+          "boost": 1,
+          "owner": "SHERLOCKHOLMES",
+          "applyEffects": true,
+          "userName": "SHERLOCKHOLMES",
+          "userNumber": 0
+        },
+        {
+          "type": 14,
+          "timing": 2,
+          "typeAttack": "Both",
+          "amount": 3,
+          "boost": 1,
+          "owner": "SHERLOCKHOLMES",
+          "applyEffects": true,
+          "userName": "SHERLOCKHOLMES",
+          "userNumber": 0
+        },
+        {
+          "type": 20,
+          "timing": 2,
+          "typeAttack": "Both",
+          "amount": 3,
+          "boost": 1,
+          "owner": "DR_WATSON",
+          "applyEffects": true,
+          "userName": "",
+          "userNumber": -1
+        },
+        {
+          "type": 18,
+          "timing": 3,
+          "typeAttack": "Event",
+          "amount": 0,
+          "boost": 2,
+          "owner": "SHERLOCKHOLMES",
+          "applyEffects": true,
+          "userName": "",
+          "userNumber": -1
+        }
+      ]
     },
     "Dr_Watson#0": {
       "movement": 2,
       "action": 2,
-      "health": 8,
-      "islive": true,
+      "health": 0,
+      "islive": false,
       "startedTurnOnFog": false,
       "pendingPlacement": false,
-      "place": 26,
+      "place": -1,
       "deck": [],
       "hand": [],
       "discard": []
     },
     "InvisibleMan#0": {
-      "movement": 0,
+      "movement": 2,
       "action": 2,
       "health": 15,
       "islive": true,
       "startedTurnOnFog": false,
       "pendingPlacement": false,
-      "place": 25,
+      "place": -1,
       "deck": [
         {
-          "type": 26,
+          "type": 37,
+          "timing": 3,
+          "typeAttack": "Event",
+          "amount": 0,
+          "boost": 3,
+          "owner": "InvisibleMan",
+          "applyEffects": true,
+          "userName": "",
+          "userNumber": -1
+        },
+        {
+          "type": 35,
           "timing": 2,
-          "typeAttack": "Both",
+          "typeAttack": "Attack",
           "amount": 3,
           "boost": 2,
           "owner": "InvisibleMan",
@@ -726,54 +734,10 @@
           "userNumber": -1
         },
         {
-          "type": 35,
-          "timing": 2,
-          "typeAttack": "Attack",
-          "amount": 3,
-          "boost": 2,
-          "owner": "InvisibleMan",
-          "applyEffects": true,
-          "userName": "",
-          "userNumber": -1
-        },
-        {
-          "type": 31,
-          "timing": 2,
-          "typeAttack": "Defense",
-          "amount": 4,
-          "boost": 1,
-          "owner": "InvisibleMan",
-          "applyEffects": true,
-          "userName": "",
-          "userNumber": -1
-        },
-        {
-          "type": 33,
-          "timing": 3,
-          "typeAttack": "Event",
-          "amount": 0,
-          "boost": 1,
-          "owner": "InvisibleMan",
-          "applyEffects": true,
-          "userName": "",
-          "userNumber": -1
-        },
-        {
-          "type": 32,
-          "timing": 2,
-          "typeAttack": "Defense",
+          "type": 30,
+          "timing": 1,
+          "typeAttack": "Both",
           "amount": 2,
-          "boost": 2,
-          "owner": "InvisibleMan",
-          "applyEffects": true,
-          "userName": "",
-          "userNumber": -1
-        },
-        {
-          "type": 25,
-          "timing": 2,
-          "typeAttack": "Defense",
-          "amount": 3,
           "boost": 2,
           "owner": "InvisibleMan",
           "applyEffects": true,
@@ -803,44 +767,11 @@
           "userNumber": -1
         },
         {
-          "type": 28,
-          "timing": 2,
-          "typeAttack": "Both",
-          "amount": 3,
+          "type": 36,
+          "timing": 3,
+          "typeAttack": "Event",
+          "amount": 0,
           "boost": 1,
-          "owner": "InvisibleMan",
-          "applyEffects": true,
-          "userName": "",
-          "userNumber": -1
-        },
-        {
-          "type": 30,
-          "timing": 1,
-          "typeAttack": "Both",
-          "amount": 2,
-          "boost": 2,
-          "owner": "InvisibleMan",
-          "applyEffects": true,
-          "userName": "",
-          "userNumber": -1
-        },
-        {
-          "type": 31,
-          "timing": 2,
-          "typeAttack": "Defense",
-          "amount": 4,
-          "boost": 1,
-          "owner": "InvisibleMan",
-          "applyEffects": true,
-          "userName": "",
-          "userNumber": -1
-        },
-        {
-          "type": 30,
-          "timing": 1,
-          "typeAttack": "Both",
-          "amount": 2,
-          "boost": 2,
           "owner": "InvisibleMan",
           "applyEffects": true,
           "userName": "",
@@ -858,10 +789,32 @@
           "userNumber": -1
         },
         {
-          "type": 28,
-          "timing": 2,
-          "typeAttack": "Both",
+          "type": 29,
+          "timing": 0,
+          "typeAttack": "Attack",
           "amount": 3,
+          "boost": 2,
+          "owner": "InvisibleMan",
+          "applyEffects": true,
+          "userName": "",
+          "userNumber": -1
+        },
+        {
+          "type": 29,
+          "timing": 0,
+          "typeAttack": "Attack",
+          "amount": 3,
+          "boost": 2,
+          "owner": "InvisibleMan",
+          "applyEffects": true,
+          "userName": "",
+          "userNumber": -1
+        },
+        {
+          "type": 33,
+          "timing": 3,
+          "typeAttack": "Event",
+          "amount": 0,
           "boost": 1,
           "owner": "InvisibleMan",
           "applyEffects": true,
@@ -869,10 +822,10 @@
           "userNumber": -1
         },
         {
-          "type": 36,
-          "timing": 3,
-          "typeAttack": "Event",
-          "amount": 0,
+          "type": 27,
+          "timing": 2,
+          "typeAttack": "Both",
+          "amount": 2,
           "boost": 1,
           "owner": "InvisibleMan",
           "applyEffects": true,
@@ -902,22 +855,22 @@
           "userNumber": -1
         },
         {
-          "type": 29,
-          "timing": 0,
-          "typeAttack": "Attack",
+          "type": 28,
+          "timing": 2,
+          "typeAttack": "Both",
           "amount": 3,
-          "boost": 2,
+          "boost": 1,
           "owner": "InvisibleMan",
           "applyEffects": true,
           "userName": "",
           "userNumber": -1
         },
         {
-          "type": 35,
-          "timing": 2,
-          "typeAttack": "Attack",
-          "amount": 3,
-          "boost": 2,
+          "type": 36,
+          "timing": 3,
+          "typeAttack": "Event",
+          "amount": 0,
+          "boost": 1,
           "owner": "InvisibleMan",
           "applyEffects": true,
           "userName": "",
@@ -929,6 +882,72 @@
           "typeAttack": "Defense",
           "amount": 3,
           "boost": 2,
+          "owner": "InvisibleMan",
+          "applyEffects": true,
+          "userName": "",
+          "userNumber": -1
+        },
+        {
+          "type": 33,
+          "timing": 3,
+          "typeAttack": "Event",
+          "amount": 0,
+          "boost": 1,
+          "owner": "InvisibleMan",
+          "applyEffects": true,
+          "userName": "",
+          "userNumber": -1
+        },
+        {
+          "type": 34,
+          "timing": 3,
+          "typeAttack": "Event",
+          "amount": 0,
+          "boost": 1,
+          "owner": "InvisibleMan",
+          "applyEffects": true,
+          "userName": "",
+          "userNumber": -1
+        },
+        {
+          "type": 25,
+          "timing": 2,
+          "typeAttack": "Defense",
+          "amount": 3,
+          "boost": 2,
+          "owner": "InvisibleMan",
+          "applyEffects": true,
+          "userName": "",
+          "userNumber": -1
+        },
+        {
+          "type": 28,
+          "timing": 2,
+          "typeAttack": "Both",
+          "amount": 3,
+          "boost": 1,
+          "owner": "InvisibleMan",
+          "applyEffects": true,
+          "userName": "",
+          "userNumber": -1
+        },
+        {
+          "type": 32,
+          "timing": 2,
+          "typeAttack": "Defense",
+          "amount": 2,
+          "boost": 2,
+          "owner": "InvisibleMan",
+          "applyEffects": true,
+          "userName": "",
+          "userNumber": -1
+        },
+        {
+          "type": 31,
+          "timing": 2,
+          "typeAttack": "Defense",
+          "amount": 4,
+          "boost": 1,
           "owner": "InvisibleMan",
           "applyEffects": true,
           "userName": "",
@@ -937,11 +956,22 @@
       ],
       "hand": [
         {
-          "type": 34,
-          "timing": 3,
-          "typeAttack": "Event",
-          "amount": 0,
+          "type": 31,
+          "timing": 2,
+          "typeAttack": "Defense",
+          "amount": 4,
           "boost": 1,
+          "owner": "InvisibleMan",
+          "applyEffects": true,
+          "userName": "",
+          "userNumber": -1
+        },
+        {
+          "type": 30,
+          "timing": 1,
+          "typeAttack": "Both",
+          "amount": 2,
+          "boost": 2,
           "owner": "InvisibleMan",
           "applyEffects": true,
           "userName": "",
@@ -959,8 +989,19 @@
           "userNumber": -1
         },
         {
-          "type": 29,
-          "timing": 0,
+          "type": 26,
+          "timing": 2,
+          "typeAttack": "Both",
+          "amount": 3,
+          "boost": 2,
+          "owner": "InvisibleMan",
+          "applyEffects": true,
+          "userName": "",
+          "userNumber": -1
+        },
+        {
+          "type": 35,
+          "timing": 2,
           "typeAttack": "Attack",
           "amount": 3,
           "boost": 2,
@@ -970,52 +1011,7 @@
           "userNumber": -1
         }
       ],
-      "discard": [
-        {
-          "type": 37,
-          "timing": 3,
-          "typeAttack": "Event",
-          "amount": 0,
-          "boost": 3,
-          "owner": "InvisibleMan",
-          "applyEffects": true,
-          "userName": "",
-          "userNumber": -1
-        },
-        {
-          "type": 27,
-          "timing": 2,
-          "typeAttack": "Both",
-          "amount": 2,
-          "boost": 1,
-          "owner": "InvisibleMan",
-          "applyEffects": true,
-          "userName": "InvisibleMan",
-          "userNumber": 0
-        },
-        {
-          "type": 36,
-          "timing": 3,
-          "typeAttack": "Event",
-          "amount": 0,
-          "boost": 1,
-          "owner": "InvisibleMan",
-          "applyEffects": true,
-          "userName": "InvisibleMan",
-          "userNumber": 0
-        },
-        {
-          "type": 33,
-          "timing": 3,
-          "typeAttack": "Event",
-          "amount": 0,
-          "boost": 1,
-          "owner": "InvisibleMan",
-          "applyEffects": true,
-          "userName": "InvisibleMan",
-          "userNumber": 0
-        }
-      ]
+      "discard": []
     },
     "FOG#1": {
       "movement": 2,
@@ -1024,7 +1020,7 @@
       "islive": true,
       "startedTurnOnFog": false,
       "pendingPlacement": false,
-      "place": 29,
+      "place": -1,
       "deck": [],
       "hand": [],
       "discard": []
@@ -1036,7 +1032,7 @@
       "islive": true,
       "startedTurnOnFog": false,
       "pendingPlacement": false,
-      "place": 31,
+      "place": -1,
       "deck": [],
       "hand": [],
       "discard": []
@@ -1048,7 +1044,7 @@
       "islive": true,
       "startedTurnOnFog": false,
       "pendingPlacement": false,
-      "place": 30,
+      "place": -1,
       "deck": [],
       "hand": [],
       "discard": []
@@ -1057,54 +1053,37 @@
   "occupancy": [
     {
       "hero": "SHERLOCKHOLMES#0",
-      "space": 24
+      "space": 31,
+      "slot": "hero"
     },
     {
-      "hero": "Dr_Watson#0",
-      "space": 26
-    },
-    {
-      "hero": "InvisibleMan#0",
-      "space": 25
-    },
-    {
-      "hero": "FOG#1",
-      "space": 29
-    },
-    {
-      "hero": "FOG#2",
-      "space": 31
-    },
-    {
-      "hero": "FOG#3",
-      "space": 30
+      "hero": "DRACULA#0",
+      "space": 32,
+      "slot": "hero"
     }
   ],
   "p1": {
-    "age": 18,
-    "name": "A",
-    "count": 0,
+    "age": 54,
+    "name": "arf",
+    "count": 1,
     "isAttacker": false,
-    "character": "InvisibleMan#0",
+    "character": "DRACULA#0",
     "comrade": [
-      "FOG#1",
-      "FOG#2",
-      "FOG#3"
+      "SISTERS#1",
+      "SISTERS#2",
+      "SISTERS#3"
     ],
     "selectedCard": null
   },
   "p2": {
-    "age": 26,
-    "name": "B",
+    "age": 54,
+    "name": "df",
     "count": 0,
     "isAttacker": false,
     "character": "SHERLOCKHOLMES#0",
     "comrade": [
       "Dr_Watson#0"
     ],
-    "selectedCard": {
-      "hero": "SHERLOCKHOLMES#0",
-      "index": 4
-    }
+    "selectedCard": null
   }
 }

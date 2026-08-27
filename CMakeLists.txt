@@ -1,39 +1,28 @@
-cmake_minimum_required(VERSION 3.20)
-
-project(unmatched LANGUAGES CXX)
-
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-include(FetchContent)
-
-set(FETCHCONTENT_UPDATES_DISCONNECTED ON)
-
-FetchContent_Declare(
-  ftxui
-  GIT_REPOSITORY https://github.com/ArthurSonzogni/FTXUI.git
-  GIT_TAG v7.0.0
-)
-
-FetchContent_MakeAvailable(ftxui)
+cmake_minimum_required(VERSION 3.11)
+project(Unmatched)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-file(GLOB SRC_FILES
-    src/*.cpp
-)
+# --- raylib ---
+# Vendored raylib source tree lives in "raylib-master"
+add_subdirectory(raylib-master)
 
-add_executable(app ${SRC_FILES})
+# --- your game sources ---
 
-if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND CMAKE_CXX_COMPILER_VERSION VERSION_LESS 9.0)
-  target_link_libraries(app PRIVATE stdc++fs)
+file(GLOB GAME_SOURCES "${CMAKE_SOURCE_DIR}/src/*.cpp")
+list(REMOVE_ITEM GAME_SOURCES "${CMAKE_SOURCE_DIR}/src/test_raylib_main.cpp")
+
+add_executable(Unmatched ${GAME_SOURCES})
+
+add_custom_command(TARGET Unmatched POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+        ${CMAKE_SOURCE_DIR}/assets $<TARGET_FILE_DIR:Unmatched>/assets)
+
+target_include_directories(Unmatched PRIVATE ${CMAKE_SOURCE_DIR}/includes)
+target_link_libraries(Unmatched PRIVATE raylib)
+
+# raylib needs these system libs on Linux
+if (UNIX AND NOT APPLE)
+    target_link_libraries(Unmatched PRIVATE m pthread dl rt X11)
 endif()
-
-target_link_libraries(app 
-  PRIVATE ftxui::screen
-  PRIVATE ftxui::dom
-  PRIVATE ftxui::component
-)
-
-target_include_directories(app PRIVATE includes src)

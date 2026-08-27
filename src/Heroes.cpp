@@ -1,6 +1,6 @@
 
 #include "Heroes.h"
-#include "Ftxui_Front.h"
+#include "Raylib.h"
 #include "Board.h"
 
 
@@ -168,9 +168,9 @@ void Heroes::Discard_Card(Card *card)
 
     if (it == hand.end())
     {
-        Ftxui_Front FF;
+        Raylib RF;
         throw std::runtime_error("Card not found.");
-        FF.get_msg().push_back("Card not found.");
+        RF.get_msg().push_back("Card not found.");
     }
 
     discard.push_back(*it);

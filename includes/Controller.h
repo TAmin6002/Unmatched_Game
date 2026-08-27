@@ -13,13 +13,9 @@
 #include "Fog.h"
 #include "InvisibleMan.h"
 #include "CardResolver.h"
-#include "Ftxui_Front.h"
+#include "Raylib.h"
 
-#include "ftxui/component/component.hpp"
-#include "ftxui/component/screen_interactive.hpp"
-#include "ftxui/dom/elements.hpp"
 
-using namespace ftxui;
 
 #include <string>
 
@@ -40,7 +36,7 @@ private:
     InvisibleMan invisibleMan;
     Fog f1{1}, f2{2}, f3{3};
 
-    Ftxui_Front FF;
+    Raylib RF;
 
     Heroes *Attacker = nullptr;
     Heroes *Defender = nullptr; // این دوتا هنگام ی ست میشوند که بازیکن از بین گزینه های اکشن اتک زدن را اتخاب کرده باشد

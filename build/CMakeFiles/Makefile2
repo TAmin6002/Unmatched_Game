@@ -63,179 +63,186 @@ CMAKE_BINARY_DIR = /home/amin/cpp/Unmatched_Game/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/app.dir/all
-all: _deps/ftxui-build/all
+all: CMakeFiles/Unmatched.dir/all
+all: raylib-master/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall: _deps/ftxui-build/preinstall
+preinstall: raylib-master/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/app.dir/clean
-clean: _deps/ftxui-build/clean
+clean: CMakeFiles/Unmatched.dir/clean
+clean: raylib-master/clean
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory _deps/ftxui-build
+# Directory level rules for directory raylib-master
 
 # Recursive "all" directory target.
-_deps/ftxui-build/all: _deps/ftxui-build/CMakeFiles/screen.dir/all
-_deps/ftxui-build/all: _deps/ftxui-build/CMakeFiles/dom.dir/all
-_deps/ftxui-build/all: _deps/ftxui-build/CMakeFiles/component.dir/all
-_deps/ftxui-build/all: _deps/ftxui-build/examples/all
-_deps/ftxui-build/all: _deps/ftxui-build/doc/all
-.PHONY : _deps/ftxui-build/all
+raylib-master/all: raylib-master/raylib/all
+.PHONY : raylib-master/all
 
 # Recursive "preinstall" directory target.
-_deps/ftxui-build/preinstall: _deps/ftxui-build/examples/preinstall
-_deps/ftxui-build/preinstall: _deps/ftxui-build/doc/preinstall
-.PHONY : _deps/ftxui-build/preinstall
+raylib-master/preinstall: raylib-master/raylib/preinstall
+.PHONY : raylib-master/preinstall
 
 # Recursive "clean" directory target.
-_deps/ftxui-build/clean: _deps/ftxui-build/CMakeFiles/screen.dir/clean
-_deps/ftxui-build/clean: _deps/ftxui-build/CMakeFiles/dom.dir/clean
-_deps/ftxui-build/clean: _deps/ftxui-build/CMakeFiles/component.dir/clean
-_deps/ftxui-build/clean: _deps/ftxui-build/examples/clean
-_deps/ftxui-build/clean: _deps/ftxui-build/doc/clean
-.PHONY : _deps/ftxui-build/clean
+raylib-master/clean: raylib-master/raylib/clean
+.PHONY : raylib-master/clean
 
 #=============================================================================
-# Directory level rules for directory _deps/ftxui-build/doc
+# Directory level rules for directory raylib-master/raylib
 
 # Recursive "all" directory target.
-_deps/ftxui-build/doc/all:
-.PHONY : _deps/ftxui-build/doc/all
+raylib-master/raylib/all: raylib-master/raylib/CMakeFiles/raylib.dir/all
+raylib-master/raylib/all: raylib-master/raylib/external/glfw/all
+.PHONY : raylib-master/raylib/all
 
 # Recursive "preinstall" directory target.
-_deps/ftxui-build/doc/preinstall:
-.PHONY : _deps/ftxui-build/doc/preinstall
+raylib-master/raylib/preinstall: raylib-master/raylib/external/glfw/preinstall
+.PHONY : raylib-master/raylib/preinstall
 
 # Recursive "clean" directory target.
-_deps/ftxui-build/doc/clean:
-.PHONY : _deps/ftxui-build/doc/clean
+raylib-master/raylib/clean: raylib-master/raylib/CMakeFiles/raylib.dir/clean
+raylib-master/raylib/clean: raylib-master/raylib/external/glfw/clean
+.PHONY : raylib-master/raylib/clean
 
 #=============================================================================
-# Directory level rules for directory _deps/ftxui-build/examples
+# Directory level rules for directory raylib-master/raylib/external/glfw
 
 # Recursive "all" directory target.
-_deps/ftxui-build/examples/all:
-.PHONY : _deps/ftxui-build/examples/all
+raylib-master/raylib/external/glfw/all: raylib-master/raylib/external/glfw/src/all
+.PHONY : raylib-master/raylib/external/glfw/all
 
 # Recursive "preinstall" directory target.
-_deps/ftxui-build/examples/preinstall:
-.PHONY : _deps/ftxui-build/examples/preinstall
+raylib-master/raylib/external/glfw/preinstall: raylib-master/raylib/external/glfw/src/preinstall
+.PHONY : raylib-master/raylib/external/glfw/preinstall
 
 # Recursive "clean" directory target.
-_deps/ftxui-build/examples/clean:
-.PHONY : _deps/ftxui-build/examples/clean
+raylib-master/raylib/external/glfw/clean: raylib-master/raylib/external/glfw/src/clean
+.PHONY : raylib-master/raylib/external/glfw/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/app.dir
+# Directory level rules for directory raylib-master/raylib/external/glfw/src
 
-# All Build rule for target.
-CMakeFiles/app.dir/all: _deps/ftxui-build/CMakeFiles/screen.dir/all
-CMakeFiles/app.dir/all: _deps/ftxui-build/CMakeFiles/dom.dir/all
-CMakeFiles/app.dir/all: _deps/ftxui-build/CMakeFiles/component.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/amin/cpp/Unmatched_Game/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18 "Built target app"
-.PHONY : CMakeFiles/app.dir/all
+# Recursive "all" directory target.
+raylib-master/raylib/external/glfw/src/all: raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/all
+.PHONY : raylib-master/raylib/external/glfw/src/all
 
-# Build rule for subdir invocation for target.
-CMakeFiles/app.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/amin/cpp/Unmatched_Game/build/CMakeFiles 96
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/app.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/amin/cpp/Unmatched_Game/build/CMakeFiles 0
-.PHONY : CMakeFiles/app.dir/rule
+# Recursive "preinstall" directory target.
+raylib-master/raylib/external/glfw/src/preinstall:
+.PHONY : raylib-master/raylib/external/glfw/src/preinstall
 
-# Convenience name for target.
-app: CMakeFiles/app.dir/rule
-.PHONY : app
-
-# clean rule for target.
-CMakeFiles/app.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/clean
-.PHONY : CMakeFiles/app.dir/clean
+# Recursive "clean" directory target.
+raylib-master/raylib/external/glfw/src/clean: raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/clean
+raylib-master/raylib/external/glfw/src/clean: raylib-master/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/clean
+.PHONY : raylib-master/raylib/external/glfw/src/clean
 
 #=============================================================================
-# Target rules for target _deps/ftxui-build/CMakeFiles/screen.dir
+# Target rules for target CMakeFiles/Unmatched.dir
 
 # All Build rule for target.
-_deps/ftxui-build/CMakeFiles/screen.dir/all:
-	$(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/screen.dir/build.make _deps/ftxui-build/CMakeFiles/screen.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/screen.dir/build.make _deps/ftxui-build/CMakeFiles/screen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/amin/cpp/Unmatched_Game/build/CMakeFiles --progress-num=89,90,91,92,93,94,95,96 "Built target screen"
-.PHONY : _deps/ftxui-build/CMakeFiles/screen.dir/all
+CMakeFiles/Unmatched.dir/all: raylib-master/raylib/CMakeFiles/raylib.dir/all
+CMakeFiles/Unmatched.dir/all: raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Unmatched.dir/build.make CMakeFiles/Unmatched.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Unmatched.dir/build.make CMakeFiles/Unmatched.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/amin/cpp/Unmatched_Game/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18 "Built target Unmatched"
+.PHONY : CMakeFiles/Unmatched.dir/all
 
 # Build rule for subdir invocation for target.
-_deps/ftxui-build/CMakeFiles/screen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/amin/cpp/Unmatched_Game/build/CMakeFiles 8
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/ftxui-build/CMakeFiles/screen.dir/all
+CMakeFiles/Unmatched.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amin/cpp/Unmatched_Game/build/CMakeFiles 48
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Unmatched.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/amin/cpp/Unmatched_Game/build/CMakeFiles 0
-.PHONY : _deps/ftxui-build/CMakeFiles/screen.dir/rule
+.PHONY : CMakeFiles/Unmatched.dir/rule
 
 # Convenience name for target.
-screen: _deps/ftxui-build/CMakeFiles/screen.dir/rule
-.PHONY : screen
+Unmatched: CMakeFiles/Unmatched.dir/rule
+.PHONY : Unmatched
 
 # clean rule for target.
-_deps/ftxui-build/CMakeFiles/screen.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/screen.dir/build.make _deps/ftxui-build/CMakeFiles/screen.dir/clean
-.PHONY : _deps/ftxui-build/CMakeFiles/screen.dir/clean
+CMakeFiles/Unmatched.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Unmatched.dir/build.make CMakeFiles/Unmatched.dir/clean
+.PHONY : CMakeFiles/Unmatched.dir/clean
 
 #=============================================================================
-# Target rules for target _deps/ftxui-build/CMakeFiles/dom.dir
+# Target rules for target raylib-master/raylib/CMakeFiles/raylib.dir
 
 # All Build rule for target.
-_deps/ftxui-build/CMakeFiles/dom.dir/all: _deps/ftxui-build/CMakeFiles/screen.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/dom.dir/build.make _deps/ftxui-build/CMakeFiles/dom.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/dom.dir/build.make _deps/ftxui-build/CMakeFiles/dom.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/amin/cpp/Unmatched_Game/build/CMakeFiles --progress-num=46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88 "Built target dom"
-.PHONY : _deps/ftxui-build/CMakeFiles/dom.dir/all
+raylib-master/raylib/CMakeFiles/raylib.dir/all: raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/all
+	$(MAKE) $(MAKESILENT) -f raylib-master/raylib/CMakeFiles/raylib.dir/build.make raylib-master/raylib/CMakeFiles/raylib.dir/depend
+	$(MAKE) $(MAKESILENT) -f raylib-master/raylib/CMakeFiles/raylib.dir/build.make raylib-master/raylib/CMakeFiles/raylib.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/amin/cpp/Unmatched_Game/build/CMakeFiles --progress-num=42,43,44,45,46,47,48 "Built target raylib"
+.PHONY : raylib-master/raylib/CMakeFiles/raylib.dir/all
 
 # Build rule for subdir invocation for target.
-_deps/ftxui-build/CMakeFiles/dom.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/amin/cpp/Unmatched_Game/build/CMakeFiles 51
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/ftxui-build/CMakeFiles/dom.dir/all
+raylib-master/raylib/CMakeFiles/raylib.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amin/cpp/Unmatched_Game/build/CMakeFiles 30
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 raylib-master/raylib/CMakeFiles/raylib.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/amin/cpp/Unmatched_Game/build/CMakeFiles 0
-.PHONY : _deps/ftxui-build/CMakeFiles/dom.dir/rule
+.PHONY : raylib-master/raylib/CMakeFiles/raylib.dir/rule
 
 # Convenience name for target.
-dom: _deps/ftxui-build/CMakeFiles/dom.dir/rule
-.PHONY : dom
+raylib: raylib-master/raylib/CMakeFiles/raylib.dir/rule
+.PHONY : raylib
 
 # clean rule for target.
-_deps/ftxui-build/CMakeFiles/dom.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/dom.dir/build.make _deps/ftxui-build/CMakeFiles/dom.dir/clean
-.PHONY : _deps/ftxui-build/CMakeFiles/dom.dir/clean
+raylib-master/raylib/CMakeFiles/raylib.dir/clean:
+	$(MAKE) $(MAKESILENT) -f raylib-master/raylib/CMakeFiles/raylib.dir/build.make raylib-master/raylib/CMakeFiles/raylib.dir/clean
+.PHONY : raylib-master/raylib/CMakeFiles/raylib.dir/clean
 
 #=============================================================================
-# Target rules for target _deps/ftxui-build/CMakeFiles/component.dir
+# Target rules for target raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir
 
 # All Build rule for target.
-_deps/ftxui-build/CMakeFiles/component.dir/all: _deps/ftxui-build/CMakeFiles/screen.dir/all
-_deps/ftxui-build/CMakeFiles/component.dir/all: _deps/ftxui-build/CMakeFiles/dom.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/component.dir/build.make _deps/ftxui-build/CMakeFiles/component.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/component.dir/build.make _deps/ftxui-build/CMakeFiles/component.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/amin/cpp/Unmatched_Game/build/CMakeFiles --progress-num=19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45 "Built target component"
-.PHONY : _deps/ftxui-build/CMakeFiles/component.dir/all
+raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/all:
+	$(MAKE) $(MAKESILENT) -f raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/build.make raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/depend
+	$(MAKE) $(MAKESILENT) -f raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/build.make raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/amin/cpp/Unmatched_Game/build/CMakeFiles --progress-num=19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41 "Built target glfw"
+.PHONY : raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/all
 
 # Build rule for subdir invocation for target.
-_deps/ftxui-build/CMakeFiles/component.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/amin/cpp/Unmatched_Game/build/CMakeFiles 78
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/ftxui-build/CMakeFiles/component.dir/all
+raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amin/cpp/Unmatched_Game/build/CMakeFiles 23
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/amin/cpp/Unmatched_Game/build/CMakeFiles 0
-.PHONY : _deps/ftxui-build/CMakeFiles/component.dir/rule
+.PHONY : raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/rule
 
 # Convenience name for target.
-component: _deps/ftxui-build/CMakeFiles/component.dir/rule
-.PHONY : component
+glfw: raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/rule
+.PHONY : glfw
 
 # clean rule for target.
-_deps/ftxui-build/CMakeFiles/component.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/ftxui-build/CMakeFiles/component.dir/build.make _deps/ftxui-build/CMakeFiles/component.dir/clean
-.PHONY : _deps/ftxui-build/CMakeFiles/component.dir/clean
+raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/clean:
+	$(MAKE) $(MAKESILENT) -f raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/build.make raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/clean
+.PHONY : raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/clean
+
+#=============================================================================
+# Target rules for target raylib-master/raylib/external/glfw/src/CMakeFiles/update_mappings.dir
+
+# All Build rule for target.
+raylib-master/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/all:
+	$(MAKE) $(MAKESILENT) -f raylib-master/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/build.make raylib-master/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/depend
+	$(MAKE) $(MAKESILENT) -f raylib-master/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/build.make raylib-master/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/amin/cpp/Unmatched_Game/build/CMakeFiles --progress-num=49 "Built target update_mappings"
+.PHONY : raylib-master/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/all
+
+# Build rule for subdir invocation for target.
+raylib-master/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amin/cpp/Unmatched_Game/build/CMakeFiles 1
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 raylib-master/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amin/cpp/Unmatched_Game/build/CMakeFiles 0
+.PHONY : raylib-master/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/rule
+
+# Convenience name for target.
+update_mappings: raylib-master/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/rule
+.PHONY : update_mappings
+
+# clean rule for target.
+raylib-master/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/clean:
+	$(MAKE) $(MAKESILENT) -f raylib-master/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/build.make raylib-master/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/clean
+.PHONY : raylib-master/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

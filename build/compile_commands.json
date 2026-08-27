@@ -1,554 +1,278 @@
 [
 {
   "directory": "/home/amin/cpp/Unmatched_Game/build",
-  "command": "/usr/bin/g++  -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -o CMakeFiles/app.dir/src/Card.cpp.o -c /home/amin/cpp/Unmatched_Game/src/Card.cpp",
+  "command": "/usr/bin/g++ -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/raylib-master/src -g -std=gnu++17 -o CMakeFiles/Unmatched.dir/src/Card.cpp.o -c /home/amin/cpp/Unmatched_Game/src/Card.cpp",
   "file": "/home/amin/cpp/Unmatched_Game/src/Card.cpp",
-  "output": "CMakeFiles/app.dir/src/Card.cpp.o"
+  "output": "CMakeFiles/Unmatched.dir/src/Card.cpp.o"
 },
 {
   "directory": "/home/amin/cpp/Unmatched_Game/build",
-  "command": "/usr/bin/g++  -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -o CMakeFiles/app.dir/src/CardResolver.cpp.o -c /home/amin/cpp/Unmatched_Game/src/CardResolver.cpp",
+  "command": "/usr/bin/g++ -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/raylib-master/src -g -std=gnu++17 -o CMakeFiles/Unmatched.dir/src/CardResolver.cpp.o -c /home/amin/cpp/Unmatched_Game/src/CardResolver.cpp",
   "file": "/home/amin/cpp/Unmatched_Game/src/CardResolver.cpp",
-  "output": "CMakeFiles/app.dir/src/CardResolver.cpp.o"
+  "output": "CMakeFiles/Unmatched.dir/src/CardResolver.cpp.o"
 },
 {
   "directory": "/home/amin/cpp/Unmatched_Game/build",
-  "command": "/usr/bin/g++  -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -o CMakeFiles/app.dir/src/Controller.cpp.o -c /home/amin/cpp/Unmatched_Game/src/Controller.cpp",
+  "command": "/usr/bin/g++ -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/raylib-master/src -g -std=gnu++17 -o CMakeFiles/Unmatched.dir/src/Controller.cpp.o -c /home/amin/cpp/Unmatched_Game/src/Controller.cpp",
   "file": "/home/amin/cpp/Unmatched_Game/src/Controller.cpp",
-  "output": "CMakeFiles/app.dir/src/Controller.cpp.o"
+  "output": "CMakeFiles/Unmatched.dir/src/Controller.cpp.o"
 },
 {
   "directory": "/home/amin/cpp/Unmatched_Game/build",
-  "command": "/usr/bin/g++  -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -o CMakeFiles/app.dir/src/Dr_Watson.cpp.o -c /home/amin/cpp/Unmatched_Game/src/Dr_Watson.cpp",
+  "command": "/usr/bin/g++ -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/raylib-master/src -g -std=gnu++17 -o CMakeFiles/Unmatched.dir/src/Dr_Watson.cpp.o -c /home/amin/cpp/Unmatched_Game/src/Dr_Watson.cpp",
   "file": "/home/amin/cpp/Unmatched_Game/src/Dr_Watson.cpp",
-  "output": "CMakeFiles/app.dir/src/Dr_Watson.cpp.o"
+  "output": "CMakeFiles/Unmatched.dir/src/Dr_Watson.cpp.o"
 },
 {
   "directory": "/home/amin/cpp/Unmatched_Game/build",
-  "command": "/usr/bin/g++  -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -o CMakeFiles/app.dir/src/Dracula.cpp.o -c /home/amin/cpp/Unmatched_Game/src/Dracula.cpp",
+  "command": "/usr/bin/g++ -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/raylib-master/src -g -std=gnu++17 -o CMakeFiles/Unmatched.dir/src/Dracula.cpp.o -c /home/amin/cpp/Unmatched_Game/src/Dracula.cpp",
   "file": "/home/amin/cpp/Unmatched_Game/src/Dracula.cpp",
-  "output": "CMakeFiles/app.dir/src/Dracula.cpp.o"
+  "output": "CMakeFiles/Unmatched.dir/src/Dracula.cpp.o"
 },
 {
   "directory": "/home/amin/cpp/Unmatched_Game/build",
-  "command": "/usr/bin/g++  -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -o CMakeFiles/app.dir/src/Fog.cpp.o -c /home/amin/cpp/Unmatched_Game/src/Fog.cpp",
+  "command": "/usr/bin/g++ -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/raylib-master/src -g -std=gnu++17 -o CMakeFiles/Unmatched.dir/src/Fog.cpp.o -c /home/amin/cpp/Unmatched_Game/src/Fog.cpp",
   "file": "/home/amin/cpp/Unmatched_Game/src/Fog.cpp",
-  "output": "CMakeFiles/app.dir/src/Fog.cpp.o"
+  "output": "CMakeFiles/Unmatched.dir/src/Fog.cpp.o"
 },
 {
   "directory": "/home/amin/cpp/Unmatched_Game/build",
-  "command": "/usr/bin/g++  -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -o CMakeFiles/app.dir/src/Ftxui_Front.cpp.o -c /home/amin/cpp/Unmatched_Game/src/Ftxui_Front.cpp",
+  "command": "/usr/bin/g++ -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/raylib-master/src -g -std=gnu++17 -o CMakeFiles/Unmatched.dir/src/Ftxui_Front.cpp.o -c /home/amin/cpp/Unmatched_Game/src/Ftxui_Front.cpp",
   "file": "/home/amin/cpp/Unmatched_Game/src/Ftxui_Front.cpp",
-  "output": "CMakeFiles/app.dir/src/Ftxui_Front.cpp.o"
+  "output": "CMakeFiles/Unmatched.dir/src/Ftxui_Front.cpp.o"
 },
 {
   "directory": "/home/amin/cpp/Unmatched_Game/build",
-  "command": "/usr/bin/g++  -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -o CMakeFiles/app.dir/src/Heroes.cpp.o -c /home/amin/cpp/Unmatched_Game/src/Heroes.cpp",
+  "command": "/usr/bin/g++ -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/raylib-master/src -g -std=gnu++17 -o CMakeFiles/Unmatched.dir/src/Heroes.cpp.o -c /home/amin/cpp/Unmatched_Game/src/Heroes.cpp",
   "file": "/home/amin/cpp/Unmatched_Game/src/Heroes.cpp",
-  "output": "CMakeFiles/app.dir/src/Heroes.cpp.o"
+  "output": "CMakeFiles/Unmatched.dir/src/Heroes.cpp.o"
 },
 {
   "directory": "/home/amin/cpp/Unmatched_Game/build",
-  "command": "/usr/bin/g++  -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -o CMakeFiles/app.dir/src/InvisibleMan.cpp.o -c /home/amin/cpp/Unmatched_Game/src/InvisibleMan.cpp",
+  "command": "/usr/bin/g++ -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/raylib-master/src -g -std=gnu++17 -o CMakeFiles/Unmatched.dir/src/InvisibleMan.cpp.o -c /home/amin/cpp/Unmatched_Game/src/InvisibleMan.cpp",
   "file": "/home/amin/cpp/Unmatched_Game/src/InvisibleMan.cpp",
-  "output": "CMakeFiles/app.dir/src/InvisibleMan.cpp.o"
+  "output": "CMakeFiles/Unmatched.dir/src/InvisibleMan.cpp.o"
 },
 {
   "directory": "/home/amin/cpp/Unmatched_Game/build",
-  "command": "/usr/bin/g++  -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -o CMakeFiles/app.dir/src/Json.cpp.o -c /home/amin/cpp/Unmatched_Game/src/Json.cpp",
+  "command": "/usr/bin/g++ -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/raylib-master/src -g -std=gnu++17 -o CMakeFiles/Unmatched.dir/src/Json.cpp.o -c /home/amin/cpp/Unmatched_Game/src/Json.cpp",
   "file": "/home/amin/cpp/Unmatched_Game/src/Json.cpp",
-  "output": "CMakeFiles/app.dir/src/Json.cpp.o"
+  "output": "CMakeFiles/Unmatched.dir/src/Json.cpp.o"
 },
 {
   "directory": "/home/amin/cpp/Unmatched_Game/build",
-  "command": "/usr/bin/g++  -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -o CMakeFiles/app.dir/src/Player.cpp.o -c /home/amin/cpp/Unmatched_Game/src/Player.cpp",
+  "command": "/usr/bin/g++ -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/raylib-master/src -g -std=gnu++17 -o CMakeFiles/Unmatched.dir/src/Player.cpp.o -c /home/amin/cpp/Unmatched_Game/src/Player.cpp",
   "file": "/home/amin/cpp/Unmatched_Game/src/Player.cpp",
-  "output": "CMakeFiles/app.dir/src/Player.cpp.o"
+  "output": "CMakeFiles/Unmatched.dir/src/Player.cpp.o"
 },
 {
   "directory": "/home/amin/cpp/Unmatched_Game/build",
-  "command": "/usr/bin/g++  -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -o CMakeFiles/app.dir/src/Raylib.cpp.o -c /home/amin/cpp/Unmatched_Game/src/Raylib.cpp",
+  "command": "/usr/bin/g++ -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/raylib-master/src -g -std=gnu++17 -o CMakeFiles/Unmatched.dir/src/Raylib.cpp.o -c /home/amin/cpp/Unmatched_Game/src/Raylib.cpp",
   "file": "/home/amin/cpp/Unmatched_Game/src/Raylib.cpp",
-  "output": "CMakeFiles/app.dir/src/Raylib.cpp.o"
+  "output": "CMakeFiles/Unmatched.dir/src/Raylib.cpp.o"
 },
 {
   "directory": "/home/amin/cpp/Unmatched_Game/build",
-  "command": "/usr/bin/g++  -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -o CMakeFiles/app.dir/src/SherlockHolmes.cpp.o -c /home/amin/cpp/Unmatched_Game/src/SherlockHolmes.cpp",
+  "command": "/usr/bin/g++ -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/raylib-master/src -g -std=gnu++17 -o CMakeFiles/Unmatched.dir/src/SherlockHolmes.cpp.o -c /home/amin/cpp/Unmatched_Game/src/SherlockHolmes.cpp",
   "file": "/home/amin/cpp/Unmatched_Game/src/SherlockHolmes.cpp",
-  "output": "CMakeFiles/app.dir/src/SherlockHolmes.cpp.o"
+  "output": "CMakeFiles/Unmatched.dir/src/SherlockHolmes.cpp.o"
 },
 {
   "directory": "/home/amin/cpp/Unmatched_Game/build",
-  "command": "/usr/bin/g++  -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -o CMakeFiles/app.dir/src/Sisters.cpp.o -c /home/amin/cpp/Unmatched_Game/src/Sisters.cpp",
+  "command": "/usr/bin/g++ -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/raylib-master/src -g -std=gnu++17 -o CMakeFiles/Unmatched.dir/src/Sisters.cpp.o -c /home/amin/cpp/Unmatched_Game/src/Sisters.cpp",
   "file": "/home/amin/cpp/Unmatched_Game/src/Sisters.cpp",
-  "output": "CMakeFiles/app.dir/src/Sisters.cpp.o"
+  "output": "CMakeFiles/Unmatched.dir/src/Sisters.cpp.o"
 },
 {
   "directory": "/home/amin/cpp/Unmatched_Game/build",
-  "command": "/usr/bin/g++  -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -o CMakeFiles/app.dir/src/board.cpp.o -c /home/amin/cpp/Unmatched_Game/src/board.cpp",
+  "command": "/usr/bin/g++ -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/raylib-master/src -g -std=gnu++17 -o CMakeFiles/Unmatched.dir/src/board.cpp.o -c /home/amin/cpp/Unmatched_Game/src/board.cpp",
   "file": "/home/amin/cpp/Unmatched_Game/src/board.cpp",
-  "output": "CMakeFiles/app.dir/src/board.cpp.o"
+  "output": "CMakeFiles/Unmatched.dir/src/board.cpp.o"
 },
 {
   "directory": "/home/amin/cpp/Unmatched_Game/build",
-  "command": "/usr/bin/g++  -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -o CMakeFiles/app.dir/src/main.cpp.o -c /home/amin/cpp/Unmatched_Game/src/main.cpp",
+  "command": "/usr/bin/g++ -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/raylib-master/src -g -std=gnu++17 -o CMakeFiles/Unmatched.dir/src/main.cpp.o -c /home/amin/cpp/Unmatched_Game/src/main.cpp",
   "file": "/home/amin/cpp/Unmatched_Game/src/main.cpp",
-  "output": "CMakeFiles/app.dir/src/main.cpp.o"
+  "output": "CMakeFiles/Unmatched.dir/src/main.cpp.o"
 },
 {
   "directory": "/home/amin/cpp/Unmatched_Game/build",
-  "command": "/usr/bin/g++  -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -o CMakeFiles/app.dir/src/space.cpp.o -c /home/amin/cpp/Unmatched_Game/src/space.cpp",
+  "command": "/usr/bin/g++ -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -I/home/amin/cpp/Unmatched_Game/includes -I/home/amin/cpp/Unmatched_Game/raylib-master/src -g -std=gnu++17 -o CMakeFiles/Unmatched.dir/src/space.cpp.o -c /home/amin/cpp/Unmatched_Game/src/space.cpp",
   "file": "/home/amin/cpp/Unmatched_Game/src/space.cpp",
-  "output": "CMakeFiles/app.dir/src/space.cpp.o"
+  "output": "CMakeFiles/Unmatched.dir/src/space.cpp.o"
 },
 {
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_SCREEN_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/screen.dir/src/ftxui/screen/box.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/screen/box.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/screen/box.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/screen.dir/src/ftxui/screen/box.cpp.o"
+  "directory": "/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib",
+  "command": "/usr/bin/gcc -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -D_GLFW_X11 -I/home/amin/cpp/Unmatched_Game/raylib-master/src -isystem /home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/include -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=gnu99 -o CMakeFiles/raylib.dir/rcore.c.o -c /home/amin/cpp/Unmatched_Game/raylib-master/src/rcore.c",
+  "file": "/home/amin/cpp/Unmatched_Game/raylib-master/src/rcore.c",
+  "output": "raylib-master/raylib/CMakeFiles/raylib.dir/rcore.c.o"
 },
 {
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_SCREEN_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/screen.dir/src/ftxui/screen/color.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/screen/color.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/screen/color.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/screen.dir/src/ftxui/screen/color.cpp.o"
+  "directory": "/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib",
+  "command": "/usr/bin/gcc -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -D_GLFW_X11 -I/home/amin/cpp/Unmatched_Game/raylib-master/src -isystem /home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/include -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=gnu99 -o CMakeFiles/raylib.dir/rshapes.c.o -c /home/amin/cpp/Unmatched_Game/raylib-master/src/rshapes.c",
+  "file": "/home/amin/cpp/Unmatched_Game/raylib-master/src/rshapes.c",
+  "output": "raylib-master/raylib/CMakeFiles/raylib.dir/rshapes.c.o"
 },
 {
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_SCREEN_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/screen.dir/src/ftxui/screen/color_info.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/screen/color_info.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/screen/color_info.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/screen.dir/src/ftxui/screen/color_info.cpp.o"
+  "directory": "/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib",
+  "command": "/usr/bin/gcc -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -D_GLFW_X11 -I/home/amin/cpp/Unmatched_Game/raylib-master/src -isystem /home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/include -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=gnu99 -o CMakeFiles/raylib.dir/rtext.c.o -c /home/amin/cpp/Unmatched_Game/raylib-master/src/rtext.c",
+  "file": "/home/amin/cpp/Unmatched_Game/raylib-master/src/rtext.c",
+  "output": "raylib-master/raylib/CMakeFiles/raylib.dir/rtext.c.o"
 },
 {
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_SCREEN_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/screen.dir/src/ftxui/screen/surface.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/screen/surface.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/screen/surface.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/screen.dir/src/ftxui/screen/surface.cpp.o"
+  "directory": "/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib",
+  "command": "/usr/bin/gcc -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -D_GLFW_X11 -I/home/amin/cpp/Unmatched_Game/raylib-master/src -isystem /home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/include -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=gnu99 -o CMakeFiles/raylib.dir/rtextures.c.o -c /home/amin/cpp/Unmatched_Game/raylib-master/src/rtextures.c",
+  "file": "/home/amin/cpp/Unmatched_Game/raylib-master/src/rtextures.c",
+  "output": "raylib-master/raylib/CMakeFiles/raylib.dir/rtextures.c.o"
 },
 {
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_SCREEN_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/screen.dir/src/ftxui/screen/screen.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/screen/screen.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/screen/screen.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/screen.dir/src/ftxui/screen/screen.cpp.o"
+  "directory": "/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib",
+  "command": "/usr/bin/gcc -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -D_GLFW_X11 -I/home/amin/cpp/Unmatched_Game/raylib-master/src -isystem /home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/include -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=gnu99 -o CMakeFiles/raylib.dir/raudio.c.o -c /home/amin/cpp/Unmatched_Game/raylib-master/src/raudio.c",
+  "file": "/home/amin/cpp/Unmatched_Game/raylib-master/src/raudio.c",
+  "output": "raylib-master/raylib/CMakeFiles/raylib.dir/raudio.c.o"
 },
 {
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_SCREEN_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/screen.dir/src/ftxui/screen/string.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/screen/string.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/screen/string.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/screen.dir/src/ftxui/screen/string.cpp.o"
+  "directory": "/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib",
+  "command": "/usr/bin/gcc -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -D_GLFW_X11 -I/home/amin/cpp/Unmatched_Game/raylib-master/src -isystem /home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/include -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=gnu99 -o CMakeFiles/raylib.dir/rmodels.c.o -c /home/amin/cpp/Unmatched_Game/raylib-master/src/rmodels.c",
+  "file": "/home/amin/cpp/Unmatched_Game/raylib-master/src/rmodels.c",
+  "output": "raylib-master/raylib/CMakeFiles/raylib.dir/rmodels.c.o"
 },
 {
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_SCREEN_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/screen.dir/src/ftxui/screen/terminal.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/screen/terminal.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/screen/terminal.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/screen.dir/src/ftxui/screen/terminal.cpp.o"
+  "directory": "/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src",
+  "command": "/usr/bin/gcc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/include -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src -I/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/context.c.o -c /home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/context.c",
+  "file": "/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/context.c",
+  "output": "raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/context.c.o"
 },
 {
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/automerge.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/automerge.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/automerge.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/automerge.cpp.o"
+  "directory": "/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src",
+  "command": "/usr/bin/gcc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/include -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src -I/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/init.c.o -c /home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/init.c",
+  "file": "/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/init.c",
+  "output": "raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/init.c.o"
 },
 {
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/selection_style.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/selection_style.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/selection_style.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/selection_style.cpp.o"
+  "directory": "/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src",
+  "command": "/usr/bin/gcc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/include -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src -I/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/input.c.o -c /home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/input.c",
+  "file": "/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/input.c",
+  "output": "raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/input.c.o"
 },
 {
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/blink.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/blink.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/blink.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/blink.cpp.o"
+  "directory": "/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src",
+  "command": "/usr/bin/gcc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/include -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src -I/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/monitor.c.o -c /home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/monitor.c",
+  "file": "/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/monitor.c",
+  "output": "raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/monitor.c.o"
 },
 {
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/bold.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/bold.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/bold.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/bold.cpp.o"
+  "directory": "/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src",
+  "command": "/usr/bin/gcc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/include -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src -I/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/platform.c.o -c /home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/platform.c",
+  "file": "/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/platform.c",
+  "output": "raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/platform.c.o"
 },
 {
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/border.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/border.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/border.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/border.cpp.o"
+  "directory": "/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src",
+  "command": "/usr/bin/gcc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/include -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src -I/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/vulkan.c.o -c /home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/vulkan.c",
+  "file": "/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/vulkan.c",
+  "output": "raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o"
 },
 {
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/box_helper.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/box_helper.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/box_helper.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/box_helper.cpp.o"
+  "directory": "/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src",
+  "command": "/usr/bin/gcc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/include -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src -I/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/window.c.o -c /home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/window.c",
+  "file": "/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/window.c",
+  "output": "raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/window.c.o"
 },
 {
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/canvas.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/canvas.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/canvas.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/canvas.cpp.o"
+  "directory": "/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src",
+  "command": "/usr/bin/gcc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/include -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src -I/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/egl_context.c.o -c /home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/egl_context.c",
+  "file": "/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/egl_context.c",
+  "output": "raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o"
 },
 {
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/clear_under.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/clear_under.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/clear_under.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/clear_under.cpp.o"
+  "directory": "/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src",
+  "command": "/usr/bin/gcc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/include -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src -I/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/osmesa_context.c.o -c /home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/osmesa_context.c",
+  "file": "/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/osmesa_context.c",
+  "output": "raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o"
 },
 {
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/color.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/color.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/color.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/color.cpp.o"
+  "directory": "/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src",
+  "command": "/usr/bin/gcc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/include -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src -I/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/null_init.c.o -c /home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/null_init.c",
+  "file": "/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/null_init.c",
+  "output": "raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_init.c.o"
 },
 {
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/composite_decorator.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/composite_decorator.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/composite_decorator.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/composite_decorator.cpp.o"
+  "directory": "/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src",
+  "command": "/usr/bin/gcc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/include -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src -I/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/null_monitor.c.o -c /home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/null_monitor.c",
+  "file": "/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/null_monitor.c",
+  "output": "raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.o"
 },
 {
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/dbox.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/dbox.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/dbox.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/dbox.cpp.o"
+  "directory": "/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src",
+  "command": "/usr/bin/gcc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/include -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src -I/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/null_window.c.o -c /home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/null_window.c",
+  "file": "/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/null_window.c",
+  "output": "raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_window.c.o"
 },
 {
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/dim.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/dim.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/dim.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/dim.cpp.o"
+  "directory": "/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src",
+  "command": "/usr/bin/gcc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/include -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src -I/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/null_joystick.c.o -c /home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/null_joystick.c",
+  "file": "/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/null_joystick.c",
+  "output": "raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.o"
 },
 {
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/flex.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/flex.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/flex.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/flex.cpp.o"
+  "directory": "/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src",
+  "command": "/usr/bin/gcc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/include -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src -I/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/posix_module.c.o -c /home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/posix_module.c",
+  "file": "/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/posix_module.c",
+  "output": "raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/posix_module.c.o"
 },
 {
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/flexbox.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/flexbox.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/flexbox.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/flexbox.cpp.o"
+  "directory": "/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src",
+  "command": "/usr/bin/gcc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/include -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src -I/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/posix_time.c.o -c /home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/posix_time.c",
+  "file": "/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/posix_time.c",
+  "output": "raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/posix_time.c.o"
 },
 {
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/flexbox_config.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/flexbox_config.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/flexbox_config.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/flexbox_config.cpp.o"
+  "directory": "/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src",
+  "command": "/usr/bin/gcc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/include -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src -I/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/posix_thread.c.o -c /home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/posix_thread.c",
+  "file": "/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/posix_thread.c",
+  "output": "raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o"
 },
 {
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/flexbox_helper.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/flexbox_helper.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/flexbox_helper.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/flexbox_helper.cpp.o"
+  "directory": "/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src",
+  "command": "/usr/bin/gcc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/include -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src -I/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/x11_init.c.o -c /home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/x11_init.c",
+  "file": "/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/x11_init.c",
+  "output": "raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/x11_init.c.o"
 },
 {
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/focus.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/focus.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/focus.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/focus.cpp.o"
+  "directory": "/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src",
+  "command": "/usr/bin/gcc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/include -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src -I/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/x11_monitor.c.o -c /home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/x11_monitor.c",
+  "file": "/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/x11_monitor.c",
+  "output": "raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/x11_monitor.c.o"
 },
 {
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/frame.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/frame.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/frame.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/frame.cpp.o"
+  "directory": "/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src",
+  "command": "/usr/bin/gcc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/include -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src -I/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/x11_window.c.o -c /home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/x11_window.c",
+  "file": "/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/x11_window.c",
+  "output": "raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/x11_window.c.o"
 },
 {
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/gauge.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/gauge.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/gauge.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/gauge.cpp.o"
+  "directory": "/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src",
+  "command": "/usr/bin/gcc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/include -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src -I/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/xkb_unicode.c.o -c /home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/xkb_unicode.c",
+  "file": "/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/xkb_unicode.c",
+  "output": "raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/xkb_unicode.c.o"
 },
 {
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/graph.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/graph.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/graph.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/graph.cpp.o"
+  "directory": "/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src",
+  "command": "/usr/bin/gcc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/include -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src -I/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/glx_context.c.o -c /home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/glx_context.c",
+  "file": "/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/glx_context.c",
+  "output": "raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/glx_context.c.o"
 },
 {
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/gridbox.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/gridbox.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/gridbox.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/gridbox.cpp.o"
+  "directory": "/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src",
+  "command": "/usr/bin/gcc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/include -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src -I/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/linux_joystick.c.o -c /home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/linux_joystick.c",
+  "file": "/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/linux_joystick.c",
+  "output": "raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/linux_joystick.c.o"
 },
 {
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/hbox.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/hbox.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/hbox.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/hbox.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/hyperlink.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/hyperlink.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/hyperlink.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/hyperlink.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/inverted.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/inverted.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/inverted.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/inverted.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/italic.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/italic.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/italic.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/italic.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/linear_gradient.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/linear_gradient.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/linear_gradient.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/linear_gradient.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/node.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/node.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/node.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/node.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/node_decorator.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/node_decorator.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/node_decorator.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/node_decorator.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/paragraph.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/paragraph.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/paragraph.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/paragraph.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/reflect.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/reflect.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/reflect.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/reflect.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/scroll_indicator.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/scroll_indicator.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/scroll_indicator.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/scroll_indicator.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/selection.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/selection.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/selection.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/selection.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/separator.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/separator.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/separator.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/separator.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/size.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/size.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/size.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/size.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/spinner.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/spinner.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/spinner.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/spinner.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/strikethrough.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/strikethrough.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/strikethrough.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/strikethrough.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/table.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/table.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/table.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/table.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/text.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/text.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/text.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/text.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/underlined.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/underlined.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/underlined.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/underlined.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/underlined_double.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/underlined_double.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/underlined_double.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/underlined_double.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/util.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/util.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/util.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/util.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_DOM_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/dom.dir/src/ftxui/dom/vbox.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/vbox.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/dom/vbox.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/vbox.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_COMPONENT_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/component.dir/src/ftxui/component/animation.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/animation.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/animation.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/animation.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_COMPONENT_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/component.dir/src/ftxui/component/button.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/button.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/button.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/button.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_COMPONENT_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/component.dir/src/ftxui/component/catch_event.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/catch_event.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/catch_event.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/catch_event.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_COMPONENT_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/component.dir/src/ftxui/component/checkbox.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/checkbox.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/checkbox.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/checkbox.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_COMPONENT_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/component.dir/src/ftxui/component/collapsible.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/collapsible.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/collapsible.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/collapsible.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_COMPONENT_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/component.dir/src/ftxui/component/component.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/component.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/component.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/component.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_COMPONENT_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/component.dir/src/ftxui/component/component_options.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/component_options.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/component_options.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/component_options.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_COMPONENT_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/component.dir/src/ftxui/component/container.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/container.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/container.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/container.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_COMPONENT_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/component.dir/src/ftxui/component/dropdown.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/dropdown.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/dropdown.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/dropdown.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_COMPONENT_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/component.dir/src/ftxui/component/event.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/event.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/event.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/event.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_COMPONENT_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/component.dir/src/ftxui/component/hoverable.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/hoverable.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/hoverable.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/hoverable.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_COMPONENT_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/component.dir/src/ftxui/component/input.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/input.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/input.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/input.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_COMPONENT_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/component.dir/src/ftxui/component/maybe.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/maybe.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/maybe.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/maybe.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_COMPONENT_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/component.dir/src/ftxui/component/menu.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/menu.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/menu.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/menu.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_COMPONENT_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/component.dir/src/ftxui/component/modal.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/modal.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/modal.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/modal.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_COMPONENT_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/component.dir/src/ftxui/component/radiobox.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/radiobox.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/radiobox.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/radiobox.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_COMPONENT_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/component.dir/src/ftxui/component/renderer.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/renderer.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/renderer.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/renderer.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_COMPONENT_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/component.dir/src/ftxui/component/resizable_split.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/resizable_split.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/resizable_split.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/resizable_split.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_COMPONENT_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/component.dir/src/ftxui/component/app.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/app.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/app.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/app.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_COMPONENT_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/component.dir/src/ftxui/component/slider.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/slider.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/slider.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/slider.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_COMPONENT_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/component.dir/src/ftxui/component/task.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/task.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/task.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/task.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_COMPONENT_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/component.dir/src/ftxui/component/task_queue.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/task_queue.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/task_queue.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/task_queue.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_COMPONENT_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/component.dir/src/ftxui/component/task_runner.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/task_runner.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/task_runner.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/task_runner.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_COMPONENT_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/component.dir/src/ftxui/component/terminal_input_parser.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/terminal_input_parser.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/terminal_input_parser.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/terminal_input_parser.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_COMPONENT_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/component.dir/src/ftxui/component/util.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/util.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/util.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/util.cpp.o"
-},
-{
-  "directory": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build",
-  "command": "/usr/bin/g++ -DIS_FTXUI_COMPONENT_IMPL=1 -I/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src -isystem /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/include -g -std=gnu++17 -fPIC -o CMakeFiles/component.dir/src/ftxui/component/window.cpp.o -c /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/window.cpp",
-  "file": "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src/src/ftxui/component/window.cpp",
-  "output": "_deps/ftxui-build/CMakeFiles/component.dir/src/ftxui/component/window.cpp.o"
+  "directory": "/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src",
+  "command": "/usr/bin/gcc -D_DEFAULT_SOURCE -D_GLFW_X11 -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/include -I/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src -I/home/amin/cpp/Unmatched_Game/build/raylib-master/raylib/external/glfw/src -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/posix_poll.c.o -c /home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/posix_poll.c",
+  "file": "/home/amin/cpp/Unmatched_Game/raylib-master/src/external/glfw/src/posix_poll.c",
+  "output": "raylib-master/raylib/external/glfw/src/CMakeFiles/glfw.dir/posix_poll.c.o"
 }
 ]

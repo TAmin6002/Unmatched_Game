@@ -71,8 +71,8 @@ CMakeFiles/ftxui-populate: CMakeFiles/ftxui-populate-complete
 CMakeFiles/ftxui-populate-complete: ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-install
 CMakeFiles/ftxui-populate-complete: ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-mkdir
 CMakeFiles/ftxui-populate-complete: ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-download
-CMakeFiles/ftxui-populate-complete: ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-update_disconnected
-CMakeFiles/ftxui-populate-complete: ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-patch_disconnected
+CMakeFiles/ftxui-populate-complete: ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-update
+CMakeFiles/ftxui-populate-complete: ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-patch
 CMakeFiles/ftxui-populate-complete: ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-configure
 CMakeFiles/ftxui-populate-complete: ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-build
 CMakeFiles/ftxui-populate-complete: ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-install
@@ -82,13 +82,16 @@ CMakeFiles/ftxui-populate-complete: ftxui-populate-prefix/src/ftxui-populate-sta
 	/usr/bin/cmake -E touch /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/CMakeFiles/ftxui-populate-complete
 	/usr/bin/cmake -E touch /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-done
 
+ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-update:
+.PHONY : ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-update
+
 ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-build: ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-configure
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "No build step for 'ftxui-populate'"
 	cd /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build && /usr/bin/cmake -E echo_append
 	cd /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build && /usr/bin/cmake -E touch /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-build
 
 ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-configure: ftxui-populate-prefix/tmp/ftxui-populate-cfgcmd.txt
-ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-configure: ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-patch_disconnected
+ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-configure: ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-patch
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "No configure step for 'ftxui-populate'"
 	cd /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build && /usr/bin/cmake -E echo_append
 	cd /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build && /usr/bin/cmake -E touch /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-configure
@@ -109,23 +112,25 @@ ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-mkdir:
 	/usr/bin/cmake -Dcfgdir= -P /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/tmp/ftxui-populate-mkdirs.cmake
 	/usr/bin/cmake -E touch /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-mkdir
 
-ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-patch_disconnected: ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-patch-info.txt
-ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-patch_disconnected: ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-update_disconnected
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "No patch_disconnected step for 'ftxui-populate'"
+ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-patch: ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-patch-info.txt
+ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-patch: ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-update
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "No patch step for 'ftxui-populate'"
 	/usr/bin/cmake -E echo_append
-	/usr/bin/cmake -E touch /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-patch_disconnected
+	/usr/bin/cmake -E touch /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-patch
+
+ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-update:
+.PHONY : ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-update
 
 ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-test: ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-install
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "No test step for 'ftxui-populate'"
 	cd /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build && /usr/bin/cmake -E echo_append
 	cd /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-build && /usr/bin/cmake -E touch /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-test
 
-ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-update_disconnected: ftxui-populate-prefix/tmp/ftxui-populate-gitupdate.cmake
-ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-update_disconnected: ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-update-info.txt
-ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-update_disconnected: ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-download
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Performing disconnected update step for 'ftxui-populate'"
-	cd /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src && /usr/bin/cmake -Dcan_fetch=NO -P /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/tmp/ftxui-populate-gitupdate.cmake
-	cd /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src && /usr/bin/cmake -E touch /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-update_disconnected
+ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-update: ftxui-populate-prefix/tmp/ftxui-populate-gitupdate.cmake
+ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-update: ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-update-info.txt
+ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-update: ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-download
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Performing update step for 'ftxui-populate'"
+	cd /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src && /usr/bin/cmake -Dcan_fetch=YES -P /home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/tmp/ftxui-populate-gitupdate.cmake
 
 ftxui-populate: CMakeFiles/ftxui-populate
 ftxui-populate: CMakeFiles/ftxui-populate-complete
@@ -134,9 +139,9 @@ ftxui-populate: ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-co
 ftxui-populate: ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-download
 ftxui-populate: ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-install
 ftxui-populate: ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-mkdir
-ftxui-populate: ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-patch_disconnected
+ftxui-populate: ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-patch
 ftxui-populate: ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-test
-ftxui-populate: ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-update_disconnected
+ftxui-populate: ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-update
 ftxui-populate: CMakeFiles/ftxui-populate.dir/build.make
 .PHONY : ftxui-populate
 

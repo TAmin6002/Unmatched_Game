@@ -1,6 +1,6 @@
 
 #include "Dracula.h"
-#include "Ftxui_Front.h"
+#include "Raylib.h"
 #include <random>
 #include <algorithm>
 using namespace std;
@@ -71,12 +71,12 @@ vector<Sisters *> Dracula::get_sisters()
 
 void Dracula::abiliti(Board *board)
 {
-  Ftxui_Front FF;
+  Raylib RF;
 
-    if (!FF.AskUseSpecialAbility(this, board))
+    if (!RF.AskUseSpecialAbility(this, board))
         return; 
 
-    Heroes *target = FF.SelectHero(board, this);
+    Heroes *target = RF.SelectHero(board, this);
 
     if (target == nullptr)
         return;

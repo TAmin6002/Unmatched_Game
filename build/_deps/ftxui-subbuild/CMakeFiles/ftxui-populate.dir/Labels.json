@@ -26,13 +26,13 @@
 			"file" : "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-mkdir.rule"
 		},
 		{
-			"file" : "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-patch_disconnected.rule"
+			"file" : "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-patch.rule"
 		},
 		{
 			"file" : "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-test.rule"
 		},
 		{
-			"file" : "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-update_disconnected.rule"
+			"file" : "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-update.rule"
 		}
 	],
 	"target" : 

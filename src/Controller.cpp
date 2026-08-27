@@ -249,16 +249,30 @@ bool Controller::SaveGame(int slot)
 
     root.set("heroes", heroes);
 
-    Json occupancy = Json::makeArray();
-    for (Heroes *hero : AllHeroes())
-    {
-        if (hero->get_place() == nullptr)
-            continue;
+    
 
-        Json entry = Json::makeObject();
-        entry.set("hero", Json(HeroToId(hero)));
-        entry.set("space", Json(hero->get_place()->get_number()));
-        occupancy.push_back(entry);
+    Json occupancy = Json::makeArray();
+    for (Space &space : board.get_spaces())
+    {
+        Heroes *occupant = space.get_hero();
+        if (occupant != nullptr)
+        {
+            Json entry = Json::makeObject();
+            entry.set("hero", Json(HeroToId(occupant)));
+            entry.set("space", Json(space.get_number()));
+            entry.set("slot", Json(std::string("hero")));
+            occupancy.push_back(entry);
+        }
+
+        Heroes *fogToken = space.get_Fog();
+        if (fogToken != nullptr)
+        {
+            Json entry = Json::makeObject();
+            entry.set("hero", Json(HeroToId(fogToken)));
+            entry.set("space", Json(space.get_number()));
+            entry.set("slot", Json(std::string("fog")));
+            occupancy.push_back(entry);
+        }
     }
     root.set("occupancy", occupancy);
 
@@ -342,6 +356,7 @@ bool Controller::LoadGame(int slot)
         hero->loadFromJson(heroesJson[HeroToId(hero)], board, resolver);
 
         // Loading information for each hero.
+
     Json occupancy = root["occupancy"];
     for (size_t i = 0; i < occupancy.size(); i++)
     {
@@ -353,7 +368,9 @@ bool Controller::LoadGame(int slot)
 
         Space *space = &board.get_spaces()[spaceNumber - 1];
 
-        if (IsFogToken(hero))
+        std::string slot = occupancy[i]["slot"].asString(IsFogToken(hero) ? "fog" : "hero");
+
+        if (slot == "fog")
             space->set_Fog(hero);
         else
             space->set_hero(hero);
@@ -453,11 +470,28 @@ void Controller::run()
 {
     
     //ool Exit = false;
+
+    int monitor = 0;
+
+    int screenW = GetMonitorWidth(monitor);
+    int screenH = GetMonitorHeight(monitor);
+
+    SetConfigFlags(FLAG_FULLSCREEN_MODE);
+    InitWindow(screenW, screenH, "Unmatched");
+    InitAudioDevice();
+
+    SetTargetFPS(60);
+
+    
     
      while (true)
     {
-        switch (FF.Menu_())
+        if (WindowShouldClose())
+            break;
+
+        switch (RF.Menu_())
         {
+
         case e_Menu::Play:
         {
             board = Board();
@@ -478,14 +512,14 @@ void Controller::run()
             f2 = Fog{2};
             f3 = Fog{3};
 
-            FF.Players_Info_List(&p1, &p2);
+            RF.Players_Info_List(&p1, &p2);
 
-            std::vector<int> hero_choices = FF.Det_characters(&p1, &p2);
+            std::vector<int> hero_choices = RF.Det_characters(&p1, &p2);
             set_players_character(hero_choices[0], hero_choices[1]);
 
-            FF.catch_place(&p1, &p2, &board);
+            RF.catch_place(&p1, &p2, &board);
 
-            FF.choose_comrad_place(&p1, &p2, &board);
+            RF.choose_comrad_place(&p1, &p2, &board);
 
             if (round == 1)
                 Initial_turn();
@@ -501,7 +535,7 @@ void Controller::run()
                 GetSaveSummary(2),
                 GetSaveSummary(3)};
 
-            int chosen = FF.SlotMenu(labels, "Continue Game");
+            int chosen = RF.SlotMenu(labels, "Continue Game");
 
             if (chosen != -1 && HasSave(chosen + 1) && LoadGame(chosen + 1))
                 GameLoop();
@@ -510,7 +544,7 @@ void Controller::run()
 
         case e_Menu::Help:
         {
-            FF.Show_Help();
+            RF.Show_Help();
         }
         break;
 
@@ -527,12 +561,17 @@ void Controller::run()
             break;
         }
     }
+    RF.UnloadGameFont();
+    CloseAudioDevice();
+    CloseWindow();
+
+    
 }
 
     // while (true)
     // {
         
-    //     switch (FF.Menu_())
+    //     switch (RF.Menu_())
     //     {
             
     //         case e_Menu::Play:
@@ -559,21 +598,21 @@ void Controller::run()
 
             
 
-    //         FF.Players_Info_List(&p1, &p2);
+    //         RF.Players_Info_List(&p1, &p2);
             
-    //         // FF.catch_place(&p1, &p2, &board);
+    //         // RF.catch_place(&p1, &p2, &board);
 
-    //         std::vector<int> hero_choices = FF.Det_characters(&p1, &p2);
+    //         std::vector<int> hero_choices = RF.Det_characters(&p1, &p2);
     //         set_players_character(hero_choices[0], hero_choices[1]);
 
-    //         FF.catch_place(&p1, &p2, &board);
+    //         RF.catch_place(&p1, &p2, &board);
 
-    //         FF.choose_comrad_place(&p1, &p2, &board);
+    //         RF.choose_comrad_place(&p1, &p2, &board);
             
     //         if(round == 1)
     //         Initial_turn();
             
-    //         // std::vector<int> choices = FF.Det_characters(&p1, &p2);
+    //         // std::vector<int> choices = RF.Det_characters(&p1, &p2);
     //         // set_players_character(choices[0], choices[1]);
 
             
@@ -600,19 +639,19 @@ void Controller::run()
     //         {
     //             if(check_winner(&dracula, &p1, &p2))
     //             {
-    //                 FF.DeclareWinner(&dracula);
+    //                 RF.DeclareWinner(&dracula);
     //                 Exit = true;
     //                 break;
     //             }
     //             else if(check_winner(&sherlock, &p1, &p2))
     //             {
-    //                 FF.DeclareWinner(&sherlock);
+    //                 RF.DeclareWinner(&sherlock);
     //                 Exit = true;
     //                 break;
     //             }
     //              else if(check_winner(&invisibleMan, &p1, &p2))
     //             {
-    //                 FF.DeclareWinner(&invisibleMan);
+    //                 RF.DeclareWinner(&invisibleMan);
     //                 Exit = true;
     //                 break;
     //             }
@@ -628,7 +667,7 @@ void Controller::run()
     //                     }
     //                     catch (const std::exception &e)
     //                     {
-    //                         FF.get_msg().push_back(e.what());
+    //                         RF.get_msg().push_back(e.what());
     //                     }
     //                 }
 
@@ -636,7 +675,7 @@ void Controller::run()
     //                 {
     //                     if (turn->get_character()->get_PendingPlacement())
     //                     {
-    //                         FF.PlaceHeroOnBoard(turn->get_character(), &board);
+    //                         RF.PlaceHeroOnBoard(turn->get_character(), &board);
 
     //                         if (turn->get_character()->get_place() != nullptr)
     //                             turn->get_character()->set_PendingPlacement(false);
@@ -650,10 +689,10 @@ void Controller::run()
     //                     }
     //                 }
                     
-    //             FF.main_map(&p1, &p2, &board, turn);
+    //             RF.main_map(&p1, &p2, &board, turn);
                 
 
-    //             switch (FF.get_number_of_choose())
+    //             switch (RF.get_number_of_choose())
     //             {
 
     //                 case 0: // Attack
@@ -665,23 +704,23 @@ void Controller::run()
                     //         try
                     //         {
 
-                    //             if (!FF.Attakcer_Heroes_Menu(turn, &board, Attacker) || Attacker == nullptr)
+                    //             if (!RF.Attakcer_Heroes_Menu(turn, &board, Attacker) || Attacker == nullptr)
                     //                 break; 
                     //             cout << "1\n";
                                 
-                    //             if (!FF.Defender_Heroes_Menu(not_turn, &board, Defender, Attacker) || Defender == nullptr)
+                    //             if (!RF.Defender_Heroes_Menu(not_turn, &board, Defender, Attacker) || Defender == nullptr)
                     //                 break; 
                     //             cout << "2\n";
                                 
-                    //             if (!FF.Attacker_selected_card(Attacker, Defender, &p1, &p2, &board, Attacker_selected_card) || Attacker_selected_card == nullptr)
+                    //             if (!RF.Attacker_selected_card(Attacker, Defender, &p1, &p2, &board, Attacker_selected_card) || Attacker_selected_card == nullptr)
                     //                 break; 
                     //             cout << "3\n";
 
-                    //             if (!FF.Defender_selected_card(Attacker, Defender, &p1, &p2, &board, Defender_selected_card))
+                    //             if (!RF.Defender_selected_card(Attacker, Defender, &p1, &p2, &board, Defender_selected_card))
                     //                 break; 
                     //             cout << "4\n";
                                 
-                    //             FF.Reveal_Combat(Attacker, Defender, Attacker_selected_card, Defender_selected_card); // show tow v&s cards
+                    //             RF.Reveal_Combat(Attacker, Defender, Attacker_selected_card, Defender_selected_card); // show tow v&s cards
                     //             cout << "5\n";
 
                     //             Attack_Value = Attacker_selected_card->get_amount();
@@ -699,7 +738,7 @@ void Controller::run()
                     //         }
                     //         catch (const std::exception &e)
                     //         {
-                    //             FF.get_msg().push_back(e.what());
+                    //             RF.get_msg().push_back(e.what());
                     //             // cout << e.what() << endl;
                     //         }
 
@@ -797,7 +836,7 @@ void Controller::run()
                             
                     //         catch (const std::exception &e)
                     //         {
-                    //             FF.get_msg().push_back(e.what());
+                    //             RF.get_msg().push_back(e.what());
                     //             // std::cerr << e.what() << '\n';
                     //         }}
                     //         cout << "11\n";
@@ -816,7 +855,7 @@ void Controller::run()
                         // if (turn->get_count() < 2)
                         // {
                         //       Heroes* selected = nullptr;
-                        //     FF.Attakcer_Heroes_Menu(turn, &board, selected);
+                        //     RF.Attakcer_Heroes_Menu(turn, &board, selected);
 
                         //     if (selected != nullptr)
                         //     {
@@ -827,14 +866,14 @@ void Controller::run()
 
                         //         int extraMove = 0;
 
-                        //         if (!cardHolder->get_hand().empty() && FF.AskBurnCardForMove(selected, &board))
+                        //         if (!cardHolder->get_hand().empty() && RF.AskBurnCardForMove(selected, &board))
                         //         {
-                        //             Card *burned = FF.ChooseCardFromHand(turn, &p1, &p2, &board);
+                        //             Card *burned = RF.ChooseCardFromHand(turn, &p1, &p2, &board);
                         //             extraMove = burned->get_Boost();
                         //             cardHolder->Discard_Card(burned);
                         //         }
 
-                        //         FF.MoveHero(selected, &board, selected->get_Movement() + extraMove, &p1, &p2);
+                        //         RF.MoveHero(selected, &board, selected->get_Movement() + extraMove, &p1, &p2);
 
                         //         selected->set_Movement((selected->get_Movement() - 1 >= 0) ? selected->get_Movement() - 1 : 0);
                         //     }
@@ -856,11 +895,11 @@ void Controller::run()
     //                                 Card *selected_Card = nullptr;
     //                                 Heroes * selectedHero = nullptr;
         
-    //                                 FF.Attakcer_Heroes_Menu(turn, &board, selectedHero);
+    //                                 RF.Attakcer_Heroes_Menu(turn, &board, selectedHero);
         
     //                                 if(selectedHero != nullptr)
     //                                 {
-    //                                     bool cardDrawn = FF.Event_Selected_Card(selectedHero, turn, &p1, &p2, &board, selected_Card);
+    //                                     bool cardDrawn = RF.Event_Selected_Card(selectedHero, turn, &p1, &p2, &board, selected_Card);
 
     //                                     if(cardDrawn && selected_Card != nullptr)
     //                                     {
@@ -878,7 +917,7 @@ void Controller::run()
     //                             }
     //                             catch (const std::exception &e)
     //                             {
-    //                                 FF.get_msg().push_back(e.what());
+    //                                 RF.get_msg().push_back(e.what());
     //                                 // std::cerr << e.what() << '\n';
     //                             }
 
@@ -921,7 +960,7 @@ void Controller::run()
 
     //     case e_Menu::Help:
     //     {
-    //         FF.Show_Help();
+    //         RF.Show_Help();
     //     }
     //     break;
 
@@ -944,21 +983,27 @@ void Controller::run()
 {
     while (true)
     {
+        if (WindowShouldClose())
+        {
+            Exit = true;
+            break;
+        }
+        
         if (check_winner(&dracula, &p1, &p2))
         {
-            FF.DeclareWinner(&dracula);
+            RF.DeclareWinner(&dracula);
             Exit = true;
             break;
         }
         else if (check_winner(&sherlock, &p1, &p2))
         {
-            FF.DeclareWinner(&sherlock);
+            RF.DeclareWinner(&sherlock);
             Exit = true;
             break;
         }
         else if (check_winner(&invisibleMan, &p1, &p2))
         {
-            FF.DeclareWinner(&invisibleMan);
+            RF.DeclareWinner(&invisibleMan);
             Exit = true;
             break;
         }
@@ -971,7 +1016,7 @@ void Controller::run()
             }
             catch (const std::exception &e)
             {
-                FF.get_msg().push_back(e.what());
+                RF.get_msg().push_back(e.what());
             }
         }
 
@@ -979,7 +1024,7 @@ void Controller::run()
         {
             if (turn->get_character()->get_PendingPlacement())
             {
-                FF.PlaceHeroOnBoard(turn->get_character(), &board);
+                RF.PlaceHeroOnBoard(turn->get_character(), &board);
 
                 if (turn->get_character()->get_place() != nullptr)
                     turn->get_character()->set_PendingPlacement(false);
@@ -993,9 +1038,9 @@ void Controller::run()
             }
         }
 
-        FF.main_map(&p1, &p2, &board, turn);
+        RF.main_map(&p1, &p2, &board, turn);
 
-        switch (FF.get_number_of_choose())
+        switch (RF.get_number_of_choose())
         {
 
         case 0: // Attack
@@ -1007,23 +1052,23 @@ void Controller::run()
                     try
                     {
 
-                        if (!FF.Attakcer_Heroes_Menu(turn, &board, Attacker) || Attacker == nullptr)
+                        if (!RF.Attakcer_Heroes_Menu(turn, &board, Attacker) || Attacker == nullptr)
                             break; 
                         cout << "1\n";
                         
-                        if (!FF.Defender_Heroes_Menu(not_turn, &board, Defender, Attacker) || Defender == nullptr)
+                        if (!RF.Defender_Heroes_Menu(not_turn, &board, Defender, Attacker) || Defender == nullptr)
                             break; 
                         cout << "2\n";
                         
-                        if (!FF.Attacker_selected_card(Attacker, Defender, &p1, &p2, &board, Attacker_selected_card) || Attacker_selected_card == nullptr)
+                        if (!RF.Attacker_selected_card(Attacker, Defender, &p1, &p2, &board, Attacker_selected_card) || Attacker_selected_card == nullptr)
                             break; 
                         cout << "3\n";
 
-                        if (!FF.Defender_selected_card(Attacker, Defender, &p1, &p2, &board, Defender_selected_card))
+                        if (!RF.Defender_selected_card(Attacker, Defender, &p1, &p2, &board, Defender_selected_card))
                             break; 
                         cout << "4\n";
                         
-                        FF.Reveal_Combat(Attacker, Defender, Attacker_selected_card, Defender_selected_card); // show tow v&s cards
+                        RF.Reveal_Combat(Attacker, Defender, Attacker_selected_card, Defender_selected_card); // show tow v&s cards
                         cout << "5\n";
 
                         Attack_Value = Attacker_selected_card->get_amount();
@@ -1041,13 +1086,13 @@ void Controller::run()
                     }
                     catch (const std::exception &e)
                     {
-                        FF.get_msg().push_back(e.what());
+                        RF.get_msg().push_back(e.what());
                         // cout << e.what() << endl;
                     }
 
                     // ------------------------ start combat -----------------------------------.
                     
-                    if(!(Attacker_selected_card == nullptr or Defender_selected_card == nullptr)){
+                    if(Attacker_selected_card != nullptr){
                     try
                     {
 
@@ -1106,40 +1151,52 @@ void Controller::run()
                         }
                         
                         
-                        // ------------------------- Transfer Cards to discard --------------------------.
-                        cout << "10\n";
-                        
-                        if (Attacker_selected_card != nullptr)
-                        {
-                            Attacker->Discard_Card(Attacker_selected_card);
-                            Attacker_selected_card->set_user_card(nullptr);
-                        }
+                       // ------------------------- Transfer Cards to discard --------------------------.
+                            cout << "10\n";
 
-                        if (Defender_selected_card != nullptr)
-                        {
-                            Defender->Discard_Card(Defender_selected_card);
-                            Defender_selected_card->set_user_card(nullptr);
-                        }
+                    auto isOwnerOf = [](Player &p, Heroes *hero)
+                    {
+                        if (p.get_character() == hero)
+                            return true;
 
-                        Attacker_selected_card = nullptr;
-                        Defender_selected_card = nullptr;
-                        
-                        Player *Attacker_Player = (p1.get_character()->get_name() == Attacker->get_name() ? &p1 : &p2);
-                        Player *Defender_Player = (p1.get_character()->get_name() == Defender->get_name() ? &p1 : &p2);
-                        
-                        Attacker_Player->set_selected_card(nullptr);
-                        Defender_Player->set_selected_card(nullptr);
-                        
-                        Attack_Value = 0;
-                        Defense_Value = 0;
+                        for (Heroes *c : p.get_comrade())
+                            if (c == hero)
+                                return true;
 
-                        Attack_Locked = false;
-                        Defense_Locked = false;
+                        return false;
+                    };
+
+                    Player *Attacker_Player = isOwnerOf(p1, Attacker) ? &p1 : &p2;
+                    Player *Defender_Player = isOwnerOf(p1, Defender) ? &p1 : &p2;
+                    
+                    if (Attacker_selected_card != nullptr)
+                    {
+                        Attacker_Player->get_character()->Discard_Card(Attacker_selected_card);
+                        Attacker_selected_card->set_user_card(nullptr);
                     }
+
+                    if (Defender_selected_card != nullptr)
+                    {
+                        Defender_Player->get_character()->Discard_Card(Defender_selected_card);
+                        Defender_selected_card->set_user_card(nullptr);
+                    }
+
+                    Attacker_selected_card = nullptr;
+                    Defender_selected_card = nullptr;
+
+                    Attacker_Player->set_selected_card(nullptr);
+                    Defender_Player->set_selected_card(nullptr);
+
+                    Attack_Value = 0;
+                    Defense_Value = 0;
+
+                    Attack_Locked = false;
+                    Defense_Locked = false;
+                                        }
                     
                     catch (const std::exception &e)
                     {
-                        FF.get_msg().push_back(e.what());
+                        RF.get_msg().push_back(e.what());
                         // std::cerr << e.what() << '\n';
                     }}
                     cout << "11\n";
@@ -1147,7 +1204,6 @@ void Controller::run()
                     turn->add_count();
 
                 } 
-                    Attacker->set_Movement((Attacker->get_Movement() - 1 >= 0 ) ? Attacker->get_Movement() - 1 : 0);
             }
 
     // exeption ...
@@ -1159,30 +1215,36 @@ void Controller::run()
         {
             if (turn->get_count() < 2)
             {
-                    Heroes* selected = nullptr;
-                FF.Attakcer_Heroes_Menu(turn, &board, selected);
-
-                if (selected != nullptr)
+                try
                 {
-                    Heroes *cardHolder = turn->get_character(); 
+                    Heroes* selected = nullptr;
+                    RF.Attakcer_Heroes_Menu(turn, &board, selected);
 
-                    if (cardHolder->DrawnCard() == 0)
-                        cardHolder->Damage(2);
-
-                    int extraMove = 0;
-
-                    if (!cardHolder->get_hand().empty() && FF.AskBurnCardForMove(selected, &board))
+                    if (selected != nullptr)
                     {
-                        Card *burned = FF.ChooseCardFromHand(turn, &p1, &p2, &board);
-                        extraMove = burned->get_Boost();
-                        cardHolder->Discard_Card(burned);
+                        Heroes *cardHolder = turn->get_character(); 
+
+                        if (cardHolder->DrawnCard() == 0)
+                            cardHolder->Damage(2);
+
+                        int extraMove = 0;
+
+                        if (!cardHolder->get_hand().empty() && RF.AskBurnCardForMove(selected, &board))
+                        {
+                            Card *burned = RF.ChooseCardFromHand(turn, &p1, &p2, &board);
+                            extraMove = burned->get_Boost();
+                            cardHolder->Discard_Card(burned);
+                        }
+
+                        RF.MoveHero(selected, &board, selected->get_Movement() + extraMove, &p1, &p2);
+
+                        turn->add_count();
                     }
-
-                    FF.MoveHero(selected, &board, selected->get_Movement() + extraMove, &p1, &p2);
-
-                    selected->set_Movement((selected->get_Movement() - 1 >= 0) ? selected->get_Movement() - 1 : 0);
                 }
-                turn->add_count();
+                catch (const std::exception &e)
+                {
+                    RF.get_msg().push_back(e.what());
+                }
             }
 
                 // exeption ...
@@ -1193,25 +1255,29 @@ void Controller::run()
         {
             if (turn->get_count() < 2)
             {
-                int temp1, temp2 ;
-                bool actionUsed = false; // only true if an Event card was actually drawn & played
+                int temp1, temp2;
+                bool actionUsed = false;
 
                 try{
                         Card *selected_Card = nullptr;
                         Heroes * selectedHero = nullptr;
 
-                        FF.Attakcer_Heroes_Menu(turn, &board, selectedHero);
+                        RF.Attakcer_Heroes_Menu(turn, &board, selectedHero);
 
                         if(selectedHero != nullptr)
                         {
-                            bool cardDrawn = FF.Event_Selected_Card(selectedHero, turn, &p1, &p2, &board, selected_Card);
+                            bool cardDrawn = RF.Event_Selected_Card(selectedHero, turn, &p1, &p2, &board, selected_Card);
 
                             if(cardDrawn && selected_Card != nullptr)
                             {
-                                card_resolver.excute(selected_Card, &p1, &p2, selectedHero, nullptr, &board, temp1, temp2, Attack_Locked, Defense_Locked);
+                         
+                                turn->get_character()->Discard_Card(selected_Card);
 
-                                selectedHero->Discard_Card(selected_Card);
-                                selected_Card->set_user_card(nullptr);
+                                Card &playedCard = turn->get_character()->get_discard().back();
+
+                                card_resolver.excute(&playedCard, &p1, &p2, selectedHero, nullptr, &board, temp1, temp2, Attack_Locked, Defense_Locked);
+
+                                playedCard.set_user_card(nullptr);
 
                                 actionUsed = true;
                             }
@@ -1222,7 +1288,7 @@ void Controller::run()
                     }
                     catch (const std::exception &e)
                     {
-                        FF.get_msg().push_back(e.what());
+                        RF.get_msg().push_back(e.what());
                         // std::cerr << e.what() << '\n';
                     }
 
@@ -1232,21 +1298,21 @@ void Controller::run()
         }
         break;
 
-        case 3: // Save  (NEW)
+        case 3: // Save 
         {
             std::vector<std::string> labels = {
                 GetSaveSummary(1),
                 GetSaveSummary(2),
                 GetSaveSummary(3)};
 
-            int chosen = FF.SlotMenu(labels, "Save Game");
+            int chosen = RF.SlotMenu(labels, "Save Game");
 
             if (chosen != -1)
             {
                 if (SaveGame(chosen + 1))
-                    FF.get_msg().push_back("Game saved to slot " + std::to_string(chosen + 1) + ".");
+                    RF.get_msg().push_back("Game saved to slot " + std::to_string(chosen + 1) + ".");
                 else
-                    FF.get_msg().push_back("Failed to save the game.");
+                    RF.get_msg().push_back("Failed to save the game.");
             }
         }
         break;
@@ -1271,6 +1337,6 @@ void Controller::run()
             round++;
         }
 
-        round++;
+        // round++;
     }
 }

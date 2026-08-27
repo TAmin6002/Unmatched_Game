@@ -41,12 +41,12 @@ endif()
 
 execute_process(
   COMMAND "/usr/bin/git"
-          checkout "v7.0.0" --
+          checkout "v5.0.0" --
   WORKING_DIRECTORY "/home/amin/cpp/Unmatched_Game/build/_deps/ftxui-src"
   RESULT_VARIABLE error_code
 )
 if(error_code)
-  message(FATAL_ERROR "Failed to checkout tag: 'v7.0.0'")
+  message(FATAL_ERROR "Failed to checkout tag: 'v5.0.0'")
 endif()
 
 set(init_submodules TRUE)

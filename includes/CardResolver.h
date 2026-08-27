@@ -2,19 +2,16 @@
 
 #include "Card.h"
 #include "Board.h"
+#include "Raylib.h"
 
 #include <string>
 
-#include "Ftxui_Front.h"
-
-#include "ftxui/component/component.hpp"
-#include "ftxui/component/screen_interactive.hpp"
-#include "ftxui/dom/elements.hpp"
 
 class CardResolver
 {
 private:
-    Ftxui_Front FF;
+    
+    Raylib RF;
 
 public:
     void TryDisableCard(Card *, Player *, Player *); 

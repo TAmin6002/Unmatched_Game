@@ -9,8 +9,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/screen.dir/src/ftxui/screen/screen.cpp.o.d"
   "CMakeFiles/screen.dir/src/ftxui/screen/string.cpp.o"
   "CMakeFiles/screen.dir/src/ftxui/screen/string.cpp.o.d"
-  "CMakeFiles/screen.dir/src/ftxui/screen/surface.cpp.o"
-  "CMakeFiles/screen.dir/src/ftxui/screen/surface.cpp.o.d"
   "CMakeFiles/screen.dir/src/ftxui/screen/terminal.cpp.o"
   "CMakeFiles/screen.dir/src/ftxui/screen/terminal.cpp.o.d"
   "libftxui-screen.a"
