@@ -1,104 +1,131 @@
-# Unmatched Game (C++)
 
-A modern C++ implementation of the **Unmatched** board game featuring both a **terminal interface** built with **FTXUI** and a graphical interface powered by **raylib**.
+## Getting the Project
 
-The project focuses on clean architecture, object-oriented design, and maintainable game logic while recreating the mechanics of the original board game.
+Clone the repository and switch to the **`v2.0.0` release tag**:
 
-> **Status:** 🚧 In Development
+```bash
+git clone https://github.com/TAmin6002/Unmatched_Game.git
+cd Unmatched_Game
+git checkout v2.0.0
+```
+
+You can also view the available releases and tags here:
+
+https://github.com/TAmin6002/Unmatched_Game/tags
+
+> **Important:** Make sure you are using the `v2.0.0` tag before building the project.
+
+
+
+A modern C++ implementation of the **Unmatched** board game, originally built with a terminal interface (**FTXUI**) in Phase 1 and now fully driven by a graphical interface (**raylib**) in Phase 2.
+
+The project focuses on clean architecture, object-oriented design, and maintainable game logic while recreating the mechanics of the original board game — combat resolution, hero decks, board movement, and hero-specific abilities.
+
 
 ---
 
 ## Preview
 
-### Terminal Interface
-- Interactive menus using FTXUI
-- Turn-based gameplay
-- Keyboard navigation
-- Rich terminal rendering
+### Graphical Interface (raylib) — Active Frontend
+- Fullscreen game window with a custom event loop (`InitWindow`, `SetTargetFPS(60)`)
+- Custom-loaded font (Cinzel) for a themed board-game look
+- Board rendering with hero and fog-token markers
+- Card art rendering for every hero's deck
+- Background music / audio device support
+- Menus for: Main Menu, Play, Continue (Load), Help, Exit
+- Full in-game UI: hero selection, action menu, attacker/defender selection, card reveal, hand viewing, discard flow, slot-based save/load menu
 
-### Graphical Interface (raylib)
-- Visual game board
-- Hero sprites
-- Card rendering
-- Modern game UI
-
----
-
-# Features
-
-- Object-Oriented Architecture
-- Modular Game Engine
-- Multiple Heroes
-- Card-Based Combat System
-- Turn Management
-- Action Point System
-- Hero Abilities
-- Board Movement
-- Zone-based Map
-- Terminal UI (FTXUI)
-- Graphical UI (raylib)
-- Cross-platform build using CMake
+### Terminal Interface (FTXUI) — Phase 1 Legacy
+- The original Phase 1 interface was built with FTXUI (interactive menus, keyboard navigation, turn-based text rendering).
+- As of Phase 2, the entire game loop runs through the raylib frontend; the FTXUI frontend source is kept in the repository for reference but is no longer wired into the active build.
 
 ---
 
-# Technologies
+## Features
+
+- Object-Oriented architecture with a polymorphic `Heroes` base class
+- Modular game engine: Board, Space, Player, Heroes, Card, CardResolver, Controller
+- Turn-based gameplay with an Action Point system (2 actions/turn)
+- Zone-based board: 32 connected spaces, including a 4-house portal network for instant travel
+- Card-based combat system (Attack / Defense / Event cards, each with timing rules: Before / During / After / Immediate)
+- Hero-specific decks and abilities
+- Sidekick / comrade system (Dracula's Vampire Sisters, Sherlock's Dr. Watson, Invisible Man's Fog tokens)
+- **Fog / Mist token system** tied to Invisible Man (Phase 2)
+- **JSON-based Save / Load system** with 3 save slots (Phase 2)
+- **Full raylib graphical frontend** replacing the terminal UI as the primary interface (Phase 2)
+- Cross-platform build using CMake, with raylib vendored directly in the repository
+
+---
+
+## Technologies
 
 - C++17
-- CMake
-- FTXUI
-- raylib
+- CMake (3.11+)
+- raylib (vendored under `raylib-master/`)
+- FTXUI (Phase 1 terminal frontend, retained but currently inactive)
+- Custom hand-written JSON library (`Json.h` / `Json.cpp`) used for save/load serialization
 
 ---
 
-# Project Structure
+## Project Structure
 
 ```
 .
-├── assets/             # Fonts, textures, sprites, sounds
-├── include/            # Header files
-├── src/                # Source files
-├── build/              # Build directory
+├── assets/             # Fonts (Cinzel), music, board/hero/card textures, backgrounds
+├── includes/           # Header files (Board, Space, Player, Heroes, Card, Controller, Raylib, Json, ...)
+├── src/                # Source files (.cpp) for every module above
+├── raylib-master/      # Vendored raylib source tree (built via add_subdirectory)
+├── saves/              # Created at runtime; holds slot_1.json, slot_2.json, slot_3.json
 ├── CMakeLists.txt
 └── README.md
 ```
 
 ---
 
-# Architecture
+## Architecture
 
-The project follows a modular architecture where every major gameplay system is isolated into its own component.
+The project follows a modular architecture where every major gameplay system is isolated into its own component. Class responsibilities, based on the current source:
 
-Main modules include:
+### Core Engine
+- **`Space`** — a single board tile. Holds pointers to its `zone` and `neighbor` tiles, an optional occupying `Heroes*`, an optional `Fog` token (`Heroes*`), a tile `number`, and optional portal connections for instant travel between linked spaces.
+- **`Board`** — owns all 32 `Space` objects and wires up their adjacency/zone relationships and portal links (currently connecting 4 "houses" into a mutual portal network). Provides adjacency checks (`is_Adjacent`) and hero-swapping (`SwapHeroes`).
+- **`Player`** — represents one of the two human players: name, age (used to determine turn order), selected `Heroes* character`, list of `comrade` sidekicks, current action `count`, and the currently `selected_card`.
+- **`Heroes`** (abstract base class) — shared state for every fighter: name, attack type, Movement, Action points, Health, board `place`, live/dead status, and per-hero `deck` / `hand` / `discard` piles. Declares a pure-virtual `abiliti(Board*)` for hero-specific special abilities, and exposes `toJson()` / `loadFromJson()` for full state serialization.
+- **`Card`** — a single game card: `CardType`, `CardTiming` (Before/During/After/Immediate), attack/defense type, numeric `amount` and `Boost`, owning hero, and an `ApplyEffects` flag used by the resolver.
+- **`CardResolver`** — the rules engine. `excute()` switches over every `CardType` and applies that card's specific gameplay effect (damage, movement, token manipulation, hand effects, etc.) against the live `Board`/`Heroes`/`Player` state.
+- **`Controller`** — the central game loop owner. Holds the `Board`, both `Player`s, every hero instance (Dracula + 3 Sisters, Sherlock Holmes + Dr. Watson, Invisible Man + 3 Fog tokens), the active `Attacker`/`Defender` and their selected cards, turn/round tracking, and the `CardResolver`. Drives combat resolution, turn switching, win-condition checks, and save/load.
 
-- Board
-- Space
-- Player
-- Heroes
-- Card
-- Card Resolver
-- Controller
-- Terminal Frontend (FTXUI)
-- Graphical Frontend (raylib)
+### Hero Hierarchy (`Heroes` subclasses)
+- `Dracula`, `Sisters` (x3, his comrades)
+- `SherlockHolmes`, `Dr_Watson` (his comrade)
+- `InvisibleMan`, `Fog` (x3 mist tokens, his comrades)
+
+### Frontend
+- **`Raylib`** — the active graphical frontend. Owns all screen/menu rendering: main menu, board rendering (`DrawBoardMap`, `DrawHeroBox`), hero and card selection menus, combat reveal, hand viewing, fog-token movement prompts, and the save/load slot menu.
+- **`Ftxui_Front`** — Phase 1's terminal frontend. Present in the repository for historical reference; its implementation is currently commented out and not linked into the build.
+
+### Persistence
+- **`Json`** — a small hand-rolled JSON value type (`Null`, `Boolean`, `Number`, `String`, `Array`, `Object`) supporting `parse()`, `dump()`, and typed accessors (`asInt`, `asBool`, `asString`), used exclusively for save/load serialization.
 
 This separation makes it easy to add new heroes, cards, maps, and gameplay mechanics without modifying the core engine.
 
 ---
 
-# Building
+## Building
 
-## Requirements
+### Requirements
 
-- CMake 3.20+
+- CMake 3.11+
 - C++17 Compiler
 - Git
+- A display/OpenGL-capable environment (raylib opens a real window) and an audio device
 
-Dependencies are downloaded automatically using **FetchContent**.
+raylib is vendored directly in the repository (`raylib-master/`) and built via `add_subdirectory`; no external package manager step is required for it.
 
-Clone the repository:
+Receive the repository:
 
 ```bash
-git clone https://github.com/TAmin6002/Unmatched_Game.git
-cd Unmatched_Game
+https://github.com/TAmin6002/Unmatched_Game/tags
 ```
 
 Configure:
@@ -116,52 +143,84 @@ cmake --build build
 Run:
 
 ```bash
-./build/app
+./build/Unmatched
 ```
+
+The build step also copies the `assets/` folder next to the produced executable so fonts, textures, and music are found at runtime.
 
 ---
 
-# Current Heroes
+## Current Heroes
 
-- Sherlock Holmes
-- Dracula
+| Hero | Comrades / Tokens | Notes |
+|---|---|---|
+| **Sherlock Holmes** | Dr. Watson | Deduction / investigation-themed card set |
+| **Dracula** | 3 Vampire Sisters | Blood-magic / seduction-themed card set |
+| **Invisible Man** *(Phase 2)* | 3 Fog tokens | Stealth hero built around Mist/Fog board tokens |
 
 More heroes will be added in future updates.
 
 ---
 
-# Gameplay
+## Gameplay
 
 Players take turns performing actions such as:
 
-- Maneuver
-- Attack
-- Scheme
+- Maneuver (move a fighter)
+- Attack (select attacker → defender → reveal combat cards → resolve damage)
+- Scheme / Event cards
 - Draw Cards
-- Resolve Card Effects
+- Resolve Card Effects (via `CardResolver`)
 - Move Fighters
 - Use Hero Abilities
+- Place, move, or interact with **Fog tokens** (Invisible Man only)
 
-Combat is resolved using attack and defense cards inspired by the original board game.
+Combat is resolved by revealing an attack card and a defense card and comparing their `amount` values, with each `CardType` able to trigger additional effects through `CardResolver`.
+
+### Invisible Man & Fog Tokens (Phase 2)
+
+Invisible Man plays around three Fog tokens scattered on the board:
+
+- Standing on a space with a Fog token grants **+1 Defense** when defending, and lets his cards deal bonus damage (e.g. *Step Lightly* deals 3 damage instead of 1 while on Fog).
+- His deck includes fog-manipulation cards such as **Rolling Fog** (teleport a Fog token anywhere), **Slip Away** (teleport the hero to an empty space near a Fog token), **Step Lightly** (attack an adjacent hero, then relocate a Fog token), and **Vanish** (remove the hero from the board for later re-placement).
+- **Reign of Terror** deals area damage to the opponent's whole team, but only while Invisible Man himself is standing on a Fog token.
+
+### Save / Load System (Phase 2)
+
+- The game serializes its entire state to JSON — round number, whose turn it is, both players (name, age, action count, character, comrades, selected card), every hero's full state (health, movement, action points, deck/hand/discard contents, board position), and board occupancy (heroes and Fog tokens per space).
+- Games are written to `saves/slot_<n>.json` for **3 independent save slots**.
+- The main menu's **Continue** option reads all 3 slots and shows a live summary (`"<Player 1> vs <Player 2> - Round <n>"`) so you can pick which one to resume.
 
 ---
 
-# Roadmap
+## Development Phases
+
+### Phase 1
+- Core game engine: `Board`, `Space`, `Player`, `Heroes`, `Card`, `CardResolver`, `Controller`
+- Terminal interface built with FTXUI (menus, keyboard navigation, text rendering)
+- Initial heroes: Sherlock Holmes (+ Dr. Watson) and Dracula (+ 3 Vampire Sisters)
+- Turn/action system and card-based combat resolution
+
+### Phase 2
+- **Invisible Man** added as a fully playable hero, including his complete card set and the Fog/Mist token mechanics (placement, movement, defense bonus, and fog-dependent card effects)
+- **Save / Load system**: full JSON serialization of game state across 3 save slots, with slot summaries in the menu
+- **Graphical interface implemented with raylib**, replacing the terminal frontend as the game's primary UI — fullscreen rendering, board and card art, audio, and all interactive menus (hero selection, combat, hand management, fog-token prompts, save/load)
+
+---
+
+## Roadmap
 
 - More heroes
 - More maps
-- Complete raylib graphical interface
-- Animations
+- Further raylib UI polish and animations
 - AI opponent
 - Online Multiplayer
-- Save / Load
-- Sound effects
-- Particle effects
+- Sound effects / particle effects
 - Improved card animations
 
 ---
 
-# Design Goals
+## Design Goals
 
 This project is built with the following principles:
 
@@ -172,10 +231,3 @@ This project is built with the following principles:
 - Maintainability
 - Separation of game logic from UI
 
----
-
-# Disclaimer
-
-This project is a fan-made implementation created for educational and programming purposes.
-
-All rights related to the original **Unmatched** board game belong to their respective owners.
